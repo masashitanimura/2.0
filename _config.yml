@@ -3,10 +3,10 @@ repository: tomjohnson1492/documentation-theme-jekyll
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Evostream Documentation
+topnav_title: EvoStream
 # this appears on the top navigation bar next to the home button
 
-site_title: Evostream Documentation
+site_title: EvoStream
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Evostream Inc
@@ -29,12 +29,12 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Evostream Documentation
+feedback_subject_line: Evostream
 
 feedback_email: salesupport@evostream.com
 # used as a contact email for the Feedback link in the top navigation bar
 
-# feedback_disable: true
+feedback_disable: true
 # if you uncomment the previous line, the Feedback link gets removed
 
 # feedback_text: "Need help?"
@@ -99,8 +99,16 @@ sidebars:
 - product2_sidebar
 - other
 
+# sidebars used by evostream
+- userguide_sidebar
+- api_sidebar
+- html5players_sidebar
+- emscloud_sidebar
+- evowebservices_sidebar
+
+
 description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-url: http://idratherbewriting.com
+# url: http://idratherbewriting.com

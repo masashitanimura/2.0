@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" events">
+<title>Event Definitions | EvoStream</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://50.56.172.81:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar").navgoco('toggle', true);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks nav-inc-size">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> EvoStream</span></a>
+            <div class="btn-group release-btn-grp" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Release Version
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/1.7-test/index.html">1.7</a></li>
+                    <li><a href="/2.0-test/index.html">2.0</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="index.html">HOME</a></li>
+                
+                
+                
+                <li><a href="userguide_overview.html">USER GUIDE</a></li>
+                
+                
+                
+                <li><a href="api_overview.html">API GUIDE</a></li>
+                
+                
+                
+                <li><a href="html5players_ersoverview.html">HTML5 PLAYERS</a></li>
+                
+                
+                
+                <li><a href="emscloud_overview.html">EMS ON CLOUD</a></li>
+                
+                
+                
+                <li><a href="evowebservices_overview.html">EVOWEBSERVICES</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!-- Adding a Support Forum Link -->
+                <li><a href="https://evostream.com/support-forum/" target="_blank">|&nbsp;&nbsp;Support Forum </a></li>
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container fixed-fr">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                        <a href="/search.html" style="font-size: smaller; margin-left: 2px;"  >Advance Search</a>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Event Definitions">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+<ul id="mysidebar" class="nav">
+
+    <li class="sidebarTitle">API Guide </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Discussion</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_overview.html">Overview</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Streams API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_pullStream.html">pullStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_pushStream.html">pushStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createHLSStream.html">createHLSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createDASHStream.html">createDASHStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createHDSStream.html">createHDSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createMSSStream.html">createMSSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_record.html">record</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_transcode.html">transcode</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreamsIds.html">listStreamsIds</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getStreamInfo.html">getStreamInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreams.html">listStreams</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getStreamsCount.html">getStreamsCount</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownStream.html">shutdownStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listConfig.html">listConfig</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeConfig.html">removeConfig</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConfigInfo.html">getConfigInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_isStreamRunning.html">isStreamRunning</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Aliasing API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_addStreamAlias.html">addStreamAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreamAliases.html">listStreamAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeStreamAlias.html">removeStreamAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_flushStreamAliases.html">flushStreamAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_addGroupNameAlias.html">addGroupNameAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getGroupNameByAlias.html">getGroupNameByAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listGroupNameAliases.html">listGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeGroupNameAliases.html">removeGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_flushGroupNameAliases.html">flushGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listHttpStreamingSessions.html">listHttpStreamingSessions</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createIngestPoint.html">createIngestPoint</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeIngestPoint.html">removeIngestPoint</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listIngestPoints.html">listIngestPoints</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Utility and Feature API Functions</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_startWebRTC.html">startWebRTC</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_stopWebRTC.html">stopWebRTC</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_launchProcess.html">launchProcess</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setTimer.html">setTimer</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listTimers.html">listTimers</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeTimer.html">removeTimer</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_generateLazyPullFile.html">generateLazyPullFile</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_generateServerPlaylist.html">generateServerPlaylist</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_insertPlaylistItem.html">insertPlaylistItem</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_uploadMedia.html">uploadMedia</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getMetadata.html">getMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_pushMetadata.html">pushMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownMetadata.html">shutdownMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStorage.html">listStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_addStorage.html">addStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeStorage.html">removeStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setAuthentication.html">setAuthentication</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setLogLevel.html">setLogLevel</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_version.html">version</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_quit.html">quit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_help.html">help</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownServer.html">shutdownServer</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Connections API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_listInboundStreamNames.html">listInboundStreamNames</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listInboundStreams.html">listInboundStreams</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionInfo.html">getConnectionInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listConnections.html">listConnections</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_clientsConnected.html">clientsConnected</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_httpClientsConnected.html">httpClientsConnected</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getExtendedConnectionCounters.html">getExtendedConnectionCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_resetMaxFdCounters.html">resetMaxFdCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_resetTotalFdCounters.html">resetTotalFdCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionsCount.html">getConnectionsCount</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionsCountLimit.html">getConnectionsCountLimit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setConnectionsCountLimit.html">setConnectionsCountLimit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getBandwidth.html">getBandwidth</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setBandwidthLimit.html">setBandwidthLimit</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Services API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_listServices.html">listServices</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createService.html">createService</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_enableService.html">enableService</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownService.html">shutdownService</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Event Notification System</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_eventoverview.html">Overview</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventnotification.html">Configuring Event Notifications</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventsinks.html">Event Sinks</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventappvsserver.html">Application vs. Server Events</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventlist.html">Event List</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="api_eventdefinition.html">Event Definitions</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!--&lt;!&ndash; if you aren't using the accordion, uncomment this block:-->
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           <!--&ndash;&gt;-->
+    </li>
+   
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        
+
+<a style="margin-top: 38px; margin-bottom: -20px;" target="_blank" href="https://github.com/pages/api/api_eventdefinition.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+
+
+<div class="post-header">
+   <h1 class="post-title-main">Event Definitions</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+  <h2 id="stream-events">Stream Events</h2>
+
+<h3 id="instreamcreated-outstreamcreated-streamcreated">inStreamCreated, outStreamCreated, streamCreated</h3>
+
+<p>A new inbound, outbound or neutral stream has been created.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>appName: evostreamms
+    audio:
+        bytesCount: 0
+        codec: AUNK
+        codecNumeric: 4707755069515235328
+        droppedBytesCount: 0
+        droppedPacketsCount: 0
+        packetsCount: 0
+    bandwidth: 0
+    connectionType: 1
+    creationTimestamp: 1361182998409.229
+    ip: 192.168.1.130
+    name: test
+    port: 49730
+    pullSettings:
+        audioCodecBytes: 
+        configId: 1
+        emulateUserAgent: EvoStream Media Server (www.evostream.com) player
+        forceTcp: false
+        isAudio: true
+        keepAlive: true
+        localStreamName: test
+        operationType: 1
+        pageUrl: 
+        ppsBytes: 
+        rtcpDetectionInterval: 10
+        spsBytes: 
+        ssmIp: 
+        swfUrl: 
+        tcUrl: 
+        tos: 256
+        ttl: 256
+        uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
+    queryTimestamp: 1361182998424.829
+    type: INR
+    typeNumeric: 5282249572905648128
+    uniqueId: 2
+    upTime: 15.600
+    video:
+        bytesCount: 0
+        codec: VUNK
+        codecNumeric: 6220964544311721984
+        droppedBytesCount: 0
+        droppedPacketsCount: 0
+        packetsCount: 0
+</code></pre>
+</div>
+
+<ul>
+  <li>appName – Name of the application using the stream</li>
+  <li>audio – Statistics about the audio stream</li>
+  <li>bandwidth – Bandwidth of the stream</li>
+  <li>connectionType – Connection type used by stream</li>
+  <li>creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)</li>
+  <li>ip – IP address used by the stream</li>
+  <li>nearIP – The address of the host computer</li>
+  <li>farIP – The IP of the stream source</li>
+  <li>name – Name assigned to the stream</li>
+  <li>port – Port used by the stream</li>
+  <li>nearPort – The port used by the host computer</li>
+  <li>farPort – the port used by the stream source</li>
+  <li>pullSettings – <code class="highlighter-rouge">pullstream</code> settings. <em>Only present for inbound streams that are pulled via the pullStream API command</em></li>
+  <li>queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)</li>
+  <li>record – Record settings for the stream</li>
+  <li>type – Protocol type (see Table of Protocol Types)</li>
+  <li>typeNumeric – Protocol type in decimal</li>
+  <li>uniqueId – Stream ID</li>
+  <li>upTime – Stream duration in milliseconds</li>
+  <li>video – Statistics about the video stream</li>
+</ul>
+
+<h3 id="instreamclosed-outstreamclosed-streamclosed">inStreamClosed, outStreamClosed, streamClosed</h3>
+
+<p>An inbound, outbound or neutral stream has been closed</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>appName: evostreamms
+	audio:
+		bytesCount: 190351
+		codec: AAAC
+		codecNumeric: 4702111241970122752
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 681
+	bandwidth: 548
+	connectionType: 1
+	creationTimestamp: 1361182998409.229
+	ip: 192.168.2.88
+	name: test
+	outStreamsUniqueIds:
+		0: 3
+	port: 49730
+	pullSettings:
+		audioCodecBytes: 
+		configId: 1
+		emulateUserAgent: EvoStream Media Server (www.evostream.com) player
+		forceTcp: false
+		isAudio: true
+		keepAlive: true
+		localStreamName: test
+		operationType: 1
+		pageUrl: 
+		ppsBytes: 
+		rtcpDetectionInterval: 10
+		spsBytes: 
+		ssmIp: 
+		swfUrl: 
+		tcUrl: 
+		tos: 256
+		ttl: 256
+		uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
+	queryTimestamp: 1361183030139.685
+	type: INR
+	typeNumeric: 5282249572905648128
+	uniqueId: 2
+	upTime: 31730.456
+	video:
+		bytesCount: 2346717
+		codec: VH264
+		codecNumeric: 6217274493967007744
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 1147
+</code></pre>
+</div>
+
+<ul>
+  <li>appName – Name of the application using the stream</li>
+  <li>audio – Statistics about the audio stream</li>
+  <li>bandwidth – Bandwidth of the stream</li>
+  <li>connectionType – Connection type used by stream</li>
+  <li>creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)</li>
+  <li>ip – IP address used by the stream</li>
+  <li>nearIP – The address used by the host computer</li>
+  <li>farIP – the adress used by the stream source</li>
+  <li>name – Name assigned to the stream</li>
+  <li>port – Port used by the stream</li>
+  <li>nearPort – The port used by the host computer</li>
+  <li>farPort – the port used by the stream source</li>
+  <li>queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)</li>
+  <li>record – Record settings for the stream</li>
+  <li>type – Protocol type (see Table of Protocol Types below)</li>
+  <li>typeNumeric – Protocol type in decimal</li>
+  <li>uniqueId – Stream ID</li>
+  <li>upTime – Stream duration in milliseconds</li>
+  <li>video – Statistics about the video stream</li>
+</ul>
+
+<h3 id="instreamcodecsupdated-outstreamcodecsupdated-streamcodecsupdated">inStreamCodecsUpdated, outStreamCodecsUpdated, streamCodecsUpdated</h3>
+
+<p>A new inbound, outbound or neutral stream has been identified with a specific codec.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>appName: evostreamms
+	audio:
+		bytesCount: 0
+		codec: AUNK
+		codecNumeric: 4707755069515235328
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 0
+	bandwidth: 548
+	connectionType: 1
+	creationTimestamp: 1361182998409.229
+	ip: 192.168.2.88
+	name: test
+	port: 49730
+	pullSettings:
+		audioCodecBytes: 
+		configId: 1
+		emulateUserAgent: EvoStream Media Server (www.evostream.com) player
+		forceTcp: false
+		isAudio: true
+		keepAlive: true
+		localStreamName: test
+		operationType: 1
+		pageUrl: 
+		ppsBytes: 
+		rtcpDetectionInterval: 10
+		spsBytes: 
+		ssmIp: 
+		swfUrl: 
+		tcUrl: 
+		tos: 256
+		ttl: 256
+		uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
+	queryTimestamp: 1361182998456.029
+	type: INR
+	typeNumeric: 5282249572905648128
+	uniqueId: 2
+	upTime: 46.800
+	video:
+		bytesCount: 56
+		codec: VH264
+		codecNumeric: 6217274493967007744
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 1
+</code></pre>
+</div>
+
+<ul>
+  <li>appName – Name of the application using the stream.</li>
+  <li>audio – Statistics about the audio stream.</li>
+  <li>bandwidth – Bandwidth of the stream.</li>
+  <li>connectionType – Connection type used by stream.</li>
+  <li>creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)</li>
+  <li>ip – IP address used by the stream</li>
+  <li>nearIP – The address used by the host computer</li>
+  <li>farIP – the address used by the stream source</li>
+  <li>name – Name assigned to the stream</li>
+  <li>port – Port used by the stream</li>
+  <li>nearPort – The port used by the host computer</li>
+  <li>farPort – the port used by the stream source</li>
+  <li>pullSettings – <code class="highlighter-rouge">pullstream</code> settings. <em>Only present for inbound streams that are pulled via the pullStream API command</em></li>
+  <li>queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)</li>
+  <li>record – Record settings for the stream</li>
+  <li>type – Protocol type (see Table of Protocol Types below)</li>
+  <li>typeNumeric – Protocol type in decimal</li>
+  <li>uniqueId – Stream ID</li>
+  <li>upTime – Stream duration in milliseconds</li>
+  <li>video – Statistics about the video stream</li>
+</ul>
+
+<h3 id="audiofeedstopped-videofeedstopped">audioFeedStopped, videoFeedStopped</h3>
+
+<p>Event triggered when an audio or video packet is lost</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>audioFeedStopped
+
+videoFeedStopped
+
+</code></pre>
+</div>
+
+<ul>
+  <li>streamId – The stream ID</li>
+  <li>localStreamName – Name of the stream which lost the audio</li>
+</ul>
+
+<h3 id="playlistitemstart-firstplaylistitemstart-lastplaylistitemstart">playlistItemStart, firstPlaylistItemStart, lastPlaylistItemStart</h3>
+
+<p>These events are created when an RTMP playlist item starts to play</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>firstPlaylistItemStart
+PID: 10796
+playlistName: stream.lst
+
+playlistItemStart
+PID: 10796
+playlistName: stream.lst
+
+lastPlaylistItemStart
+PID: 12268
+playlistName: stream.lst
+</code></pre>
+</div>
+
+<ul>
+  <li>PID: the process ID</li>
+  <li>playlistName - the playlist file name</li>
+</ul>
+
+<h2 id="adaptive-streaming--file-based-streaming-events">Adaptive Streaming / File-based Streaming Events</h2>
+
+<h3 id="hlschunkcreated-hdschunkcreated-msschunkcreated-dashchunkcreated">hlsChunkCreated, hdsChunkCreated, mssChunkCreated, dashChunkCreated</h3>
+
+<p>Event triggered when an HLS/HDS/MSS/DASH chunk file was opened on disk.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hlsChunkCreated
+/evo-webroot/hls/stream1/segment_1362025844863_1362025844863\_14.ts
+
+hdsChunkCreated
+evo-webroot/hds/stream1/f4vSeg1-Frag1
+
+mssChunkCreated
+/evo-webroot/mss/stream1/video/524288/1413797685000.m4s
+
+dashChunkCreated
+/evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the HLS/HDS/MSS/DASH chunk file that was opened</p>
+
+<h3 id="hlschunkclosed-hdschunkclosed-msschunkclosed-dashchunkclosed">hlsChunkClosed, hdsChunkClosed, mssChunkClosed, dashChunkClosed</h3>
+
+<p>Event triggered when an HLS/HDS/MSS/DASH chunk file was closed on disk.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hlsChunkClosed
+/evo-webroot/hls/stream1/segment_1362025844863_1362025844863_14.ts
+
+hdsChunkClosed
+/evo-webroot/hds/stream1/f4vSeg1-Frag1
+
+mssChunkClosed
+/evo-webroot/mss/stream1/video/524288/1413797685000.m4s
+
+dashChunkClosed
+/evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the HLS/HDS/MSS/DASH chunk file that was closed.</p>
+
+<h3 id="hlschunkerror-hdschunkerror-msschunkerror-dashchunkerror">hlsChunkError, hdsChunkError, mssChunkError, dashChunkError</h3>
+
+<p>Event triggered when an error occurs while writing an HLS/HDS/MSS/DASH chunk file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Could not write video sample to /evo-webroot/hls/stream1/
+segment_1362025844863_1362025844863_14.ts
+</code></pre>
+</div>
+
+<ul>
+  <li>error – description of the error encountered</li>
+</ul>
+
+<h3 id="hlschildplaylistupdated-hdschildplaylistupdated">hlsChildPlaylistUpdated, hdsChildPlaylistUpdated</h3>
+
+<p>Event triggered when an HLS or HDS stream specific playlist file was modified</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hlsChildPlaylistUpdated
+/evo-webroot/hls/stream1/playlist.m3u8
+
+hdsChildPlaylistUpdated
+/evo-webroot/hds/stream1/stream1.f4m
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the HLS or HDS playlist that was updated</p>
+
+<h3 id="hlsmasterplaylistupdated-hdsmasterplaylistupdated">hlsMasterPlaylistUpdated, hdsMasterPlaylistUpdated</h3>
+
+<p>Event triggered when an HLS or HDS group playlist file was modified</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hlsMasterPlaylistUpdated
+/evo-webroot/hls/playlist.m3u8
+
+hdsMasterPlaylistUpdated
+/evo-webroot/hds/stream1.f4m
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the HLS or HDS playlist that was updated</p>
+
+<h3 id="mssplaylistupdated-dashplaylistupdated">mssPlaylistUpdated, dashPlaylistUpdated</h3>
+
+<p>Event triggered when an MSS/DASH stream specific playlist file was modified</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mssPlaylistUpdated
+/evo-webroot/mss/stream1/manifest.f4m
+
+dashPlaylistUpdated
+/evo-webroot/dash/stream1/manifest.mpd
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the MSS/DASH manifest that was updated</p>
+
+<h3 id="recordchunkcreated-recordchunkclosed-recordchunkerror">recordChunkCreated, recordChunkClosed, recordChunkError</h3>
+
+<p>Event triggered when a new record fragment has been opened, completed and ready on disk, or failed due to a write error</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/media/record/stream1_part0008.mp4
+</code></pre>
+</div>
+
+<p><strong>file</strong> – Name of the record fragment that was opened, closed, or had a write error</p>
+
+<h2 id="web-server-events">Web Server Events</h2>
+
+<h3 id="streamingsessionstarted">streamingSessionStarted</h3>
+
+<p>This event is created right after an HTTP streaming session has started.</p>
+
+<ul>
+  <li>clientIP – Address of connecting client</li>
+  <li>sessionID – Internal ID</li>
+  <li>playlist – The playlist file</li>
+  <li>startTime – Time session started</li>
+</ul>
+
+<h3 id="streamingsessionended">streamingSessionEnded</h3>
+
+<p>This event is created right after an HTTP streaming session has stopped.</p>
+
+<ul>
+  <li>clientIP – Address of connecting client</li>
+  <li>sessionID – Internal ID</li>
+  <li>playlist – The playlist file</li>
+  <li>startTime – Time session started</li>
+  <li>stopTime – Time session stopped</li>
+</ul>
+
+<h3 id="filedownloaded">fileDownloaded</h3>
+
+<p>This event is created right after an HTTP file download has completed.</p>
+
+<ul>
+  <li>clientIP – Address of connecting client.</li>
+  <li>mediaFile – The path to the media file.</li>
+  <li>startTime – Time session started.</li>
+  <li>elapsed – The number of seconds since the session started</li>
+</ul>
+
+<h2 id="api-based-events">API Based Events</h2>
+
+<h3 id="clirequest">cliRequest</h3>
+
+<p>The EMS has received a Runtime API command.</p>
+
+<ul>
+  <li>command – The CLI command received by the EMS</li>
+  <li>parameters – Optional parameters for the CLI command</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>command: launchProcess
+	parameters:
+		fullBinaryPath: d:\demoplay.bat
+
+</code></pre>
+</div>
+
+<h3 id="cliresponse">cliResponse</h3>
+
+<p>The response generated by the EMS for the last Runtime API command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>data:
+		arguments: 
+		configId: 1
+		fullBinaryPath: d:\demoplay.bat
+		keepAlive: true
+		operationType: 6
+	description: Process enqueued for start
+	status: SUCCESS
+</code></pre>
+</div>
+
+<ul>
+  <li>data – Optional data for the CLI response</li>
+  <li>description – A description of the CLI response</li>
+  <li>status – SUCCESS or FAIL. The result of parsing (not necessarily executing) the CLI command</li>
+</ul>
+
+<h3 id="processstarted-processstopped">processStarted, processStopped</h3>
+
+<p>A process has been started/stopped at the request of the launchProcess API command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>arguments: 
+configId: 1
+	fullBinaryPath: d:\demoplay.bat
+	keepAlive: true
+	operationType: 6
+</code></pre>
+</div>
+
+<ul>
+  <li>arguments – Arguments for the process just started.</li>
+  <li>configId – The configuration ID for the process just started.</li>
+  <li>fullBinaryPath – Full path to the binary of the process just started.</li>
+  <li>keepAlive – If true, reconnection is attempted every second when the connection is severed.</li>
+  <li>operationType – 0:STANDARD, 1:PUSH, 2:PULL, 3:HLS, 4:HDS, 5:RECORD, or 6:LAUNCHPROCESS.</li>
+</ul>
+
+<h3 id="timercreated">timerCreated</h3>
+
+<p>A new timer has been created via the setTimer API command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>arguments: 
+configId: 1
+	fullBinaryPath: d:\demoplay.bat
+	keepAlive: true
+	operationType: 6
+</code></pre>
+</div>
+
+<ul>
+  <li>timerId – The ID of the timer created</li>
+  <li>triggerCount – The number of times the timer triggered since it was created</li>
+  <li>value – The time value for the timer</li>
+</ul>
+
+<h3 id="timertriggered">timerTriggered</h3>
+
+<p>A timer has triggered.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>timerId: 9
+triggerCount: 0
+value: 100
+</code></pre>
+</div>
+
+<ul>
+  <li>timerId – The ID of the timer that triggered</li>
+  <li>triggerCount – The number of times the timer triggered since it was created</li>
+  <li>value – The time value for the timer</li>
+</ul>
+
+<h3 id="timerclosed">timerClosed</h3>
+
+<p>A timer has been closed and will not create any new timerTriggered events.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>timerId: 9
+triggerCount: 2
+value: 100
+</code></pre>
+</div>
+
+<ul>
+  <li>timerId – The ID of the timer closed</li>
+  <li>triggerCount – The number of times the timer triggered since it was created</li>
+  <li>value – The time value for the timer</li>
+</ul>
+
+<h2 id="connection-based-events">Connection Based Events</h2>
+
+<h3 id="protocolregisteredtoapp">protocolRegisteredToApp</h3>
+
+<p>A connection has been fully established.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	customParameters:
+		ip: 127.0.0.1
+		port: 1112
+		protocol: inboundJsonCli
+		sslCert: 
+		sslKey: 
+		useLengthPadding: true
+	protocolType: IJSONCLI
+</code></pre>
+</div>
+
+<ul>
+  <li>customParameters – Custom parameters for the protocol.</li>
+  <li>protocolType – Protocol type (see Table of Protocol Types below).</li>
+</ul>
+
+<h3 id="protocolunregisteredfromapp">protocolUnregisteredFromApp</h3>
+
+<p>A connection has been disconnected.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	customParameters:
+		ip: 127.0.0.1
+		port: 1112
+		protocol: inboundJsonCli
+		sslCert: 
+		sslKey: 
+		useLengthPadding: true
+	protocolType: IJSONCLI
+</code></pre>
+</div>
+
+<ul>
+  <li>customParameters – Custom parameters for the protocol.</li>
+  <li>protocolType – Protocol type (see Table of Protocol Types below).</li>
+</ul>
+
+<h3 id="carriercreated">carrierCreated</h3>
+
+<p>Some IO handler, such as a TCP socket, has been created.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+<h3 id="carrierclosed">carrierClosed</h3>
+
+<p>Some IO handler, such as a UDP socket, has been closed.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+<h2 id="application-based-events">Application Based Events</h2>
+
+<h3 id="applicationstart-applicationstop">applicationStart, applicationStop</h3>
+
+<p>These events are created right after the internal EMS application has started and when that application has stopped, likely indicating server shutdown.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>config:
+acceptors:
+0:
+	ip: 127.0.0.1
+	port: 1112
+	protocol: inboundJsonCli
+	sslCert: 
+	sslKey: 
+	useLengthPadding: true
+1:
+	ip: 0.0.0.0
+	port: 7777
+	protocol: inboundHttpJsonCli
+	sslCert: 
+	sslKey: 
+2:
+	ip: 0.0.0.0
+	port: 1935
+	protocol: inboundRtmp
+	sslCert: 
+	sslKey: 
+3:
+	clustering: true
+	ip: 127.0.0.1
+	port: 1936
+	protocol: inboundRtmp
+	sslCert: 
+	sslKey: 
+4:
+	clustering: true
+	ip: 127.0.0.1
+	port: 1113
+	protocol: inboundBinVariant
+	sslCert: 
+	sslKey: 
+5:
+	ip: 0.0.0.0
+	port: 5544
+	protocol: inboundRtsp
+	sslCert: 
+	sslKey: 
+6:
+	ip: 0.0.0.0
+	port: 6666
+	protocol: inboundLiveFlv
+	sslCert: 
+	sslKey: 
+	waitForMetadata: true
+aliases:
+	0: er
+	1: live
+	2: vod
+appDir: C:\emsdemo\config\
+authPersistenceFile: ..\config\auth.xml
+bandwidthLimitPersistenceFile: ..\config\bandwidthlimits.xml
+connectionsLimitPersistenceFile: ..\config\connlimits.xml
+default: true
+description: EVOSTREAM MEDIA SERVER
+eventLogger:
+	sinks:
+	1:
+		filename: ..\logs\events.txt
+		format: text
+		type: file
+		hasStreamAliases: false
+		initApplicationFunction: GetApplication_evostreamms
+		initFactoryFunction: GetFactory_evostreamms
+		library: 
+		maxRtmpOutBuffer: 524288
+		mediaStorage:
+			1:
+				description: Default media storage
+				mediaFolder: ../media
+		metaFileGenerator: false
+		name: evostreamms
+		protocol: dynamiclinklibrary
+		pushPullPersistenceFile: ..\config\pushPullSetup.xml
+		rtcpDetectionInterval: 15
+		streamsExpireTimer: 10
+		validateHandshake: false
+id: 1
+name: evostreamms
+</code></pre>
+</div>
+
+<ul>
+  <li>config – Configuration of the application that just started (see EMS User’s Guide for details)</li>
+  <li>id – ID of the application that just started</li>
+  <li>name – Name of the application that just started</li>
+</ul>
+
+<h3 id="serverstarted">serverStarted</h3>
+
+<p>The server has started.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+<h3 id="serverstopped">serverStopped</h3>
+
+<p>The server is just about to stop.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+<footer>
+    <div class="container">
+            <div class="row row-footer">
+
+            <div class="col-lg-4 copyright col-md-4 col-sm-5">
+               <p><img src="images/width-200.png" alt="Company logo"/></p>
+               &copy;2017 EvoStream Inc. All rights reserved. <br />
+
+                </div> 
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <h3 class="widget-title">
+                        <span>ABOUT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-linkedin"><a href="">Linkedln</a></li>
+                        <li class="fa fa-twitter"><a href="">Twitter</a></li>
+                        <li class="fa fa-lock"><a href="">Privacy Policy</a></li>
+                        <li class="fa fa-book"><a href="">Glossary</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-4">
+                   <h3 class="widget-title">
+                        <span>CONTACT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-envelope-o"><a>salesupport@evostream.com</a></li>
+                        <li class="fa fa-phone"><a href="">+1 858-454-9393</a></li>
+                        <li class="fa fa-map-marker"><a>1010 Turquoise Street, Suite 101, San Diego, CA 92109, USA</a></li>                        
+                    </ul>
+                    </div>
+                </div>
+
+
+
+
+
+               
+            </div>
+    </div>
+</footer>
+</body>
+
+</html>

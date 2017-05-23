@@ -10,6 +10,25 @@
 {% elsif page.sidebar == "mydoc_sidebar" %}
 {% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}
 
+<!-- EMS Menus -->
+<!--{% elsif page.sidebar == "home_sidebar" %}-->
+<!--{% assign sidebar = site.data.sidebars.home_sidebar.entries %}-->
+
+{% elsif page.sidebar == "userguide_sidebar" %}
+{% assign sidebar = site.data.sidebars.userguide_sidebar.entries %}
+
+{% elsif page.sidebar == "api_sidebar" %}
+{% assign sidebar = site.data.sidebars.api_sidebar.entries %}
+
+{% elsif page.sidebar == "html5players_sidebar" %}
+{% assign sidebar = site.data.sidebars.html5players_sidebar.entries %}
+
+{% elsif page.sidebar == "emscloud_sidebar" %}
+{% assign sidebar = site.data.sidebars.emscloud_sidebar.entries %}
+
+{% elsif page.sidebar == "evowebservices_sidebar" %}
+{% assign sidebar = site.data.sidebars.evowebservices_sidebar.entries %}
+
 {% else %}
 {% assign sidebar = site.data.sidebars.home_sidebar.entries %}
 {% endif %}

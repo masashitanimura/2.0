@@ -1,0 +1,376 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: API Guide
+#  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Discussion
+    output: web, pdf
+
+    folderitems:
+    - title: Overview
+      url: /api_overview.html
+      output: web, pdf
+
+
+  - title: Streams API
+    output: web, pdf
+
+    folderitems:
+    - title: pullStream
+      url: /api_pullStream.html
+      output: web, pdf
+
+    - title: pushStream
+      url: /api_pushStream.html
+      output: web, pdf
+
+    - title: createHLSStream
+      url: /api_createHLSStream.html
+      output: web, pdf
+
+    - title: createDASHStream
+      url: /api_createDASHStream.html
+      output: web, pdf
+
+    - title: createHDSStream
+      url: /api_createHDSStream.html
+      output: web, pdf
+
+    - title: createMSSStream
+      url: /api_createMSSStream.html
+      output: web, pdf
+
+    - title: record
+      url: /api_record.html
+      output: web, pdf
+
+    - title: transcode
+      url: /api_transcode.html
+      output: web, pdf
+
+    - title: listStreamsIds
+      url: /api_listStreamsIds.html
+      output: web, pdf
+
+    - title: getStreamInfo
+      url: /api_getStreamInfo.html
+      output: web, pdf
+
+    - title: listStreams
+      url: /api_listStreams.html
+      output: web, pdf
+
+    - title: getStreamsCount
+      url: /api_getStreamsCount.html
+      output: web, pdf
+
+    - title: shutdownStream
+      url: /api_shutdownStream.html
+      output: web, pdf
+
+    - title: listConfig
+      url: /api_listConfig.html
+      output: web, pdf
+
+    - title: removeConfig
+      url: /api_removeConfig.html
+      output: web, pdf
+
+    - title: getConfigInfo
+      url: /api_getConfigInfo.html
+      output: web, pdf
+
+    - title: isStreamRunning
+      url: /api_isStreamRunning.html
+      output: web, pdf
+
+
+
+  - title: Aliasing API
+    output: web, pdf
+
+    folderitems:
+
+    - title: addStreamAlias
+      url: /api_addStreamAlias.html
+      output: web, pdf
+
+    - title: listStreamAliases
+      url: /api_listStreamAliases.html
+      output: web, pdf
+
+    - title: removeStreamAlias
+      url: /api_removeStreamAlias.html
+      output: web, pdf
+
+    - title: flushStreamAliases
+      url: /api_flushStreamAliases.html
+      output: web, pdf
+
+    - title: addGroupNameAlias
+      url: /api_addGroupNameAlias.html
+      output: web, pdf
+
+    - title: getGroupNameByAlias
+      url: /api_getGroupNameByAlias.html
+      output: web, pdf
+
+    - title: listGroupNameAliases
+      url: /api_listGroupNameAliases.html
+      output: web, pdf
+
+    - title: removeGroupNameAliases
+      url: /api_removeGroupNameAliases.html
+      output: web, pdf
+
+    - title: flushGroupNameAliases
+      url: /api_flushGroupNameAliases.html
+      output: web, pdf
+
+    - title: listHttpStreamingSessions
+      url: /api_listHttpStreamingSessions.html
+      output: web, pdf
+
+    - title: createIngestPoint
+      url: /api_createIngestPoint.html
+      output: web, pdf
+
+    - title: removeIngestPoint
+      url: /api_removeIngestPoint.html
+      output: web, pdf
+
+    - title: listIngestPoints
+      url: /api_listIngestPoints.html
+      output: web, pdf
+
+
+
+
+  - title: Utility and Feature API Functions
+    output: web, pdf
+
+    folderitems:
+
+
+    - title: startWebRTC
+      url: /api_startWebRTC.html
+      output: web, pdf
+
+    - title: stopWebRTC
+      url: /api_stopWebRTC.html
+      output: web, pdf
+
+    - title: launchProcess
+      url: /api_launchProcess.html
+      output: web, pdf
+
+    - title: setTimer
+      url: /api_setTimer.html
+      output: web, pdf
+
+    - title: listTimers
+      url: /api_listTimers.html
+      output: web, pdf
+
+    - title: removeTimer
+      url: /api_removeTimer.html
+      output: web, pdf
+
+    - title: generateLazyPullFile
+      url: /api_generateLazyPullFile.html
+      output: web, pdf
+
+    - title: generateServerPlaylist
+      url: /api_generateServerPlaylist.html
+      output: web, pdf
+
+    - title: insertPlaylistItem
+      url: /api_insertPlaylistItem.html
+      output: web, pdf
+
+    - title: uploadMedia
+      url: /api_uploadMedia.html
+      output: web, pdf
+
+    - title: getMetadata
+      url: /api_getMetadata.html
+      output: web, pdf
+
+    - title: pushMetadata
+      url: /api_pushMetadata.html
+      output: web, pdf
+
+    - title: shutdownMetadata
+      url: /api_shutdownMetadata.html
+      output: web, pdf
+
+    - title: listStorage
+      url: /api_listStorage.html
+      output: web, pdf
+
+    - title: addStorage
+      url: /api_addStorage.html
+      output: web, pdf
+
+    - title: removeStorage
+      url: /api_removeStorage.html
+      output: web, pdf
+
+    - title: setAuthentication
+      url: /api_setAuthentication.html
+      output: web, pdf
+
+    - title: setLogLevel
+      url: /api_setLogLevel.html
+      output: web, pdf
+
+    - title: version
+      url: /api_version.html
+      output: web, pdf
+
+    - title: quit
+      url: /api_quit.html
+      output: web, pdf
+
+    - title: help
+      url: /api_help.html
+      output: web, pdf
+
+    - title: shutdownServer
+      url: /api_shutdownServer.html
+      output: web, pdf
+
+
+  - title: Connections API
+    output: web, pdf
+
+    folderitems:
+
+
+    - title: listInboundStreamNames
+      url: /api_listInboundStreamNames.html
+      output: web, pdf
+
+    - title: listInboundStreams
+      url: /api_listInboundStreams.html
+      output: web, pdf
+
+    - title: getConnectionInfo
+      url: /api_getConnectionInfo.html
+      output: web, pdf
+
+    - title: listConnections
+      url: /api_listConnections.html
+      output: web, pdf
+
+    - title: clientsConnected
+      url: /api_clientsConnected.html
+      output: web, pdf
+
+    - title: httpClientsConnected
+      url: /api_httpClientsConnected.html
+      output: web, pdf
+
+    - title: getExtendedConnectionCounters
+      url: /api_getExtendedConnectionCounters.html
+      output: web, pdf
+
+    - title: resetMaxFdCounters
+      url: /api_resetMaxFdCounters.html
+      output: web, pdf
+
+    - title: resetTotalFdCounters
+      url: /api_resetTotalFdCounters.html
+      output: web, pdf
+
+    - title: getConnectionsCount
+      url: /api_getConnectionsCount.html
+      output: web, pdf
+
+    - title: getConnectionsCountLimit
+      url: /api_getConnectionsCountLimit.html
+      output: web, pdf
+
+    - title: setConnectionsCountLimit
+      url: /api_setConnectionsCountLimit.html
+      output: web, pdf
+
+    - title: getBandwidth
+      url: /api_getBandwidth.html
+      output: web, pdf
+
+    - title: setBandwidthLimit
+      url: /api_setBandwidthLimit.html
+      output: web, pdf
+
+ 
+  - title: Services API
+    output: web, pdf
+
+    folderitems:
+
+
+    - title: listServices
+      url: /api_listServices.html
+      output: web, pdf
+
+    - title: createService
+      url: /api_createService.html
+      output: web, pdf
+
+    - title: enableService
+      url: /api_enableService.html
+      output: web, pdf
+
+    - title: shutdownService
+      url: /api_shutdownService.html
+      output: web, pdf
+
+
+
+  - title: Event Notification System
+    output: web, pdf
+
+    folderitems:
+    - title: Overview
+      url: /api_eventoverview.html
+      output: web, pdf
+
+    - title: Configuring Event Notifications
+      url: /api_eventnotification.html
+      output: web, pdf
+
+    - title: Event Sinks
+      url: /api_eventsinks.html
+      output: web, pdf
+
+    - title: Application vs. Server Events
+      url: /api_eventappvsserver.html
+      output: web, pdf
+
+    - title: Event List
+      url: /api_eventlist.html
+      output: web, pdf
+
+    - title: Event Definitions
+      url: /api_eventdefinition.html
+      output: web, pdf
+

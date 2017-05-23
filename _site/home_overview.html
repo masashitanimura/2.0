@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" EMS">
+<title>Overview | EvoStream</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://50.56.172.81:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar").navgoco('toggle', true);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks nav-inc-size">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> EvoStream</span></a>
+            <div class="btn-group release-btn-grp" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Release Version
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/1.7-test/index.html">1.7</a></li>
+                    <li><a href="/2.0-test/index.html">2.0</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="index.html">HOME</a></li>
+                
+                
+                
+                <li><a href="userguide_overview.html">USER GUIDE</a></li>
+                
+                
+                
+                <li><a href="api_overview.html">API GUIDE</a></li>
+                
+                
+                
+                <li><a href="html5players_ersoverview.html">HTML5 PLAYERS</a></li>
+                
+                
+                
+                <li><a href="emscloud_overview.html">EMS ON CLOUD</a></li>
+                
+                
+                
+                <li><a href="evowebservices_overview.html">EVOWEBSERVICES</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!-- Adding a Support Forum Link -->
+                <li><a href="https://evostream.com/support-forum/" target="_blank">|&nbsp;&nbsp;Support Forum </a></li>
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container fixed-fr">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                        <a href="/search.html" style="font-size: smaller; margin-left: 2px;"  >Advance Search</a>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Overview">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+<ul id="mysidebar" class="nav">
+
+    <li class="sidebarTitle">Home </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">EvoStream Media Server</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="home_overview.html">Overview</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="home_releasenotes.html">Release Notes</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!--&lt;!&ndash; if you aren't using the accordion, uncomment this block:-->
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           <!--&ndash;&gt;-->
+    </li>
+   
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        
+
+<a style="margin-top: 38px; margin-bottom: -20px;" target="_blank" href="https://github.com/pages/home/home_overview.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+
+
+<div class="post-header">
+   <h1 class="post-title-main">Overview</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+  <p>This document provides instructions on how to use the EvoStream Media Server (EMS). It will cover the basics of starting the server as well as some advanced topics like modifying configuration files</p>
+
+<p>This document is written for users of the EMS. It is expected that readers have a basic understanding of multimedia streaming and the technologies required to perform multimedia streaming.</p>
+
+<h2 id="what-is-ems">What is EMS?</h2>
+
+<p>EvoStream is an enterprise-strength media server capable of delivering live and on-demand content to any screen with an unbeatable cost of ownership. With EvoStream, audio/video/data delivery can be expanded to all popular media platforms including Adobe Flash, Apple iOS devices and QuickTime, IPTV, Microsoft Silverlight, Android, Blackberry, and other 3GPP devices into a single workflow.</p>
+
+<h2 id="why-use-ems">Why Use EMS?</h2>
+
+<p>EvoStream’s unique architecture significantly increases I/O performance compared to Java-based media servers, and is the only unified media server capable of running on virtually any platform (Linux, Windows, Mac OSX, etc.) including embedded devices (encoders, IP cameras, DVRs, and more).</p>
+
+<h2 id="what-are-the-key-features-and-benefits-of-the-ems">What are the Key Features and Benefits of the EMS?</h2>
+
+<p>EvoStream Media Server is not just a multi-format, multi-protocol server that delivers media rich content across multiple screens and platforms. It delivers enterprise strength content at a cost-lowering performance. Simply put, EvoStream is the most efficient and flexible streaming server available. It delivers enterprise strength content at a cost-lowering performance. For a better understanding, refer to the picture and descriptions below.</p>
+
+<p><img src="..images/home/intro1.jpg" alt="" /></p>
+
+<ul>
+  <li><strong>Next Generation Streaming</strong></li>
+</ul>
+
+<p>Stream directly to HTML5 browsers with <strong>sub-second</strong> latency! No Plugins, No custom apps!Peer to peer streaming eliminating the vast majority of operating costs!Metadata delivered in frame-aligned real-time</p>
+
+<ul>
+  <li><strong>Highly Efficient</strong></li>
+</ul>
+
+<p>The EMS has the smallest CPU and memory footprint possible while still being capable of handling approximately <strong>2,000 simultaneous connections</strong> per Intel style CPU core. In other words, <strong>never</strong> max out on hardware resources before reaching bandwidth limitations.</p>
+
+<ul>
+  <li><strong>Extensible</strong></li>
+</ul>
+
+<p>Never write custom modules again or be limited to a single programming language to extend server functionality for applications and infrastructure. The EMS has a diverse set of run-time APIs including standard HTTP calls, PHP, Lua, or C++, allowing for quick and easy integration of EvoStream into existing workflows.</p>
+
+<p>Along with the Runtime API, the EMS also provides an Event Notification System, which allows users to completely tailor the behavior of the EMS. Automate stream routing, dynamically create HLS or HDS, or simply monitor server activities with a simple RESTful monitor!</p>
+
+<ul>
+  <li><strong>Cross Platform</strong></li>
+</ul>
+
+<p>Built from the ground-up to be truly platform agnostic and capable of being delivered on virtually any operating system including embedded systems such as encoders, IP cameras, DVRs, and more!</p>
+
+<ul>
+  <li><strong>Scalable</strong></li>
+</ul>
+
+<p>Whether serving a few users to hundreds of thousands, EvoStream can meet live and on-demand streaming needs through robust load-balancing allowing the infrastructure to infinitely scale as needed while keeping the hardware and licensing costs at an absolute minimum.</p>
+
+<ul>
+  <li><strong>Reliable</strong></li>
+</ul>
+
+<p>Proven and tested under high-traffic environments and deployed worldwide by enterprise content publishers and service providers that demand maximum uptime and reliability.</p>
+
+<h2 id="how-does-the-ems-work">How Does the EMS Work?</h2>
+
+<p>EvoStream Media Server runs as a separate application which users can send video and audio streams to. Users can then connect to the EMS with a variety of players or other servers and use the Runtime API to push streams out or pull new streams in.</p>
+
+<ul>
+  <li><strong>Stream Routing</strong></li>
+</ul>
+
+<p>EvoStream’s rich set of APIs includes <strong>pull/push streaming</strong>, which allows users to easily publish or consume RTMP/RTSP/HLS/MPEG-TS/etc streams to and from other locations such as a CDN or a service provider.</p>
+
+<p><img src="..images/home/intro2.jpg" alt="" /></p>
+
+<h2 id="where-will-ems-run">Where will EMS Run?</h2>
+
+<p>On practically everything! It runs on Windows, Linux, Mac OSX, BSD and Solaris. It can be hosted on a robust server or on a small ARM based IP Camera, or anything in-between.</p>
+
+<p>Specifically, the EMS can be run on:</p>
+
+<ul>
+  <li>Windows: 10 x64, 8.1 x64, 8 x64, 7 x64, Server 2008, Server 2012, Server 2012 R2</li>
+  <li>Linux: Debian, CentOS, RedHat, Ubuntu, openSUSE, and others</li>
+  <li>Mac OSX</li>
+  <li>FreeBSD</li>
+  <li>OpenBSD</li>
+  <li>Raspbian</li>
+</ul>
+
+<p><strong>Note:</strong> starting release v1.7.1, EMS will only support 64bit machines</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+<footer>
+    <div class="container">
+            <div class="row row-footer">
+
+            <div class="col-lg-4 copyright col-md-4 col-sm-5">
+               <p><img src="images/width-200.png" alt="Company logo"/></p>
+               &copy;2017 EvoStream Inc. All rights reserved. <br />
+
+                </div> 
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <h3 class="widget-title">
+                        <span>ABOUT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-linkedin"><a href="">Linkedln</a></li>
+                        <li class="fa fa-twitter"><a href="">Twitter</a></li>
+                        <li class="fa fa-lock"><a href="">Privacy Policy</a></li>
+                        <li class="fa fa-book"><a href="">Glossary</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-4">
+                   <h3 class="widget-title">
+                        <span>CONTACT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-envelope-o"><a>salesupport@evostream.com</a></li>
+                        <li class="fa fa-phone"><a href="">+1 858-454-9393</a></li>
+                        <li class="fa fa-map-marker"><a>1010 Turquoise Street, Suite 101, San Diego, CA 92109, USA</a></li>                        
+                    </ul>
+                    </div>
+                </div>
+
+
+
+
+
+               
+            </div>
+    </div>
+</footer>
+</body>
+
+</html>

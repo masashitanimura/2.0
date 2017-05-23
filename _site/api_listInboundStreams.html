@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" api">
+<title>listInboundStreams | EvoStream</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://50.56.172.81:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar").navgoco('toggle', true);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks nav-inc-size">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> EvoStream</span></a>
+            <div class="btn-group release-btn-grp" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Release Version
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/1.7-test/index.html">1.7</a></li>
+                    <li><a href="/2.0-test/index.html">2.0</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="index.html">HOME</a></li>
+                
+                
+                
+                <li><a href="userguide_overview.html">USER GUIDE</a></li>
+                
+                
+                
+                <li><a href="api_overview.html">API GUIDE</a></li>
+                
+                
+                
+                <li><a href="html5players_ersoverview.html">HTML5 PLAYERS</a></li>
+                
+                
+                
+                <li><a href="emscloud_overview.html">EMS ON CLOUD</a></li>
+                
+                
+                
+                <li><a href="evowebservices_overview.html">EVOWEBSERVICES</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!-- Adding a Support Forum Link -->
+                <li><a href="https://evostream.com/support-forum/" target="_blank">|&nbsp;&nbsp;Support Forum </a></li>
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container fixed-fr">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                        <a href="/search.html" style="font-size: smaller; margin-left: 2px;"  >Advance Search</a>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="listInboundStreams">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+<ul id="mysidebar" class="nav">
+
+    <li class="sidebarTitle">API Guide </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Discussion</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_overview.html">Overview</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Streams API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_pullStream.html">pullStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_pushStream.html">pushStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createHLSStream.html">createHLSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createDASHStream.html">createDASHStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createHDSStream.html">createHDSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createMSSStream.html">createMSSStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_record.html">record</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_transcode.html">transcode</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreamsIds.html">listStreamsIds</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getStreamInfo.html">getStreamInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreams.html">listStreams</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getStreamsCount.html">getStreamsCount</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownStream.html">shutdownStream</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listConfig.html">listConfig</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeConfig.html">removeConfig</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConfigInfo.html">getConfigInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_isStreamRunning.html">isStreamRunning</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Aliasing API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_addStreamAlias.html">addStreamAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStreamAliases.html">listStreamAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeStreamAlias.html">removeStreamAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_flushStreamAliases.html">flushStreamAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_addGroupNameAlias.html">addGroupNameAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getGroupNameByAlias.html">getGroupNameByAlias</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listGroupNameAliases.html">listGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeGroupNameAliases.html">removeGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_flushGroupNameAliases.html">flushGroupNameAliases</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listHttpStreamingSessions.html">listHttpStreamingSessions</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createIngestPoint.html">createIngestPoint</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeIngestPoint.html">removeIngestPoint</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listIngestPoints.html">listIngestPoints</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Utility and Feature API Functions</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_startWebRTC.html">startWebRTC</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_stopWebRTC.html">stopWebRTC</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_launchProcess.html">launchProcess</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setTimer.html">setTimer</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listTimers.html">listTimers</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeTimer.html">removeTimer</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_generateLazyPullFile.html">generateLazyPullFile</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_generateServerPlaylist.html">generateServerPlaylist</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_insertPlaylistItem.html">insertPlaylistItem</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_uploadMedia.html">uploadMedia</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getMetadata.html">getMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_pushMetadata.html">pushMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownMetadata.html">shutdownMetadata</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listStorage.html">listStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_addStorage.html">addStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_removeStorage.html">removeStorage</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setAuthentication.html">setAuthentication</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setLogLevel.html">setLogLevel</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_version.html">version</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_quit.html">quit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_help.html">help</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownServer.html">shutdownServer</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Connections API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_listInboundStreamNames.html">listInboundStreamNames</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="api_listInboundStreams.html">listInboundStreams</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionInfo.html">getConnectionInfo</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_listConnections.html">listConnections</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_clientsConnected.html">clientsConnected</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_httpClientsConnected.html">httpClientsConnected</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getExtendedConnectionCounters.html">getExtendedConnectionCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_resetMaxFdCounters.html">resetMaxFdCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_resetTotalFdCounters.html">resetTotalFdCounters</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionsCount.html">getConnectionsCount</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getConnectionsCountLimit.html">getConnectionsCountLimit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setConnectionsCountLimit.html">setConnectionsCountLimit</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_getBandwidth.html">getBandwidth</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_setBandwidthLimit.html">setBandwidthLimit</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Services API</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_listServices.html">listServices</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_createService.html">createService</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_enableService.html">enableService</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_shutdownService.html">shutdownService</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Event Notification System</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_eventoverview.html">Overview</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventnotification.html">Configuring Event Notifications</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventsinks.html">Event Sinks</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventappvsserver.html">Application vs. Server Events</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventlist.html">Event List</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="api_eventdefinition.html">Event Definitions</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!--&lt;!&ndash; if you aren't using the accordion, uncomment this block:-->
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           <!--&ndash;&gt;-->
+    </li>
+   
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        
+
+<a style="margin-top: 38px; margin-bottom: -20px;" target="_blank" href="https://github.com/pages/api/api_listInboundStreams.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+
+
+<div class="post-header">
+   <h1 class="post-title-main">listInboundStreams</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+  <p>Provides a complete detailed list of all the current inbound <code class="highlighter-rouge">localStreamNames</code>.</p>
+
+<h2 id="api-parameter-table">API Parameter Table</h2>
+
+<p>This function has no parameters.</p>
+
+<h2 id="api-call-template">API Call Template</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>listInboundStreams
+</code></pre>
+</div>
+
+<h3 id="success-response-in-json">Success Response in JSON</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"data"</span><span class="p">:[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"appName"</span><span class="p">:</span><span class="s2">"evostreamms"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"audio"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"bytesCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"codec"</span><span class="p">:</span><span class="s2">"AAAC"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"codecNumeric"</span><span class="p">:</span><span class="mi">4702111241970122752</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"droppedBytesCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"droppedPacketsCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"packetsCount"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"bandwidth"</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"connectionType"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creationTimestamp"</span><span class="p">:</span><span class="mf">1462950774977.0740</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"edgePid"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"farIp"</span><span class="p">:</span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"farPort"</span><span class="p">:</span><span class="mi">36968</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"ip"</span><span class="p">:</span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"teststream"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"nearIp"</span><span class="p">:</span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"nearPort"</span><span class="p">:</span><span class="mi">5544</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"outStreamsUniqueIds"</span><span class="p">:[</span><span class="w">
+    </span><span class="mi">67</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"port"</span><span class="p">:</span><span class="mi">5544</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"processId"</span><span class="p">:</span><span class="mi">5785</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"processType"</span><span class="p">:</span><span class="s2">"origin"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"queryTimestamp"</span><span class="p">:</span><span class="mf">1462950861518.4170</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"IFP"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"typeNumeric"</span><span class="p">:</span><span class="mi">5279995574068707328</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uniqueId"</span><span class="p">:</span><span class="mi">66</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"upTime"</span><span class="p">:</span><span class="mf">86541.3430</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"userAgent"</span><span class="p">:</span><span class="s2">"EvoStream Media Server (www.evostream.com)"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"video"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"bytesCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"codec"</span><span class="p">:</span><span class="s2">"VH264"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"codecNumeric"</span><span class="p">:</span><span class="mi">6217274493967007744</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"droppedBytesCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"droppedPacketsCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"height"</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"level"</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"packetsCount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="p">:</span><span class="mi">66</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"width"</span><span class="p">:</span><span class="mi">424</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Available inbound streams"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="json-response">JSON Response</h4>
+
+<p>The JSON response contains the following details:</p>
+
+<ul>
+  <li>
+    <p>data –  The data to parse.</p>
+
+    <ul>
+      <li>
+        <p>appName - EvoStream Media Server</p>
+      </li>
+      <li>
+        <p>audio – stats about the audio portion of the stream</p>
+
+        <ul>
+          <li>bytesCount – Total amount of audio data received</li>
+          <li>codec -</li>
+          <li>codecNumeric -</li>
+          <li>droppedBytesCount - The number of video bytes lost</li>
+          <li>droppedBytesCount – The number of audio bytes lost</li>
+          <li>droppedPacketsCount – The number of lost audio packets</li>
+          <li>packetsCount – Total number of audio packets received</li>
+        </ul>
+      </li>
+      <li>
+        <p>bandwidth – The current bandwidth utilization of the stream</p>
+      </li>
+      <li>
+        <p>connectionType -</p>
+      </li>
+      <li>
+        <p>canDropFrames – <em>Outstreams only</em>. Flag set by client allowing for dropped frames/packets</p>
+      </li>
+      <li>
+        <p>creationTimestamp – The UNIX timestamp for when the stream was created. UNIX time is expressed as the number of seconds since the UNIX Epoch (Jan 1, 1970)</p>
+      </li>
+      <li>
+        <p>edgePid – Internal flag used for clustering</p>
+      </li>
+      <li>
+        <p>farIp - The IP address of the distant party</p>
+      </li>
+      <li>
+        <p>farPort - The port used by the distant party</p>
+      </li>
+      <li>
+        <p>ip - IP address of the source stream’s host</p>
+      </li>
+      <li>
+        <p>inStreamUniqueID – <em>For pushed streams.</em> The id of the source stream.</p>
+      </li>
+      <li>
+        <p>name – the <code class="highlighter-rouge">localStreamName</code> for this stream</p>
+      </li>
+      <li>
+        <p>nearIp - The IP address used by the local computer</p>
+      </li>
+      <li>
+        <p>nearPort - The port used by the local computer</p>
+      </li>
+      <li>
+        <p>outStreamsUniqueIDs – <em>For pulled streams.</em> An array of the “out” stream IDs associated with this “in” stream</p>
+      </li>
+      <li>
+        <p>pageUrl - A link to the page that originated the request (often unused)</p>
+      </li>
+      <li>
+        <p>port - The port bound to the service</p>
+      </li>
+      <li>
+        <p>processId -</p>
+      </li>
+      <li>
+        <p>processType -</p>
+      </li>
+      <li>
+        <p>queryTimestamp – The time (in UNIX seconds) when the information in this request was populated</p>
+      </li>
+      <li>
+        <p>type – The type of stream this is. The first two characters are of most interest:</p>
+
+        <ul>
+          <li>
+            <p>char 1 = I for inbound, O for outbound</p>
+          </li>
+          <li>
+            <p>char 2 = N for network, F for file</p>
+          </li>
+          <li>
+            <p>char 3+ = further details about stream</p>
+
+            <p>example: INR = Inbound Network Stream (a stream coming from the network into the EMS)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>typeNumeric - ??</p>
+      </li>
+      <li>
+        <p>uniqueId – The unique ID of the stream</p>
+      </li>
+      <li>
+        <p>uptime – The time in seconds that the stream has been alive/running for</p>
+      </li>
+      <li>
+        <p>userAgent - ??</p>
+      </li>
+      <li>
+        <p>video – Stats about the video portion of the stream</p>
+
+        <ul>
+          <li>bytesCount – Total amount of video data received</li>
+          <li>codec - ??</li>
+          <li>codecNumeric - ??</li>
+          <li>droppedBytesCount – The number of video bytes lost</li>
+          <li>droppedPacketsCount – The number of lost video packets</li>
+          <li>height – The video stream’s pixel height</li>
+          <li>level - ??</li>
+          <li>packetsCount – Total number of video packets received</li>
+          <li>profile - ??</li>
+          <li>width - The video stream’s pixel width</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>description– Describes the result of parsing/executing the command</p>
+  </li>
+  <li>
+    <p>status – <strong>SUCCESS</strong> if the command was parsed and executed successfully, <strong>FAIL</strong> if not.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="notes">Notes</h2>
+
+<ul>
+  <li>​</li>
+  <li>​</li>
+</ul>
+
+<h2 id="related-links"><strong>Related Links</strong></h2>
+
+<ul>
+  <li>Link 1</li>
+  <li>Link 2</li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+<footer>
+    <div class="container">
+            <div class="row row-footer">
+
+            <div class="col-lg-4 copyright col-md-4 col-sm-5">
+               <p><img src="images/width-200.png" alt="Company logo"/></p>
+               &copy;2017 EvoStream Inc. All rights reserved. <br />
+
+                </div> 
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <h3 class="widget-title">
+                        <span>ABOUT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-linkedin"><a href="">Linkedln</a></li>
+                        <li class="fa fa-twitter"><a href="">Twitter</a></li>
+                        <li class="fa fa-lock"><a href="">Privacy Policy</a></li>
+                        <li class="fa fa-book"><a href="">Glossary</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-4">
+                   <h3 class="widget-title">
+                        <span>CONTACT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-envelope-o"><a>salesupport@evostream.com</a></li>
+                        <li class="fa fa-phone"><a href="">+1 858-454-9393</a></li>
+                        <li class="fa fa-map-marker"><a>1010 Turquoise Street, Suite 101, San Diego, CA 92109, USA</a></li>                        
+                    </ul>
+                    </div>
+                </div>
+
+
+
+
+
+               
+            </div>
+    </div>
+</footer>
+</body>
+
+</html>

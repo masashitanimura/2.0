@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" azure">
+<title>EMS Load Balancer | EvoStream</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://50.56.172.81:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar").navgoco('toggle', true);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks nav-inc-size">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> EvoStream</span></a>
+            <div class="btn-group release-btn-grp" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Release Version
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/1.7-test/index.html">1.7</a></li>
+                    <li><a href="/2.0-test/index.html">2.0</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="index.html">HOME</a></li>
+                
+                
+                
+                <li><a href="userguide_overview.html">USER GUIDE</a></li>
+                
+                
+                
+                <li><a href="api_overview.html">API GUIDE</a></li>
+                
+                
+                
+                <li><a href="html5players_ersoverview.html">HTML5 PLAYERS</a></li>
+                
+                
+                
+                <li><a href="emscloud_overview.html">EMS ON CLOUD</a></li>
+                
+                
+                
+                <li><a href="evowebservices_overview.html">EVOWEBSERVICES</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!-- Adding a Support Forum Link -->
+                <li><a href="https://evostream.com/support-forum/" target="_blank">|&nbsp;&nbsp;Support Forum </a></li>
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container fixed-fr">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                        <a href="/search.html" style="font-size: smaller; margin-left: 2px;"  >Advance Search</a>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="EMS Load Balancer">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+<ul id="mysidebar" class="nav">
+
+    <li class="sidebarTitle">EMS on Cloud </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Discussion</a>
+        <ul>
+            
+            
+            
+            <li><a href="emscloud_overview.html">Overview</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Amazon Marketplace</a>
+        <ul>
+            
+            
+            
+            <li><a href="emscloud_amazon_deployinstance.html">Deploying an Instance</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="emscloud_amazon_connectEMS.html">Connecting to EMS</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="emscloud_amazon_stopEMS.html">Stopping/Terminating EMS Instance</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Microsoft Azure Marketplace</a>
+        <ul>
+            
+            
+            
+            <li><a href="emscloud_azure_createVM.html">Creating Virtual Machine</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="emscloud_azure_connectEMS.html">Connecting to EMS</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="emscloud_azure_stopEMS.html">Stopping/Terminating EMS Instance</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="emscloud_azure_loadbalancer.html">EMS Load Balancer</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!--&lt;!&ndash; if you aren't using the accordion, uncomment this block:-->
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           <!--&ndash;&gt;-->
+    </li>
+   
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        
+
+<a style="margin-top: 38px; margin-bottom: -20px;" target="_blank" href="https://github.com/pages/emscloud/emscloud_azure_loadbalancer.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+
+
+<div class="post-header">
+   <h1 class="post-title-main">EMS Load Balancer</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+  <h2 id="getting-started">Getting Started</h2>
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+
+<ul>
+  <li>
+    <p>Microsoft Account</p>
+  </li>
+  <li>
+    <p>Working knowledge of Azure virtual machines</p>
+  </li>
+  <li>
+    <p>Working knowledge of OTT Video Streaming</p>
+
+    <p>​</p>
+  </li>
+</ul>
+
+<h2 id="setup-virtual-machine-environment">Setup Virtual Machine Environment</h2>
+
+<p>To get started with the EvoStream Media Server (EMS) on Azure, the first thing to do is to setup the virtual machine by simply following these steps:</p>
+
+<ol>
+  <li>Search for the EvoStream Media Server in the Azure marketplace, or simply follow this <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/evostream-inc.evostream-media-server">link</a>.</li>
+  <li>Click on <strong>GET IT NOW</strong></li>
+  <li>Select the load balancer plan for the virtual machine to be created. Click on <strong>Continue</strong>.</li>
+</ol>
+
+<p><img src="../images/emscloud/azure_create_ubuntu.jpg" alt="" /></p>
+
+<p>​	<strong>Image available:</strong></p>
+
+<p>​	EvoStream Media Server for Ubuntu - Ubuntu 16.04 64-bit</p>
+
+<ol>
+  <li>
+    <p>Configure the virtual machine settings based on your preferences:</p>
+
+    <p>A. Basics - configure basic settings</p>
+
+    <ul>
+      <li>Unique Suffix</li>
+      <li>Username</li>
+      <li>SSH public key ~<em>Click here to know how to create a SSH public key.</em>~</li>
+      <li>Subscription</li>
+      <li>Resource Group</li>
+      <li>Location</li>
+    </ul>
+
+    <p>B. VM Configuration - configure the VMs</p>
+
+    <ul>
+      <li>VM Size</li>
+      <li>HTTP password</li>
+      <li>Confirm password ​</li>
+    </ul>
+  </li>
+  <li>
+    <p>Review the Settings, Offer Details and Terms of Use then click <strong>Purchase</strong> to start the deployment</p>
+  </li>
+  <li>
+    <p>To check if the image has been created, on the Microsoft Azure Dashboard, click on the <strong>Virtual machines</strong>. You will now see the image created once the deployment succeeded.</p>
+
+    <p>You should have these machines after creation:</p>
+
+    <ul>
+      <li>1 Stream Manager</li>
+      <li>1 Origin</li>
+      <li>1 Edge (with two instances)</li>
+      <li>1 Load Balancer</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Virtual Machine</th>
+          <th>List in Resource Group</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stream Manager, Origin, Edge</td>
+          <td><img src="../images/emscloud/albset.JPG" alt="" /></td>
+        </tr>
+        <tr>
+          <td>Load Balancer</td>
+          <td><img src="../images/emscloud/albLB.jpg" alt="" /></td>
+        </tr>
+        <tr>
+          <td>Edge instances</td>
+          <td><img src="../images/emscloud/albedge.JPG" alt="" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Note:</strong> The machines are started after the deployment</p>
+  </li>
+</ol>
+
+<h2 id="ems-machine-components">EMS Machine Components</h2>
+
+<p>When creating a machine with load balancer, three machines are actualy created. These are all included in the EMS template. The machines functions as follows:</p>
+
+<p><strong>A. Stream Manager</strong></p>
+
+<ul>
+  <li>Maintains a map of active Origin and Edges</li>
+  <li>Detects ingest events at Origin to trigger stream replication at Edges
+    <ul>
+      <li>Pulls streams to Edges when Origin ingests new streams</li>
+      <li>Updates configuration when VM creation event detected</li>
+      <li>Updates configuration when Server Started event detected</li>
+      <li>Pings Origin &amp; Edges regularly to update configuration</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>B. Origin Server</strong></p>
+
+<ul>
+  <li>Ingests streams from Source Clients</li>
+  <li>Requests SM to replicate ingested streams to Edges</li>
+  <li>Registers to NLM on VM creation</li>
+</ul>
+
+<p><strong>C. Edge Server</strong></p>
+
+<ul>
+  <li>Replicate (pull) streams ingested by Origin</li>
+  <li>Register to NLM on VM creation</li>
+</ul>
+
+<p><strong>D. Load Balancer</strong></p>
+
+<ul>
+  <li>Distributes load among Edges</li>
+</ul>
+
+<p><strong>E. Auto-Scaler</strong></p>
+
+<ul>
+  <li>Automatically scales Edges based on bandwidth usage</li>
+</ul>
+
+<h2 id="connecting-to-ems-machine">Connecting to EMS machine</h2>
+
+<p>All the virtual machines in your account is seen under the Virtual machines in the left-side menu bar.</p>
+
+<p><strong>Note:</strong> All VMs are started after creation.</p>
+
+<p>If your machine is turned off, manually start the set of VMs; SM, Origin, Edge in your resource group.</p>
+
+<p><img src="../images/emscloud/albstart.JPG" alt="" /></p>
+
+<p>To start anything for your project, what you need to access is the Origin Server. An EMS is installed in this server. From here, you can pull your streams and the Stream Manager will do the replication of the streams to the Edge Servers. The Edge Servers will be accessed by clients when a request is sent for streaming.</p>
+
+<h3 id="a-connecting-via-ssh-from-linux-terminal">A. Connecting via SSH from Linux Terminal</h3>
+
+<ol>
+  <li>
+    <p>Send command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -1 &lt;private_keyname&gt; &lt;username&gt;@&lt;OriginServer_IPaddress&gt;
+
+</code></pre>
+    </div>
+
+    <p><strong>Note:</strong> You should be in the path of the private key.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>user@ubuntu:~/Desktop$ ssh -1 evostreamkey user@11.221.105.202
+
+The authenticity of host '111.221.105.202 (111.221.105.202)' can't be established.
+ECDSA key fingerprint is 3c:1b:60:14:c0:5c:24:ab:9e:63:20:66:87:6c:12:b0.
+Are you sure you want to continue connecting (yes/no)? yes
+
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Input “<strong>yes</strong>”, press <strong>Enter</strong></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>Warning: Permanently added '111.221.105.202' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.4.0-28-generic x86_64)
+
+  Documentation:  https://help.ubuntu.com/
+
+Get cloud support with Ubuntu Advantage Cloud Guest:
+http://www.ubuntu.com/business/services/cloud
+
+15 packages can be updated.
+1 update is a security update.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo &lt;command&gt;".
+See "man sudo_root" for details.
+
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Check if EMS is running by sending <code class="highlighter-rouge">ps -e|grep evo</code></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>1912 ?        00:00:00 evostreamms
+1913 ?        00:00:00 evo-webserver
+
+</code></pre>
+    </div>
+
+    <p>​<strong>You are now connected to EMS!</strong></p>
+
+    <p><strong>Notes:</strong></p>
+
+    <ul>
+      <li>The license is already installed and is placed in <code class="highlighter-rouge">/etc/evostreamms</code>.</li>
+      <li>Number of EMS instance depends on the VM size.</li>
+    </ul>
+
+    <p>​</p>
+  </li>
+</ol>
+
+<h3 id="b-connecting-via-ssh-using-putty">B. Connecting via SSH using PuTTy</h3>
+
+<p><strong>Pre-requisites:</strong></p>
+
+<ul>
+  <li>
+    <p>PuTTY Secure Shell Client</p>
+  </li>
+  <li>
+    <p>PuTTY Generator</p>
+
+    <p>​</p>
+  </li>
+</ul>
+
+<h4 id="b1-key-file-conversion">B.1. Key File Conversion</h4>
+
+<p>On Windows operating systems, you can open a secure session to your Azure instance by using the PuTTY Secure Shell client, which you can download <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>.</p>
+
+<p>The first thing you’ll need to do is convert the private key. The PuTTY Secure Shell client doesn’t natively support the private key format generated in the given link above.</p>
+
+<p>PuTTY has a tool called PuTTYgen that you can use to convert your private key to the required PuTTY Private Key File (*.ppk) format. To convert the private key file that you created to a [key-pair-name].ppk file, do the following:</p>
+
+<ol>
+  <li>
+    <p>Run <strong>PuTTY Key Generator</strong></p>
+  </li>
+  <li>
+    <p>Click <strong>Load</strong> button</p>
+
+    <p><img src="../images/emscloud/image14.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p>Select and open the <strong>private key file</strong> that you want to convert in the Load private key window.</p>
+
+    <p><strong>Note:</strong> You’ll need to select the All Files option in the File filter drop-down list to see private key files in the file list.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> in the PuTTYgen Notice window</p>
+
+    <p><img src="../images/emscloud/image15.png" alt="" /></p>
+
+    <p>​</p>
+  </li>
+  <li>
+    <p>Click <strong>Save private key</strong> and save the file with the name <strong>[key-pair-name].ppk</strong>.</p>
+  </li>
+</ol>
+
+<h4 id="b2-connecting-via-ssh">B.2. Connecting via SSH</h4>
+
+<ol>
+  <li>
+    <p>Run <strong>PuTTY</strong></p>
+  </li>
+  <li>
+    <p>Select <strong>Session</strong> under the category tree</p>
+
+    <p><img src="../images/emscloud/image16.png" alt="" /></p>
+
+    <p>​</p>
+  </li>
+  <li>
+    <p>Specify the destination you want to connect to:</p>
+
+    <p><img src="../images/emscloud/putty.JPG" alt="" /></p>
+
+    <p>​</p>
+
+    <p><strong>Host Name</strong> – the username and public IP address of the Origin Server</p>
+
+    <p><strong>Port</strong> – 22 (default)</p>
+
+    <p><strong>Connection type</strong> – SSH</p>
+
+    <p>​</p>
+  </li>
+  <li>
+    <p>Select <strong>Auth</strong> under <strong>Connection &gt; SSH</strong> in category tree</p>
+  </li>
+  <li>
+    <p>Click the <strong>Browse</strong> button to find and open the <strong>[key-pair-name].ppk</strong> file</p>
+
+    <p><img src="../images/emscloud/image18.jpg" alt="" /></p>
+
+    <p><strong>Note:</strong> If you will be opening this same session later, you can save it for future use</p>
+
+    <p>​</p>
+  </li>
+  <li>
+    <p>Click <strong>Open</strong></p>
+
+    <p><img src="../images/emscloud/image20.png" alt="" /></p>
+
+    <p>​</p>
+  </li>
+  <li>
+    <p>Click <strong>Yes</strong> to accept the security key on the PuTTy Security Alert Window</p>
+  </li>
+  <li>
+    <p>You are now connected to the machine!</p>
+
+    <p><strong>Note:</strong> The license is already installed and is placed in <code class="highlighter-rouge">/etc/evostreamms</code>.</p>
+  </li>
+</ol>
+
+<h2 id="load-balancing">Load Balancing</h2>
+
+<p>Azure Load Balancer delivers high availability and network performance to EMS Edge servers. It distributes outbound traffic among healthy instances of Edge servers defined in a load-balanced scale set.</p>
+
+<p><img src="../images/emscloud/albems.jpg" alt="" /></p>
+
+<p>The Azure Load Balancer (or ALB) consists of an <strong>Ingest</strong> side, a <strong>Delivery</strong> side, and a <strong>Stream Manager</strong>.</p>
+
+<p>The Ingest side consists of an Origin server (a Virtual Machine or VM with EMS). The Delivery side consists of a variable number of Edge servers (VMs with EMS) that are part of a Virtual Machine Scale Set (VMSS). The Scale Set is equipped with an <strong>Auto Scaler</strong> to increase or decrease the number of Edge VMs depending on the total outbound bandwidth. The Scale Set uses a <strong>Load Balancer</strong> to distribute the load among the Edge VMs. The Stream Manager (SM) coordinates all streaming activities at the Origin and Edge servers.</p>
+
+<p>At the Ingest side, when a stream is ingested by the Origin server, the Stream Manager will be notified of a stream creation event. The SM will then ask each Edge server (each instance in the Scale Set) to pull the stream from the Origin server as an RTMP stream. At the Delivery side, when a client plays or pulls a stream, the Load Balancer randomly selects an available Edge server in the Scale Set to serve the requested stream to the client.</p>
+
+<h3 id="scale-in-and-scale-out">Scale In and Scale Out</h3>
+
+<p>As more clients consume streams, the outbound bandwidth reaches a threshold at which the Autoscaler will add a new instance (an Edge VM) to the Scale Set. This is called <strong>scaling out</strong>. There is a maximum number of instances in the Scale Set (currently 5). The maximum bandwidth capacity depends on the VM size of the Scale Set.</p>
+
+<p>On the other hand, as fewer client consume streams, the outbound bandwidth drops below a threshold at which the Auto Scaler will delete an instance (an Edge VM) from the Scale Set. This is called <strong>scaling in</strong>. There is a minimum number of instances in the Scale Set (currently 2).</p>
+
+<h3 id="pushing-stream-to-origin">Pushing Stream to Origin</h3>
+
+<p>First things first after VM deployment is to push a stream or streams into your Origin machine. You can push a stream using other EMS or other third party media players.</p>
+
+<p>To check on the Origin machine’s IP address, go to your resource group &gt; check for the origin virtual machine &gt; click on Overview. You can find the public IP address in this page.</p>
+
+<p><img src="../images/emscloud/albOriginIP.JPG" alt="" /></p>
+
+<h4 id="pushing-stream-using-ems">Pushing stream using EMS</h4>
+
+<p>If you wished to push a stream to your origin machine using EMS, you need to know the destination address and localstreamname of the source to be pushed then send this command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pushStream uri=rtmp://Origin_IPAddress/live localStreamname=&lt;localStreamname&gt; targetStreamName=&lt;targetStreamName&gt;
+
+</code></pre>
+</div>
+
+<p>You may check if the stream if successfully pushed to the Origin server <a href="http://ers.evostream.com:5050/demo/evoplayersv5.html">here</a>.</p>
+
+<p>Just enter the Origin’s IP address and the localStreamName of the stream and hit <strong>Play</strong>.</p>
+
+<p><img src="../images/emscloud/albhtml5.JPG" alt="" /></p>
+
+<p>To know more about <code class="highlighter-rouge">pushStream</code> API, click <a href="http://docs.evostream.com/ems_api_definition/pushstream">here</a>.</p>
+
+<h2 id="terminating-ems-machine">Terminating EMS machine</h2>
+
+<h3 id="stopping-ems-machine">Stopping EMS machine</h3>
+
+<p>When you want to stop the virtual machine, fret not, all the changes remains in the server. The machine is only in suspended.</p>
+
+<ol>
+  <li>
+    <p>Click on the Virtual Machine Server menu</p>
+  </li>
+  <li>
+    <p>Right click on the virtual machine name, click on <strong>Stop</strong></p>
+  </li>
+  <li>
+    <p>or, simply click <strong>Stop</strong> on the virtual machine window</p>
+  </li>
+  <li>
+    <p>Confirm stopping the virtual machine by clicking <strong>Yes</strong></p>
+
+    <p><img src="../images/emscloud/albstop.JPG" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+  <li>There is no Stop function for Edge Server and its instances.</li>
+  <li>If the machine is stopped, the IP address of the machine will change on start.</li>
+</ul>
+
+<h3 id="deleting-ems-machine">Deleting EMS machine</h3>
+
+<p>Deleting the EMS virtual machine will remove all the changes and the virtual machine itself in the Azure Virtual Machine list.</p>
+
+<ol>
+  <li>
+    <p>Click on the Virtual machine menu</p>
+  </li>
+  <li>
+    <p>Right click on the virtual machine name, click on <strong>Delete</strong></p>
+  </li>
+  <li>
+    <p>or, simply click <strong>Delete</strong> on the virtual machine window</p>
+  </li>
+  <li>
+    <p>Choose if you want to delete or keep the attached disk</p>
+
+    <p><img src="../images/emscloud/albdelete.JPG" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+  <li>
+    <p>For Edge, you need to stop the instances. Just go under the Instances menu and you will find all the running instances in your Edge Server.</p>
+
+    <p><img src="../images/emscloud/albdeleteedge.JPG" alt="" /></p>
+  </li>
+  <li>
+    <p>Another edge instance will be created when one is deleted. For the two initial edge only.</p>
+  </li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+<footer>
+    <div class="container">
+            <div class="row row-footer">
+
+            <div class="col-lg-4 copyright col-md-4 col-sm-5">
+               <p><img src="images/width-200.png" alt="Company logo"/></p>
+               &copy;2017 EvoStream Inc. All rights reserved. <br />
+
+                </div> 
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <h3 class="widget-title">
+                        <span>ABOUT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-linkedin"><a href="">Linkedln</a></li>
+                        <li class="fa fa-twitter"><a href="">Twitter</a></li>
+                        <li class="fa fa-lock"><a href="">Privacy Policy</a></li>
+                        <li class="fa fa-book"><a href="">Glossary</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-4">
+                   <h3 class="widget-title">
+                        <span>CONTACT US</span>
+                    </h3>
+
+                    <div class="menu">
+                    <ul>
+                        <li class="fa fa-envelope-o"><a>salesupport@evostream.com</a></li>
+                        <li class="fa fa-phone"><a href="">+1 858-454-9393</a></li>
+                        <li class="fa fa-map-marker"><a>1010 Turquoise Street, Suite 101, San Diego, CA 92109, USA</a></li>                        
+                    </ul>
+                    </div>
+                </div>
+
+
+
+
+
+               
+            </div>
+    </div>
+</footer>
+</body>
+
+</html>
