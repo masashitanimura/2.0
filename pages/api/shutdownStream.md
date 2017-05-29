@@ -2,7 +2,7 @@
 title: shutdownStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_shutdownStream.html
+permalink: shutdownStream.html
 folder: api
 toc: false
 ---

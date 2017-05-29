@@ -2,7 +2,7 @@
 title: startWebRTC
 keywords: api
 sidebar: api_sidebar
-permalink: api_startWebRTC.html
+permalink: startWebRTC.html
 folder: api
 toc: false
 ---

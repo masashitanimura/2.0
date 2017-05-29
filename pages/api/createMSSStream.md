@@ -2,7 +2,7 @@
 title: createMSSStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_createMSSStream.html
+permalink: createMSSStream.html
 folder: api
 toc: false
 ---

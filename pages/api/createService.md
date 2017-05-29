@@ -2,7 +2,7 @@
 title: createService
 keywords: api
 sidebar: api_sidebar
-permalink: api_createService.html
+permalink: createService.html
 folder: api
 toc: false
 ---

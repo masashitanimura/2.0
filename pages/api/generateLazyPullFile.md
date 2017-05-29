@@ -2,7 +2,7 @@
 title: generateLazyPullFile
 keywords: api
 sidebar: api_sidebar
-permalink: api_generateLazyPullFile.html
+permalink: generateLazyPullFile.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: createHDSStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_createHDSStream.html
+permalink: createHDSStream.html
 folder: api
 toc: false
 ---

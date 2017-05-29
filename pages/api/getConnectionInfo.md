@@ -2,7 +2,7 @@
 title: getConnectionInfo
 keywords: api
 sidebar: api_sidebar
-permalink: api_getConnectionInfos.html
+permalink: getConnectionInfos.html
 folder: api
 toc: false
 ---

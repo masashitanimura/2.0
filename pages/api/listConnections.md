@@ -2,7 +2,7 @@
 title: listConnections
 keywords: api
 sidebar: api_sidebar
-permalink: api_listConnections.html
+permalink: listConnections.html
 folder: api
 toc: false
 ---

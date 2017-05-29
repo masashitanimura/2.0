@@ -2,7 +2,7 @@
 title: stopWebRTC
 keywords: api
 sidebar: api_sidebar
-permalink: api_stopWebRTC.html
+permalink: stopWebRTC.html
 folder: api
 toc: false
 ---

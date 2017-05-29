@@ -2,7 +2,7 @@
 title: listConfig
 keywords: api
 sidebar: api_sidebar
-permalink: api_listConfig.html
+permalink: listConfig.html
 folder: api
 toc: false
 ---

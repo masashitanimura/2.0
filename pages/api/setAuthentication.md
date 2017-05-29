@@ -2,7 +2,7 @@
 title: setAuthentication
 keywords: api
 sidebar: api_sidebar
-permalink: api_setAuthentication.html
+permalink: setAuthentication.html
 folder: api
 toc: false
 ---

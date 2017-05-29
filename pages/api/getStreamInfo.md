@@ -2,7 +2,7 @@
 title: getStreamInfo
 keywords: api
 sidebar: api_sidebar
-permalink: api_getStreamInfo.html
+permalink: getStreamInfo.html
 folder: api
 toc: false
 ---

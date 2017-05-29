@@ -2,7 +2,7 @@
 title: removeGroupNameAliases
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeGroupNameAliases.html
+permalink: removeGroupNameAliases.html
 folder: api
 toc: false
 ---

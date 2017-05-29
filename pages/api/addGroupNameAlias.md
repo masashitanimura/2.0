@@ -2,7 +2,7 @@
 title: addGroupNameAlias
 keywords: api
 sidebar: api_sidebar
-permalink: api_addGroupNameAlias.html
+permalink: addGroupNameAlias.html
 folder: api
 toc: false
 ---

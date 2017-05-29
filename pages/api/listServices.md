@@ -2,7 +2,7 @@
 title: listServices
 keywords: api
 sidebar: api_sidebar
-permalink: api_listServices.html
+permalink: listServices.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: shutdownServer
 keywords: api
 sidebar: api_sidebar
-permalink: api_shutdownServer.html
+permalink: shutdownServer.html
 folder: api
 toc: false
 ---

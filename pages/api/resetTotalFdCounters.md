@@ -2,7 +2,7 @@
 title: resetTotalFdCounters
 keywords: api
 sidebar: api_sidebar
-permalink: api_resetTotalFdCounters.html
+permalink: resetTotalFdCounters.html
 folder: api
 toc: false
 ---

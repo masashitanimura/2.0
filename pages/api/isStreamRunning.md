@@ -2,7 +2,7 @@
 title: isStreamRunning
 keywords: api
 sidebar: api_sidebar
-permalink: api_isStreamRunning.html
+permalink: isStreamRunning.html
 folder: api
 toc: false
 ---

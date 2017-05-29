@@ -2,7 +2,7 @@
 title: generateServerPlaylist
 keywords: api
 sidebar: api_sidebar
-permalink: api_generateServerPlaylist.html
+permalink: generateServerPlaylist.html
 folder: api
 toc: false
 ---

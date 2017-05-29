@@ -2,7 +2,7 @@
 title: help
 keywords: api
 sidebar: api_sidebar
-permalink: api_help.html
+permalink: help.html
 folder: api
 toc: false
 ---

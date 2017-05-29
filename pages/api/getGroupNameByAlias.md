@@ -2,7 +2,7 @@
 title: getGroupNameByAlias
 keywords: api
 sidebar: api_sidebar
-permalink: api_getGroupNameByAlias.html
+permalink: getGroupNameByAlias.html
 folder: api
 toc: false
 ---

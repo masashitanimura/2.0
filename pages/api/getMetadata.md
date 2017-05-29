@@ -2,7 +2,7 @@
 title: getMetadata
 keywords: api
 sidebar: api_sidebar
-permalink: api_getMetadata.html
+permalink: getMetadata.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: httpClientsConnected
 keywords: api
 sidebar: api_sidebar
-permalink: api_httpClientsConnected.html
+permalink: httpClientsConnected.html
 folder: api
 toc: false
 ---

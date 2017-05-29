@@ -2,7 +2,7 @@
 title: setLogLevel
 keywords: api
 sidebar: api_sidebar
-permalink: api_setLogLevel.html
+permalink: setLogLevel.html
 folder: api
 toc: false
 ---

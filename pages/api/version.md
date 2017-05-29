@@ -2,7 +2,7 @@
 title: version
 keywords: api
 sidebar: api_sidebar
-permalink: api_version.html
+permalink: version.html
 folder: api
 toc: false
 ---

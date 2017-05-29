@@ -2,7 +2,7 @@
 title: transcode
 keywords: api
 sidebar: api_sidebar
-permalink: api_transcode.html
+permalink: transcode.html
 folder: api
 toc: false
 ---

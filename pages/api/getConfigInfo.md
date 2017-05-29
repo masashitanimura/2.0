@@ -2,7 +2,7 @@
 title: getConfigInfo
 keywords: api
 sidebar: api_sidebar
-permalink: api_getConfigInfo.html
+permalink: getConfigInfo.html
 folder: api
 toc: false
 ---

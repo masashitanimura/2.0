@@ -2,7 +2,7 @@
 title: record
 keywords: api
 sidebar: api_sidebar
-permalink: api_record.html
+permalink: record.html
 folder: api
 toc: false
 ---

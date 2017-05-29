@@ -2,7 +2,7 @@
 title: getConnectionsCount
 keywords: api
 sidebar: api_sidebar
-permalink: api_getConnectionsCount.html
+permalink: getConnectionsCount.html
 folder: api
 toc: false
 ---

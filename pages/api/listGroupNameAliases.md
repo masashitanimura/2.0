@@ -2,7 +2,7 @@
 title: listGroupNameAliases
 keywords: api
 sidebar: api_sidebar
-permalink: api_listGroupNameAliases.html
+permalink: listGroupNameAliases.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: pullStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_pullStream.html
+permalink: pullStream.html
 folder: api
 toc: false
 ---
@@ -20,7 +20,7 @@ This will try to pull in a stream from an external source. Once a stream has bee
 |          uri          | string  |                   true                   |           *null*            | The URI of the external stream. Can be RTMP, RTSP or unicast/multicast (d) mpegts |
 |       keepAlive       | boolean |                  false                   |          1 *true*           | If `keepAlive` is set to **true**, the server will attempt to reestablish connection with astream source after a connection has been lost. The reconnect will be attempted once every second |
 |    localStreamName    | string  |                  false                   |         *generated*         | If provided, the stream will be given this name. Otherwise, a fallback technique is used to determine the stream name (based on the URI) |
-|       forceTcp        | boolean |                  false                   |          0 *false*           | If **true** and if the stream is RTSP, a TCP connection will be forced.  Otherwise the transport mechanism will be negotiated (UDP or TCP) |
+|       forceTcp        | boolean |                  false                   |          0 *false*          | If **true** and if the stream is RTSP, a TCP connection will be forced.  Otherwise the transport mechanism will be negotiated (UDP or TCP) |
 |         tcUrl         | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the TC URL in the initial RTMP connect invoke |
 |        pageUrl        | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the originating web page address in the initial RTMP connect invoke |
 |        swfUrl         | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the originating swf URL in the initial RTMP connect invoke |

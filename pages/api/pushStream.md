@@ -2,7 +2,7 @@
 title: pushStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_pushStream.html
+permalink: pushStream.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: Event Sinks
 keywords: evemts
 sidebar: api_sidebar
-permalink: api_eventsinks.html
+permalink: eventsinks.html
 folder: api
 toc: true
 ---

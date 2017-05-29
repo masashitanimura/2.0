@@ -2,7 +2,7 @@
 title: pushMetadata
 keywords: api
 sidebar: api_sidebar
-permalink: api_pushMetadata.html
+permalink: pushMetadata.html
 folder: api
 toc: false
 ---

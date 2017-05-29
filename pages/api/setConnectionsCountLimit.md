@@ -2,7 +2,7 @@
 title: setConnectionsCountLimit
 keywords: api
 sidebar: api_sidebar
-permalink: api_setConnectionsCountLimit.html
+permalink: setConnectionsCountLimit.html
 folder: api
 toc: false
 ---

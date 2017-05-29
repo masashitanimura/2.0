@@ -2,7 +2,7 @@
 title: Overview
 keywords: events
 sidebar: api_sidebar
-permalink: api_eventoverview.html
+permalink: eventoverview.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: listStreamAliases
 keywords: api
 sidebar: api_sidebar
-permalink: api_listStreamAliases.html
+permalink: listStreamAliases.html
 folder: api
 toc: false
 ---

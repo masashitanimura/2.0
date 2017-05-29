@@ -2,7 +2,7 @@
 title: Configuring Event Notifications
 keywords: events
 sidebar: api_sidebar
-permalink: api_eventnotification.html
+permalink: eventnotification.html
 folder: api
 toc: false
 ---

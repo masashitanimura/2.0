@@ -2,7 +2,7 @@
 title: removeStreamAlias
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeStreamAlias.html
+permalink: removeStreamAlias.html
 folder: api
 toc: false
 ---

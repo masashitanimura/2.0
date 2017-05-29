@@ -2,7 +2,7 @@
 title: removeStorage
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeStorage.html
+permalink: removeStorage.html
 folder: api
 toc: false
 ---

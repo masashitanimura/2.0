@@ -2,7 +2,7 @@
 title: shutdownMetadata
 keywords: api
 sidebar: api_sidebar
-permalink: api_shutdownMetadata.html
+permalink: shutdownMetadata.html
 folder: api
 toc: false
 ---

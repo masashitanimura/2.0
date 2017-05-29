@@ -2,7 +2,7 @@
 title: uploadMedia
 keywords: api
 sidebar: api_sidebar
-permalink: api_uploadMedia.html
+permalink: uploadMedia.html
 folder: api
 toc: false
 ---

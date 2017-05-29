@@ -2,7 +2,7 @@
 title: listInboundStreams
 keywords: api
 sidebar: api_sidebar
-permalink: api_listInboundStreams.html
+permalink: listInboundStreams.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: removeIngestPoint
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeIngestPoint.html
+permalink: removeIngestPoint.html
 folder: api
 toc: false
 ---

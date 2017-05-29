@@ -2,7 +2,7 @@
 title: createDASHStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_createDASHStream.html
+permalink: createDASHStream.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: listHttpStreamingSessions
 keywords: api
 sidebar: api_sidebar
-permalink: api_listHttpStreamingSessions.html
+permalink: listHttpStreamingSessions.html
 folder: api
 toc: false
 ---

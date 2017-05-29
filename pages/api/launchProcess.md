@@ -2,7 +2,7 @@
 title: launchProcess
 keywords: api
 sidebar: api_sidebar
-permalink: api_launchProcess.html
+permalink: launchProcess.html
 folder: api
 toc: false
 ---

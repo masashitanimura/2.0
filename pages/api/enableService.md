@@ -2,7 +2,7 @@
 title: enableService
 keywords: api
 sidebar: api_sidebar
-permalink: api_enableService.html
+permalink: enableService.html
 folder: api
 toc: false
 ---

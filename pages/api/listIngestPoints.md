@@ -2,7 +2,7 @@
 title: listIngestPoints
 keywords: api
 sidebar: api_sidebar
-permalink: api_listIngestPoints.html
+permalink: listIngestPoints.html
 folder: api
 toc: false
 ---

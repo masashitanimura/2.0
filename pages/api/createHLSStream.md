@@ -2,7 +2,7 @@
 title: createHLSStream
 keywords: api
 sidebar: api_sidebar
-permalink: api_createHLSStream.html
+permalink: createHLSStream.html
 folder: api
 toc: false
 ---
@@ -23,7 +23,7 @@ Create an HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is u
 | overwriteDestination | boolean |   false   |                 1 *true*                 | If true, it will force overwrite of destination files |
 | staleRetentionCount  | integer |   false   | *if not specified, it will have the value of playlistLength* | The number of old files kept besides the ones listed in the current version of the playlist. Only applicable for rolling playlists |
 | createMasterPlaylist | boolean |   false   |                 1 *true*                 | If true, a master playlist will be created |
-| cleanupDestination   | boolean |   false   |                0 *false*                 | If true, all *.ts and *.m3u8 files in the target folder will be removed before HLS creation is started |
+|  cleanupDestination  | boolean |   false   |                0 *false*                 | If true, all *.ts and *.m3u8 files in the target folder will be removed before HLS creation is started |
 |      bandwidths      | integer |   false   |                    0                     | The corresponding bandwidths for each stream listed in `localStreamNames`. Again, this can be a comma-delimited list |
 |      groupName       | string  |   false   | *it will be a random name in the form of hls_group_xxxx* | The name assigned to the HLS stream or group. If the `localStreamNames` parameter contains only one entry and `groupName` is not specified,`groupName` will have the value of the input stream name |
 |     playlistType     | string  |   false   |                appending                 | Either appending or rolling              |

@@ -2,7 +2,7 @@
 title: addStreamAlias
 keywords: api
 sidebar: api_sidebar
-permalink: api_addStreamAlias.html
+permalink: addStreamAlias.html
 folder: api
 toc: false
 ---

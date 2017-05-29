@@ -2,7 +2,7 @@
 title: Event Definitions
 keywords: events
 sidebar: api_sidebar
-permalink: api_eventdefinition.html
+permalink: eventdefinition.html
 folder: api
 toc: true
 ---

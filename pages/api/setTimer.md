@@ -2,7 +2,7 @@
 title: setTimer
 keywords: api
 sidebar: api_sidebar
-permalink: api_setTimer.html
+permalink: setTimer.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: quit
 keywords: api
 sidebar: api_sidebar
-permalink: api_quit.html
+permalink: quit.html
 folder: api
 toc: false
 ---

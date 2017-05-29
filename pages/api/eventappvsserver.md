@@ -2,7 +2,7 @@
 title: Application vs. Server Events
 keywords: events
 sidebar: api_sidebar
-permalink: api_eventappvsserver.html
+permalink: eventappvsserver.html
 folder: api
 toc: false
 ---

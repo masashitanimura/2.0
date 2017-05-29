@@ -2,7 +2,7 @@
 title: createIngestPoint
 keywords: api
 sidebar: api_sidebar
-permalink: api_createIngestPoint.html
+permalink: createIngestPoint.html
 folder: api
 toc: false
 ---

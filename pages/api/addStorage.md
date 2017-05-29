@@ -2,7 +2,7 @@
 title: addStorage
 keywords: api
 sidebar: api_sidebar
-permalink: api_addStorage.html
+permalink: addStorage.html
 folder: api
 toc: false
 ---

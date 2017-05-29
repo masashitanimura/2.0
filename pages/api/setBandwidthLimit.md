@@ -2,7 +2,7 @@
 title: setBandwidthLimit
 keywords: api
 sidebar: api_sidebar
-permalink: api_setBandwidthLimit.html
+permalink: setBandwidthLimit.html
 folder: api
 toc: false
 ---

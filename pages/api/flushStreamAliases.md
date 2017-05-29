@@ -2,7 +2,7 @@
 title: flushStreamAliases
 keywords: api
 sidebar: api_sidebar
-permalink: api_flushStreamAliases.html
+permalink: flushStreamAliases.html
 folder: api
 toc: false
 ---

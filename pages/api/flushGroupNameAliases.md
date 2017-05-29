@@ -2,7 +2,7 @@
 title: flushGroupNameAliases
 keywords: api
 sidebar: api_sidebar
-permalink: api_flushGroupNameAliases.html
+permalink: flushGroupNameAliases.html
 folder: api
 toc: false
 ---

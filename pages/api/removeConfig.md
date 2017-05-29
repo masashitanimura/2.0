@@ -2,7 +2,7 @@
 title: removeConfig
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeConfig.html
+permalink: removeConfig.html
 folder: api
 toc: false
 ---

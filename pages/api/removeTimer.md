@@ -2,7 +2,7 @@
 title: removeTimer
 keywords: api
 sidebar: api_sidebar
-permalink: api_removeTimer.html
+permalink: removeTimer.html
 folder: api
 toc: false
 ---

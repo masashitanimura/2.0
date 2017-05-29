@@ -2,7 +2,7 @@
 title: listStorage
 keywords: api
 sidebar: api_sidebar
-permalink: api_listStorage.html
+permalink: listStorage.html
 folder: api
 toc: false
 ---

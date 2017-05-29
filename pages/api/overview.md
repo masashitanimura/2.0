@@ -2,7 +2,7 @@
 title: Overview
 keywords: api
 sidebar: api_sidebar
-permalink: api_overview.html
+permalink: overview.html
 folder: api
 ---
 

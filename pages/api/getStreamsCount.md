@@ -2,7 +2,7 @@
 title: getStreamsCount
 keywords: api
 sidebar: api_sidebar
-permalink: api_getStreamsCount.html
+permalink: getStreamsCount.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: insertPlaylistItem
 keywords: api
 sidebar: api_sidebar
-permalink: api_insertPlaylistItem.html
+permalink: insertPlaylistItem.html
 folder: api
 toc: false
 ---

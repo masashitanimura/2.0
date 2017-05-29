@@ -2,7 +2,7 @@
 title: resetMaxFdCounters
 keywords: api
 sidebar: api_sidebar
-permalink: api_resetMaxFdCounters.html
+permalink: resetMaxFdCounters.html
 folder: api
 toc: false
 ---

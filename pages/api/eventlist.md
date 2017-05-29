@@ -2,7 +2,7 @@
 title: Event List
 keywords: events
 sidebar: api_sidebar
-permalink: api_eventlist.html
+permalink: eventlist.html
 folder: api
 toc: true
 ---

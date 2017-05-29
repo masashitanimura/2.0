@@ -2,7 +2,7 @@
 title: listTimers
 keywords: api
 sidebar: api_sidebar
-permalink: api_listTimers.html
+permalink: listTimers.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: getExtendedConnectionCounters
 keywords: api
 sidebar: api_sidebar
-permalink: api_getExtendedConnectionCounters.html
+permalink: getExtendedConnectionCounters.html
 folder: api
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: listStreamsIds
 keywords: api
 sidebar: api_sidebar
-permalink: api_listStreamsIds.html
+permalink: listStreamsIds.html
 folder: api
 toc: false
 ---
