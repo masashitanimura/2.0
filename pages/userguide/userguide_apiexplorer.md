@@ -11,7 +11,7 @@ toc: false
 
 This tool lets you use the EMS Core API by helping you build the commands that will create and manipulate the streams in the EMS
 
-![](../images/userguide/apiexplorer.jpg)
+![](images/userguide/apiexplorer.jpg)
 
 
 
@@ -19,23 +19,26 @@ This tool lets you use the EMS Core API by helping you build the commands that w
 
 1. Choose the API command under the command drop down list
 
-   ![](../images/userguide/pullstreamcommand.JPG)
+   ![](images/userguide/pullstreamcommand.JPG)
 
 2. A list of parameter will show if there's any. There are two types of parameter in list: the **required** and **non-required**. Required parameters are the mandatory parameters that needs to be filled up to send the command. The non-required are the optional parameters that can be added for their use. Enter the parameters needed for the command.
 
-   ![](../images/userguide/parameters.JPG)
+   ![](images/userguide/parameters.JPG)
 
    ​
 
 3. Check the generated command in the command text. If your'e  good to go just click on **Send Command**
 
-   ![](../images/userguide/commandtext.JPG)
+   ![](images/userguide/commandtext.JPG)
 
 
 4. A JSON response will appear in the JSON box
 
-   ![](../images/userguide/json.jpg)
+   ![](images/userguide/json.jpg)
 
 
 
-**For more information with the EMS API, see API documentation [here]().**
+
+
+
+**For more information with the EMS API, see API documentation [here](/api/overview.html).**

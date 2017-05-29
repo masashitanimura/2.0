@@ -17,55 +17,55 @@ toc: true
 
    2.2. Right-click on `setup.exe` then click **Run as administrator**
 
-   ![](../images/userguide/qsgfw1.jpg)
+   ![](images/userguide/qsgfw1.jpg)
 
    ​
 
    2.3. Select the Setup Language, click **OK**
 
-   ![](../images/userguide/qsgfw2.jpg)
+   ![](images/userguide/qsgfw2.jpg)
 
    ​
 
    2.4. Click **Next** to continue the installation
 
-   ![](../images/userguide/qsgfw3.jpg)
+   ![](images/userguide/qsgfw3.jpg)
 
    ​
 
    2.5 Read the license agreement and select **I accept the agreement**, click **Next**
 
-   ![](../images/userguide/qsgfw4.jpg)
+   ![](images/userguide/qsgfw4.jpg)
 
    ​
 
    2.6. Verify the installation path, click **Next**
 
-   ![](../images/userguide/qsgfw5.jpg)
+   ![](images/userguide/qsgfw5.jpg)
 
    ​
 
    2.7. Tick **Create a desktop icon**, click **Next**
 
-   ![](../images/userguide/qsgfw6.jpg)
+   ![](images/userguide/qsgfw6.jpg)
 
    ​
 
    2.8. Confirm installation, click **Install**
 
-   ![](../images/userguide/qsgfw7.jpg)
+   ![](images/userguide/qsgfw7.jpg)
 
    ​
 
    2.9. Read the information, click **Next**
 
-   ![](../images/userguide/qsgfw8.jpg)
+   ![](images/userguide/qsgfw8.jpg)
 
    ​
 
    2.10. Click **Finish** to finish the installation.  
 
-   ![](../images/userguide/qsgfw9.jpg)
+   ![](images/userguide/qsgfw9.jpg)
 
    ​
 

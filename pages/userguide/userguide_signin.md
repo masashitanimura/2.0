@@ -26,21 +26,21 @@ There are three options to Sign in:
 
 If you forgot your password, you can reset your password by clicking **Forgot password** in the Log in Page.
 
-![](../images/userguide/forgotpassword.jpg)
+![](images/userguide/forgotpassword.jpg)
 
 
 
 1. To reset password, enter the **email address** used in Signing in.
 
-![](../images/userguide/resetpassword.jpg)
+![](images/userguide/resetpassword.jpg)
 
 2. Enter the new password, click on **Save New Password**.
 
-![](../images/userguide/savenewpassword.jpg)
+![](images/userguide/savenewpassword.jpg)
 
 3. Your password has been updated!
 
-![](../images/userguide/resetsuccess.jpg)
+![](images/userguide/resetsuccess.jpg)
 
 
 
@@ -50,7 +50,7 @@ If you forgot your password, you can reset your password by clicking **Forgot pa
 
 To sign out, simply click on the **Log Out** button under the profile menu.
 
-![](./assets/logout.jpg)
+![](images/userguide/logout.jpg)
 
 The page will redirect to Log in.
 

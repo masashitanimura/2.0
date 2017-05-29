@@ -206,4 +206,4 @@ autoDASH=
 
 ```
 
-To enable automatic DASH section in the `config.lua` file needs to be enabled and modified. See configuration [here]().
+To enable automatic DASH section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).

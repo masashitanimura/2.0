@@ -17,7 +17,7 @@ You can also connect to EMS using the telnet and HTTP request aside from the EMS
 
 Telnet may need to be enabled using Windows OS. To enabled the feature, go to the *Control Panel -> Programs -> Turn Windows Features on and off*. Turn **ON** the Telnet Client program.
 
-![](../images/userguide/enabletelnet.jpg)
+![](images/userguide/enabletelnet.jpg)
 
 Please also note that on Windows, the default telnet behavior will need to be changed. The local echo and new line mode should be set for proper behavior. Once telnet is launched, exit the telnet session by typing `CTRL`+`]`. Then enter the following commands:
 

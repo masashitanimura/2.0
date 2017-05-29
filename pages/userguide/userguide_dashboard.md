@@ -20,4 +20,4 @@ The **Dashboard** contains the following information of your EMS:
 - Quick Links - shortcuts
 - Incoming/Outgoing Stream - displays charts for the incoming and outgoing streams count
 
-![](../images/userguide/dashboard.jpg)
+![](images/userguide/dashboard.jpg)

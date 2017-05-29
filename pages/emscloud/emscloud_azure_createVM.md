@@ -43,7 +43,7 @@ To lessen the time of configuring a virtual machine, clicking the links below wi
 
 **Note:** The size of the machine used in this setup is the A5 Standard.
 
-​	![](../images/emscloud/A5.jpg)
+​	![](images/emscloud/A5.jpg)
 
 
 
@@ -53,13 +53,13 @@ To lessen the time of configuring a virtual machine, clicking the links below wi
 
 1. Search for the EvoStream Media Server in the Azure marketplace, or simply follow this [link](https://azure.microsoft.com/en-us/marketplace/partners/evostream-inc/evostream-media-server/).
 
-   ![](../images/emscloud/homepage.JPG)
+   ![](images/emscloud/homepage.JPG)
 
    ​
 
 2. Select the operating system for the virtual machine to be created. Click on **Create Virtual Machine** button.
 
-   ![](../images/emscloud/OSselect.jpg)
+   ![](images/emscloud/OSselect.jpg)
 
    ​
 
@@ -72,7 +72,7 @@ To lessen the time of configuring a virtual machine, clicking the links below wi
 
 3. **Sign in** your Microsoft Azure account if not yet signed in. You will be redirected to the EvoStream Media Server page.  Read on the notes and if ready, click on the **Create** button.
 
-   ![](../images/emscloud/create_windows.JPG)
+   ![](images/emscloud/create_windows.JPG)
 
    ​
 
@@ -80,27 +80,27 @@ To lessen the time of configuring a virtual machine, clicking the links below wi
 
    - Configure basic settings
 
-	![](../images/emscloud/basics.jpg)
+   ![](images/emscloud/basics.jpg)
 
 
    - Choose virtual machine size
 
          **Note:** Click on View all to see all the available machine size
 
-	![](../images/emscloud/size.jpg)
+        ![](images/emscloud/size.jpg)
 
 
    - Configure optional features
 
-	![](../images/emscloud/optional.jpg)
+  ![](images/emscloud/optional.jpg)
 
 
    - Review Summary
-	![](../images/emscloud/summary.jpg)
+  ![](images/emscloud/summary.jpg)
 
 
    - Buy
-	![](../images/emscloud/buy.jpg)
+  ![](images/emscloud/buy.jpg)
 
 
 

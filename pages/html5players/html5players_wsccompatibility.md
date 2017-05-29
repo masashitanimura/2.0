@@ -15,7 +15,7 @@ folder: emscloud
 
 The following diagram shows the compatibility of various browsers with the EvoStream WebSocket feature. 
 
-![](../images/emscloud/proto2.png)
+![](images/emscloud/proto2.png)
 
 
 

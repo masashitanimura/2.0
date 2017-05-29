@@ -36,7 +36,7 @@ To get started with the EvoStream Media Server (EMS) on Azure, the first thing t
 2. Click on **GET IT NOW**
 3. Select the load balancer plan for the virtual machine to be created. Click on **Continue**.
 
-![](../images/emscloud/azure_create_ubuntu.jpg)
+![](images/emscloud/azure_create_ubuntu.jpg)
 
 ​	**Image available:**
 
@@ -72,11 +72,11 @@ To get started with the EvoStream Media Server (EMS) on Azure, the first thing t
    - 1 Edge (with two instances)
    - 1 Load Balancer
 
-   | Virtual Machine              | List in Resource Group              |
-   | ---------------------------- | ----------------------------------- |
-   | Stream Manager, Origin, Edge | ![](../images/emscloud/albset.JPG)  |
-   | Load Balancer                | ![](../images/emscloud/albLB.jpg)   |
-   | Edge instances               | ![](../images/emscloud/albedge.JPG) |
+   | Virtual Machine              | List in Resource Group           |
+   | ---------------------------- | -------------------------------- |
+   | Stream Manager, Origin, Edge | ![](images/emscloud/albset.JPG)  |
+   | Load Balancer                | ![](images/emscloud/albLB.jpg)   |
+   | Edge instances               | ![](images/emscloud/albedge.JPG) |
 
    **Note:** The machines are started after the deployment
 
@@ -131,7 +131,7 @@ All the virtual machines in your account is seen under the Virtual machines in t
 
 If your machine is turned off, manually start the set of VMs; SM, Origin, Edge in your resource group.
 
-![](../images/emscloud/albstart.JPG)
+![](images/emscloud/albstart.JPG)
 
 To start anything for your project, what you need to access is the Origin Server. An EMS is installed in this server. From here, you can pull your streams and the Stream Manager will do the replication of the streams to the Edge Servers. The Edge Servers will be accessed by clients when a request is sent for streaming.
 
@@ -222,7 +222,7 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 2. Click **Load** button
 
-   ![](../images/emscloud/image14.jpg)
+   ![](images/emscloud/image14.jpg)
 
 
 
@@ -232,7 +232,7 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 4. Click **OK** in the PuTTYgen Notice window
 
-   ![](../images/emscloud/image15.png)
+   ![](images/emscloud/image15.png)
 
    ​
 
@@ -248,13 +248,13 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 2. Select **Session** under the category tree
 
-   ![](../images/emscloud/image16.png)
+   ![](images/emscloud/image16.png)
 
    ​
 
 3. Specify the destination you want to connect to:
 
-   ![](../images/emscloud/putty.JPG)
+   ![](images/emscloud/putty.JPG)
 
    ​
 
@@ -270,7 +270,7 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 5. Click the **Browse** button to find and open the **[key-pair-name].ppk** file
 
-   ![](../images/emscloud/image18.jpg)
+   ![](images/emscloud/image18.jpg)
 
    **Note:** If you will be opening this same session later, you can save it for future use
 
@@ -278,7 +278,7 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 6. Click **Open**
 
-   ![](../images/emscloud/image20.png)
+   ![](images/emscloud/image20.png)
 
    ​
 
@@ -297,7 +297,7 @@ PuTTY has a tool called PuTTYgen that you can use to convert your private key to
 
 Azure Load Balancer delivers high availability and network performance to EMS Edge servers. It distributes outbound traffic among healthy instances of Edge servers defined in a load-balanced scale set.
 
-![](../images/emscloud/albems.jpg)
+![](images/emscloud/albems.jpg)
 
 The Azure Load Balancer (or ALB) consists of an **Ingest** side, a **Delivery** side, and a **Stream Manager**.
 
@@ -321,7 +321,7 @@ First things first after VM deployment is to push a stream or streams into your 
 
 To check on the Origin machine’s IP address, go to your resource group > check for the origin virtual machine > click on Overview. You can find the public IP address in this page.
 
-![](../images/emscloud/albOriginIP.JPG)
+![](images/emscloud/albOriginIP.JPG)
 
 
 
@@ -338,7 +338,7 @@ You may check if the stream if successfully pushed to the Origin server [here](
 
 Just enter the Origin’s IP address and the localStreamName of the stream and hit **Play**.
 
-![](../images/emscloud/albhtml5.JPG)
+![](images/emscloud/albhtml5.JPG)
 
 To know more about `pushStream` API, click [here](http://docs.evostream.com/ems_api_definition/pushstream).
 
@@ -358,7 +358,7 @@ When you want to stop the virtual machine, fret not, all the changes remains in 
 
 4. Confirm stopping the virtual machine by clicking **Yes**
 
-   ![](../images/emscloud/albstop.JPG)
+   ![](images/emscloud/albstop.JPG)
 
 **Notes:**
 
@@ -379,7 +379,7 @@ Deleting the EMS virtual machine will remove all the changes and the virtual mac
 
 4. Choose if you want to delete or keep the attached disk
 
-   ![](../images/emscloud/albdelete.JPG)
+   ![](images/emscloud/albdelete.JPG)
 
 
 
@@ -387,6 +387,6 @@ Deleting the EMS virtual machine will remove all the changes and the virtual mac
 
 - For Edge, you need to stop the instances. Just go under the Instances menu and you will find all the running instances in your Edge Server.
 
-  ![](../images/emscloud/albdeleteedge.JPG)
+  ![](images/emscloud/albdeleteedge.JPG)
 
 - Another edge instance will be created when one is deleted. For the two initial edge only.

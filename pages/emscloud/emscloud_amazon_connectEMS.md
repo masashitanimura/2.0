@@ -81,7 +81,7 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
 
 2. Click **Load** button
 
-   ![](../images/emscloud/image14.jpg)
+   ![](images/emscloud/image14.jpg)
 
    ​
 
@@ -93,7 +93,7 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
 
 4. Click **OK** in the PuTTYgen Notice window
 
-   ![](../images/emscloud/image15.png)
+   ![](images/emscloud/image15.png)
 
    ​
 
@@ -107,13 +107,13 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
 
 2. Select **Session** under the category tree
 
-   ![](../images/emscloud/image16.png)
+   ![](images/emscloud/image16.png)
 
    ​
 
 3. Specify the destination you want to connect to:
 
-   ![](../images/emscloud/image17.png)
+   ![](images/emscloud/image17.png)
 
    **Host Name** – the public IP address in Amazon EC2 instance running EvoStream Media Server
 
@@ -127,7 +127,7 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
 
 5. Click the **Browse** button to find and open the **\[key-pair-name\].ppk** file
 
-   ![](../images/emscloud/image18.jpg)
+   ![](images/emscloud/image18.jpg)
 
    **Note:** If you will be opening this same session later, you can save it for future use
 
@@ -135,17 +135,17 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
 
    On the Basic options for your PuTTY Session page, enter a name for the session in Saved Sessions, and then click the **Save** button
 
-   ![](../images/emscloud/image19.jpg)
+   ![](images/emscloud/image19.jpg)
 
    1. Click the **Open** button to open the secure SSH session. The first time you connect to your instance, you'll get a PuTTY Security Alert that references the first use of **\[key-pair-name\].pem**
 
    2. Click **Yes** to accept the security key
 
-      ![](../images/emscloud/image20.png)
+      ![](images/emscloud/image20.png)
 
    3. Logged in as "**ubuntu**"
 
-      ![](../images/emscloud/loggedin.JPG)
+      ![](images/emscloud/loggedin.JPG)
 
 
 
@@ -157,13 +157,13 @@ If you previously saved the SSH session information for this Amazon EC2 instance
 
 3. Select the Saved Session and then click the **Load** button
 
-   ![](../images/emscloud/image21.jpg)
+   ![](images/emscloud/image21.jpg)
 
 4. Click the **Open** button to open the secure SSH session.
 
 **Note:** You should see the login as: prompt in the SSH client window. Enter "**ubuntu**" as the username 
 
-![](../images/emscloud/image22.png)
+![](images/emscloud/image22.png)
 
 ![]../images/emscloud/loggedin.JPG)
 
@@ -187,7 +187,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 2. Click on the **EC2** under compute
 
-   ![](../images/emscloud/image23.jpeg)
+   ![](images/emscloud/image23.jpeg)
 
 3. In the Navigation pane of the EC2 Management Console, under Instances, click **Instances**.
 
@@ -195,7 +195,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 5. In the lower pane, click the **Description tab**. The Public DNS value is the public domain name of your running instance and the Instance ID is the instances instance ID.
 
-   ![](../images/emscloud/image13.jpeg)
+   ![](images/emscloud/image13.jpeg)
 
    ​
 
@@ -203,7 +203,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 The Web UI is protected by default when using the EMS on AWS.  When accessing the Web UI you will be prompted for a username and password.
 
-![](../images/emscloud/authentication.JPG)
+![](images/emscloud/authentication.JPG)
 
 - Username: evostream
 
@@ -217,17 +217,17 @@ The Web UI is protected by default when using the EMS on AWS.  When accessing th
 
   2. Click on the **EC2** under compute
 
-     ![](../images/emscloud/image23.jpeg)
+     ![](images/emscloud/image23.jpeg)
 
   3. Click on **Running Instances** under Resources
 
-     ![](../images/emscloud/image24.jpeg)
+     ![](images/emscloud/image24.jpeg)
 
      ​
 
   4. Click on the **Instance Name** provided for the EMS, and look for the **Instance ID** given.  This will be your password.
 
-     ![](../images/emscloud/image25.jpeg)
+     ![](images/emscloud/image25.jpeg)
 
 
 
@@ -286,7 +286,7 @@ See EMS [documentation on HTTP](http://docs.evostream.com/ems_user_guide/runtime
 
    To get the password, right click on the instance under the Instances list. Click **Connect** and you will be prompted with this:
 
-   ![](../images/emscloud/password.jpg)
+   ![](images/emscloud/password.jpg)
 
    ​
 
@@ -294,7 +294,7 @@ See EMS [documentation on HTTP](http://docs.evostream.com/ems_user_guide/runtime
 
    A **password** will be shown on the window.
 
-   ![](../images/emscloud/decrypt.JPG)
+   ![](images/emscloud/decrypt.JPG)
 
    ​
 
@@ -322,7 +322,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 2. Click on the **EC2** under compute
 
-   ![](../images/emscloud/image23.jpeg)
+   ![](images/emscloud/image23.jpeg)
 
 3. In the Navigation pane of the EC2 Management Console, under Instances, click **Instances**.
 
@@ -330,7 +330,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 5. In the lower pane, click the **Description tab**. The Public DNS value is the public domain name of your running instance and the Instance ID is the instances instance ID.
 
-   ![](../images/emscloud/image13.jpeg)
+   ![](images/emscloud/image13.jpeg)
 
    ​
 
@@ -338,7 +338,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 The Web UI is protected by default when using the EMS on AWS.  When accessing the Web UI you will be prompted for a username and password.
 
-![](../images/emscloud/authentication.JPG)
+![](images/emscloud/authentication.JPG)
 
 - Username: evostream
 
@@ -352,17 +352,17 @@ The Web UI is protected by default when using the EMS on AWS.  When accessing th
 
   2. Click on the **EC2** under compute
 
-     ![](../images/emscloud/image23.jpeg)
+     ![](images/emscloud/image23.jpeg)
 
   3. Click on **Running Instances** under Resources
 
-     ![](../images/emscloud/image24.jpeg)
+     ![](images/emscloud/image24.jpeg)
 
      ​
 
   4. Click on the **Instance Name** provided for the EMS, and look for the **Instance ID** given.  This will be your password.
 
-     ![](../images/emscloud/image25.jpeg)
+     ![](images/emscloud/image25.jpeg)
 
 
 

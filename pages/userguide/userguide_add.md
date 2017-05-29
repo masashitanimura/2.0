@@ -21,15 +21,15 @@ If you wan't to add a RTSP or RTMP stream, simply do the following:
 3. Enter the **Local Stream Name**
 4. Click **Add Stream**
 
-![](../images/userguide/addstream.JPG)
+![](images/userguide/addstream.JPG)
 
 **Notes:**
 
-- ![](../images/userguide/clear.JPG)- will clear inputs in fields
+- ![](images/userguide/clear.JPG)  - will clear inputs in fields
 
-- ![](../images/userguide/viewstream.JPG) - redirects to Active to view the stream in list
+- ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
 
-See [pullStream]() API for more information.
+See [pullStream](/api/pullStream.html) API for more information.
 
 
 
@@ -53,12 +53,12 @@ Adding HTTP streams has made easy in this page. You can now create your HLS, DAS
 
 6. Click **Add Stream**
 
-![](../images/userguide/addhttpstream.JPG)
+![](images/userguide/addhttpstream.JPG)
 
 
 
 **Notes:**
 
-- ![](../images/userguide/clear.JPG) - will clear inputs in fields
-- ![](../images/userguide/viewstream.JPG) - redirects to Active to view the stream in list
+- ![](images/userguide/clear.JPG)   - will clear inputs in fields
+- ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
 

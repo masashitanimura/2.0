@@ -20,7 +20,7 @@ When you want to stop the virtual machine, fret not, all the changes remains in 
 3. or, simply click **Stop** on the virtual machine window
 4. Confirm stopping the virtual machine by clicking **Yes**
 
-![](../images/emscloud/stopVM.JPG)
+![](images/emscloud/stopVM.JPG)
 
 
 
@@ -33,4 +33,4 @@ Deleting the EMS virtual machine will remove all the changes and the virtual mac
 3. or, simply click **Delete** on the virtual machine window
 4. Choose if you want to delete or keep the attached disk
 
-![](../images/emscloud/deleteVM.jpg)
+![](images/emscloud/deleteVM.jpg)

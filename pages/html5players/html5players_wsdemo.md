@@ -21,5 +21,6 @@ folder: emscloud
 
    The video will play automatically once it has successfully connected with EMS.
 
-   ![](./assets/websocket.jpg)
+   ![](images/html5players/websocket.jpg)
+
 

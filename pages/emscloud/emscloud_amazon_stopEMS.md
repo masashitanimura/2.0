@@ -25,17 +25,17 @@ After you've saved your data, do the following to stop or terminate an instance:
 
 4. Click the **Actions** button, and then click on **Stop** or **Terminate**. Confirm the termination. The Instance State column for the selected instance(s) will show if the instance is shut down or terminated.
 
-   ![](../images/emscloud/stopter.jpg)
+   ![](images/emscloud/stopter.jpg)
 
 
 
 - **EMS Stopped Instance**
 
-  ![](../images/emscloud/stop.jpg)
+  ![](images/emscloud/stop.jpg)
 
 
 - **EMS Terminated Instance**
 
-  ![](../images/emscloud/terminate.jpg)
+  ![](images/emscloud/terminate.jpg)
 
 **Note:** Amazon recommends that you confirm the machine reaches the terminated state before signing out. Charges will continue to accrue for instances that fail to shut down. See Amazon documentation on stopping and terminating [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html).

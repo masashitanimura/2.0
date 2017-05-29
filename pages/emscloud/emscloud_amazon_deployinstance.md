@@ -27,7 +27,7 @@ folder: emscloud
 
 EMS offers a 30-day free trial use for first-time customers.
 
-![](../images/emscloud/image12.png)
+![](images/emscloud/image12.png)
 
 **Note:** There will be no software changes but the AWS infrastructure charges still apply.
 
@@ -39,11 +39,11 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
 1. Search for the EvoStream Media Server in the AWS marketplace, or simply follow this [link](https://aws.amazon.com/marketplace/pp/B00VTR946Y).
 
-   ![](../images/emscloud/image1.JPG)
+   ![](images/emscloud/image1.JPG)
 
 2. Click **Continue** and **Sign in** your AWS account
 
-   ![](../images/emscloud/image2.png)
+   ![](images/emscloud/image2.png)
 
    ​
 
@@ -51,19 +51,19 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
 - ### 1-Click Launch
 
-  ![](../images/emscloud/image3.jpeg)
+  ![](images/emscloud/image3.jpeg)
 
   The setup for the instance is made easy by the Amazon 1-click Launch utility and the EMS can be successfully deployed with all of the default settings.
 
   A.	Select the **Version** of the EMS to be used
 
-  ![](../images/emscloud/image4.JPG)
+  ![](images/emscloud/image4.JPG)
 
   B.	Select the **Region** and **EC2 Instance Type** (size of computer) for your deployment
 
-  ![](../images/emscloud/region.jpg)
+  ![](images/emscloud/region.jpg)
 
-  ![](../images/emscloud/image5.JPG)
+  ![](images/emscloud/image5.JPG)
 
   ​
 
@@ -73,7 +73,7 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
   C.	Select or create the **VPC** and **Subnet** to be used.
 
-  ![](../images/emscloud/image6.JPG)
+  ![](images/emscloud/image6.JPG)
 
   **Note:** See Amazon documentation on [VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) for more information.
 
@@ -81,7 +81,7 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
   D.	Choose a **Security Group**
 
-  ![](../images/emscloud/image7.JPG)
+  ![](images/emscloud/image7.JPG)
 
   The default security group has been designed to provide outside access to all ports used for streaming. The ports are defined and used as follows:
 
@@ -125,13 +125,13 @@ Either choose an existing key pair for instance access or create a new one for y
 
 F.	Review the settings created, click on **Launch with 1-Click**
 
-![](../images/emscloud/image9.jpeg)
+![](images/emscloud/image9.jpeg)
 
 
 
 - ### Manual Launch
 
-![](../images/emscloud/image10.jpeg)
+![](images/emscloud/image10.jpeg)
 
 
 
@@ -139,7 +139,7 @@ F.	Review the settings created, click on **Launch with 1-Click**
 
 A.	Select the **EMS version** to be used
 
-![](../images/emscloud/image11.JPG)
+![](images/emscloud/image11.JPG)
 
 
 
@@ -155,7 +155,7 @@ You will now be redirected to the **Launch Instance Wizard in Step 2**. You may 
 
 C.	Select the **Instance Type** to be used. You may **Review and Launch** the AMI or click **Next** to continue with the configuration
 
-![](../images/emscloud/instancetype.JPG)
+![](images/emscloud/instancetype.JPG)
 
 
 
@@ -163,7 +163,7 @@ C.	Select the **Instance Type** to be used. You may **Review and Launch** the AM
 
 D.	Configure the instance to suit your requirements. You may **Review and Launch** the AMI or click **Next** to continue with the configuration
 
-![](../images/emscloud/instance.JPG)
+![](images/emscloud/instance.JPG)
 
 
 
@@ -171,19 +171,19 @@ D.	Configure the instance to suit your requirements. You may **Review and Launch
 
 E.	**Add New Volume** or you may **Review and Launch** the AMI or click **Next** to continue with the configuration
 
-![](../images/emscloud/volume.JPG)
+![](images/emscloud/volume.JPG)
 
 
 
 F.	Add a tag for the instance or you may **Review and Launch** the AMI or click **Next** to continue with the configuration
 
-![](../images/emscloud/tag.JPG)
+![](images/emscloud/tag.JPG)
 
 
 
 G.	**Create** or **select** the **security group** to be used then click **Review and Launch**
 
-![](../images/emscloud/securitygroup.JPG)
+![](images/emscloud/securitygroup.JPG)
 
 
 
@@ -191,13 +191,13 @@ G.	**Create** or **select** the **security group** to be used then click **Revie
 
 H.	Review the configuration made, click **Launch** or go back to modify the changes
 
-![](../images/emscloud/review.JPG)
+![](images/emscloud/review.JPG)
 
 
 
 I.	A window for the keys will prompt. Select an existing key pair or create or proceed without the key pair to be used. Click **Launch instances**
 
-![](../images/emscloud/keypair.jpg)
+![](images/emscloud/keypair.jpg)
 
 
 

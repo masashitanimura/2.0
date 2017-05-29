@@ -9,8 +9,6 @@ toc: true
 
 
 
-
-
 ## Linux Distributions (Linux apt/yum Installer)
 
 Running EMS as a service:
@@ -87,15 +85,15 @@ It is needed to add EMS into your Window's registry to enable the use of service
 
 4. A confirmation will be asked, click **Yes**
 
-	![](../images/userguide/register.JPG)
+  ![](images/userguide/register.JPG)
 
 5. EMS keys are now registered! Click **OK**
 
-	![](../images/userguide/register_success.JPG)
+  ![](images/userguide/register_success.JPG)
 
 6. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
 
-	![](../images/userguide/registry_services.jpg)
+  ![](images/userguide/registry_services.jpg)
 
 **Note:** Use the `remove.bat` command if you opt to remove EMS in the registry.
 
@@ -122,7 +120,7 @@ It is needed to add EMS into your Window's registry to enable the use of service
 
 User may directly run the EMS using the shortcut icon if added during installation
 
- ![](../images/userguide/emsShortcut.jpg)
+ ![](images/userguide/emsShortcut.jpg)
 
 This will open a console running EMS.
 
@@ -138,7 +136,7 @@ C:\EvoStream\run_console_ems.bat
 
 For either Windows or Linux/BSD/OSX, when you run the EMS as a console application, you should see the following screen indicating the server is up and running:
 
-![](../images/userguide/start1.png)
+![](images/userguide/start1.png)
 
 **Tip!** A successful EMS start will show GO! GO! GO! in console.
 

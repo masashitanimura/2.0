@@ -16,4 +16,4 @@ The configuration for the authentication. If true, the authentication declared i
 <BOOL name="">true</BOOL>
 ```
 
-See [users.lua](#K. users.lua).
+See [users.lua](userguide_users.html).

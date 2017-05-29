@@ -17,7 +17,7 @@ This page is where you can edit or update your profile.
 
 Displays user's local email account used.
 
-![](../images/userguide/profile_localaccount.jpg)
+![](images/userguide/profile_localaccount.jpg)
 
 
 
@@ -27,7 +27,7 @@ If you logged in using your social media account, this will be seen under the So
 
 **Unlink:** This will remove/logout your account in the EMS Web UI
 
-![](../images/userguide/profile_social.jpg)
+![](images/userguide/profile_social.jpg)
 
 
 
@@ -39,5 +39,5 @@ This portion lets users to change password being used.
 
 To change password enter the Old, New Password and Confirm New Password and click **Submit New Password**
 
-![](../images/userguide/profile_changepw.jpg)
+![](images/userguide/profile_changepw.jpg)
 

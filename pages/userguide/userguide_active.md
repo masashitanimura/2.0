@@ -61,3 +61,13 @@ Displays the list active VOD streams
 
 - ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
 - ![](images/userguide/VOD_play.JPG)   **Play** - streams the VOD files
+
+
+
+------
+
+## Related Links
+
+- [listStreams]([](/api/listStreams.html))
+
+  ​

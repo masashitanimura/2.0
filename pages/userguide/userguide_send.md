@@ -19,11 +19,11 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
 2. **Select a stream** to push to Facebook. Note that a list active streams will be listed under the selections
 
-   ![](../images/userguide/FB_choosestream.JPG)
+   ![](images/userguide/FB_choosestream.JPG)
 
 3. **Enter a description** for the stream to be pushed
 
-   ![](../images/userguide/FB_adddescription.JPG)
+   ![](images/userguide/FB_adddescription.JPG)
 
 4. **Choose where to publish** the live stream. You have several options where to publish the stream:
 
@@ -43,13 +43,13 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
      ​
 
-   ![](../images/userguide/FB_publish.jpg)
+   ![](images/userguide/FB_publish.jpg)
 
    ​
 
 5. **Select the privacy setting** for the stream
 
-   ![](../images/userguide/FB_privacy.JPG)
+   ![](images/userguide/FB_privacy.JPG)
 
    See Facebook's privacy settings [here](https://www.facebook.com/help/325807937506242/).
 
@@ -57,7 +57,7 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
 6. **Click Send Stream to Facebook Video** to publish the stream
 
-   ![](../images/userguide/FB_sendstream.JPG)
+   ![](images/userguide/FB_sendstream.JPG)
 
    **Note:** In this example, a stream named **testStream** will be pushed in **Group A** page which will be seen by **Public**.
 
@@ -65,7 +65,7 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
 7. **Check the page** where the stream is pushed
 
-   ![](../images/userguide/FB_live.JPG)
+   ![](images/userguide/FB_live.JPG)
 
 
 
@@ -85,11 +85,11 @@ This will try to push a local stream to YouTube Live Stream using Events. Below 
 
 2. **Select a stream** to push to YouTube. Note that a list active streams will be listed under the selections
 
-   ![](../images/userguide/FB_choosestream.JPG)
+   ![](images/userguide/FB_choosestream.JPG)
 
 3. **Enter a Title and Description** for the stream to be pushed
 
-   ![](../images/userguide/G+_titledesc.JPG)
+   ![](images/userguide/G+_titledesc.JPG)
 
 4. **Select the privacy setting** for the stream
 
@@ -97,7 +97,7 @@ This will try to push a local stream to YouTube Live Stream using Events. Below 
    - **Private ** - videos and playlists can only be seen by you and the users you choose
    - **Unlisted** -  videos and playlists can be seen and shared by anyone with the link
 
-   ![](../images/userguide/FB_privacy.JPG)
+   ![](images/userguide/FB_privacy.JPG)
 
    See YouTube's privacy settings [here](https://support.google.com/youtube/answer/157177?co=GENIE.Platform%3DDesktop&hl=en).
 
@@ -105,7 +105,7 @@ This will try to push a local stream to YouTube Live Stream using Events. Below 
 
 5. **Choose the stream format** of the stream
 
-   ![](../images/userguide/G+_vidformat.JPG)
+   ![](images/userguide/G+_vidformat.JPG)
 
    **Note:** The video format should be the same or lesser than the stream format or else the stream published will fail to play
 
@@ -113,7 +113,7 @@ This will try to push a local stream to YouTube Live Stream using Events. Below 
 
 6. **Click Send Stream to YouTube** to publish the stream
 
-   ![](../images/userguide/G+_sendstream.JPG)
+   ![](images/userguide/G+_sendstream.JPG)
 
    **Note:** In this example, a stream named **testStream** will be pushed to YouTube which will be viewed by **Publicly**.
 

@@ -11,4 +11,4 @@ Provided along with the EMS is a simple html page which helps users to formulate
 
 Simply double click the html file to open it in a browser.
 
-![](../images/userguide/runtime2.png)
+![](images/userguide/runtime2.png)
