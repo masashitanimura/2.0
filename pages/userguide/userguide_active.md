@@ -11,7 +11,7 @@ toc: true
 
 Provides a detailed description of all active streams. 
 
-**Note:** Refresh page to update the list
+**Note:** This page is refreshing when there is an update with the EMS connection.
 
 
 
@@ -19,11 +19,11 @@ Provides a detailed description of all active streams.
 
 Displays the list of all active pulled streams
 
-![](../images/userguide/Active_inbound.jpg)
+![](images/userguide/Active_inbound.jpg)
 
-- ![](../images/userguide/Config_info.JPG)**Information** - displays the stream information in a new window
-- ![](../images/userguide/VOD_play.JPG)**Play** - streams the inbound file
-- ![](../images/userguide/VOD_delete.JPG)**Delete** - deletes the stream in the configuration
+- ![](images/userguide/Config_info.JPG)**Information** - displays the stream information in a new window
+- ![](images/userguide/VOD_play.JPG)**Play** - streams the inbound file
+- ![](images/userguide/VOD_delete.JPG)**Delete** - deletes the stream in the configuration
 
 
 
