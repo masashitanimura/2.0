@@ -13,8 +13,6 @@ Returns all the clients currently utilizing the EMS.
 
 
 
-
-
 ## API Parameter Table
 
 | **Parameter Name** |  Type  | **Mandatory** | **Default Value** | **Description**                          |
@@ -41,6 +39,8 @@ clientsConnected
 clientsConnected localStreamName=testpullStream
 ```
 
+
+
 ### Success Response in JSON
 
 ``` 
@@ -63,6 +63,8 @@ clientsConnected localStreamName=testpullStream
 }
 ```
 
+
+
 #### JSON Response
 
 The JSON response contains the following details:
@@ -72,18 +74,10 @@ The JSON response contains the following details:
 - description– Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
+
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
+- [httpClientsConnected](httpClientsConnected.html)
 
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

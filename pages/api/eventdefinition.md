@@ -716,3 +716,24 @@ The server is just about to stop.
 ```
 
 ```
+------
+
+## Notes:
+
+- Make sure [eventLogger](userguide_configlua.html#eventLogger) is not commented to be able to use events.
+
+------
+
+## Related Links
+
+- [Event Overview](eventoverview.html)
+- [Configuring Event Notifications](eventnotification.html)
+- [Event Sinks](eventsinks.html)
+- [Application vs. Server Events](eventappvsserver.html)
+- [Events List](eventlist.html)
+- [Event Logger](userguide_configlua.html#eventLogger)
+- [EvoWebservices Event](evowebservices_event.html)
+- [EvoWebservices Event Configuration](evowebservices_eventconfiguration)
+
+
+

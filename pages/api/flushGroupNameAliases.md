@@ -13,8 +13,6 @@ This command invalidates all group name aliases.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -53,14 +51,13 @@ The JSON response contains the following details:
 
 ## Notes
 
-- **hasIngestPoints** in config.lua should be **TRUE**
-- ​
+- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
 
-
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
+- [addGroupNameAliases](addGroupNameAliases.html)
+- [listGroupNameAliases](listGroupNameAliases.html)
+- [removeGroupNameAliases](removeGroupNameAliases.html)

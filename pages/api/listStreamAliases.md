@@ -71,7 +71,7 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
-- [removeStreamAlias](api_removeStreamAlias.html)
-- [flushStreamAliases](api_flushStreamAliases.html)
-- [addStreamAlias](api_addStreamAlias.html)
+- [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
+- [addStreamAlias](addStreamAlias.html)
+- [removeStreamAlias](removeStreamAlias.html)
+- [flushStreamAliases](flushStreamAliases.html)

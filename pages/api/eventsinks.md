@@ -172,3 +172,24 @@ The `serializer` type can be one of the following formats:
 The `customData` parameter for both File and RPC Event Sinks can be *optionally* used to extra data to each event for that sink. This could be used to identify the particular EMS instance which is generating the event, return a particular ID or Key which is pertinent to your handling of the event, or anything really! A customData parameter can be a simple sting value or a complex LUA object.
 
 If a `customData` parameter is not specified for a node, the value of the parent eventLogger customData node will be used. If that is also not specified, the value will be V_NULL.
+
+------
+
+## Notes
+
+- The event sinks should be enabled to be able to use events
+- Event logs will be saved in the configured `filename` 
+
+------
+
+## Related Links
+
+- [Event Overview](eventoverview.html)
+- [Configuring Event Notifications](eventnotification.html)
+- [Application vs. Server Events](eventappvsserver.html)
+- [Events List](eventlist.html)
+- [Event Definition](eventdefinition.html)
+- [Event Logger](userguide_configlua.html#eventLogger)
+- [EvoWebservices Event](evowebservices_event.html)
+- [EvoWebservices Event Configuration](evowebservices_eventconfiguration)
+

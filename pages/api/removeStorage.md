@@ -13,8 +13,6 @@ This function removes a storage location.
 
 
 
-
-
 ## API Parameter Table
 
 | Parameter Name |  Type  | Mandatory | Default Value | Description                  |
@@ -83,14 +81,15 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - Removing storage does not remove any storage configured in config.lua
 
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [listStorage](api_listStorage.html_)
-- [addStorage](api_addStorage.html)
+- [listStorage](listStorage.html_)
+- [addStorage](addStorage.html)
+- [mediaStorage](userguide_confuglua.html#mediastorage)

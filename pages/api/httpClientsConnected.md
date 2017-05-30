@@ -13,8 +13,6 @@ Returns all the clients which are currently utilizing the EWS.
 
 
 
-
-
 ## API Parameter Table
 
 | **Parameter Name** |  Type  | **Mandatory** | **Default Value** | **Description**                          |
@@ -41,6 +39,8 @@ httpClientsConnected
 httpClientsConnected groupName=MyGroupStream
 ```
 
+
+
 ### Success Response in JSON
 
 ``` 
@@ -65,6 +65,8 @@ httpClientsConnected groupName=MyGroupStream
 }
 ```
 
+
+
 #### JSON Response
 
 The JSON response contains the following details:
@@ -77,16 +79,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [clientsConnected](clientsConnected.html)

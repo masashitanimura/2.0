@@ -155,5 +155,3 @@ The JSON response contains the following details:
 - [Adding Streams](userguide_add.html#adding-http-streams)
 - [Create HLS Stream](userguide_createhls.html)
 - [autoHLS](userguide_configlua.html#autodashhlshdsmss)
-
-------

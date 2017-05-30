@@ -13,8 +13,6 @@ Creates an RTMP ingest point, which mandates that streams pushed into the EMS ha
 
 
 
-
-
 ## API Parameter Table
 
 |  Parameter Name   |  Type  | Mandatory | Default Value | Description                              |
@@ -37,6 +35,8 @@ createIngestPoint privateStreamName=<theIngestPoint> publicStreamName=<publicStr
 ``` 
 createIngestPoint privateStreamName=testIngestPoint publicStreamName=testPublicStreamName
 ```
+
+
 
 ### Success Response in JSON
 
@@ -75,5 +75,5 @@ The JSON response contains the following details:
 ## Related Link
 
 - [hasIngestPoints](../userguide_configlua.html#hasingestpoints)
-
-------
+- [listIngestPoints](listIngestPoints.html)
+- [removeIngestPoint](removeIngestPoint.html)

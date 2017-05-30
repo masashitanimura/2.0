@@ -88,15 +88,15 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - The added storage is not added in the media storage inside config.lua
 
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [mediaStorage](userguide_confuglua.html#mediaStorage_)
-- [listStorage](api_listStorage.html)
-- [lremoveStorage](api_removeStorage.html)
+- [mediaStorage](userguide_confuglua.html#mediastorage)
+- [listStorage](listStorage.html)
+- [removeStorage](removeStorage.html)

@@ -7,13 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 This command will remove the group name given the alias name.
-
-
 
 
 
@@ -74,14 +68,14 @@ The JSON response contains the following details:
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
-- ​
+- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
+- [addGroupNameAliases](addGroupNameAliases.html)
+- [listGroupNameAliases](listGroupNameAliases.html)
+- [flushGroupNameAliases](flushGroupNameAliases.html)

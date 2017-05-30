@@ -71,7 +71,6 @@ The JSON response contains the following details:
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 
-
 ------
 
 ## Notes
@@ -81,9 +80,10 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
 - [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
 - [listStreamAliases](listStreamAliases.html)
 - [removeStreamAlias](removeStreamAlias.html)
 - [flushStreamAliases](flushStreamAliases.html)
+

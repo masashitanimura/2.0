@@ -85,13 +85,13 @@ The JSON response contains the following details:
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
+- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
 
 ------
-
 
 ## Related Links
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
-
-------
+- [listGroupNameAliases](listGroupNameAliases.html)
+- [removeGroupNameAliases](removeGroupNameAliases.html)
+- [flushGroupNameAliases](flushGroupNameAliases.html)

@@ -13,8 +13,6 @@ Enable or disable a service.
 
 
 
-
-
 ## API Parameter Table
 
 | **Parameter Name** |  Type   | **Mandatory** | **Default Value** | **Description**                          |
@@ -68,6 +66,8 @@ This **enables** the service with an id of 5.
 }
 ```
 
+
+
 #### JSON Response
 
 The JSON response contains the following details:
@@ -91,16 +91,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [createService](createService.html)
+- [acceptors](userguide_configlua.html#acceptors)

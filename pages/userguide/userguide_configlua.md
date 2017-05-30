@@ -558,7 +558,7 @@ There are several uses of the media folder:
 
 ### acceptors
 
-the “acceptors” block is found within the “applications” section named “evostreamms” in the configuration file. Each acceptor protocol used by applications is defined here. Some protocols may require additional parameters.
+The “acceptors” block is found within the “applications” section named “evostreamms” in the configuration file. Each acceptor protocol used by applications is defined here. Some protocols may require additional parameters.
 
 **Type:** Object
 
@@ -832,7 +832,6 @@ authentication=
 2. Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
 
 
-
 ### eventLogger
 
 settings for the server-wide event sinks. 
@@ -903,7 +902,7 @@ eventLogger=
 1. This section is disabled by default. 
 2. The event log files will be stored in the path where EMS logs are configured
 
-See [Event Notification System]() for more information.
+See [Event Notification System](eventoverview.html) for more information.
 
 
 

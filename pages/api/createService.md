@@ -9,9 +9,7 @@ toc: false
 
 
 
-Creates a new service.
-
-
+Creates a new service. 
 
 
 
@@ -65,6 +63,8 @@ This will create a service called **inboundRtmp** which will use port **9556** a
 }
 ```
 
+
+
 #### JSON Response
 
 The JSON response contains the following details:
@@ -87,13 +87,11 @@ The JSON response contains the following details:
 ## Notes
 
 - The created service will not be added in config.lua
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [enableService](enableService.html)
+- [acceptors](userguide_configlua.html#acceptors)

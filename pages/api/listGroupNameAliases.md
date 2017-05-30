@@ -7,10 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 Returns a complete list of aliases.
 
 
@@ -60,14 +56,14 @@ The JSON response contains the following details:
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
-- ​
+- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
+- [addGroupNameAliases](addGroupNameAliases.html)
+- [removeGroupNameAliases](removeGroupNameAliases.html)
+- [flushGroupNameAliases](flushGroupNameAliases.html)

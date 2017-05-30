@@ -13,8 +13,6 @@ Create a Microsoft Smooth Stream (MSS) out of an existing H.264/AAC stream. Smoo
 
 
 
-
-
 ## API Parameter Table
 
 |    Parameter Name    |  Type   | Mandatory |              Default Value               | Description                              |
@@ -122,5 +120,3 @@ The JSON response contains the following details:
 - [Adding Streams](userguide_add.html#adding-http-streams)
 - [Create MSS Stream](userguide_createmss.html)
 - [autoMSS](userguide_configlua.html#autodashhlshdsmss)
-
-------

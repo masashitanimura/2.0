@@ -13,8 +13,6 @@ Create an HDS (HTTP Dynamic Streaming) stream out of an existing H.264/AAC strea
 
 
 
-
-
 ## API Parameter Table
 
 |    Parameter Name    |  Type   | Mandatory |              Default Value               | Description                              |
@@ -116,5 +114,3 @@ The JSON response contains the following details:
 - [Adding Streams](userguide_add.html#adding-http-streams)
 - [Create HDS Stream](userguide_createhds.html)
 - [autoHDS](userguide_configlua.html#autodashhlshdsmss)
-
-------

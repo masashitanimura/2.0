@@ -78,3 +78,16 @@ The evowebservices rely on EMS Events being generated as follows:
   {"payload":{"creationTimestamp":1349335053486.4370,"name":"","queryTimestamp":1349335053487.4370,"type":"NR","uniqueId":1,"upTime":1.0000},"type":"streamCreated"}
   ```
 
+
+------
+
+## Related Links
+
+- [EvoWebservices Event](evowebservices_event.html)
+- [Event Overview](eventoverview.html)
+- [Configuring Event Notifications](eventnotification.html)
+- [Event Sinks](eventsinks.html)
+- [Application vs. Server Events](eventappvsserver.html)
+- [Events List](eventlist.html)
+- [Event Definition](eventdefinition.html)
+- [Event Logger](userguide_configlua.html#eventLogger)
