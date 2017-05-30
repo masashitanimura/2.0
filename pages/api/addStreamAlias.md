@@ -70,18 +70,20 @@ The JSON response contains the following details:
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
+
+
 ------
 
 ## Notes
 
 - **hasStreamAliases** in config.lua should be **TRUE**
-- ​ 
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
+- [listStreamAliases](api_listStreamAliases.html)
+- [removeStreamAlias](api_removeStreamAlias.html)
+- [flushStreamAliases](api_flushStreamAliases.html)

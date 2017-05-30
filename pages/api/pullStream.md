@@ -163,5 +163,5 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [Adding Streams](../userguide_add.html)
-- [Pull a Stream](../userguide_pullstream.html)
+- [Adding Streams](userguide_add.html)
+- [Pull a Stream](userguide_pullstream.html)

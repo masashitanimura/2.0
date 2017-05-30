@@ -88,7 +88,7 @@ EMS_INSTALL_DIRECTORY is the `bin` directory within the EvoStream Media Server
 
 ## daemon
 
-For Linux only. If **true** means the server will start in daemon mode. **false** means it will start in console mode (nice for development)
+For Linux only. If **true** means the server will start in daemon mode. **false** means it will start in console mode (nice for development).
 
 **Type:** Boolean
 
@@ -182,13 +182,15 @@ Will hold a collection of loaded applications. Besides that, it will also hold f
 
 **Mandatory:** Yes
 
+
+
 Below are the objects inside applications:
 
 
 
 ### rootDirectory
 
-the folder containing applications subfolders. If this path begins with a “/” or “" (depending on the OS), then is treated as an absolute path. Otherwise is treated as a path relative to the run-time directory (the place where you started the server).
+The folder containing applications subfolders. If this path begins with a “/” or “" (depending on the OS), then is treated as an absolute path. Otherwise is treated as a path relative to the run-time directory (the place where you started the server).
 
 **Type:** String
 
@@ -202,7 +204,7 @@ rootDirectory="./",
 
 ### appDir
 
-the application directory of EMS
+The application directory of EMS.
 
 **Type:** String
 
@@ -216,7 +218,7 @@ appDir="./",
 
 ### name
 
-the name of the server. Could be the name of the company, organization etc.
+The name of the server. Could be the name of the company, organization etc.
 
 **Type:** String
 
@@ -230,7 +232,7 @@ name="evostreamms",
 
 ### description
 
-the description of the "name"
+The description of the "name".
 
 **Type:** String
 
@@ -268,7 +270,7 @@ default=true,
 
 ### pushPullPersistenceFile
 
-the path of the pushPull configuration file
+The path of the pushPull configuration file.
 
 **Type:** String
 
@@ -388,7 +390,7 @@ hasIngestPoints=false
 
 
 
-### validateHandshake- 
+### validateHandshake
 
 **Type:** Boolean
 
@@ -507,7 +509,7 @@ forceRtmpDatarate=false,
 
 ### mediaStorage
 
-the configuration for the media storage.
+the configuration for the media storage
 
 **Type:** Object
 
@@ -529,7 +531,7 @@ There are several uses of the media folder:
 - Location of the created file using `generateLazyPull` command
 - Storage of recorded streams using record command
 
-​
+
 
 **media Structure Table**
 

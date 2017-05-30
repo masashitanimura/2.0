@@ -7,13 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 Returns a complete list of aliases.
-
-
 
 
 
@@ -71,13 +65,13 @@ The JSON response contains the following details:
 ## Notes
 
 - **hasStreamAliases** in config.lua should be **TRUE**
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
+- [removeStreamAlias](api_removeStreamAlias.html)
+- [flushStreamAliases](api_flushStreamAliases.html)
+- [addStreamAlias](api_addStreamAlias.html)

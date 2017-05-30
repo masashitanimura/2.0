@@ -115,8 +115,8 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [Adding Streams](../userguide_add.html#adding-http-streams)
-- [Create DASH Stream](../userguide_createdash.html)
-- [autoHLS](../userguide_configlua.html#autodashhlshdsmss)
+- [Adding Streams](userguide_add.html#adding-http-streams)
+- [Create DASH Stream](userguide_createdash.html)
+- [autoHLS](userguide_configlua.html#autodashhlshdsmss)
 
 ------

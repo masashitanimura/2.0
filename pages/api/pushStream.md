@@ -147,5 +147,5 @@ The JSON response for pullStream contains the following details:
 
 ## Related Links
 
-- [Sending Streams](../userguide_send.html)
-- [Push a Stream](../userguide_pushstream.html)
+- [Sending Streams](userguide_send.html)
+- [Push a Stream](userguide_pushstream.html)

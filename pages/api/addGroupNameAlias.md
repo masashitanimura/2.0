@@ -92,6 +92,6 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [hasGroupNameAliases](../userguide_webconfig.html#hasgroupnamealiases)
+- [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 
 ------

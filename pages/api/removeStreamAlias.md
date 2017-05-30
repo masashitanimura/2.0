@@ -13,8 +13,6 @@ Removes an alias of a stream.
 
 
 
-
-
 ## API Parameter Table
 
 | Parameter Name |  Type  | Mandatory | Default Value | Description         |
@@ -65,13 +63,13 @@ The JSON response contains the following details:
 ## Notes
 
 - **hasStreamAliases** in config.lua should be **TRUE**
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
+- [listStreamAliases](api_listStreamAliases.html)
+- [flushStreamAliases](api_flushStreamAliases.html)
+- [addStreamAlias](api_addStreamAlias.html)

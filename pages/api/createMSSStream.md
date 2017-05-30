@@ -119,8 +119,8 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [Adding Streams](../userguide_add.html#adding-http-streams)
-- [Create MSS Stream](../userguide_createmss.html)
-- [autoMSS](../userguide_configlua.html#autodashhlshdsmss)
+- [Adding Streams](userguide_add.html#adding-http-streams)
+- [Create MSS Stream](userguide_createmss.html)
+- [autoMSS](userguide_configlua.html#autodashhlshdsmss)
 
 ------

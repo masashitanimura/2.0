@@ -13,8 +13,6 @@ Invalidates all streams aliases.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -54,13 +52,13 @@ The JSON response contains the following details:
 ## Notes
 
 - **hasIngestPoints** in config.lua should be **TRUE**
-- ​
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
+- [listStreamAliases](api_listStreamAliases.html)
+- [removeStreamAlias](api_removeStreamAlias.html)
+- [addStreamAliases](api_addStreamAlias.html)

@@ -85,15 +85,12 @@ The JSON response contains the following details:
 
 ### Notes
 
-- ​
-
-- ​
+- Removing storage does not remove any storage configured in config.lua
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [listStorage](api_listStorage.html_)
+- [addStorage](api_addStorage.html)

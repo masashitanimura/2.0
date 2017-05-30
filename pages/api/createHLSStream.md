@@ -151,9 +151,9 @@ The JSON response contains the following details:
 ------
 ## Related Links
 
-- [hlsVersion](../userguide_configlua.html#hlsversion)
-- [Adding Streams](../userguide_add.html#adding-http-streams)
-- [Create HLS Stream](../userguide_createhls.html)
-- [autoHLS](../userguide_configlua.html#autodashhlshdsmss)
+- [hlsVersion](userguide_configlua.html#hlsversion)
+- [Adding Streams](userguide_add.html#adding-http-streams)
+- [Create HLS Stream](userguide_createhls.html)
+- [autoHLS](userguide_configlua.html#autodashhlshdsmss)
 
 ------
