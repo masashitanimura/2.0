@@ -83,7 +83,7 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [hasStreamAliases](userguide_configlua.html#hasStreamAliases)
-- [listStreamAliases](api_listStreamAliases.html)
-- [removeStreamAlias](api_removeStreamAlias.html)
-- [flushStreamAliases](api_flushStreamAliases.html)
+- [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
+- [listStreamAliases](listStreamAliases.html)
+- [removeStreamAlias](removeStreamAlias.html)
+- [flushStreamAliases](flushStreamAliases.html)
