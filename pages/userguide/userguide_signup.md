@@ -9,7 +9,7 @@ toc: true
 
 
 
-To access the EMS Web UI, a user should be added first. There are several options for the users to Sign Up. To Sign up via **email address**, via **Facebook** account and via **Google+** account. 
+To access the EMS Web UI, a user should be added first. You have the option to sign up via **email address** or just log in via **Facebook** account or **Google+** account. 
 
 To proceed with Signing up, go in this URL: `<EMSIPaddress>:4100`
 
