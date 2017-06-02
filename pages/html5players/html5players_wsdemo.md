@@ -3,7 +3,7 @@ title: Playing Videos Using WebSocket Demo Player
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html
-folder: emscloud
+folder: html5players
 toc: false
 ---
 
@@ -19,6 +19,6 @@ toc: false
 
    The video will play automatically once it has successfully connected with EMS.
 
-   ![](images/html5players/websocket.jpg)
+   ![](images/html5/websocket.JPG)
 
 

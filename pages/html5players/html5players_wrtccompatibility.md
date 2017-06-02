@@ -9,7 +9,7 @@ toc: false
 
 The following diagram shows the compatibility of various browsers with the EvoStream WebRTC feature. 
 
-![](images/emscloud/proto2.png)
+![](images/html5/proto2.png)
 
 
 
@@ -36,5 +36,5 @@ The following configuration changes must be made to Firefox before it will work 
 
 To verify if your browser supports HTML5 player, you may check the following links:
 
-- https://html5test.com/
-- https://www.youtube.com/html5?gl=PH
+- [https://html5test.com/](https://html5test.com/)
+- [https://www.youtube.com/html5?gl=PH](https://www.youtube.com/html5?gl=PH)
