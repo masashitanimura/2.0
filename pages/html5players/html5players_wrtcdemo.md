@@ -1,7 +1,7 @@
 ---
 title: Playing Videos Using webRTC
 keywords: webrtc
-sidebar: emscloud_sidebar
+sidebar: html5players_sidebar
 permalink: html5players_wrtcdemo.html
 folder: html5players
 toc: false
@@ -30,12 +30,12 @@ toc: false
 
 
 
-![](/images/html5players/webrtc.jpg)
+![](images/html5players/webrtc.jpg)
 
 
 
 ## Related Links
 
-- [Starting WebRTC](api/startWebRTC)
-- [Stopping WebRTC](api/stopWebRTC.html)
+- [Starting WebRTC](api/startWebRTC.html)
+- [Stopping WebRTC](stopWebRTC.html)
 

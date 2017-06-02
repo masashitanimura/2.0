@@ -3,13 +3,9 @@ title: Browser Compatibility
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtccompatibility.html
-folder: emscloud
+folder: html5players
 toc: false
 ---
-
-
-
-##  
 
 The following diagram shows the compatibility of various browsers with the EvoStream WebRTC feature. 
 
@@ -33,3 +29,12 @@ The following configuration changes must be made to Firefox before it will work 
   - media.fragmented-mp4.use-blank-decoder = false
 - Restart Firefox to activate these changes
 
+
+
+
+## Notes
+
+To verify if your browser supports HTML5 player, you may check the following links:
+
+- https://html5test.com/
+- https://www.youtube.com/html5?gl=PH

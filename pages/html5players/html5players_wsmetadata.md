@@ -3,11 +3,9 @@ title: WebSocket Metadata
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsmetadata.html
-folder: emscloud
+folder: html5players
 toc: false
 ---
-
-
 
 Both Metadata Outbound Push and Metadata Ingest use a **Web Sockets Metadata Acceptor**. The EMS uses this to receive and/or send metadata.
 
@@ -41,7 +39,7 @@ acceptors =
 
 
 
-### Sending Metadata
+## Sending Metadata
 
 - **Using GET**
 

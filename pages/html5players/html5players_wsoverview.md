@@ -3,11 +3,9 @@ title: WebSocket Overview
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsoverview.html
-folder: emscloud
+folder: html5players
 toc: false
 ---
-
-
 
 HTML5 Web Socket technology provides socket connections between a web browser and a server, as opposed to the traditional request/response model of HTTP. With HTTP, for the server to send data the client has to initiate the communication via a request and the server will then send back a response. HTTP incurs considerable overhead which makes it not ideal for low latency applications.
 
