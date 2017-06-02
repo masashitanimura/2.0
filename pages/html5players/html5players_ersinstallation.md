@@ -2,92 +2,91 @@
 title: ERS Installation
 keywords: html5
 sidebar: html5players_sidebar
-permalink: html5players_ersinstall.html
-folder: emscloud
+permalink: html5players_ersinstallation.html
+folder: html5players
 toc: true
 ---
 
 
 
-### Pre-requisites
+## Pre-requisites
 
-- **STUN Server**
+### STUN Server
 
-  STUN is a set of methods and network protocols to allow an end host to discover its public IP address even if it’s located behind a NAT. This server is used by ERS to allow both EMS and the client end-point (browser) to discover their respective IP addresses. Restund is the recommended open-source STUN/TURN server to be used with ERS.
+STUN is a set of methods and network protocols to allow an end host to discover its public IP address even if it’s located behind a NAT. This server is used by ERS to allow both EMS and the client end-point (browser) to discover their respective IP addresses. Restund is the recommended open-source STUN/TURN server to be used with ERS.
 
-  The default configuration of ERS already points to a public EvoStream STUN server. However, hosting your own STUN/TURN server is also possible as described below.
+The default configuration of ERS already points to a public EvoStream STUN server. However, hosting your own STUN/TURN server is also possible as described below.
 
-  To install and host restund on Linux, execute the following instructions:
+To install and host restund on Linux, execute the following instructions:
 
-  1. Make sure that build-essential and unzip packages are already installed. On a debian-based Linux, these can be done through the following:
+1. Make sure that build-essential and unzip packages are already installed. On a debian-based Linux, these can be done through the following:
 
-     ```
-     apt-get install build-essential
-     apt-get install unzip
-     ```
+   ```
+   apt-get install build-essential
+   apt-get install unzip
+   ```
 
-  2. Download and install the toolkit library to be used by restund:
+2. Download and install the toolkit library to be used by restund:
 
-     ```
-     wget http://www.creytiv.com/pub/re-0.4.12.tar.gz
-     tar -xzf re-0.4.12.tar.gz
-     cd re-0.4.12/
-     make
-     sudo make install
-     ```
+   ```
+   wget http://www.creytiv.com/pub/re-0.4.12.tar.gz
+   tar -xzf re-0.4.12.tar.gz
+   cd re-0.4.12/
+   make
+   sudo make install
+   ```
 
-  3. Download and install restund itself:
+3. Download and install restund itself:
 
-     ```
-     wget https://github.com/otalk/restund/archive/master.zip
-     unzip master.zip
-     cd restund-master
-     make
-     sudo make install
-     sudo ldconfig
-     ```
+   ```
+   wget https://github.com/otalk/restund/archive/master.zip
+   unzip master.zip
+   cd restund-master
+   make
+   sudo make install
+   sudo ldconfig
+   ```
 
-  4. Configure restund (following is a basic sample config file):
+4. Configure restund (following is a basic sample config file):
 
-     ```
-     #
-     # restund.conf
-     #
-     # core
-     #
-     daemon no
-     debug yes
-     realm TestRealmThatCanBeChanged
-     syncinterval 600
-     udp_listen <ip>:<port>
-     udp_sockbuf_size 524288
-     tcp_listen <ip>:<port>
-     #
-     # modules (STUN messages are processed in module loading order)
-     #
-     module_path /usr/local/lib/restund/modules
-     module stat.so
-     module binding.so
-     module syslog.so
-     module status.so
-     #
-     # syslog
-     #
-     syslog_facility 24
-     ```
+   ```
+   #
+   # restund.conf
+   #
+   # core
+   #
+   daemon no
+   debug yes
+   realm TestRealmThatCanBeChanged
+   syncinterval 600
+   udp_listen <ip>:<port>
+   udp_sockbuf_size 524288
+   tcp_listen <ip>:<port>
+   #
+   # modules (STUN messages are processed in module loading order)
+   #
+   module_path /usr/local/lib/restund/modules
+   module stat.so
+   module binding.so
+   module syslog.so
+   module status.so
+   #
+   # syslog
+   #
+   syslog_facility 24
+   ```
 
-  5. Copy the updated configuration file:
+5. Copy the updated configuration file:
 
-     ```
-     sudo cp restund.conf /etc/
-     ```
+   ```
+   sudo cp restund.conf /etc/
+   ```
 
-  6. Run restund:
+6. Run restund:
 
-     ```
-     sudo restund /etc/restund.conf # add -d option for daemon
-     ```
-
+   ```
+   sudo restund /etc/restund.conf # add -d option for daemon
+   ```
 
 
 - **Node.JS**
@@ -127,51 +126,49 @@ toc: true
 
 
 
-### Installation Procedure
+## Installation Procedure
 
-- **Manual Installation**
+### Manual Installation
 
-  Select a location where ERS will be installed and then change directory to that folder. Install ERS through the following command:
+Select a location where ERS will be installed and then change directory to that folder. Install ERS through the following command:
 
-  ```
-  npm install http://tarballs.evostream.com/ers/ers-<version>.tgz
+```
+npm install http://tarballs.evostream.com/ers/ers-<version>.tgz
+```
 
-  ```
+**Example:**
 
-  Example:
-
-  ```
-  npm install http://tarballs.evostream.com/ers/ers-1.0.0.tgz
-  ```
-
-- **Automatic Installation**
-
-  For Linux/Unix platforms, an easy to use script is provided to install Node.JS, PM2 and ERS automatically, and then start ERS using the PM2 node.js application manager.
-
-  This script can be download from
-
-  ```
-  http://tarballs.evostream.com/ers/ers-<version>-<OS>-<arch>.sh
-
-  ```
-
-  Example:
-
-  ```
-  http://tarballs.evostream.com/ers/ers-1.0.0-linux-x64.sh
-
-  ```
-
-  Once downloaded, select the target installation directory, change to that folder, and run the script:
-
-  ```
-  sudo ./ers-<version>-<OS>-<arch>.sh
-  ```
+```
+npm install http://tarballs.evostream.com/ers/ers-1.0.0.tgz
+```
 
 
+### Automatic Installation
+
+For Linux/Unix platforms, an easy to use script is provided to install Node.JS, PM2 and ERS automatically, and then start ERS using the PM2 node.js application manager.
+
+This script can be download from:
+
+```
+http://tarballs.evostream.com/ers/ers-<version>-<OS>-<arch>.sh
+
+```
+
+**Example:**
+
+```
+http://tarballs.evostream.com/ers/ers-1.0.0-linux-x64.sh
+
+```
+
+Once downloaded, select the target installation directory, change to that folder, and run the script:
+
+```
+sudo ./ers-<version>-<OS>-<arch>.sh
+```
 
 
-### ERS Configuration
+## ERS Configuration
 
 A **default** configuration file, `default.json` is included in the `config` folder where ERS was installed (e.g. `INSTALL_DIRECTORY/node_modules/ers/config/default.json`). This file can be modified to customize the settings of ERS.
 
@@ -228,40 +225,38 @@ Following is the content of the `default.json` config file:
 
 
 
-### Starting ERS
+## Starting ERS
 
-- **Using Node**
+### Using Node
 
-  On the installation folder on ERS, change directory to the `node_modules/ers` folder and execute the following command:
+On the installation folder on ERS, change directory to the `node_modules/ers` folder and execute the following command:
 
-  ```
-  node ers.js
-  ```
+```
+node ers.js
+```
 
-  ERS will then launch with the following message:
+ERS will then launch with the following message:
 
-  ```
-  info: ERS running on port 3535...
-  info: Webserver port: 3535
-  info: Admin access port: 3030
-  ```
+```
+info: ERS running on port 3535...
+info: Webserver port: 3535
+info: Admin access port: 3030
+```
 
-  To stop ERS, simply hit **CTRL-C**.
-
-
+To stop ERS, simply hit **CTRL-C**.
 
 
-- **Using PM2**
 
-  On the installation folder on ERS, change directory to the `node_modules/ers` folder and execute the following command:
+### Using PM2
 
-  ```
-  pm2 start ers.js
-  ```
+On the installation folder on ERS, change directory to the `node_modules/ers` folder and execute the following command:
 
-  To stop ERS:
+```
+pm2 start ers.js
+```
 
-  ```
-  pm2 stop ers
-  ```
+To stop ERS:
 
+```
+pm2 stop ers
+```

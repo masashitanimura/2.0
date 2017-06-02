@@ -10,7 +10,7 @@ toc: false
 
 ## Overview
 
-This document provides instructions on how to use the EvoStream Rendezvous Server. It covers installation, configuration and usage. This document is written for users of the EvoStream Rendezvous Server.
+This document provides instructions on how to use the EvoStream Rendezvous Server (ERS). It covers installation, configuration and usage. This document is written for users of the ERS.
 
 
 

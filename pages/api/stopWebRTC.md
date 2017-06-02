@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Stops the WebRTC Signalling client to an ERS (Evostream Rendezvous Server)
-
-
 
 
 
@@ -58,16 +54,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+-  [startWebRTC](api/startWebRTC.html)

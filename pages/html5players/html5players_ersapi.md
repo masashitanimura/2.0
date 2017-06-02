@@ -2,8 +2,8 @@
 title: ERS API
 keywords: html5
 sidebar: html5players_sidebar
-permalink: hmtl5players_ersapi.html
-folder: emscloud
+permalink: html5players_ersapi.html
+folder: html5players
 toc: true
 ---
 
@@ -42,9 +42,9 @@ http://127.0.0.1:3030/ersadmin.html
 
 
 
-### API LIST
+## API LIST
 
-#### Get Version
+### Get Version
 
 Returns the current version of ERS.
 
@@ -61,7 +61,7 @@ http://127.0.0.1:3030/?c=version
 
 
 
-#### Add Token
+### Add Token
 
 Adds a token that can be used later by a client trying to connect with EMS.
 
@@ -79,7 +79,7 @@ http://127.0.0.1:3030/?c=addToken&i=tokenId
 
 
 
-#### Delete Token
+### Delete Token
 
 Deletes an existing token.
 
@@ -97,7 +97,7 @@ http://127.0.0.1:3030/?c=delToken&i=tokenId
 
 
 
-#### List Tokens
+### List Tokens
 
 Displays all created tokens currently active.
 
@@ -115,7 +115,7 @@ http://127.0.0.1:3030/?c=listTokens
 
 
 
-#### Add Room
+### Add Room
 
 Adds an allowed room to the list during runtime. This command also effectively prevents creation of rooms not included on the list.
 
@@ -133,7 +133,7 @@ http://127.0.0.1:3030/?c=addRoom&i=roomId
 
 
 
-#### Delete Room
+### Delete Room
 
 Deletes a room added from the list.
 
@@ -151,7 +151,7 @@ http://127.0.0.1:3030/?c=delRoom&i=roomId
 
 
 
-#### List Rooms
+### List Rooms
 
 Displays all rooms with their corresponding descriptions and status.
 
