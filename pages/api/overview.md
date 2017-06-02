@@ -4,6 +4,7 @@ keywords: api
 sidebar: api_sidebar
 permalink: overview.html
 folder: api
+toc: false
 ---
 
 This document describes the Application Programming Interface (API) and Event Notification Systems presented by the EvoStream Media Server (EMS).

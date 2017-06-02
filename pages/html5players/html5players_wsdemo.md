@@ -3,10 +3,8 @@ title: Playing Videos Using WebSocket Demo Player
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: false
 ---
 
 

@@ -832,9 +832,11 @@ authentication=
 2. Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
 
 
+###  
+
 ### eventLogger
 
-settings for the server-wide event sinks. 
+Settings for the server-wide event sinks. 
 
 **Type:** Object
 

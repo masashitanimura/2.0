@@ -3,10 +3,8 @@ title: ERS API
 keywords: html5
 sidebar: html5players_sidebar
 permalink: hmtl5players_ersapi.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: true
 ---
 
 

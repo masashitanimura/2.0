@@ -3,10 +3,8 @@ title: Browser Compatibility
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtccompatibility.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: false
 ---
 
 

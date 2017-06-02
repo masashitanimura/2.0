@@ -3,10 +3,7 @@ title: EvoStream Rendezvous Server (ERS)
 keywords: html5
 sidebar: html5players_sidebar
 permalink: html5players_ersoverview.html
-simple_map: false
-map_name: usermap
-box_number: 1
-folder: emscloud
+toc: false
 ---
 
 

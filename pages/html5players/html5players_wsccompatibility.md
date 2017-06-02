@@ -3,10 +3,8 @@ title: Browser Compatibility
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: emscloud_wscompatibility.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: false
 ---
 
 
