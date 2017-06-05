@@ -13,8 +13,6 @@ Returns the information of the stream by the configId.
 
 
 
-
-
 ## API Parameter Table
 
 
@@ -89,11 +87,12 @@ getConfigInfo id=1
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
 - data – The information about the configuration
+  - Other fields present are dependent on stream type
 
 
 - description – Describes the result of parsing/executing the command
@@ -103,14 +102,12 @@ The JSON response contains the following details:
 
 ## Notes
 
-- ​
-- ​
+- The response varies depending on the configuration.
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [listConfig](api_listConfig.html)
+- [removeConfig](api_removeConfig.html)

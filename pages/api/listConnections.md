@@ -13,13 +13,11 @@ Returns details about every active stream-related connection. This does not incl
 
 
 
-
-
 ## API Parameter Table
 
 |     **Parameter Name**     |  Type   | **Mandatory** | **Default Value** | **Description**                          |
 | :------------------------: | :-----: | :-----------: | :---------------: | ---------------------------------------- |
-| excludeNonNetworkProtocols | boolean |     false     |      *null*       | The unique Id of the connection. Usually a value returned by `listConnectionsIds` |
+| excludeNonNetworkProtocols | boolean |     false     |      *null*       | The unique Id of the connection. Usually a value returned by `listStreamsIds` |
 
 
 
@@ -109,16 +107,9 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [getConnectionInfo](api_getConnectionInfo.html)
+
+- [listStreamsIds](api_listStreamsIds.html)
+

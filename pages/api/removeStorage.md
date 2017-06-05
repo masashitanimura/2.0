@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 This function removes a storage location.
 
 
@@ -59,7 +57,7 @@ removeStorage mediaFolder=C:\EvoStream\testMediaFolder
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 

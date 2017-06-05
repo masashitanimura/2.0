@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Returns the versions for framework and this application.
-
-
 
 
 
@@ -66,16 +62,3 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

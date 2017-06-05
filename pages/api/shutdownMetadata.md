@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Stops a metadata pseudo-stream. This command shuts down all multiple pull streams that were issued for a given `localStreamName`.
-
-
 
 
 
@@ -70,17 +66,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
-
-- ​
-
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [pushMetadata](api/pushMetadata.html)
+- [getMetadata](api/getMetadata.html)

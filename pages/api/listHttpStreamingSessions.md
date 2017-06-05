@@ -7,13 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 This command lists all currently active HTTP streaming sessions.
-
-
 
 
 
@@ -41,7 +35,7 @@ listHttpStreamingSessions
     "elapsedTime": 33,
     "sessionId": 1,
     "startTime": "2014-12-17T18-31-13",
-    "targetFolder": "C:\\xampp\\htdocs\\mss_group\\mystream"
+    "targetFolder": "C:\\xampp\\htdocs\\hls_group\\mystream"
     }
   ],
   "description":"Currently open HTTP streaming sessions",
@@ -65,16 +59,6 @@ listHttpStreamingSessions
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [httpClientsConnected](api_httpClientsConnected.html)

@@ -11,8 +11,6 @@ Terminates a specific stream. When `permanently=1` is used, this command is an
 
 
 
-
-
 ## API Parameter Table
 
 | Parameter Name  |  Type   | Mandatory |    Default Value     | Description                              |
@@ -165,7 +163,7 @@ shutdownstream localStreamName=testpullStream permanently=1
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -243,13 +241,10 @@ The JSON response contains the following details:
 ## Notes
 
 - The stream ID shown by the `listStreams` command is not the same as the config ID shown by the `listConfig` command. The `shutdownStream` command uses the stream ID, not the config ID.
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [removeConfig](api/removeConfig.html)

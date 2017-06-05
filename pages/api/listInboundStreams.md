@@ -13,8 +13,6 @@ Provides a complete detailed list of all the current inbound `localStreamNames`.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -98,8 +96,8 @@ The JSON response contains the following details:
   - audio – stats about the audio portion of the stream
 
     - bytesCount – Total amount of audio data received
-    - codec - 
-    - codecNumeric - 
+    - codec - The name of the audio codec 
+    - codecNumeric - Code used for internal use only
     - droppedBytesCount - The number of video bytes lost
     - droppedBytesCount – The number of audio bytes lost
     - droppedPacketsCount – The number of lost audio packets
@@ -157,13 +155,13 @@ The JSON response contains the following details:
 
   - uptime – The time in seconds that the stream has been alive/running for
 
-  - userAgent - ??
+  - userAgent -  The string that the EMS uses to identify itself with the other server. It can be modified so that EMS identifies itself as, say, a Flash Media Server
 
   - video – Stats about the video portion of the stream
 
     - bytesCount – Total amount of video data received
-    - codec - ??
-    - codecNumeric - ??
+    - codec - The name of the video codec 
+    - codecNumeric - Code used for internal use only
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
     - height – The video stream’s pixel height
@@ -178,16 +176,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [listInboundStreamNames](api_listInboundStreamNames.html)

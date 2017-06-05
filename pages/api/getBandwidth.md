@@ -13,8 +13,6 @@ Returns the current and limit bandwidth values.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -66,16 +64,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [setBandwidthLimit](api_setBandwidthLimit.html)

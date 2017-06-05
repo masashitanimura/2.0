@@ -15,8 +15,6 @@ Whenever the `pullStream` or `pushStream` interfaces are called, a record contai
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -53,7 +51,7 @@ listConfig
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -76,16 +74,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [removeConfig](api_removeConfig.html)
+- [getConfigInfo](api_getConfigInfo.html)

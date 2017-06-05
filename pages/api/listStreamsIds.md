@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 Get a list of IDs for every **active** stream.
 
 
@@ -16,8 +14,6 @@ Get a list of IDs for every **active** stream.
 ## API Parameter Table
 
 This function has no parameters.
-
-
 
 
 
@@ -45,7 +41,7 @@ listStreamsIds
 
 The JSON response contains the following details:
 
-- data – Contains an array of IDs (integers) for theactive streams
+- data – Contains an array of IDs (integers) for the active streams
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
@@ -53,12 +49,11 @@ The JSON response contains the following details:
 
 ## Notes
 
-- ​
-- ​
+- ID's may change overtime
 
 
+------
 
 ## Related Links
 
-- Link 1
-- Link 2
+- [listStreams](api/listStreams.html)

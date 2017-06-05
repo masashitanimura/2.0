@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Opens an outboundVmf TCP stream over which each modified JSON metadata object is sent.
-
-
 
 
 
@@ -64,7 +60,7 @@ pushMetadata localStreamName=testpullStream ip=192.168.0.1 port=8110
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -85,17 +81,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
-
-- ​
-
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [getMetadata](api/getMetadata.html)
+- [shutdownMetadata](api/shutdownMetadata.html)

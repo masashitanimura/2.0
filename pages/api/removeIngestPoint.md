@@ -67,14 +67,12 @@ The JSON response contains the following details:
 ## Notes
 
 - **hasIngestPoint** is config.lua should be set to **TRUE**
-- ​
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [hasIngestPoints](userguide_configlua.html#hasingestpoints)
+- [createIngestPoint](api_createIngestPoint.html)
+- [listIngestPoints](api_listIngestPoints.html)

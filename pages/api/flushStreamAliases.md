@@ -59,6 +59,6 @@ The JSON response contains the following details:
 ## Related Links
 
 - [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
-- [listStreamAliases](listStreamAliases.html)
-- [removeStreamAlias](removeStreamAlias.html)
-- [addStreamAliases](addStreamAlias.html)
+- [listStreamAliases](api_listStreamAliases.html)
+- [removeStreamAlias](api_removeStreamAlias.html)
+- [addStreamAliases](api_addStreamAlias.html)

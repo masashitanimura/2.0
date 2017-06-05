@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Will create a server-side playlist with the specified sources.
-
-
 
 
 
@@ -59,7 +55,7 @@ generateServerPlaylist sources=File1.mp4,File2.mp4 pathToFile=../media/testPlayl
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -75,7 +71,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - May place live streams or mp4 files for sources
 
@@ -94,13 +90,9 @@ The JSON response contains the following details:
   - -2 will play media files until their end (same as -1 behavior). For live sources, it will play the live stream until that stream is no longer available. When the source stream is lost the EMS shall move to the next item in the playlist.
   - Any negative number other than -1 or -2 will be assumed to be -2
 
-  ​
 
-
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [insertPlaylistItem](api_insertPlaylistItem.html)

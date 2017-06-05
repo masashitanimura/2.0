@@ -11,8 +11,6 @@ Checks a specific stream if it is running or not.
 
 
 
-
-
 ## API Parameter Table
 
 
@@ -82,13 +80,12 @@ The JSON response contains the following details:
 ## Notes
 
 - Either add the parameter **id** or **localStreamName** in the API call
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [listStreams](api_listStreams.html)
+- [listStreamsIds](api_listStreamsIds.html)
+- [listConfig](api_listConfig.html)

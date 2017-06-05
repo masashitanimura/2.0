@@ -11,8 +11,6 @@ Allows the user to launch an external process on the local machine. This can be 
 
 
 
-
-
 ## API Parameter Table
 
 
@@ -76,30 +74,15 @@ The final parameter is an example for setting an environment variable (SAMPLE_E_
 The JSON response contains the following details:
 
 - data – The data to parse.
-  - configId - The configuration ID for this command
-  - ersip – The IP address of the ERS
-  - ersport – The port of the ERS
-  - keepAlive - ??
-  - name - ??
+  - arguments – Complete list of arguments that need to be passed to the process
+  - configID – The configuration ID for this command
+  - fullBinaryPath – Full path to the binary that needs to be launched
+  - groupName - The group name assigned to the process
+  - keepAlive – If `keepAlive` is set to 1, the server will restart the process if it exits
   - operationType – The type of operation
-  - roomId – The room identifier
-  - sslCert - The SSL certificate
-  - sslKey - The SSL key certificate
+  - $[ENV]=[VALUE] – Any number of environment variables that need to be set just before launching the process
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 ------
 
-## Notes
-
-- Room ID can only be started once
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

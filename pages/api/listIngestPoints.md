@@ -59,13 +59,14 @@ The JSON response contains the following details:
 ## Notes
 
 - **hasIngestPoints** in config.lua should be **TRUE**
-- ​
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [hasIngestPoints](userguide_configlua.html#hasingestpoints)
+
+
+- [createIngestPoint](api_createIngestPoint.html)
+- [removeIngestPoint](api_removeIngestPoint.html)

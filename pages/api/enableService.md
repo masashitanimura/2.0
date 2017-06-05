@@ -93,5 +93,7 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [createService](createService.html)
+- [createService](api_createService.html)
+- [listServices](api_listServices.html)
+- [shutdownService](api_shutdownService.html)
 - [acceptors](userguide_configlua.html#acceptors)

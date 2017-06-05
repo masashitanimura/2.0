@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 This function quits the ASCII Command Line Interface (CLI).
-
-
 
 
 
@@ -53,14 +49,5 @@ The JSON response contains the following details:
 
 ## Notes
 
-- ​
-- ​
+- This is not available in EMS Web UI's API Explorer
 
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

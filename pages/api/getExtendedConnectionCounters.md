@@ -98,16 +98,3 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

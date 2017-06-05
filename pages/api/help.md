@@ -13,8 +13,6 @@ This function prints out descriptions of the API in JSON format.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -78,16 +76,3 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

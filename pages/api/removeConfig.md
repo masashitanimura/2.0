@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-Checks a specific stream if it is running or not.
-
-
+This command will both stop the stream and remove the corresponding configuration entry. This command is the same as performing `shutdownStream permanently=1`.
 
 
 
@@ -19,21 +15,24 @@ Checks a specific stream if it is running or not.
 
 
 
-| Parameter Name  |  Type   | Mandatory | Default Value | Description                           |
-| :-------------: | :-----: | :-------: | :-----------: | ------------------------------------- |
-|       id        | integer |   true    |    *null*     | The unique id of the stream to check. |
-| localStreamName | string  |   true    |    *null*     | The name of the stream to check.      |
+|  Parameter Name   |  Type   | Mandatory | Default Value | Description                              |
+| :---------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
+|        id         | integer |   true    |    *null*     | The configId of the configuration that needs to be removed. ConfigId’s can be obtained from the `listConfig` interface. Removing an inbound stream will also automatically remove all associated outbound streams. |
+|     groupName     | string  |   false   |    *null*     | The name of the group that needs to be removed (applicable to HLS, HDS and external processes). *Mandatory only if the id parameter is not specified.* |
+| removeHlsHdsFiles | boolean |   false   |   0 *false*   | If **true** and the stream is HLS or HDS, the folder associated with it will be removed |
+
+
 
 ## API Call Template
 
 ``` 
-isStreamRunning id=<configId>
+removeConfig id=<configId>
 ```
 
 OR
 
 ``` 
-isStreamRunning localStreamName=<localStreamName>
+removeConfig groupName=<groupName>
 ```
 
 
@@ -41,7 +40,7 @@ isStreamRunning localStreamName=<localStreamName>
 ### Sample API Call
 
 ``` 
-isStreamRunning localStreamName=testpullStream
+removeConfig id=555
 ```
 
 
@@ -49,19 +48,13 @@ isStreamRunning localStreamName=testpullStream
 ### Success Response in JSON
 
 ``` 
+{
 "data":{
-	"Running":true
-},
-"description":"Stream status:",
-"status":"SUCCESS"
-```
-
-``` 
-"data":{
-	"Running":false
-},
-"description":"Stream status:",
-"status":"SUCCESS"
+    *..remove details for clarity*
+    },
+    "description":"Configuration terminated",
+    "status":"SUCCESS"
+}
 ```
 
 
@@ -80,14 +73,12 @@ The JSON response contains the following details:
 
 ## Notes
 
-- Either add the parameter id or localStreamName in the API call
-- ​
+- The config ID shown by the listConfig command is not the same as the stream ID shown by the listStreams command. The removeConfig command uses the config ID, not the stream ID.
 
 
 
 
+## Related Links
 
-## **Related Links**
-
-- Link 1
-- Link 2
+- [listConfig](api/listConfig.html)
+- [getConfigInfo](api/getConfigInfo.html)

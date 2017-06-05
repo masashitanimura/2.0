@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 This function removes a previously armed timer.
-
-
 
 
 
@@ -55,7 +51,7 @@ removeTimer id=8
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -70,16 +66,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [setTimer](api/setTimer.html)
+- [listTimers](listTimers.html)

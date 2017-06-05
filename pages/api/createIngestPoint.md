@@ -74,6 +74,6 @@ The JSON response contains the following details:
 
 ## Related Link
 
-- [hasIngestPoints](../userguide_configlua.html#hasingestpoints)
-- [listIngestPoints](listIngestPoints.html)
-- [removeIngestPoint](removeIngestPoint.html)
+- [hasIngestPoints](userguide_configlua.html#hasingestpoints)
+- [listIngestPoints](api_listIngestPoints.html)
+- [removeIngestPoint](api_removeIngestPoint.html)

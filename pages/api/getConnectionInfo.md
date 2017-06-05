@@ -2,7 +2,7 @@
 title: getConnectionInfo
 keywords: api
 sidebar: api_sidebar
-permalink: getConnectionInfos.html
+permalink: getConnectionInfo.html
 folder: api
 toc: false
 ---
@@ -13,13 +13,11 @@ Returns a detailed set of information about a connection.
 
 
 
-
-
 ## API Parameter Table
 
 | **Parameter Name** |  Type   | **Mandatory** | **Default Value** | **Description**                          |
 | :----------------: | :-----: | :-----------: | :---------------: | ---------------------------------------- |
-|         id         | integer |     true      |      *null*       | The uniqueId of the connection. Usually a value returned by `listConnectionsIds` |
+|         id         | integer |     true      |      *null*       | The uniqueId of the connection. Usually a value returned by `listStreamsIds` |
 
 
 
@@ -81,16 +79,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [listConnections](api_listConnections.html)

@@ -81,15 +81,17 @@ The JSON response contains the following details:
 
 ------
 
-## Note
+## Notes
 
 - **hasStreamAliases** in config.lua should be **TRUE**
 
 ------
 
+## Related Links
 
-## Related Link
+- [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
+- [addGroupNameAlias](api_addGroupNameAlias.html)
+- [listGroupNameAliases](api_listGroupNameAliases.html)
+- [removeGroupNameAliases](api_removeGroupNameAliases.html)
+- [flushGroupNameAliases](api_flushGroupNameAliases.html)
 
-- hasGroupNameAliases(../userguide_webconfig.html#hasgroupnamealiases)
-
-------

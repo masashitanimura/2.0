@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 This function adds a timer. When triggered, it will send an event to the event logger.
-
-
 
 
 
@@ -85,7 +81,7 @@ setTimer value=07:30:00
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -103,13 +99,11 @@ The JSON response contains the following details:
 ## Notes
 
 - Using **HH:MM:SS** means the trigger will be done on the **current date** on the given time
-- ​
 
 
+------
 
+## Related Links
 
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [listTimers](listTimers.html)
+- [removeTimer](removeTimer.html)

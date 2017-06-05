@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Inserts a new item into an RTMP playlist. insertPlaylistItem may be called on playlists which are actively being played by one or more clients/players.
-
-
 
 
 
@@ -60,7 +56,7 @@ generateServerPlaylist sources=File1.mp4,File2.mp4 pathToFile=../media/testPlayl
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -77,19 +73,15 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - This function does NOT modify the actual playlist file. Instead it modifies ONLY the in-memory copy of the file.
 
 - The `sourceOffset` and duration parameters behave exactly as they do when creating Playlist Files. However, they are measured in **MILLISECONDS** as opposed to seconds.
 
-  ​
 
-
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [generateServerPlaylist](api_generateServerPlaylist.html)

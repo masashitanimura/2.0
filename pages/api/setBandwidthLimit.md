@@ -77,16 +77,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [getBandwidth](api_getBandwidth.html)
+- [Configuring Bandwidth Limits](userguide_bandwidthlimits.html)

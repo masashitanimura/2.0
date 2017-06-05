@@ -11,8 +11,6 @@ Creates an acceptor which receives an HTTP POST binary upload. The acceptor will
 
 
 
-
-
 ## API Parameter Table
 
 | Parameter Name |  Type   | Mandatory | Default Value | Description                              |
@@ -54,7 +52,7 @@ uploadMedia port=3333 targetFolder=../media
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -69,7 +67,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - The sending client must conform to the following:
   - It must send the data by way of HTTP POST
@@ -78,13 +76,7 @@ The JSON response contains the following details:
   - Content-type must be set to *video/mp4* or *application/octet-stream*
   - Content-length must be used. This function is intended for uploading VOD MP4 so the EMS will expect that the size of the file is already known
 
-- ​
 
 
+------
 
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

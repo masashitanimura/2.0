@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 This function ends the server process, completely shutting down the EMS. This function must be called twice, once with a blank parameter, allowing you to obtain the shutdown key, and then a second time with the key, which actually causes the EMS to terminate.
 
 
@@ -45,7 +43,7 @@ This will send a key in response
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -68,14 +66,3 @@ The connection will end after sending the command.
 
 ------
 
-### Notes
-
-- ​
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

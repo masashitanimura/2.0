@@ -64,6 +64,7 @@ The JSON response contains the following details:
 ## **Related Links**
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
-- [addGroupNameAliases](addGroupNameAliases.html)
-- [removeGroupNameAliases](removeGroupNameAliases.html)
-- [flushGroupNameAliases](flushGroupNameAliases.html)
+- [addGroupNameAliases](api_addGroupNameAliases.html)
+- [getGroupNameByAlias](api_getGroupNameByAlias.html)
+- [removeGroupNameAliases](api_removeGroupNameAliases.html)
+- [flushGroupNameAliases](api_flushGroupNameAliases.html)

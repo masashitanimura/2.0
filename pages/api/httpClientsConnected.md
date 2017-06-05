@@ -81,4 +81,4 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [clientsConnected](clientsConnected.html)
+- [clientsConnected](api_clientsConnected.html)

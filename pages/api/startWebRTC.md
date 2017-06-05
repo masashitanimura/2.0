@@ -15,8 +15,6 @@ This will open the port in the given IP address and will open doors for the room
 
 
 
-
-
 ## API Parameter Table
 
 
@@ -75,7 +73,7 @@ The JSON response contains the following details:
   - configId - The configuration ID for this command
   - ersip – The IP address of the ERS
   - ersport – The port of the ERS
-  - keepAlive - ??
+  - keepAlive - The value of keepAlive
   - name - ??
   - operationType – The type of operation
   - roomId – The room identifier
@@ -89,13 +87,11 @@ The JSON response contains the following details:
 ## Notes
 
 - Room ID can only be started once
-- ​
 
 
-
-
+------
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [stopWebRTC](api/stopWebRTC.html)
+- [WebRTC Overview](html5players_wrtcoverview.html)

@@ -7,19 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
-# setConnectionsCountLimit
-
-
-
-## Definition
-
 This interface sets a limit on the number of concurrent connections the EMS will allow.
-
-
 
 
 

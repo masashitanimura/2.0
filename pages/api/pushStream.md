@@ -24,7 +24,7 @@ This will try to push a local stream to an external destination. The pushed stre
 |    targetStreamType    | string  |   false   |            live             | It can be one of following: **live**, **record**, **append**. It is meaningful only for RTMP |
 |         tcUrl          | string  |   false   |    *zero-length string*     | When specified, this value will be used to set the TC URL in the initial RTMPconnect invoke |
 |        pageUrl         | string  |   false   |    *zero-length string*     | When specified, this value will be used to set the originating web page address inthe initial RTMP connect invoke |
-|         swfUrl         | string  |   false   |    *zero-length string*     | When specified, this value will be used to set the originating swf URL in theinitial RTMP connect invoke |
+|         swfUrl         | string  |   false   |    *zero-length string*     | When specified, this value will be used to set the originating swf URL in the initial RTMP connect invoke |
 |          ttl           | integer |   false   | *operating system supplied* | Sets the IP_TTL (Time to Live) option on the socket |
 |          tos           | integer |   false   | *operating system supplied* | Sets the IP_TOS (Type of Service) option on the socket |
 |    emulateUserAgent    | string  |   false   |     *EvoStream message*     | When specified, this value will be used as the user agent string. It is meaningful only for RTMP |

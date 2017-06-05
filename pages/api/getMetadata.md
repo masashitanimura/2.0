@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Returns the most recently received string currently cached by the Metadata Manager. The call is stateless so multiple clients may each poll for metadata with no impact on each other. This may result in getting the same string multiple times if no new string has arrived.
-
-
 
 
 
@@ -69,16 +65,16 @@ getMetadata localStreamName=testpullStream noWrap=1
 }
 ```
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
 - data – The data to parse
   - type - response type
-  - timestamp -
+  - timestamp -  
   - lat - latitude value
   - lon - longitude value
-  - alt -
+  - alt -altitude value
   - speed - speed value
   - dir -
 
@@ -88,17 +84,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Related Links
 
-- ​
-
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [pushMetadata](api_pushMetadata.html)
+- [shutdownMetadata](api_shutdownMetadata.html)

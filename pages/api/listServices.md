@@ -90,16 +90,9 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [createService](api_createService.html)
+- [enableService](api_enableService.html)
+- [shutdownService](api_shutdownService.html)
+- [acceptors](userguide_configlua.html#acceptors)

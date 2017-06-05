@@ -72,6 +72,6 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [addStorage](addStorage.html)
-- [removeStorage](removeStorage.html)
+- [addStorage](api_addStorage.html)
+- [removeStorage](api_removeStorage.html)
 - [mediaStorage](userguide_confuglua.html#mediastorage)

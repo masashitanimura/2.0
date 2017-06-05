@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 This function lists currently active timers.
-
-
 
 
 
@@ -60,16 +56,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [setTimer](api/setTimer.html)
+- [removeTimer](removeTimer.html)

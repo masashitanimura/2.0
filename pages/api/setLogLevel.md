@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 Change the log level for all log appenders. Default value in the system is set in the config.lua file, which is usually set to 6.
 
 
@@ -43,7 +41,7 @@ This sets the log level to 1. It means it will only output the error logs.
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -55,7 +53,7 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
+## Notes
 
 - Log Levels:
   - 0 – Fatal
@@ -71,5 +69,4 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [logAppenders](userguide/configlua.html#logappenders)

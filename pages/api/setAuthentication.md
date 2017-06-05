@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Will enable/disable RTMP authentication.
-
-
 
 
 
@@ -45,7 +41,7 @@ setAuthentication enabled=1
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -58,17 +54,6 @@ The JSON response contains the following details:
 
 ------
 
-### Notes
-
-- ​
-
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [Adding Stream Authentication](userguide/addstreamauth.html)

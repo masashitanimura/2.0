@@ -13,8 +13,6 @@ Provides a detailed description of all **active** streams.
 
 
 
-
-
 ## API Parameter Table
 
 |   **Parameter Name**   |  Type   | Mandatory | **Default Value** | Description                              |
@@ -127,11 +125,11 @@ listStreams
 The JSON response contains the following details:
 
 - data – The data to parse
-  - appName - ??
+  - appName -  The name of the application using the service
   - audio – stats about the audio portion of the stream
     - bytesCount - Total amount of audio data received
-    - codec - ??
-    - codecNumeric - ??
+    - codec - The name of the audio codec 
+    - codecNumeric - Code used for internal use only
     - droppedBytesCount - The number of video bytes lost
     - droppedPacketsCount – The number of lost audio packets
     - packetsCount – Total number of audio packets received
@@ -186,8 +184,8 @@ The JSON response contains the following details:
   - upTime – The time in seconds that the stream has been alive/running for.
   - video – Stats about the video portion of the stream
     - bytesCount - Total amount of video data received
-    - codec - ??
-    - codecNumeric - ??
+    - codec - The name of the video codec 
+    - codecNumeric - Code used for internal use only.
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
     - height - The video stream’s pixel height
@@ -200,14 +198,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
 ## Related Links
 
-- Link 1
-- Link 2
+- [listStreamsIds](listStreamsIds.html)

@@ -13,8 +13,6 @@ Will create a VOD file which contains details of the stream to be pulled when th
 
 
 
-
-
 ## API Parameter Table
 
 |    Parameter Name     |  Type   |                Mandatory                 |        Default Value        | Description                              |
@@ -25,8 +23,8 @@ Will create a VOD file which contains details of the stream to be pulled when th
 |         tcUrl         | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the TC URL in the initial RTMP connect invoke |
 |        pageUrl        | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the originating web page address in the initial RTMP connect invoke |
 |        swfUrl         | string  |                  false                   |    *zero-length string*     | When specified, this value will be used to set the originating swf URL in the initial RTMP connect invoke |
-|      rangeStart       | integer |                  false                   |             -2              | For RTSP and RTMP connections.  A value from which the playback should start expressed in seconds. There are 2 special values: **-2** and **-1**. For more information, please read about start/len parameters here: [http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.html](http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.html) |
-|       rangeEnd        | integer |                  false                   |             -1              | The length in seconds for the playback. **-1** is a special value. For more information, please read about start/len parameters here: [http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.html](http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.html) |
+|      rangeStart       | integer |                  false                   |             -2              | For RTSP and RTMP connections.  A value from which the playback should start expressed in seconds. There are 2 special values: **-2** and **-1**. For more information, please read about start/len parameters [here:](http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.html]) |
+|       rangeEnd        | integer |                  false                   |             -1              | The length in seconds for the playback. **-1** is a special value. For more information, please read about start/len parameters [here:][http://livedocs.adobe.com/flashmediaserver/3.0/hpdocs/help.html?content=00000185.htm] |
 |          ttl          | integer |                  false                   | *operating system supplied* | Sets the IP_TTL (Time to Live) option on the socket |
 |          tos          | integer |                  false                   | *operating system supplied* | Sets the IP_TOS (Type of Service) option on the socket |
 | rtcpDetectionInterval | integer |                  false                   |             10              | How much time (in seconds) should the server wait for RTCP packets before declaring the RTSP stream as a RTCP-less stream |
@@ -40,7 +38,7 @@ Will create a VOD file which contains details of the stream to be pulled when th
 |    sendRenewStream    | boolean |                  false                   |          0 *false*          | If **true**, the server will send RenewStream via SET_PARAMETER when a new client connects. Only valid for RTSP URIs |
 |       keepAlive       | boolean |                  false                   |          0 *false*          | If value is **true**, source stream will not shutdown even after all clients have hung up |
 
-## 
+
 
 ## API Call Template
 
@@ -110,7 +108,7 @@ generateLazyPullFile uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -159,16 +157,3 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2

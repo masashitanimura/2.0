@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Provides a list of all the current inbound `localStreamNames`.
-
-
 
 
 
@@ -62,16 +58,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [listInboundStreams](api_listInboundStreams.html)
