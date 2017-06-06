@@ -82,6 +82,6 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [generateServerPlaylist](api_generateServerPlaylist.html)
+- [generateServerPlaylist](generateServerPlaylist.html)

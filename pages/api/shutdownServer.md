@@ -56,6 +56,8 @@ The JSON response contains the following details:
 
 
 
+
+
 **To shutdown the Server enter the same command with the key parameter given:**
 
 ```
@@ -63,6 +65,4 @@ shutdownServer key=GCY6IXniMf6NDOxY
 ```
 
 The connection will end after sending the command.
-
-------
 

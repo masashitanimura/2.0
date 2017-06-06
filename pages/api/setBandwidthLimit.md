@@ -13,8 +13,6 @@ Enforces a limit on input and output bandwidth.
 
 
 
-
-
 ## API Parameter Table
 
 | Parameter Name |  Type   | Mandatory | Default Value | Description                              |
@@ -77,7 +75,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [getBandwidth](api_getBandwidth.html)
+- [getBandwidth](getBandwidth.html)
 - [Configuring Bandwidth Limits](userguide_bandwidthlimits.html)

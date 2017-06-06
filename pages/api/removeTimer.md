@@ -66,7 +66,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [setTimer](api/setTimer.html)
+- [setTimer](setTimer.html)
 - [listTimers](listTimers.html)

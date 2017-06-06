@@ -7,13 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 Returns the number of active connections.  This includes connections necessary for EMS operations (telnet, license manager, interface, etc.) and all connections opened by streams (RTSP-UDP-RTP ports).
-
-
 
 
 
@@ -56,6 +50,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [getConnectionsCountLimit](api_getConnectionsCountLimit.html)
+- [setConnectionsCountLimit](setConnectionsCountLimit.html)
+- [getConnectionsCountLimit](getConnectionsCountLimit.html)

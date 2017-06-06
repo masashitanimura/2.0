@@ -107,9 +107,9 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [getConnectionInfo](api_getConnectionInfo.html)
-
-- [listStreamsIds](api_listStreamsIds.html)
+- [getConnectionInfo](getConnectionInfo.html)
+- [getConnectionsCount](getConnectionsCount.html)
+- [getConnectionsCountLimit](getConnectionsCountLimit.html)
 

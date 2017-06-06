@@ -91,7 +91,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [stopWebRTC](api/stopWebRTC.html)
+- [stopWebRTC](stopWebRTC.html)
 - [WebRTC Overview](html5players_wrtcoverview.html)

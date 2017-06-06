@@ -73,12 +73,12 @@ The JSON response contains the following details:
 
 ## Notes
 
-- The config ID shown by the listConfig command is not the same as the stream ID shown by the listStreams command. The removeConfig command uses the config ID, not the stream ID.
+- The config ID shown by the listConfig command is not the same as the stream ID shown by the listStreams command. The `removeConfig` command uses the config ID, not the stream ID.
 
 
 
 
 ## Related Links
 
-- [listConfig](api/listConfig.html)
-- [getConfigInfo](api/getConfigInfo.html)
+- [listConfig](listConfig.html)
+- [getConfigInfo](getConfigInfo.html)

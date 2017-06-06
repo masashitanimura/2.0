@@ -64,16 +64,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
+## Related Links
 
-- ​
-- ​
-
-
-
-
-
-## **Related Links**
-
-- Link 1
-- Link 2
+- [getConnectionsCountLimit](getConnectionsCountLimit.html)
+- [getConnectionsCount](getConnectionsCount.html)

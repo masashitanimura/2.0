@@ -74,5 +74,7 @@ The JSON response contains the following details:
 ## Related Links
 
 - [hasIngestPoints](userguide_configlua.html#hasingestpoints)
-- [createIngestPoint](api_createIngestPoint.html)
-- [listIngestPoints](api_listIngestPoints.html)
+- [createIngestPoint](createIngestPoint.html)
+- [listIngestPoints](listIngestPoints.html)
+- [ingestpoints.xml](userguide_ingestpoints.html)
+

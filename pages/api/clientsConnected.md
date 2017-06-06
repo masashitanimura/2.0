@@ -79,5 +79,5 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [httpClientsConnected](api_httpClientsConnected.html)
+- [httpClientsConnected](httpClientsConnected.html)
 

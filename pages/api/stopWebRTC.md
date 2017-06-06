@@ -54,6 +54,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
--  [startWebRTC](api/startWebRTC.html)
+-  [startWebRTC](startWebRTC.html)
+-  [WebRTC Overview](html5players_wrtcoverview.html)

@@ -66,4 +66,4 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [setBandwidthLimit](api_setBandwidthLimit.html)
+- [setBandwidthLimit](setBandwidthLimit.html)

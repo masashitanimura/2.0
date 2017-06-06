@@ -74,7 +74,14 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Notes
 
-- [removeConfig](api_removeConfig.html)
-- [getConfigInfo](api_getConfigInfo.html)
+- Only the configurations with a `keepAlive` value of **true** will be listed
+- Active configurations will also be listed
+
+------
+
+## Related Links
+
+- [removeConfig](removeConfig.html)
+- [getConfigInfo](getConfigInfo.html)

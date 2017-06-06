@@ -51,7 +51,7 @@ shutdownMetadata localStreamName=testpullStream
 
 
 
-#### **JSON Response**
+#### JSON Response
 
 The JSON response contains the following details:
 
@@ -68,5 +68,5 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [pushMetadata](api/pushMetadata.html)
-- [getMetadata](api/getMetadata.html)
+- [pushMetadata](pushMetadata.html)
+- [getMetadata](getMetadata.html)

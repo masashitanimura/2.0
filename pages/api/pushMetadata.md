@@ -81,7 +81,7 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [getMetadata](api/getMetadata.html)
-- [shutdownMetadata](api/shutdownMetadata.html)
+- [getMetadata](getMetadata.html)
+- [shutdownMetadata](shutdownMetadata.html)

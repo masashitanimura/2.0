@@ -58,4 +58,6 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [getConnectionsCount](api_getConnectionsCount.html)
+- [setConnectionsCountLimit](setConnectionsCountLimit.html)
+- [getConnectionsCount](getConnectionsCount.html)
+

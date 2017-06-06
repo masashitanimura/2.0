@@ -58,5 +58,5 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [setTimer](api/setTimer.html)
+- [setTimer](setTimer.html)
 - [removeTimer](removeTimer.html)

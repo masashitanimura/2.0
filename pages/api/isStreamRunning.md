@@ -86,6 +86,6 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [listStreams](api_listStreams.html)
-- [listStreamsIds](api_listStreamsIds.html)
-- [listConfig](api_listConfig.html)
+- [listStreams](listStreams.html)
+- [listStreamsIds](listStreamsIds.html)
+- [listConfig](listConfig.html)

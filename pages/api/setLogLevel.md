@@ -69,4 +69,4 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [logAppenders](userguide/configlua.html#logappenders)
+- [logAppenders](userguide_configlua.html#logappenders)

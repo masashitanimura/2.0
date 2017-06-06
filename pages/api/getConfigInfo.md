@@ -109,5 +109,5 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [listConfig](api_listConfig.html)
-- [removeConfig](api_removeConfig.html)
+- [listConfig](listConfig.html)
+- [removeConfig](removeConfig.html)

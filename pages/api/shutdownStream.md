@@ -247,4 +247,4 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [removeConfig](api/removeConfig.html)
+- [removeConfig](removeConfig.html)

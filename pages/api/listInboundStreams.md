@@ -178,4 +178,4 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [listInboundStreamNames](api_listInboundStreamNames.html)
+- [listInboundStreamNames](listInboundStreamNames.html)

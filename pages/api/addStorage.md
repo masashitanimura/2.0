@@ -98,6 +98,6 @@ The JSON response contains the following details:
 ## Related Links
 
 - [mediaStorage](userguide_confuglua.html#mediastorage)
-- [listStorage](api_listStorage.html)
-- [removeStorage](api_removeStorage.html)
+- [listStorage](listStorage.html)
+- [removeStorage](removeStorage.html)
 

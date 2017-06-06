@@ -60,4 +60,4 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [listInboundStreams](api_listInboundStreams.html)
+- [listInboundStreams](listInboundStreams.html)

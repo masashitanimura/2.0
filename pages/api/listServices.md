@@ -7,13 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
-
-
 Returns the list of available services.
-
-
 
 
 
@@ -90,9 +84,9 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [createService](api_createService.html)
-- [enableService](api_enableService.html)
-- [shutdownService](api_shutdownService.html)
+- [createService](createService.html)
+- [enableService](enableService.html)
+- [shutdownService](shutdownService.html)
 - [acceptors](userguide_configlua.html#acceptors)

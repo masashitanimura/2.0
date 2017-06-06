@@ -86,5 +86,5 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [pushMetadata](api_pushMetadata.html)
-- [shutdownMetadata](api_shutdownMetadata.html)
+- [pushMetadata](pushMetadata.html)
+- [shutdownMetadata](shutdownMetadata.html)

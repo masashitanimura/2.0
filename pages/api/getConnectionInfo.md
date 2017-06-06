@@ -79,6 +79,6 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [listConnections](api_listConnections.html)
+- [listConnections](listConnections.html)

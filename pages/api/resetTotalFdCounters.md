@@ -7,11 +7,7 @@ folder: api
 toc: false
 ---
 
-
-
 Resets the cumulative totals from the Connection Counters.
-
-
 
 
 
@@ -51,16 +47,6 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
-
-
 ## **Related Links**
 
-- Link 1
-- Link 2
+- [resetMaxFdCounters](resetMaxFdCounters.html)

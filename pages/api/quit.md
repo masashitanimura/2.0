@@ -49,5 +49,5 @@ The JSON response contains the following details:
 
 ## Notes
 
-- This is not available in EMS Web UI's API Explorer
+- This API is not available in EMS Web UI's API Explorer
 

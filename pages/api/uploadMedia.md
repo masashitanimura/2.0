@@ -77,6 +77,3 @@ The JSON response contains the following details:
   - Content-length must be used. This function is intended for uploading VOD MP4 so the EMS will expect that the size of the file is already known
 
 
-
-------
-

@@ -54,6 +54,6 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [Adding Stream Authentication](userguide/addstreamauth.html)
+- [Adding Stream Authentication](userguide_addstreamauth.html)

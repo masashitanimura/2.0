@@ -60,5 +60,3 @@ The JSON response contains the following details:
 - description– Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
-------
-

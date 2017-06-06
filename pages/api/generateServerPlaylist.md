@@ -93,6 +93,6 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
-- [insertPlaylistItem](api_insertPlaylistItem.html)
+- [insertPlaylistItem](insertPlaylistItem.html)

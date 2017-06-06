@@ -63,10 +63,11 @@ The JSON response contains the following details:
 
 ------
 
-## **Related Links**
+## Related Links
 
 - [hasIngestPoints](userguide_configlua.html#hasingestpoints)
 
 
-- [createIngestPoint](api_createIngestPoint.html)
-- [removeIngestPoint](api_removeIngestPoint.html)
+- [createIngestPoint](createIngestPoint.html)
+- [removeIngestPoint](removeIngestPoint.html)
+- [ingestpoints.xml](userguide_ingestpoints.html)

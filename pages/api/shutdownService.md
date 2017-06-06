@@ -85,7 +85,7 @@ The JSON response contains the following details:
 
 ## **Related Links**
 
-- [createService](api_createService.html)
-- [enableService](api_enableService.html)
-- [listServices](api_listServices.html)
+- [createService](createService.html)
+- [enableService](enableService.html)
+- [listServices](listServices.html)
 - [acceptors](userguide_configlua.html#acceptors)

@@ -92,6 +92,6 @@ The JSON response contains the following details:
 ## Related Links
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
-- [listGroupNameAliases](api_listGroupNameAliases.html)
-- [removeGroupNameAliases](api_removeGroupNameAliases.html)
-- [flushGroupNameAliases](api_flushGroupNameAliases.html)
+- [listGroupNameAliases](listGroupNameAliases.html)
+- [removeGroupNameAliases](removeGroupNameAliases.html)
+- [flushGroupNameAliases](flushGroupNameAliases.html)
