@@ -207,4 +207,4 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [getStreamsCount](api_getStreamsCount.html)
+- [getStreamsCount](getStreamsCount.html)
