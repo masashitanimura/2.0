@@ -2,7 +2,7 @@
 title: Record a Stream
 keywords: record
 sidebar: userguide_sidebar
-permalink: userguide_protocols.html
+permalink: userguide_record.html
 folder: userguide
 toc: true
 ---

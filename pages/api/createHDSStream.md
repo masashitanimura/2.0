@@ -103,7 +103,7 @@ The JSON response contains the following details:
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 ------
-## Note
+## Notes
 
 - If you wan't your playlist to start at the very beginning, issue the `createHDSStream` first before `pullStream` command
 

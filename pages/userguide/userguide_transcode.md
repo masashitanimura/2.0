@@ -371,3 +371,4 @@ The `transcode` command calls the emsTranscoder.sh. The logs will help you deter
        Stream #0.1: Audio: aac, 44100 Hz, stereo, fltp
    Unable to find a suitable output format for 'rtmp://192.168.2.35/live/testTransDest'
    ```
+

@@ -107,7 +107,7 @@ The JSON response contains the following details:
 
 ------
 
-## Note
+## Notes
 
 - If you wan't your playlist to start at the very beginning, issue the `createDASHStream` first before `pullStream` command
 

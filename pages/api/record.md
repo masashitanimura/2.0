@@ -101,11 +101,10 @@ The JSON response contains the following details:
 ## Notes
 
 - If you wan't your recorded file to start at the very beginning of the stream, issue the record first before `pullStream` command
-- ​
 
 
+------
 
 ## Related Links
 
-- Link 1
-- Link 2
+- [Record a Stream](userguide_record.html)

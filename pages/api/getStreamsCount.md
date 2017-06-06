@@ -13,8 +13,6 @@ Returns the number of **active** streams.
 
 
 
-
-
 ## API Parameter Table
 
 This function has no parameters.
@@ -56,14 +54,7 @@ The JSON response contains the following details:
 
 ------
 
-## Notes
-
-- ​
-- ​
-
-
-
 ## Related Links
 
-- Link 1
-- Link 2
+- [getStreamInfo](getStreamInfo.html)
+

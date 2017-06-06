@@ -56,4 +56,4 @@ The JSON response contains the following details:
 
 ## Related Links
 
-- [listStreams](api/listStreams.html)
+- [listStreams](api_listStreams.html)

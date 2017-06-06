@@ -126,8 +126,9 @@ The JSON response contains the following details:
 - Audio related parameters are ignored if the parameter `audioBitrates` is not specified.
 
 
+------
 
 ## Related Links
 
-- Link 1
-- Link 2
+- [Transcode a Stream](userguide_transcode.html)
+
