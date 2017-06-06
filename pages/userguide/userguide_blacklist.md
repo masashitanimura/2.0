@@ -37,4 +37,11 @@ Defines the IP address that will be blocked by EMS. If a blacklist is specified,
 
 - If IP address is both on whitelist and blacklist file, EMS will treat the IP address as blacklisted
 
-See [whitelist.txt](#M. whitelist.txt).
+
+
+------
+
+## Related LInks
+
+- [whitelist.txt](userguide_whitelist.html)
+- [Blacklisting](userguide_blacklisting.html)

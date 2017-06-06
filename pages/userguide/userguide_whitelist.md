@@ -36,3 +36,12 @@ Defines the IP address that will have access to EMS. If a whitelist is specified
   ```
 
 - If IP address is both on whitelist and blacklist file, EMS will treat the IP address as blacklisted
+
+
+
+------
+
+## Related Links
+
+- [blacklist.txt](userguide_blacklist.html)
+- [Blacklisting](userguide_blacklisting.html)
