@@ -272,6 +272,10 @@ entries:
     - title: listInboundStreams
       url: /listInboundStreams.html
       output: web, pdf
+	  
+  - title: getInboundStreamsCount
+      url: /getInboundStreamsCount.html
+      output: web, pdf
 
     - title: getConnectionInfo
       url: /getConnectionInfo.html
