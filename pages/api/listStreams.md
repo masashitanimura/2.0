@@ -134,7 +134,7 @@ The JSON response contains the following details:
     - droppedPacketsCount – The number of lost audio packets
     - packetsCount – Total number of audio packets received
   - bandwidth – The current bandwidth utilization of the stream
-  - connectionType - ??
+  - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
   - creationTimestamp – The UNIX timestamp for when the stream was created. UNIX time is expressed as the number of seconds since the UNIX Epoch (Jan 1, 1970)
   - farIp - The IP address of the distant party
   - farPort - The port used by the distant party
@@ -145,10 +145,10 @@ The JSON response contains the following details:
   - outStreamsUniqueIDs – *For pulled streams*. An array of the “out” stream IDs associated with this “in” stream
   - pageUrl - A link to the page that originated the request (often unused)
   - port - The port bound to the service
-  - processID - ??
-  - preocessType - ??
+  - processID - The process ID of the EMS instance processing the API command
+  - processType - Origin or edge, depending on the EMS instance processing the API command
   - pullSettings/pushSettings – Not present for streams requested by a 3rd party (IE player/client). A copy of the parameters used in the `pullStream` or `pushStream` command.
-    - _callback - ??
+    - _callback - Essential to lazy pull, for internal use only
     - audioCodecBytes - The audio codec setup of this RTP stream if it is audio
     - configId – The identifier for the pullPushConfig.xml entry
     - emulateUserAgent – The string that the EMS uses to identify itself with the other server. It can be modified so that EMS identifies itself as, say, a Flash Media Server
@@ -179,7 +179,7 @@ The JSON response contains the following details:
     - char 2 = N for network, F for file
     - char 3+ = further details about stream
     - example: INR = Inbound Network Stream (a stream coming from the network into the EMS)
-  - typeNumeric - ??
+  - typeNumeric - A number obtained from an array of 8 bytes filled with the characters of the stream type padded with 0's
   - uniqueId – The unique ID of the stream (integer)
   - upTime – The time in seconds that the stream has been alive/running for.
   - video – Stats about the video portion of the stream
@@ -189,9 +189,9 @@ The JSON response contains the following details:
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
     - height - The video stream’s pixel height
-    - level - ??
+    - level - H264 level
     - packetsCount – Total number of video packets received
-    - profile - ??
+    - profile - H264 profile
     - width - The video stream’s pixel width
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.

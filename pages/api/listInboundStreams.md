@@ -105,7 +105,7 @@ The JSON response contains the following details:
 
   - bandwidth – The current bandwidth utilization of the stream
 
-  - connectionType - 
+  - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
 
   - canDropFrames – *Outstreams only*. Flag set by client allowing for dropped frames/packets
 
@@ -133,9 +133,9 @@ The JSON response contains the following details:
 
   - port - The port bound to the service
 
-  - processId - 
+  - processId - The process ID of the EMS instance processing the API command
 
-  - processType - 
+  - processType - Origin or edge, depending on the EMS instance processing the API command
 
   - queryTimestamp – The time (in UNIX seconds) when the information in this request was populated
 
@@ -149,7 +149,7 @@ The JSON response contains the following details:
 
       example: INR = Inbound Network Stream (a stream coming from the network into the EMS)
 
-  - typeNumeric - ??
+  - typeNumeric - A number obtained from an array of 8 bytes filled with the characters of the stream type padded with 0's
 
   - uniqueId – The unique ID of the stream
 
@@ -165,9 +165,9 @@ The JSON response contains the following details:
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
     - height – The video stream’s pixel height
-    - level - ??
+    - level - H264 level
     - packetsCount – Total number of video packets received
-    - profile - ??
+    - profile - H264 profile
     - width - The video stream’s pixel width
 
 - description– Describes the result of parsing/executing the command
