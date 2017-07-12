@@ -43,11 +43,10 @@ There are two “run” scripts that can be used to start the EvoStream Media Se
     $ ./run_console_ems.sh
    ```
 
-2. Run EMS as a background process. The script will attempt to assign the run-process to the user `evostream`.
+2. Run EMS as a background process. The script will attempt to assign the run-process to the user `evostream`. Check EMS if already running.
 
    ```
     $ ./run_daemon_ems.sh
-
    ```
 
 **Notes:**
@@ -65,11 +64,13 @@ This command will print differently on different operating systems, but it shoul
 
 ## Windows Distribution
 
-The EMS may be started using the **Windows Services** tool in Windows.
+The EMS may be started using the **Windows Services** tool in Windows or using the **EMS shortcut**.
+
+
 
 ### Via Service
 
-**Pre-requisite:**
+**Creating the Service**
 
 It is needed to add EMS into your Window's registry to enable the use of service.
 
@@ -95,36 +96,41 @@ It is needed to add EMS into your Window's registry to enable the use of service
 
   ![](images/userguide/registry_services.jpg)
 
-**Note:** Use the `remove.bat` command if you opt to remove EMS in the registry.
+**Notes:**
+
+- Use the `remove.bat` command if you opt to remove EMS in the registry.
+- Always run the application as Administrator.
 
 
 
 **Starting the Service**
 
+This will start the service if it has not already been started
+
 1. Open a command prompt
-
 2. Locate the services folder: `C:\EvoStream\services\ems`
-
 3. Send command: `start.bat`
 
-   This will start the service if it has not already been started
+
+or simply run `start.bat` in its location.
+
+**Notes:**
+
+- Use `stop.bat` to stop the EMS service, take note that it will only stop the EMS not the other 
 
 
 
-- `C:\EvoStream\services\ems\stop.bat` : Stops the service if it is currently running
+### Via Shortcut Icon
 
-  ​
-
-
-### Via Shotcut Icon
-
-User may directly run the EMS using the shortcut icon if added during installation
+User may directly run the EMS using the shortcut icon if added during installation.
 
  ![](images/userguide/emsShortcut.jpg)
 
+
+
 This will open a console running EMS.
 
-The shotcut icon calls the `run_console_ems.bat`. You may also run this executable found in the installed EMS. Simply double-clicked to start the server. This script simply runs the Media Server through the command prompt, using `config/config.lua` as the main server configuration. 
+The shortcut icon calls the `run_console_ems.bat`. You may also run this executable found in the installed EMS. Simply double-clicked to start the server. This script simply runs the Media Server through the command prompt, using `config/config.lua` as the main server configuration. 
 
 ```
 C:\EvoStream\run_console_ems.bat
