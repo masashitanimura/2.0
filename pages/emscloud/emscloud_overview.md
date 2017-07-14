@@ -1,6 +1,6 @@
 ---
-title: Overview
-keywords: amazon
+title: EMS Cloud Services
+keywords: cloud
 sidebar: emscloud_sidebar
 permalink: emscloud_overview.html
 folder: emscloud

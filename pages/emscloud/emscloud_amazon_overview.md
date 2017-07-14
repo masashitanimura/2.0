@@ -1,9 +1,10 @@
 ---
-title: EMS on Amazon
+title: EMS on Amazon Marketplace
 keywords: amazon
 sidebar: emscloud_sidebar
-permalink: emscloud_amazon_emsonamazon.html
+permalink: emscloud_amazon_overview.html
 folder: emscloud
+toc: false
 ---
 
 Amazon EC2 is a cloud-computing platform that virtualizes computing resources as virtual machines. A single virtual machine configuration is registered as an Amazon Machine Image (AMI).
