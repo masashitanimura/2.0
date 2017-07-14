@@ -21,6 +21,7 @@ entries:
       type: frontmatter
 
   - title: Discussion
+    url: /emscloud_overview.html
     output: web, pdf
 
     folderitems:
@@ -32,10 +33,14 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Deploying an Instance
+    - title: EMS on Amazon
+      url: /emscloud_amazon_emsonamazon.html
+      output: web, pdf
+	  
+	- title: Deploying an Instance
       url: /emscloud_amazon_deployinstance.html
       output: web, pdf
-
+	  
     - title: Connecting to EMS
       url: /emscloud_amazon_connectEMS.html
       output: web, pdf
@@ -48,6 +53,10 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: EMS on Azure
+      url: /emscloud_amazon_emsonazure.html
+      output: web, pdf
+
     - title: Creating Virtual Machine
       url: /emscloud_azure_createVM.html
       output: web, pdf
