@@ -82,20 +82,25 @@ It is needed to add EMS into your Window's registry to enable the use of service
    ```
    C:\EvoStream\services\ems> create.bat
    ```
+   **Note:** You can also double click the batch file to run
+
+   ​
 
 4. A confirmation will be asked, click **Yes**
 
   ![](images/userguide/register.JPG)
 
+  ​
+
 5. EMS keys are now registered! Click **OK**
 
   ![](images/userguide/register_success.JPG)
 
+  ​
+
 6. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
 
   ![](images/userguide/registry_services.jpg)
-
-**Note:** Use the `remove.bat` command if you opt to remove EMS in the registry.
 
 
 
@@ -109,14 +114,19 @@ It is needed to add EMS into your Window's registry to enable the use of service
 
    This will start the service if it has not already been started
 
+   ​
 
 
-- `C:\EvoStream\services\ems\stop.bat` : Stops the service if it is currently running
+**Notes:**
 
-  ​
+- Call `stop.bat` to stop the running EMS service
+- Use the `remove.bat` command if you opt to remove EMS in the registry
 
 
-### Via Shotcut Icon
+
+
+
+### Via Shortcut Icon
 
 User may directly run the EMS using the shortcut icon if added during installation
 

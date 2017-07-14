@@ -107,50 +107,209 @@ C:\EvoStream
    │   ├── base64.js
    │   └── emsdemo.html
    ├── evo-avconv-presets
-   │   └── [30 transcode preset files]
+   │   ├── libx264-baseline.avpreset
+   │   ├── libx264-fast.avpreset
+   │   ├── libx264-fast.avpreset
+   │   ├── libx264-faster.avpreset
+   │   ├── libx264-faster.avpreset
+   │   ├── libx264-ipod320.avpreset
+   │   ├── libx264-ipod640.avpreset
+   │   ├── libx264-lossless_fast.avpreset
+   │   ├── libx264-lossless_max.avpreset
+   │   ├── libx264-lossless_medium.avpreset
+   │   ├── libx264-lossless_slow.avpreset
+   │   ├── libx264-lossless_slower.avpreset
+   │   ├── libx264-lossless_ultrafast.avpreset
+   │   ├── libx264-main.avpreset
+   │   ├── libx264-medium.avpreset
+   │   ├── libx264-medium_firstpass.avpreset
+   │   ├── libx264-placebo.avpreset
+   │   ├── libx264-placebo_firstpass.avpreset
+   │   ├── libx264-slow.avpreset
+   │   ├── libx264-slow_firstpass.avpreset
+   │   ├── libx264-slower.avpreset
+   │   ├── libx264-slower_firstpass.avpreset
+   │   ├── libx264-superfast.avpreset
+   │   ├── libx264-superfast_firstpass.avpreset
+   │   ├── libx264-ultrafast.avpreset
+   │   ├── libx264-ultrafast_firstpass.avpreset
+   │   ├── libx264-veryfast.avpreset
+   │   ├── libx264-veryfast_firstpass.avpreset
+   │   ├── libx264-veryslow.avpreset
+   │   └── libx264-veryslow_firstpass.avpreset
    ├── evo-phpengine
-   ├── evo-webroot
-       ├── demo
-       │   ├── css
-       │   ├── evo.png
-       │   ├── evowrtcclient.html
-       │   ├── evowsvideo.html
-       │   ├── jsonMetaTest.html
-       │   ├── jsonMetaWriteTest.html
-       │   └── loading.gif
-       ├── EMS_Web_UI
-       │   ├── css
-       │   ├── img
-       │   ├── js
-       │   ├── php
-       │   ├── phpacct
-       │   ├── settings
-       │   ├── swf
-       │   ├── evo.png
-       │   ├── evostream_copyright.txt
-       │   ├── index.php
-       │   ├── install_license.php
-       │   ├── license.txt
-       │   ├── loading.gif
-       │   ├── navbar.php
-       │   ├── README.txt
-       │   ├── README[Enable_Login_Authentication].txt
-       │   └── style.css
-       ├── evowebservices
-       │   ├── config
-       │   ├── core
-       │   ├── plugins
-       │   ├── evostream_copyright.txt
-       │   ├── evowebservices.php   
-       │   └── README.txt
-       ├── clientaccesspolicy.xml
-       └── crossdomain.xml
-   ├── logs
+   │   ├── ext
+   │   │	└── php_curl.dll
+   │   ├── info.html
+   │   ├── libeay32.dll
+   │   ├── libssh2.dll
+   │   ├── php.ini
+   │   ├── php5ts.dll
+   │   ├── php-cgi.exe
+   │   └── ssleay32.dll
+   ├── evo-webroot  
+   │   ├── demo
+   │   │   ├── css
+   │   │   │	├── common.css
+   │   │   │	└── common.css.orig  
+   │   │   ├── js
+   │   │   │	└── evohtml5player-latest.bundle.js 
+   │   │   ├── evo.png
+   │   │   ├── evoplayers.html
+   │   │   ├── evowrtcclient.html
+   │   │   ├── evowsvideo.html
+   │   │   ├── jsonMetaTest.html
+   │   │   ├── jsonMetaWriteTest.html
+   │   │   └── loading.gif
+   │   ├── evowebservices
+   │   │   ├── config
+   │   │   │	├── config.ini
+   │   │   │	└── config.php  
+   │   │   ├── core
+   │   │   │	├── evoapi-core.php
+   │   │   │	├── ini-parser.php  
+   │   │   │	└── s3-core.php    
+   │   │   ├── plugins
+   │   │   │	├── amazonhdsupload.php
+   │   │   │	├── amazonhlsupload.php
+   │   │   │	├── basehdsplugin.php
+   │   │   │	├── basehlsplugin.php
+   │   │   │	├── baseplugin.php
+   │   │   │	├── plugins.php
+   │   │   │	├── streamautorouter.php
+   │   │   │	├── streamloadbalancer.php
+   │   │   │	├── streamrecorder.php
+   │   │   │	└── transcoderesetter.php     
+   │   │   ├── evostream_copyright.txt
+   │   │   ├── evowebservices.php   
+   │   │   └── README.txt
+   │   ├── clientaccesspolicy.xml
+   │   └── crossdomain.xml
+   ├── evowebservices
+   │   │   ├── base_plugins
+   │   │   │	├── basehdsplugin.js
+   │   │   │	├── basehlsplugin.js
+   │   │   │	└── baseplugin.js    
+   │   │   ├── bin
+   │   │   │	└── www       
+   │   │   ├── config
+   │   │   │	├── logging.json
+   │   │   │	└── plugins.json    
+   │   │   ├── core_modules
+   │   │   │	└── ems-api-core.js       
+   │   │   ├── logs
+   │   │   │	└── evowebservices.log          
+   │   │   ├── node_modules
+   │   │   │	├── body-parser
+   │   │   │	├── comment-json
+   │   │   │	├── concat-stream
+   │   │   │	├── debug
+   │   │   │	├──express
+   │   │   │	├── morgan
+   │   │   │	├── request-enhanced
+   │   │   │	├── s3
+   │   │   │	└── winston
+   │   │   ├── plugins
+   │   │   │	├── amazondashupload
+   │   │   │	├── amazonhdsupload.js
+   │   │   │	├── amazonhlsupload.js
+   │   │   │	├── streamautorouter.js
+   │   │   │	├── streamloadbalancer.js
+   │   │   │	└── streamrecorder.js   
+   │   │   ├── routes
+   │   │   │	├── evowebservices.js
+   │   │   │	└── index.js      
+   │   │   ├── services
+   │   │   │	└── plugin-service.js
+   │   │   ├── views
+   │   │   │	├── error.hbs
+   │   │   │	├── index.hbs
+   │   │   │	└── layout.hbs
+   │   │   ├── app.js
+   │   │   ├── LICENSE
+   │   │   ├── package.json
+   │   │   ├── README.md
+   │   └── └── README.txt
+   ├── logs   
    ├── media
+   ├── node-ews
+   │   ├── ext
+   │   │   └── php_curl.dll
+   │   ├── node_modules
+   │   │   ├── basic-auth
+   │   │   ├── connect
+   │   │   └── winston 
+   │   ├── req_handlers
+   │   │   ├── authproxy.js
+   │   │   ├── default.js
+   │   │   ├── httpstream.js
+   │   │   ├── php.js
+   │   │   └── resphdrs.js  
+   │   ├── evo-phpengine.exe
+   │   ├── ews.node
+   │   ├── fileRotateSize.js
+   │   ├── helper.js
+   │   ├── node-ews.js
+   │   ├── php.ini
+   │   └── php5ts.dll
+   ├── node-webui
+   │   ├── auth
+   │   │   ├── passport-config.js
+   │   │   └── restrict.js
+   │   ├── bin
+   │   │   └── webui_activate
+   │   ├── config
+   │   │   ├── dir-config.js
+   │   │   ├── logging.json
+   │   │   └── social-auth-config.js
+   │   ├── core_modules
+   │   │   └──  ems-api-core.js
+   │   ├── data
+   │   │   ├── logging.json
+   │   │   └── social-auth-config.js   
+   │   ├── logs
+   │   │   └── webui.log 
+   │   ├── models
+   │   │   └── user.js
+   │   ├── node_modules
+   │   │   └── [136 node_module files]
+   │   ├── public
+   │   │   ├── css
+   │   │   ├── fonts
+   │   │   ├── images
+   │   │   ├── js
+   │   │   └── media
+   │   ├── routes
+   │   │   ├── api-explorer.js   
+   │   │   ├── dashboard.js
+   │   │   ├── ems.js
+   │   │   ├── index.js
+   │   │   ├── stream.js
+   │   │   └── users.js
+   │   ├── views
+   │   │   ├── admin
+   │   │   ├── index
+   │   │   ├── error.hbs
+   │   │   └── index.hbs  
+   │   ├── app.js
+   │   ├── LICENSE
+   │   └── package.json   
    ├── services
+   │   ├── ems
+   │   │   ├── create.bat
+   │   │   ├── nssm.exe
+   │   │   ├── remove.bat
+   │   │   ├── start.bat   
+   │   │   └── stop.bat    
+   │   └── webui     
+   │   │   ├── create_webui_service.bat
+   │   │   ├── remove_webui_service.bat
+   │   │   ├── start_webui_service.bat
+   │   │   └── stop_webui_service.bat 
    ├── emsTranscoder.bat
    ├── evo-avconv.exe
    ├── evo-mp4writer.exe
+   ├── evo-node.exe
    ├── Evostream Media Server EULA v2.pdf
    ├── evostreamms.exe
    ├── evo-webserver.exe
@@ -164,6 +323,7 @@ C:\EvoStream
    ├── libnettle-4-7.dll
    ├── README.txt
    ├── run_console_ems.bat
+   ├── run_console_webui.bat
    ├── tests.exe
    ├── unins000.dat
    ├── unins000.exe

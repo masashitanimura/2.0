@@ -73,7 +73,7 @@ The JSON response contains the following details:
   - configId - The configuration ID for this command
   - ersip – The IP address of the ERS
   - ersport – The port of the ERS
-  - keepAlive - The value of keepAlive
+  - keepAlive - If keepAlive is set to true, EMS will reconnect to ERS in the event that it gets disconnected
   - name - ??
   - operationType – The type of operation
   - roomId – The room identifier

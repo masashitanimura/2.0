@@ -152,7 +152,8 @@ logAppenders=
 			newLineCharacters="\n",
 			fileHistorySize=100,
 			fileLength=1024*1024,
-			singleLine=true
+			singleLine=true,
+			clearLogsOnStart=false
 		},
 	},
 ```
@@ -169,6 +170,7 @@ logAppenders=
 |  fileHistorySize  | number  |    no     | The maximum number of log files to be retained. The oldest log file will be deleted first if this number is exceeded. |
 |    fileLength     | number  |    no     | Buffer size of the file appender.        |
 |    singleLine     | boolean |    no     | If yes, multi-line log messages are merged into one line. |
+| clearLogsOnStart  | boolean |    no     | If **true**, the EMS should go through the destination folder for log files and delete all files named "*.log" excluding the current .log files. For file appender only. |
 
 **Note:** When daemon mode is set to true, all console appenders will be ignored..
 
@@ -204,7 +206,7 @@ rootDirectory="./",
 
 ### appDir
 
-The application directory of EMS.
+Combined with rootDirectory to form a default base directory for non-absolute paths.
 
 **Type:** String
 
@@ -244,19 +246,9 @@ description="EVOSTREAM MEDIA SERVER",
 
 
 
-### protocol
-
-**Type:** String
-
-**Mandatory:** Yes
-
-```
-protocol="dynamiclinklibrary",
-```
-
-
-
 ### default
+
+Selects default application
 
 **Type:** Boolean
 
@@ -284,7 +276,7 @@ pushPullPersistenceFile="..\\config\\pushPullSetup.xml",
 
 ### authPersistenceFile
 
-the path of the authentication file
+The path of the authentication file
 
 **Type:** String
 
@@ -298,7 +290,7 @@ authPersistenceFile="..\\config\\auth.xml",
 
 ### connectionsLimitPersistenceFile
 
-the path of the connection limit file
+The path of the connection limit file
 
 **Type:** String
 
@@ -312,7 +304,7 @@ connectionsLimitPersistenceFile="..\\config\\connlimits.xml",
 
 ### bandwidthLimitPersistenceFile 
 
-the path of the bandwidth limit file
+The path of the bandwidth limit file
 
 **Type:** String
 
@@ -326,7 +318,7 @@ bandwidthLimitPersistenceFile="..\\config\\bandwidthlimits.xml",
 
 ### ingestPointsPersistenceFile
 
- the path of the ingest points file
+The path of the ingest points file
 
 **Type:** String
 
@@ -338,7 +330,9 @@ ingestPointsPersistenceFile="..\\config\\ingestpoints.xml",
 
 
 
-### streamsExpireTimer 
+### streamsExpireTimer
+
+The number of seconds the EMS will wait for audio/video data from a connected stream before timing out
 
 **Type:** Number
 
@@ -352,6 +346,8 @@ streamsExpireTimer=10,
 
 ### rtcpDetectionInterval
 
+The number of seconds the EMS will wait for RTCP streams in an RTSP session before continuing without them
+
 **Type:** Number
 
 **Mandatory:** Yes
@@ -364,7 +360,7 @@ rtcpDetectionInterval=15,
 
 ### hasStreamAliases
 
-enables or disables stream name aliases
+Enables or disables stream name aliases
 
 **Type:** Boolean
 
@@ -378,7 +374,7 @@ hasStreamAliases=false,
 
 ### hasIngestPoints
 
-the configuration of the ingest point 
+The configuration of the ingest point 
 
 **Type:** Boolean
 
@@ -392,6 +388,8 @@ hasIngestPoints=false
 
 ### validateHandshake
 
+Set to false for old Flash players with no RTMP validation handshake
+
 **Type:** Boolean
 
 **Mandatory:** Yes
@@ -404,7 +402,7 @@ validateHandshake=false,
 
 ### aliases
 
-the extension of the stream where alias can be added
+The extension of the stream where alias can be added
 
 **Type:** Array
 
@@ -418,6 +416,8 @@ aliases={"er", "live", "vod"},
 
 ### maxRtmpOutBuffer
 
+The maximum amount of bytes the EMS will store in the output RTMP buffer
+
 **Type:** String
 
 **Mandatory:** Yes
@@ -428,9 +428,23 @@ maxRtmpOutBuffer=512*1024,
 
 
 
+### maxRtspOutBuffer
+
+The maximum amount of bytes the EMS will store in the output RTSP buffer. Only used for RTSP when the final transport is RTP over TCP
+
+**Type:** String
+
+**Mandatory:** Yes
+
+```
+maxRtspOutBuffer=512*1024,
+```
+
+
+
 ### hlsVersion
 
-the HLS version to be used. User should make sure of the version before creating HLS files.
+The HLS version to be used. User should make sure of the version before creating HLS files.
 
 **Type:** Number
 
@@ -453,6 +467,8 @@ For more information about HLS click [here](https://developer.apple.com/library/
 
 ### useSourcePts
 
+If set to true, the outbound stream will use the PTS of the source stream. Otherwise, the pushed stream will start at 0
+
 **Type:** Boolean
 
 **Mandatory:** Yes
@@ -465,7 +481,7 @@ useSourcePts=false,
 
 ### enableCheckBandwidth
 
-reads the bandwidth.xml if set to true
+Reads the bandwidth.xml if set to true
 
 **Type:** Boolean
 
@@ -479,7 +495,7 @@ enableCheckBandwidth=true,
 
 ### vodRedirectRtmpIp
 
-the IP of the other server where EMS can get the source VOD file.
+The IP of the other server where EMS can get the source VOD file.
 
 **How it works?** The local server will look for video1. When that lookup fails it will get the configuration details set to `vodRedirectRtmpIp` parameter. If there's a valid value, the local server makes a `pullStream` request on the server (vodRedirectRtmpIP value) for video1. The local server then uses that new stream resulting from the `pullStream` to serve the initial client request.
 
@@ -509,7 +525,7 @@ forceRtmpDatarate=false,
 
 ### mediaStorage
 
-the configuration for the media storage
+The configuration for the media storage
 
 **Type:** Object
 
@@ -786,9 +802,38 @@ autoMSS=
 
 
 
+### deviceStreams
+
+Section for streams coming from the V4L2 driver directly (only for embedded Linux)
+
+**Type:** Object
+
+**Mandatory:** No
+
+```
+deviceStreams=
+			{
+				{
+					name="camera01",
+					video=
+					{
+						type="v4l2",
+						path="/dev/video0",
+					},
+					audio=
+					{
+						type="v4l2",
+						path="/dev/video1",
+					},
+				},
+			},
+```
+
+
+
 ### authentication
 
-the authentication settings for RTMP and RTSP protocols. For RTMP, another file, `auth.xml`, is required to enable authentication. In addition, a users file, typically named `users.lua`, provides the user names and passwords.
+The authentication settings for RTMP and RTSP protocols. For RTMP, another file, `auth.xml`, is required to enable authentication. In addition, a users file, typically named `users.lua`, provides the user names and passwords.
 
 **Type:** Object
 
@@ -842,6 +887,8 @@ Settings for the server-wide event sinks.
 
 **Mandatory:** No
 
+**A. File**
+
 ```
 eventLogger=
 			{
@@ -877,10 +924,23 @@ eventLogger=
 							--removed other list of event for clarity--	
 						},
 					},
-					]=]--
+```
+
+**Notes:** 
+
+1. This section is disabled by default. 
+
+2. The event log files will be stored in the path where EMS logs are configured
+
+   ​
+
+**B. RPC**
+
+```
+
 					{
 						type="RPC",
-						url="http://127.0.0.1:8888/evowebservices/evowebservices.php",
+						url="http://127.0.0.1:4100/evowebservices/evowebservices",
 						serializerType="JSON",
 						enabledEvents=
 						{  --These are the events sent by default and tend to be the most commonly used
@@ -901,8 +961,8 @@ eventLogger=
 
 **Notes:** 
 
-1. This section is disabled by default. 
-2. The event log files will be stored in the path where EMS logs are configured
+1. This section is enabled by default. 
+2. Replace URL depending on the evowebservices to be used (Node.js or PHP). See evowebservices user guide
 
 See [Event Notification System](eventoverview.html) for more information.
 

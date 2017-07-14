@@ -7,13 +7,7 @@ folder: userguide
 toc: true
 ---
 
-
-
-EMS is capable of receiving streams that are pushed to it from other servers. An RTMP listener is available on port **1935** , an RTSP listener on **5544** and a LiveFLV listener on port **6666**.
-
 Steps on how to do the actual stream push needs to be consulted with the stream source, as every system has different ways of accomplishing this.
-
-
 
 ## How To
 
@@ -37,7 +31,7 @@ pushStream uri=rtsp://DestinationAddress:port localStreamName=SomeLocalStreamNam
 
 ### MPEG-TS stream
 
-MPEG-TS streams, in general, donâ€™t have the concept of a stream identifier (name). The EMS will assign a name to an inbound MPEG-TS stream for internal uses, but outside of the EMS, that name is not used. To obtain an MPEG-TS stream from the EMS, it must be first pushed out to the network.
+MPEG-TS streams, in general, don't have the concept of a stream identifier (name). The EMS will assign a name to an inbound MPEG-TS stream for internal uses, but outside of the EMS, that name is not used. To obtain an MPEG-TS stream from the EMS, it must be first pushed out to the network.
 
 Sample commands to do this are:
 
@@ -50,69 +44,6 @@ or
 ```
 pushStream uri=mpegtstcp://DestinationAddr localStreamName=SomeStream
 ```
-
-
-
-### Push-In Authentication
-
-For security, EMS has an option to require all streams which are pushed into the server be authenticated using authentication details that are specified in `config.lua` and `users.lua`. By default, the authentication configuration is disabled.
-
-To enable authentication in the EMS the following should be set:
-
-1. Set [auth.xml]() to true
-
-   ```
-   <BOOL name="">true</BOOL>
-   ```
-
-2. Remove comments (`--[[` .. `]]--`) and configure authentication in `config.lua`
-
-   ```
-   authentication=
-    {
-      rtmp=
-      {
-        type="adobe",
-        encoderAgents=
-      {
-        "FMLE/3.0 (compatible; FMSc/1.0)",
-        "Wirecast/FM 1.0 (compatible; FMSc/1.0)",
-        "EvoStream Media Server (www.evostream.com)"
-      },
-        usersFile="..\\config\\users.lua"
-      },
-      rtsp=
-      {
-        usersFile="..\\config\\users.lua",
-        authenticatePlay=true,
-      }
-    },
-   ```
-
-3. Add user in [users.lua]()
-
-   ```
-   users=
-   {
-   	evo="evo123",
-   	stream="stream123",
-   }
-
-   realms=
-   {
-   	{
-   		name="EVOSTREAM stream router",
-   		method="Digest",
-   		users={
-   			"evo",
-   			"stream",
-   		},
-   	},
-   }
-   ```
-
-4. Run EMS and send the `pushStream` command
-
 
 
 
@@ -143,6 +74,7 @@ Local stream testpullstream enqueued for pushing to rtmp://192.168.2.105/live as
       port: 1935
       scheme: rtmp
 ```
+
 
 
 ## Playing a Pushed Steam

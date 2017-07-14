@@ -29,10 +29,10 @@ configuration =
 
 **webServer Configuration Structure Table:**
 
-| Key          | Type   | Mandatory | Description                              |
-| ------------ | ------ | --------- | ---------------------------------------- |
-| logAppenders | object | yes       | Will hold a collection of log appenders. Each log message will be sent to each of the log appenders enumerated in this configuration section. |
-| applications | object | yes       | Will hold a collection of loaded applications. Besides that, it will also hold some other values. |
+|     Key      |  Type  | Mandatory | Description                              |
+| :----------: | :----: | :-------: | ---------------------------------------- |
+| logAppenders | object |    yes    | Will hold a collection of log appenders. Each log message will be sent to each of the log appenders enumerated in this configuration section. |
+| applications | object |    yes    | Will hold a collection of loaded applications. Besides that, it will also hold some other values. |
 
 When the web server starts, the following sequence of operations is performed:
 
