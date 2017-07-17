@@ -19,8 +19,8 @@ Create an HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is u
 | :------------------: | :-----: | :-------: | :--------------------------------------: | ---------------------------------------- |
 |   localStreamNames   | string  |   true    |                  *null*                  | The stream(s) that will be used as the input. This is a comma-delimited list of active stream names (local stream names) |
 |     targetFolder     | string  |   true    |                  *null*                  | The folder where all the *.ts/*.m3u8 files will be stored. This folder must be accessible by the HLS clients. It is usually in the web-root of the server |
-|      keepAlive       | boolean |   false   |                 1 *true*                 | If true, the EMS will attempt to reconnect to the stream source if the connection is severed |
-| overwriteDestination | boolean |   false   |                 1 *true*                 | If true, it will force overwrite of destination files |
+|      keepAlive       | boolean |   false   |                 1 *true*                 | If **true**, the EMS will attempt to reconnect to the stream source if the connection is severed |
+| overwriteDestination | boolean |   false   |                 1 *true*                 | If **true**, it will force overwrite of destination files |
 | staleRetentionCount  | integer |   false   | *if not specified, it will have the value of playlistLength* | The number of old files kept besides the ones listed in the current version of the playlist. Only applicable for rolling playlists |
 | createMasterPlaylist | boolean |   false   |                 1 *true*                 | If true, a master playlist will be created |
 |  cleanupDestination  | boolean |   false   |                0 *false*                 | If true, all *.ts and *.m3u8 files in the target folder will be removed before HLS creation is started |
@@ -147,6 +147,12 @@ The JSON response contains the following details:
 
 - Make sure that **HLS version** is properly configured in config.lua before running EMS
 - If you wan't your playlist to start at the very beginning, issue the `createHLSStream` first before `pullStream` command
+- If using autoHLS, take note that the following parameter values will not be modified:
+  - keepAlive - will always be false
+  - cleanupDestination - will always be true
+  - createMasterPlaylist - will always be false
+  - overwriteDestination - will always be true
+  - playlistType - will always be "rolling"
 
 ------
 ## Related Links
