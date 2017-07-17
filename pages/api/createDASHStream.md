@@ -13,8 +13,6 @@ Create Dynamic Adaptive Streaming over HTTP (DASH) out of an existing H.264/AAC 
 
 
 
-
-
 ## API Parameter Table
 
 |    Parameter Name    |  Type   | Mandatory |              Default Value               | Description                              |
@@ -23,10 +21,10 @@ Create Dynamic Adaptive Streaming over HTTP (DASH) out of an existing H.264/AAC 
 |     targetFolder     | string  |   true    |                  *null*                  | The folder where all the manifest and fragment files will be stored. This folder must be accessible by the DASH clients. It is usually in the web-root of the server |
 |      bandwidths      | integer |   false   |                    0                     | The corresponding bandwidths for each stream listed in `localStreamNames`. Again, this can be a comma-delimited list |
 |      groupName       | string  |   false   |        *dash_group_xxxx (random)*        | The name assigned to the DASH stream or group. If the `localStreamNames` parameter contains only one entry and `groupName` is not specified, `groupName` will have the value of the input stream name |
-|     playlistType     | string  |   false   |                appending                 | Either **appending** or **rolling**      |
+|     playlistType     | string  |   false   |                appending                 | Either **appending** or **rolling**. Appending playlist will create a playlist continuously while rolling playlist will depend on the playListLength. |
 |    playlistLength    | integer |   false   |                    10                    | The number of fragments before the server starts to overwrite the older fragments. Used only when `playlistType` is **rolling**. Ignored otherwise |
 |     manifestName     | string  |   false   |               manifest.mpd               | The manifest file name                   |
-|     chunkLength      | boolean |   false   |                    10                    | The length (in seconds) of fragments to be made |
+|     chunkLength      | boolean |   false   |                    10                    | The length (in seconds) of each fragment. Minimum value is 1 (second) |
 |      chunkOnIDR      | boolean |   false   |                 1 *true*                 | If **true**, chunking is performed ONLY on IDR. Otherwise, chunking is performed whenever chunk length is achieved |
 |      keepAlive       | boolean |   false   |                 1 *true*                 | If **true**, the EMS will attempt to reconnect to the stream source if the connection is severed |
 | overwriteDestination | boolean |   false   |                 1 *true*                 | If **true**, it will allow overwrite of destination files |
@@ -110,6 +108,12 @@ The JSON response contains the following details:
 ## Notes
 
 - If you wan't your playlist to start at the very beginning, issue the `createDASHStream` first before `pullStream` command
+- If using autoDASH, take note that the following parameter values will not be modified:
+  - keepAlive - will always be false
+  - cleanupDestination - will always be true
+  - createMasterPlaylist - will always be false
+  - overwriteDestination - will always be true
+  - playlistType - will always be "rolling"
 
 ------
 

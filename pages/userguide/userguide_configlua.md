@@ -798,7 +798,9 @@ autoMSS=
 			},
 ```
 
-**Note:** You can add other parameters associated with the API. See [API documetation](insert link here) for parameter lists.
+
+
+**Note:** You can add other parameters associated with the API. See [createDASHStream](api_createDASHStream.html),[createHLSStream](api_createHLSStream.html), [createHDSStream](api_createHDSStream.html), [createMSSStream](api_createMSSStream.html), for parameter lists.
 
 
 
