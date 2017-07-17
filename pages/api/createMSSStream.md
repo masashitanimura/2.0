@@ -21,7 +21,7 @@ Create a Microsoft Smooth Stream (MSS) out of an existing H.264/AAC stream. Smoo
 |     targetFolder     | string  |   true    |                  *null*                  | The folder where all the manifest and fragment files will be stored. This folder must be accessible by the MSS clients. It is usually in the web-root of the server |
 |      bandwidths      | integer |   false   |                    0                     | The corresponding bandwidths for each stream listed in `localStreamNames`. Again, this can be a comma-delimited list |
 |      groupName       | string  |   false   |        *mss_group_xxxx (random)*         | The name assigned to the MSS stream or group. If the `localStreamNames` parameter contains only one entry and groupName is not specified,  `groupName` will have the value of the input stream name |
-|     playlistType     | string  |   false   |                Appending                 | Either **appending** or **rolling**      |
+|     playlistType     | string  |   false   |                Appending                 | Either **appending** or **rolling**. Appending playlist will create a playlist continuously while rolling playlist will depend on the playListLength. |
 |    playlistLength    | integer |   false   |                    10                    | The number of fragments before the server starts to overwrite the older fragments. Used only when`playlistType` is **rolling**. Ignored otherwise |
 |     manifestName     | string  |   false   |              manifest.ismc               | The manifest file name                   |
 |     chunkLength      | integer |   false   |                    10                    | The length (in seconds) of fragments to be made |
@@ -34,6 +34,8 @@ Create a Microsoft Smooth Stream (MSS) out of an existing H.264/AAC stream. Smoo
 |        isLive        | boolean |   false   |                 1 *true*                 | If **true**, creates a live MSS stream, otherwise set to **0** for **VOD** |
 |   publishingPoint    | string  |   false   |                  *none*                  | This parameter is needed when `ismType=isml`, it is the REST URI where the mss contents will be ingested |
 |      ingestMode      | string  |   false   |                  single                  | Either **single** for a non looping ingest or **loop** for looping an ingest |
+
+
 
 ## API Call Template
 
@@ -112,6 +114,12 @@ The JSON response contains the following details:
 ## Notes
 
 - If you wan't your playlist to start at the very beginning, issue the `createMSSStream` first before `pullStream` command
+- If using autoMSS, take note that the following parameter values will not be modified:
+  - keepAlive - will always be false
+  - cleanupDestination - will always be true
+  - createMasterPlaylist - will always be false
+  - overwriteDestination - will always be true
+  - playlistType - will always be "rolling"
 
 ------
 

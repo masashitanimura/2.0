@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 Create an HDS (HTTP Dynamic Streaming) stream out of an existing H.264/AAC stream. HDS is used to stream standard MP4 media over regular HTTP connections. HDS is a new technology developed by Adobe in response to HLS from Apple.
 
 
@@ -26,8 +24,8 @@ Create an HDS (HTTP Dynamic Streaming) stream out of an existing H.264/AAC strea
 |      groupName       | string  |   false   | *(if not specified, it will be a random name in the form of hds_group_xxxx)* | The name assigned to the HDS stream or group. If the `localStreamNames` parameter contains only one entry and `groupName` is not specified,`groupName` will have the value of the input stream name |
 |      keepAlive       | boolean |   false   |                 1 *true*                 | If true, the EMS will attempt to reconnect to the stream source if the connection is severed |
 |     manifestName     | string  |   false   |    *defaults to stream name if false*    | The manifest file name                   |
-| overwriteDestination |         |   false   |                 1 *true*                 | If true, it will allow overwrite of destination files |
-|     playlistType     | string  |   false   |                appending                 | Either **appending** or **rolling**      |
+| overwriteDestination | boolean |   false   |                 1 *true*                 | If **true**, it will allow overwrite of destination files |
+|     playlistType     | string  |   false   |                appending                 | Either **appending** or **rolling**. Appending playlist will create a playlist continuously while rolling playlist will depend on the playListLength. |
 |    playlistLength    | integer |   false   |                    10                    | The number of fragments before the server starts to overwrite the older fragments. Used only when`playlistType` is **rolling**. Ignored otherwise |
 | staleRetentionCount  | integer |   false   | *If not specified, it will have the value of playlistLength* | How many old files are kept besides the ones present in the current version of the playlist. Only applicable for **rolling** playlists |
 | createMasterPlaylist | boolean |   false   |                 1 *true*                 | If **true**, a master playlist will be created |
@@ -106,6 +104,12 @@ The JSON response contains the following details:
 ## Notes
 
 - If you wan't your playlist to start at the very beginning, issue the `createHDSStream` first before `pullStream` command
+- If using autoHDS, take note that the following parameter values will not be modified:
+  - keepAlive - will always be false
+  - cleanupDestination - will always be true
+  - createMasterPlaylist - will always be false
+  - overwriteDestination - will always be true
+  - playlistType - will always be "rolling"
 
 ------
 
