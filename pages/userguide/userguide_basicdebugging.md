@@ -115,3 +115,17 @@ toc: true
    ​
 
 
+## Flickering and/or Freezing of the Video Using HTML5 player
+
+1. **Adjust GOP size.** This is likely caused by a too-small video buffer.  In the page JS you can modify the queueSize variable to control the size of that buffer.  It is a variable in the option parameter you send to the EvoWsPlayer function/constructor.  In the source code from this example page:
+   [http://ers.evostream.com:5050/demo/evoplayersv3.html](http://ers.evostream.com:5050/demo/evoplayersv3.html)
+
+   The options variable should look like this:
+   var opts = {
+   ​                   emsIp: emsIp,
+   ​                   streamName: streamName,
+   ​                   videoTagId: 'video' + number,
+   ​                   debugDivId: 'debug' + number,
+   ​                   queueSize: 5
+   ​               };
+   queueSize is measured in GOP’s. The higher the GOP size, the less buffer it has but take note that it will also increase the size of footprint in your computer. The important thing to note is that this will increase playback latency!

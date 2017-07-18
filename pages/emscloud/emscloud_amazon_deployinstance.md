@@ -3,10 +3,8 @@ title: Deploying EMS Instance
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_deployinstance.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: true
 ---
 
 
@@ -115,7 +113,7 @@ These Security Settings can be changed but it will impact the accessibility of t
 
 E.	Choose or create a **Key Pair**
 
-![](../images/emscloud/image8.JPG)
+![](/images/emscloud/image8.JPG)
 
 Either choose an existing key pair for instance access or create a new one for your account. If you choose an existing pair you **MUST** have the .pem file already downloaded from that pair. Amazon does not allow you to download key pairs a second time.
 

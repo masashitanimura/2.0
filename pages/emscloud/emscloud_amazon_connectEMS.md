@@ -3,15 +3,14 @@ title: Connecting to EMS
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_connectEMS.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: true
 ---
 
 
 
 After creating the EMS instance, you will need to connect to your EMS to use it. Here are the steps on how you can connect to EMS using **SSH Terminal**, **Windows PuTTy**, **EMS Web UI** and **EMS HTTP Based API**.
+
 
 
 ## Connecting to EMS on Linux
@@ -68,7 +67,6 @@ Connecting to your new instance via SSH is exactly the same as connecting to any
   ​
 
 
-
 #### B.2.	Key File Conversion
 
 EvoStream Media Server configuration can be accomplished using SSH and a client. Public AMI instances use a public/private key pair to log in instead of a password. The public key half of this pair is embedded in your instance, allowing you to use the private key half to log in securely without a password.
@@ -98,6 +96,7 @@ The first thing you’ll need to do is <u>convert</u> the private key. The PuTTY
    ​
 
 5. Click **Save private key** and save the file with the name **\[key-pair-name\].ppk**.
+
 
 
 
@@ -165,9 +164,7 @@ If you previously saved the SSH session information for this Amazon EC2 instance
 
 ![](images/emscloud/image22.png)
 
-![]../images/emscloud/loggedin.JPG)
-
-
+![](images/emscloud/loggedin.JPG)
 
 
 
@@ -236,7 +233,7 @@ The Web UI is protected by default when using the EMS on AWS.  When accessing th
 
 ### C.	HTTP Based API
 
-For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API's available to you are found here: [API Definition](http://docs.evostream.com/ems_api_definition/table_of_contents).
+For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API's available to you are found here: [API Definition](api_overview.html).
 
 For the EMS on AWS, the HTTP based API is exposed, but it requires authentication to be used.  We call this **Proxy Authentication**. Basic Authentication is used and so just a username and password are required:
 
@@ -259,7 +256,7 @@ http://evostream:i-013c03dc9bab9d69f@52.91.237.115:8888/apiproxy/version
 
 **Note:** username is “**evostream**” and password is the “**instance ID**”
 
-See EMS [documentation on HTTP](http://docs.evostream.com/ems_user_guide/runtimeapi#http) for more details.
+See EMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli) for more details.
 
 
 
@@ -368,7 +365,7 @@ The Web UI is protected by default when using the EMS on AWS.  When accessing th
 
 ### C.	HTTP Based API
 
-The above instructions gave you access to the EMS via the command line.  For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API's available to you are found here: [API Definition](http://docs.evostream.com/ems_api_definition/table_of_contents)
+The above instructions gave you access to the EMS via the command line.  For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API's available to you are found here: [API Definition](api_overview.html).
 
 For the EMS on AWS, the HTTP based API is exposed, but it requires authentication to be used.  We call this **Proxy Authentication**. Basic Authentication is used and so just a username and password are required:
 
@@ -391,5 +388,5 @@ http://evostream:i-013c03dc9bab9d69f@52.91.237.115:8888/apiproxy/version
 
 **Note:** username is “**evostream**” and password is the “**instance ID**”
 
-See EMS [documentation on HTTP](http://docs.evostream.com/ems_user_guide/runtimeapi#http) for more details.
+See EMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli) for more details.
 

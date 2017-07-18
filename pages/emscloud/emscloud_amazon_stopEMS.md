@@ -3,13 +3,9 @@ title: Stopping/Terminating EMS
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_stopEMS.html
-simple_map: false
-map_name: usermap
-box_number: 1
 folder: emscloud
+toc: false
 ---
-
-
 
 According to Amazon, *"You can stop and restart your instance if it has an Amazon EBS volume as its root device."*
 
