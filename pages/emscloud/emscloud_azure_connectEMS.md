@@ -25,7 +25,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
 
 
 
-### A.	SSH via Terminal
+### SSH via Terminal
 
 1. Send command: `ssh <username>@<IP_address>`
 
@@ -51,7 +51,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
 
 
 
-### B.	Connecting  via SSH from Windows (PuTTy)
+### Connecting  via SSH from Windows (PuTTy)
 
 **Pre-requisites:**
 
@@ -100,7 +100,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
 
 
 
-### C.	Connecting via Remote Desktop
+### Connecting via Remote Desktop
 
 1. Run the **Remote Desktop Application** to be used
 
@@ -125,8 +125,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
 
 
 
-
-### D.	EMS Web UI
+### EMS Web UI
 
 While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: `http://<DomainOrPublicIP>:8888/EMS_Web_UI/index.php`
 
@@ -136,7 +135,7 @@ While most work with the EMS happens at the command line or through the HTTP bas
 
 
 
-#### D.1.	Determining Public IP
+#### Determining Public IP
 
 1. Sign in to *http://portal.azure.com/*
 
@@ -151,14 +150,13 @@ While most work with the EMS happens at the command line or through the HTTP bas
    ![](images/emscloud/IPinAzure.jpg)
 
 
-
-## Authentication
+#### Authentication
 
 The authentication is only enabled starting the 1.7.1 version of EMS. The Authentication is enabled by default in EMS Web UI and HTTP Based API.
 
 
 
-### Login for Web UI
+#### Login for Web UI
 
 The Web UI is protected by default when using the EMS on Azure.  When accessing the Web UI you will be prompted for a username and password.
 
@@ -170,7 +168,7 @@ The Web UI is protected by default when using the EMS on Azure.  When accessing 
 
 
 
-### E.	HTTP Based API
+### HTTP Based API
 
 For the EMS on Azure, the HTTP based API is exposed, but it requires authentication to be used.  We call this **Proxy Authentication**. Basic Authentication is used and so just a username and password are required:
 
@@ -197,7 +195,7 @@ See EMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli) for more details.
 
 
 
-### Getting the Unique ID
+#### Getting the Unique ID
 
 The UID will serves as the password for the Proxy and Web UI authentication. The UID is obtained once a virtual machine is made. It can only be checked in the EMS webconfig.lua.
 
