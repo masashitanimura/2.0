@@ -28,25 +28,25 @@ entries:
       url: /emscloud_amazon_overview.html
       output: web, pdf
 	  
-folderitems:
+  folderitems:
 	
-- title: Deploying an Instance
-      url: /emscloud_amazon_deployinstance.html
-      output: web, pdf
+   - title: Deploying an Instance
+     url: /emscloud_amazon_deployinstance.html
+     output: web, pdf
 	  
-    - title: Connecting to EMS
-      url: /emscloud_amazon_connectEMS.html
-      output: web, pdf
+   - title: Connecting to EMS
+     url: /emscloud_amazon_connectEMS.html
+     output: web, pdf
 
-    - title: Stopping/Terminating EMS Instance
-      url: /emscloud_amazon_stopEMS.html
-      output: web, pdf
+   - title: Stopping/Terminating EMS Instance
+     url: /emscloud_amazon_stopEMS.html
+     output: web, pdf
 
   - title: EMS on Microsoft Azure Marketplace
     url: /emscloud_azure_overview.html
     output: web, pdf
 
-    folderitems:
+  folderitems:
 
     - title: Creating Virtual Machine
       url: /emscloud_azure_createVM.html
