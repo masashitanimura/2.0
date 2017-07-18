@@ -272,8 +272,8 @@ entries:
     - title: listInboundStreams
       url: /listInboundStreams.html
       output: web, pdf
-	  
-  - title: getInboundStreamsCount
+
+    - title: getInboundStreamsCount
       url: /getInboundStreamsCount.html
       output: web, pdf
 
