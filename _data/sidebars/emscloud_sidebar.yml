@@ -27,9 +27,10 @@ entries:
   - title: EMS on Amazon Marketplace
       url: /emscloud_amazon_overview.html
       output: web, pdf
-    
-	folderitems:	  
-	- title: Deploying an Instance
+	  
+folderitems:
+	
+- title: Deploying an Instance
       url: /emscloud_amazon_deployinstance.html
       output: web, pdf
 	  
