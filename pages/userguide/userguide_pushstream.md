@@ -116,3 +116,12 @@ The basic commands in playing a pushed stream in EMS are the following:
   ```
 
   By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
+
+------
+
+## Related Links:
+
+- [pushStream API](api_pushStream.html)
+- [Send Stream To Facebook](userguide_send.html#facebook-live)
+- [Send Stream To Youtube](userguide_send.html#youtube-live)
+- [Stream Load Balancer Service](evowebservices_streamloadbalancer.html)

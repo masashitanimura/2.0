@@ -147,5 +147,13 @@ The basic commands in playing a pulled stream in EMS are the following:
   By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
 
   ```
-  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamName
+  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamNam
   ```
+
+------
+
+## Related Links:
+
+- [pullStream API](api_pullStream.html)
+- [Adding Inbound Streams](userguide_add.html#adding-inbound-live-streams)
+- [Stream AutoRouting Service](evowebservices_streamautorouting.html)

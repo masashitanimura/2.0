@@ -7,7 +7,7 @@ folder: userguide
 toc: true
 ---
 
-Create an HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. Please see `createHLSStream` [API]() for more details.
+Create an HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. Please see `createHLSStream` [API](api_createHLSStream.html) for more details.
 
 
 
@@ -247,6 +247,7 @@ createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupNam
 
 
 
+
 ## Automatic HLS
 
 The EMS can be configured to automatically create an HLS stream for every new inbound stream. The details for the HLS creation are placed in the config.lua file instead of as parameters to the `createHLSStream` API call.
@@ -259,3 +260,11 @@ autoHLS=
 ```
 
 To enable automatic HLS a section in the `config.lua` file needs to be enabled and modified. See configuration  [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+
+------
+
+## Related Links:
+
+- [createHLSStream API](api_createHLSStream.html) 
+- [Adding HTTP Streams](userguide_add.html#adding-http-streams)
+- [HLS Upload Service](evowebservices_HLSupload.html)

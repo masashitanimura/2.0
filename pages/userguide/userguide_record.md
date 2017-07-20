@@ -62,7 +62,7 @@ media:                           --> targetfolder
 -testRecord.mp4.track2           --> mp4 file on creation   
 ```
 
-If the stream source ended or disconnected, the MP4 files will be compiled as one MP4 file: See [MP4 File Creation](#### MP4 File Creation).
+If the stream source ended or disconnected, the MP4 files will be compiled as one MP4 file: See [MP4 File Creation](userguide_record.html#mp4-file-creation).
 
 ```
 media:                           --> targetfolder
@@ -106,7 +106,6 @@ When recording to an MP4 file format the EMS will create three (if video or audi
 
   ```
   evo-mp4writer -path=/path/to/file.mp4
-
   ```
 
   The `-path` parameter here should be the same as was used in the record `pathtofile` parameter.
@@ -256,7 +255,9 @@ Recording Stream
 
 A recorded stream is just like any other stream in the EMS, it is simply directed to a file instead of towards the network. Users may therefore use either of the normal shutdown stream commands to stop a recording. This will cause the recording of this stream to stop, which will close the file that is being written to. All data that had previously been recorded will remain stored in that file. If the stream had not yet been recorded (because a stream with that name was not yet available) then the recording will be canceled.
 
+------
 
-## Related Link
+## Related Links
 
-- [Record API](../api_record.html)
+- [record API](api_record.html)
+- [Stream Recorder Service](evowebservices_streamrecorder.html)

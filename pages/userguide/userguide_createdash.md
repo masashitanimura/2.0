@@ -207,3 +207,11 @@ autoDASH=
 ```
 
 To enable automatic DASH section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+
+------
+
+## Related Links:
+
+- [createDASHStream API](api_createDASHStream.html) 
+- [Adding HTTP Streams](userguide_add.html#adding-http-streams)
+- [DASH Upload Service](evowebservices_DASHupload.html)

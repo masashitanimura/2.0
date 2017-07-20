@@ -186,4 +186,12 @@ autoHDS=
 },
 ```
 
-To enable automatic HDS a section in the `config.lua` file needs to be enabled and modified. See configuration  [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+To enable automatic HDS a section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+
+------
+
+## Related Links:
+
+- [createHDSStream API](api_createHDSStream.html) 
+- [Adding HTTP Streams](userguide_add.html#adding-http-streams)
+- [HDS Upload Service](evowebservices_HDSupload.html)

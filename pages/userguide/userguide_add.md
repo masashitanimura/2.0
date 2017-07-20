@@ -29,7 +29,7 @@ If you wan't to add a RTSP or RTMP stream, simply do the following:
 
 - ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
 
-See [pullStream](/api/pullStream.html) API for more information.
+See [pullStream](api_pullStream.html) API for more information.
 
 
 
@@ -51,7 +51,9 @@ Adding HTTP streams has made easy in this page. You can now create your HLS, DAS
 
 5. Enter **Chunk Length**
 
-6. Click **Add Stream**
+6. Enter **Bitrate** (optional)
+
+7. Click **Add Stream**
 
 ![](images/userguide/addhttpstream.JPG)
 

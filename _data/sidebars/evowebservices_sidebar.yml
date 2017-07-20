@@ -81,10 +81,6 @@ entries:
       url: /evowebservices_HDSupload.html
       output: web, pdf
 
-    - title: Stream Recorder
-      url: /evowebservices_HDSupload.html
-      output: web, pdf
-
     - title: Event Notification System
       url: /evowebservices_event.html
       output: web, pdf

@@ -196,4 +196,9 @@ autoMSS=
 
 ```
 
-To enable automatic MSS a section in the `config.lua` file needs to be enabled and modified. See configuration  [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+To enable automatic MSS a section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+
+------
+
+- [createMSSStream API](api_createMSSStream.html) 
+- [Adding HTTP Streams](userguide_add.html#adding-http-streams)
