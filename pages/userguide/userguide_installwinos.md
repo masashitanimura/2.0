@@ -101,7 +101,7 @@ C:\EvoStream
    │   ├── server.cert
    │   ├── server.key
    │   ├── users.lua
-   │   ├── webconfig.lua
+   │   ├── webconfig.json
    │   └── whitelist.txt
    ├── demo
    │   ├── base64.js
@@ -137,16 +137,6 @@ C:\EvoStream
    │   ├── libx264-veryfast_firstpass.avpreset
    │   ├── libx264-veryslow.avpreset
    │   └── libx264-veryslow_firstpass.avpreset
-   ├── evo-phpengine
-   │   ├── ext
-   │   │	└── php_curl.dll
-   │   ├── info.html
-   │   ├── libeay32.dll
-   │   ├── libssh2.dll
-   │   ├── php.ini
-   │   ├── php5ts.dll
-   │   ├── php-cgi.exe
-   │   └── ssleay32.dll
    ├── evo-webroot  
    │   ├── demo
    │   │   ├── css
@@ -156,36 +146,13 @@ C:\EvoStream
    │   │   │	└── evohtml5player-latest.bundle.js 
    │   │   ├── evo.png
    │   │   ├── evoplayers.html
-   │   │   ├── evowrtcclient.html
-   │   │   ├── evowsvideo.html
+   │   │   ├── evowsabrvideo.html
    │   │   ├── jsonMetaTest.html
    │   │   ├── jsonMetaWriteTest.html
    │   │   └── loading.gif
-   │   ├── evowebservices
-   │   │   ├── config
-   │   │   │	├── config.ini
-   │   │   │	└── config.php  
-   │   │   ├── core
-   │   │   │	├── evoapi-core.php
-   │   │   │	├── ini-parser.php  
-   │   │   │	└── s3-core.php    
-   │   │   ├── plugins
-   │   │   │	├── amazonhdsupload.php
-   │   │   │	├── amazonhlsupload.php
-   │   │   │	├── basehdsplugin.php
-   │   │   │	├── basehlsplugin.php
-   │   │   │	├── baseplugin.php
-   │   │   │	├── plugins.php
-   │   │   │	├── streamautorouter.php
-   │   │   │	├── streamloadbalancer.php
-   │   │   │	├── streamrecorder.php
-   │   │   │	└── transcoderesetter.php     
-   │   │   ├── evostream_copyright.txt
-   │   │   ├── evowebservices.php   
-   │   │   └── README.txt
    │   ├── clientaccesspolicy.xml
-   │   └── crossdomain.xml
-   ├── evowebservices
+   │   └── crossdomain.xml   
+   ├── node-evowebservices
    │   │   ├── base_plugins
    │   │   │	├── basehdsplugin.js
    │   │   │	├── basehlsplugin.js
@@ -204,13 +171,13 @@ C:\EvoStream
    │   │   │	├── comment-json
    │   │   │	├── concat-stream
    │   │   │	├── debug
-   │   │   │	├──express
+   │   │   │	├── express
    │   │   │	├── morgan
    │   │   │	├── request-enhanced
    │   │   │	├── s3
    │   │   │	└── winston
    │   │   ├── plugins
-   │   │   │	├── amazondashupload
+   │   │   │	├── amazondashupload.js
    │   │   │	├── amazonhdsupload.js
    │   │   │	├── amazonhlsupload.js
    │   │   │	├── streamautorouter.js
@@ -263,16 +230,21 @@ C:\EvoStream
    │   │   ├── logging.json
    │   │   └── social-auth-config.js
    │   ├── core_modules
-   │   │   └──  ems-api-core.js
+   │   │   ├── ems-api-core.js
+   │   │   ├── ems-api-proxy.js 
+   │   │   ├── ems-config-core.js
+   │   │   └── socket-io-api.js
    │   ├── data
-   │   │   ├── logging.json
-   │   │   └── social-auth-config.js   
+   │   │   ├── help.json
+   │   │   └── user.json   
    │   ├── logs
    │   │   └── webui.log 
    │   ├── models
+   │   │   ├── list-config.js
+   │   │   ├── list-streams.js
    │   │   └── user.js
    │   ├── node_modules
-   │   │   └── [136 node_module files]
+   │   │   └── [168 node_module files]
    │   ├── public
    │   │   ├── css
    │   │   ├── fonts
@@ -286,6 +258,8 @@ C:\EvoStream
    │   │   ├── index.js
    │   │   ├── stream.js
    │   │   └── users.js
+   │   ├── services 
+   │   │   └── stream-service.js
    │   ├── views
    │   │   ├── admin
    │   │   ├── index
@@ -300,12 +274,13 @@ C:\EvoStream
    │   │   ├── nssm.exe
    │   │   ├── remove.bat
    │   │   ├── start.bat   
-   │   │   └── stop.bat    
+   │   │   ├── stop.bat      
+   │   │   └── uninstall.bat    
    │   └── webui     
    │   │   ├── create_webui_service.bat
    │   │   ├── remove_webui_service.bat
    │   │   ├── start_webui_service.bat
-   │   │   └── stop_webui_service.bat 
+   │   └── └── stop_webui_service.bat 
    ├── emsTranscoder.bat
    ├── evo-avconv.exe
    ├── evo-mp4writer.exe

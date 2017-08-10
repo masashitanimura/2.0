@@ -451,7 +451,7 @@ The HLS version to be used. User should make sure of the version before creating
 **Mandatory:** Yes
 
 ```
-hlsVersion=3,
+hlsVersion=6,
 ```
 
 Supported versions:
@@ -513,12 +513,70 @@ vodRedirectRtmpIp="",
 
 ### forceRtmpDatarate
 
+Hardcodes videodatarate and audiodatarate to satisfy the requirements for some configurations.
+
 **Type:** Boolean
 
 **Mandatory:** Yes
 
 ```
 forceRtmpDatarate=false,
+```
+
+
+
+### sendRtspRangeHeaders
+
+Required for axis camera configuration
+
+**Type:** Boolean
+
+**Mandatory:** Yes
+
+```
+sendRtspRangeHeaders=false,
+```
+
+
+
+### serverNameStreamPrefix
+
+Server name used as prefix for stream name 
+
+**Type:** String
+
+**Mandatory:** No
+
+```
+serverNameStreamPrefix="",
+```
+
+
+
+### runWebServer
+
+Enables EMS Web Server on startup
+
+**Type:** Boolean
+
+**Mandatory:** Yes
+
+```
+runWebServer=true,
+```
+
+
+
+### runWebUI
+
+Enables EMS Web UI on startup
+
+**Type:** Boolean
+
+**Mandatory:** Yes
+
+```
+runWebUI=true,
 ```
 
 
@@ -568,9 +626,7 @@ There are several uses of the media folder:
 |    seekGranularity    | number  |   False   | Seeking only occurs at key-frames if true. If false, seeking may occur on inter-frame packets, which may cause garbage to be shown on the client player until a keyframe is reached |
 | externalSeekGenerator | boolean |   False   | The fidelity, in seconds, of seeking for the files in this mediaFolder |
 
-  See [VOD]() for more details.
-
-  
+   
 
 ### acceptors
 
@@ -652,7 +708,8 @@ The “acceptors” block is found within the “applications” section named �
 -- Inbound TCP TS
 				{
 					ip="0.0.0.0",
-					port=9999,
+					port=9998,
+					localStreamName="testTcp",
 					protocol="inboundTcpTs",
 				},
 ```
@@ -661,17 +718,9 @@ The “acceptors” block is found within the “applications” section named �
 -- Inbound UDP TS
 				{
 					ip="0.0.0.0",
-					port=9999,
+					port=9898,
+					localStreamName="testUcp",
 					protocol="inboundUdpTs",
-				},
-```
-
-```
--- HTTP
-				{
-					ip="0.0.0.0",
-					port=8080,
-					protocol="inboundHttp",
 				},
 ```
 
@@ -707,6 +756,18 @@ The “acceptors” block is found within the “applications” section named �
 ```
 
 ```
+-- WebSockets JSON Metadata over SSL
+				{
+					ip="0.0.0.0",
+					port=8433,
+					protocol="wssJsonMeta",
+					-- streamname="~0~0~0~"
+					sslKey="/path/to/some/key",
+					sslCert="/path/to/some/cert",
+				},
+```
+
+```
 -- WebSockets FMP4 Fetch
 				{
 					ip="0.0.0.0",
@@ -714,6 +775,20 @@ The “acceptors” block is found within the “applications” section named �
 					protocol="inboundWSFMP4"
 				},
 ```
+
+```
+-- WebSockets over SSL FMP4 Fetch
+				--[[
+				{
+					ip="0.0.0.0",
+					port=8420,
+					protocol="inboundWSSFMP4",
+					sslKey="/path/to/some/key",
+					sslCert="/path/to/some/cert",
+				},
+```
+
+
 
 **acceptor Structure Table:**
 
@@ -725,48 +800,53 @@ The “acceptors” block is found within the “applications” section named �
 
   The following acceptor types are supported by EMS:
 
-| Acceptor Protocol  | Typical IP | Typical Port |    Additional Parameters (see Note 1)    | Protocol Stack (Tags) |
-| :----------------: | :--------: | :----------: | :--------------------------------------: | :-------------------: |
-|    inboundRtmp     |  0.0.0.0   |     1935     |                                          |        TCP+IR         |
-|    inboundRtmps    |  0.0.0.0   |     8081     | sslKey (path to SSL key file), sslCert (path to SSL certificate file) (see Note 2) |     TCP+ISSL+IRS      |
-|    inboundRtmpt    |  0.0.0.0   |     8080     |                                          |       TCP+IH4R        |
-|    inboundTcpTs    |  0.0.0.0   |     9999     |                                          |        TCP+ITS        |
-|    inboundUdpTs    |  0.0.0.0   |     9999     |                                          |        UDP+ITS        |
-|    inboundRtsp     |  0.0.0.0   |     5544     |                                          |       TCP+RTSP        |
-|   inboundLiveFlv   |  0.0.0.0   |     6666     |        waitForMetadata (boolean)         |       TCP+ILFL        |
-| inboundBinVariant  | 127.0.0.1  |     1113     |           clustering (boolean)           |       TCP+BVAR        |
-|   inboundJsonCli   | 127.0.0.1  |     1112     |        useLengthPadding (boolean)        |     TCP+IJSONCLI      |
-| inboundHttpJsonCli | 127.0.0.1  |     7777     |                                          | TCP+IHTT+H4C+IJSONCLI |
-|  inboundAsciiCli   | 127.0.0.1  |     1222     |        useLengthPadding (boolean)        |      TCP+IASCCLI      |
+| Acceptor Protocol  | Typical IP | Typical Port |    Additional Parameters    | Protocol Stack (Tags) |
+| :----------------: | :--------: | :----------: | :-------------------------: | :-------------------: |
+|   inboundJsonCli   | 127.0.0.1  |     1112     |      useLengthPadding       |     TCP+IJSONCLI      |
+| inboundHttpJsonCli | 127.0.0.1  |     7777     |              -              | TCP+IHTT+H4C+IJSONCLI |
+|  inboundAsciiCli   | 127.0.0.1  |     1222     |      useLengthPadding       |      TCP+IASCCLI      |
+|    inboundRtmp     |  0.0.0.0   |     1935     |              -              |        TCP+IR         |
+|    inboundRtmp     | 127.0.0.1  |     1936     |         clustering          |                       |
+| inboundBinVariant  | 127.0.0.1  |     1113     |         clustering          |       TCP+BVAR        |
+|    inboundRtsp     |  0.0.0.0   |     5544     |          multicast          |       TCP+RTSP        |
+|   inboundLiveFlv   |  0.0.0.0   |     6666     |       waitForMetadata       |       TCP+ILFL        |
+|    inboundTcpTs    |  0.0.0.0   |     9998     |       localStreamName       |        TCP+ITS        |
+|    inboundUdpTs    |  0.0.0.0   |     9898     |       localStreamName       |        UDP+ITS        |
+|    inboundRtmps    |  0.0.0.0   |     4443     |       sslKey, sslCert       |     TCP+ISSL+IRS      |
+|  inboundJsonMeta   |  0.0.0.0   |     8100     |         streamname          |                       |
+|     wsJsonMeta     |  0.0.0.0   |     8210     |         streamname          |                       |
+|    wssJsonMeta     |  0.0.0.0   |     8433     | streamname, sslKey, sslCert |                       |
+|   inboundWSFMP4    |  0.0.0.0   |     8410     |              -              |                       |
+|   inboundWSSFMP4   |  0.0.0.0   |     8420     |       sslKey, sslCert       |                       |
 
   **Protocol Group Table:**
 
 |    Protocol Group    |   Tag    | Protocol Type          |
 | :------------------: | :------: | ---------------------- |
 |  Carrier Protocols   |   TCP    | TCP                    |
-|                      |   UDP    | UDP                    |
+|         \|\|         |   UDP    | UDP                    |
 |  Variant Protocols   |   BVAR   | Bin Variant            |
-|                      |   XVAR   | XML Variant            |
-|                      |   JVAR   | JSON Variant           |
+|         \|\|         |   XVAR   | XML Variant            |
+|         \|\|         |   JVAR   | JSON Variant           |
 |    RTMP Protocols    |    IR    | Inbound RTMP           |
-|                      |   IRS    | Inbound RTMPS          |
-|                      |    OR    | Outbound RTMP          |
-|                      |    RS    | RTMP Dissector         |
+|         \|\|         |   IRS    | Inbound RTMPS          |
+|         \|\|         |    OR    | Outbound RTMP          |
+|         \|\|         |    RS    | RTMP Dissector         |
 | Encryption Protocols |    RE    | RTMPE                  |
-|                      |   ISSL   | Inbound SSL            |
-|                      |   OSSL   | Outbound SSL           |
+|         \|\|         |   ISSL   | Inbound SSL            |
+|         \|\|         |   OSSL   | Outbound SSL           |
 |   MPEG-TS Protocol   |   ITS    | Inbound TS             |
 |    HTTP Protocols    |   IHTT   | Inbound HTTP           |
-|                      |  IHTT2   | Inbound HTTP2          |
-|                      |   IH4R   | Inbound HTTP for RTMP  |
-|                      |   OHTT   | Outbound HTTP          |
-|                      |  OHTT2   | Outbound HTTP2         |
-|                      |   OH4R   | Outbound HTTP for RTMP |
+|         \|\|         |  IHTT2   | Inbound HTTP2          |
+|         \|\|         |   IH4R   | Inbound HTTP for RTMP  |
+|         \|\|         |   OHTT   | Outbound HTTP          |
+|         \|\|         |  OHTT2   | Outbound HTTP2         |
+|         \|\|         |   OH4R   | Outbound HTTP for RTMP |
 |    CLI Protocols     | IJSONCLI | Inbound JSON CLI       |
-|                      |   H4C    | HTTP for CLI           |
-|                      | IASCCLI  | Inbound ASCII CLI      |
+|         \|\|         |   H4C    | HTTP for CLI           |
+|         \|\|         | IASCCLI  | Inbound ASCII CLI      |
 |    RPC Protocols     |   IRPC   | Inbound RPC            |
-|                      |   ORPC   | Outbound RPC           |
+|         \|\|         |   ORPC   | Outbound RPC           |
 | Passthrough Protocol |    PT    | Passthrough            |
 
   ​
@@ -782,54 +862,25 @@ if enabled, will automatically create the HTTP streams from the pulled entries.
 ```
 autoDASH=
 			{
-				targetFolder= "..\\evo-webroot",
+				targetFolder="path/to/evo-webroot",
 			},
 autoHLS=
 			{
-				targetFolder= "..\\evo-webroot",
+				targetFolder="path/to/evo-webroot",
 			},
 autoHDS=
 			{
-				targetFolder= "..\\evo-webroot",
+				targetFolder="path/to/evo-webroot",
 			},
 autoMSS=
 			{
-				targetFolder= "..\\evo-webroot",
+				targetFolder="path/to/evo-webroot",
 			},
 ```
 
 
 
 **Note:** You can add other parameters associated with the API. See [createDASHStream](api_createDASHStream.html),[createHLSStream](api_createHLSStream.html), [createHDSStream](api_createHDSStream.html), [createMSSStream](api_createMSSStream.html), for parameter lists.
-
-
-
-### deviceStreams
-
-Section for streams coming from the V4L2 driver directly (only for embedded Linux)
-
-**Type:** Object
-
-**Mandatory:** No
-
-```
-deviceStreams=
-			{
-				{
-					name="camera01",
-					video=
-					{
-						type="v4l2",
-						path="/dev/video0",
-					},
-					audio=
-					{
-						type="v4l2",
-						path="/dev/video1",
-					},
-				},
-			},
-```
 
 
 
@@ -853,25 +904,34 @@ authentication=
 						"Wirecast/FM 1.0 (compatible; FMSc/1.0)",
 						"EvoStream Media Server (www.evostream.com)"
 					},
-					usersFile="..\\config\\users.lua"
+					usersFile="path/to/config/users.lua",
+					--verifierUri="http://authserver/verifier.php",
+					--token="secretstring",					
 				},
 				rtsp=
 				{
-					usersFile="..\\config\\users.lua",
+					usersFile="path/to/config/users.lua",
 					--authenticatePlay=false,
 				}
+				--ws=
+				--{
+				--	token="",
+				--},
 			},
 ```
 
 **authentication Structure Table:**
 
-| Protocol |    Parameter     | Mandatory |        Typical Setting        |
-| :------: | :--------------: | :-------: | :---------------------------: |
-|   RTMP   |       type       |   true    |            “adobe”            |
-|   RTMP   |  encoderAgents   |   true    |     “FMLE…” *(see below)*     |
-|   RTMP   |    usersFile     |   true    |     ”../config/users.lua”     |
-|   RTSP   |    usersFile     |   true    |     ”../config/users.lua”     |
-|   RTSP   | authenticatePlay |   false   | true (default value is false) |
+| Protocol  |    Parameter     | Mandatory |         Typical Setting          |
+| :-------: | :--------------: | :-------: | :------------------------------: |
+|   RTMP    |       type       |   true    |             “adobe”              |
+|   \|\|    |  encoderAgents   |   true    |   "FMLE, Wirecast, EvoStream"    |
+|   \|\|    |    usersFile     |   true    |      ”../config/users.lua”       |
+|   \|\|    |   verifierUri    |   false   | "http://authserver/verifier.php" |
+|   \|\|    |      token       |   false   |          "secretstring"          |
+|   RTSP    |    usersFile     |   true    |      ”../config/users.lua”       |
+|   \|\|    | authenticatePlay |   false   |              false               |
+| WebSocket |      token       |           |            "<blank>"             |
 
 **Notes:**
 
@@ -1019,7 +1079,7 @@ webrtc = {
 
 
 
-### drm 
+### drm
 
 the configuration for the HLS security 
 

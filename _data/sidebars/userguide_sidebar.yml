@@ -119,20 +119,20 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Sign Up
-      url: /userguide_signup.html
+    - title: Create Local Account
+      url: /userguide_createaccount.html
       output: web, pdf
 
-    - title: Sign In
-      url: /userguide_signin.html
+    - title: Log In
+      url: /userguide_login.html
       output: web, pdf
 
     - title: Forgot Password
       url: /userguide_forgotpassword.html
       output: web, pdf
 
-    - title: Sign Out
-      url: /userguide_signout.html
+    - title: Log Out
+      url: /userguide_logout.html
       output: web, pdf
 
 

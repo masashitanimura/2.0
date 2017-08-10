@@ -47,19 +47,24 @@ startWebrtc ersip=52.6.14.61 ersport=3535 roomid=testRoom
 
 ``` 
 {
-"data":{
-    "configId":2,
-    "ersip":"52.6.14.61",
-    "ersport":3535,
-    "keepAlive":true,
-    "name":"evostreamms",
-    "operationType":9,
-    "roomid":"testRoom",
-    "sslCert":"..\/config\/server.cert",
-    "sslKey":"..\/config\/server.key"
-},
-"description":"Started WebRTC Negotiation Service",
-"status":"SUCCESS"
+          "data": {
+                    "data": {
+                              "configId": 2,
+                              "ers": "",
+                              "ersOverSsl": false,
+                              "ersip": "54.174.188.145",
+                              "ersport": 4545,
+                              "keepAlive": true,
+                              "name": "evostreamms",
+                              "operationType": 9,
+                              "roomid": "testRoom",
+                              "sslCert": "../config/server.cert",
+                              "sslKey": "../config/server.key",
+                              "token": ""
+                    },
+                    "description": "Started WebRTC Negotiation Service",
+                    "status": "SUCCESS"
+          }
 }
 ```
 
@@ -71,6 +76,8 @@ The JSON response contains the following details:
 
 - data – The data to parse.
   - configId - The configuration ID for this command
+  - ers - 
+  - ersOverSsl - The configuration of the SSL
   - ersip – The IP address of the ERS
   - ersport – The port of the ERS
   - keepAlive - If keepAlive is set to true, EMS will reconnect to ERS in the event that it gets disconnected
@@ -79,6 +86,7 @@ The JSON response contains the following details:
   - roomId – The room identifier
   - sslCert - The SSL certificate
   - sslKey - The SSL key certificate
+  - token - ??
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 

@@ -195,7 +195,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │       └── pushPullSetup.xml
 ```
 
-**A.4. HTML and evowebservices Files**
+**A.4. Evo-webroot Files**
 
 ```
 └── var
@@ -203,18 +203,13 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │   ├── demo
     │   │   ├── css
     │   │   ├── evo.png
-    │   │   ├── evowrtcclient.html
-    │   │   ├── evowsvideo.html
+    │   │   ├── evoplayers.html
+    │   │   ├── evowsabrvideo.html
     │   │   ├── jsonMetaTest.html
     │   │   ├── jsonMetaWriteTest.html
     │   │   └── loading.gif
-    │   ├── evowebservices
-    │   │   ├── config
-    │   │   ├── core
-    │   │   ├── plugins
-    │   │   ├── evostream_copyright.txt
-    │   │   ├── evowebservices.php
-    │   │   └── README.txt
+    │   ├── clientaccesspolicy.xml
+    │   └── crossdomain.xml    
     │   ├── clientaccesspolicy.xml
     │   └── crossdomaim.xml
 ```
@@ -244,15 +239,126 @@ To install the license, simply copy the `License.lic` file to `../config/License
 ```
 ./EvoStream Archive
   ├── bin
-  │   ├── evo-phpengine
+  │   ├── node-evowebservices
+  │   │   ├── base_plugins
+  │   │   │	  ├── basehdsplugin.js
+  │   │   │	  ├── basehlsplugin.js
+  │   │   │	  └── baseplugin.js    
+  │   │   ├── bin
+  │   │   │   └── www       
+  │   │   ├── config
+  │   │   │	  ├── logging.json
+  │   │   │	  └── plugins.json    
+  │   │   ├── core_modules
+  │   │   │	  └── ems-api-core.js       
+  │   │   ├── logs
+  │   │   │	  └── evowebservices.log          
+  │   │   ├── node_modules
+  │   │   │	  ├── body-parser
+  │   │   │	  ├── comment-json
+  │   │   │	  ├── concat-stream
+  │   │   │	  ├── debug
+  │   │   │   ├── express
+  │   │   │   ├── morgan
+  │   │   │	  ├── request-enhanced
+  │   │   │	  ├── s3
+  │   │   │	  └── winston
+  │   │   ├── plugins
+  │   │   │	  ├── amazondashupload.js
+  │   │   │	  ├── amazonhdsupload.js
+  │   │   │	  ├── amazonhlsupload.js
+  │   │   │	  ├── streamautorouter.js
+  │   │   │	  ├── streamloadbalancer.js
+  │   │   │	  └── streamrecorder.js   
+  │   │   ├── routes
+  │   │   │	  ├── evowebservices.js
+  │   │   │	  └── index.js      
+  │   │   ├── services
+  │   │   │	  └── plugin-service.js
+  │   │   ├── views
+  │   │   │   ├── error.hbs
+  │   │   │	  ├── index.hbs
+  │   │   │	  └── layout.hbs
+  │   │   ├── app.js
+  │   │   ├── LICENSE
+  │   │   ├── package.json
+  │   │   ├── README.md
+  │   ├── └── README.txt  
+  │   ├── node-ews
+  │   │   ├── node_modules
+  │   │   │   ├── basic-auth
+  │   │   │   ├── connect
+  │   │   │   └── winston 
+  │   │   ├── req_handlers
+  │   │   │   ├── authproxy.js
+  │   │   │   ├── default.js
+  │   │   │   ├── httpstream.js
+  │   │   │   ├── php.js
+  │   │   │   └── resphdrs.js  
+  │   │   ├── evo-phpengine.exe
+  │   │   ├── ews.node
+  │   │   ├── fileRotateSize.js
+  │   │   ├── helper.js
+  │   │   └── node-ews.js
+  │   ├── node-webui
+  │   │   ├── auth
+  │   │   │   ├── passport-config.js
+  │   │   │   └── restrict.js
+  │   │   ├── bin
+  │   │   │   └── webui_activate
+  │   │   ├── config
+  │   │   │   ├── dir-config.js
+  │   │   │   ├── logging.json
+  │   │   │   └── social-auth-config.js
+  │   │   ├── core_modules
+  │   │   │   ├── ems-api-core.js
+  │   │   │   ├── ems-api-proxy.js 
+  │   │   │   ├── ems-config-core.js
+  │   │   │   └── socket-io-api.js
+  │   │   ├── data
+  │   │   │   ├── help.json
+  │   │   │   └── user.json   
+  │   │   ├── logs
+  │   │   │   └── webui.log 
+  │   │   ├── models
+  │   │   │   ├── list-config.js
+  │   │   │   ├── list-streams.js
+  │   │   │   └── user.js
+  │   │   ├── node_modules
+  │   │   │   └── [168 node_module files]
+  │   │   ├── public
+  │   │   │   ├── css
+  │   │   │   ├── fonts
+  │   │   │   ├── images
+  │   │   │   ├── js
+  │   │   │   └── media
+  │   │   ├── routes
+  │   │   │   ├── api-explorer.js   
+  │   │   │   ├── dashboard.js
+  │   │   │   ├── ems.js
+  │   │   │   ├── index.js
+  │   │   │   ├── stream.js
+  │   │   │   └── users.js
+  │   │   ├── services 
+  │   │   │   └── stream-service.js
+  │   │   ├── views
+  │   │   │   ├── admin
+  │   │   │   ├── index
+  │   │   │   ├── error.hbs
+  │   │   │   └── index.hbs  
+  │   │   ├── app.js
+  │   │   ├── LICENSE
+  │   │   └── package.json     
   │   ├── emsTranscoder.sh
   │   ├── evo-avconv
   │   ├── evo-mp4writer
   │   ├── evostreamms
-  │   ├── evo-webserver
   │   ├── platformTests
   │   ├── run_console_ems.sh
-  │   └── run_daemon_ems.sh
+  │   ├── run_console_webui.sh
+  │   ├── run_daemon_ems.sh
+  │   ├── run_daemon_webui.sh  
+  │   └── run_stop_webui.sh
   ├── config
   │   ├── auth.xml
   │   ├── bandwidthlimits.xml
@@ -264,7 +370,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   ├── server.cert
   │   ├── server.key
   │   ├── users.lua
-  │   ├── webconfig.lua
+  │   ├── webconfig.json
   │   └── whitelist.txt
   ├── demo
   │   ├── base64.js
@@ -272,23 +378,20 @@ To install the license, simply copy the `License.lic` file to `../config/License
   ├── evo-avconv-presets
   │   └── [30 transcode preset files]
   ├── evo-webroot
-      ├── demo
-      │   ├── css
-      │   ├── evo.png
-      │   ├── evowrtcclient.html
-      │   ├── evowsvideo.html
-      │   ├── jsonMetaTest.html
-      │   ├── jsonMetaWriteTest.html
-      │   └── loading.gif
-      ├── evowebservices
-      │   ├── config
-      │   ├── core
-      │   ├── plugins
-      │   ├── EMS_Web_Services_User_Guide.pdf
-      │   ├── evostream_copyright.txt
-      │   └── evowebservices.php
-      ├── clientaccesspolicy.xml
-      └── crossdomain.xml
+  │   ├── demo
+  │   │   ├── css
+  │   │   │   ├── common.css
+  │   │   │	  └── common.css.orig  
+  │   │   ├── js
+  │   │   │	  └── evohtml5player-latest.bundle.js 
+  │   │   ├── evo.png
+  │   │   ├── evoplayers.html
+  │   │   ├── evowsabrvideo.html
+  │   │   ├── jsonMetaTest.html
+  │   │   ├── jsonMetaWriteTest.html
+  │   │   └── loading.gif
+  │   ├── clientaccesspolicy.xml
+  │   └── crossdomain.xml
   ├── logs
   ├── media
   ├── BUILD_DATE
