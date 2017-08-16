@@ -6,15 +6,13 @@ folder: userguide
 toc: true
 ---
 
-
-
 This is where you can add a stream to your EMS. You can add simple streams and HTTP streams in this page.
 
 
 
 ## Adding Inbound Live Streams
 
-If you wan't to add a RTSP or RTMP stream, simply do the following:
+This is similar to the `pullStream` command. If you wan't to add a RTSP or RTMP stream, simply do the following:
 
 1. Choose  **Inbound Live Stream** under Choose the Stream Type to Add
 2. Enter the **URI Stream Source**
@@ -37,13 +35,13 @@ See [pullStream](api_pullStream.html) API for more information.
 
 Adding HTTP streams has made easy in this page. You can now create your HLS, DASH, HDS and MSS here.
 
-1. Choose the Stream Type ( HLS, DASH, HDS, MSS)
+1. Choose the  **HTTP Stream Type** (HLS, DASH, HDS, MSS)
 
-2. Choose the Stream Source
+2. Choose the **Stream Source**
 
    **Note:** List of Active streams will be shown under the Stream Source field. You can select more than one
 
-3. Enter Target Folder
+3. Enter **Target Folder**
 
    **Note:** Should use absolute path 
 
@@ -63,4 +61,5 @@ Adding HTTP streams has made easy in this page. You can now create your HLS, DAS
 
 - ![](images/userguide/clear.JPG)   - will clear inputs in fields
 - ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
+
 

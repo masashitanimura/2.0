@@ -7,17 +7,15 @@ folder: userguide
 toc: true
 ---
 
+Provides a detailed description of all active streams. Select from Inbound  Streams, Outbound Streams or Adaptive HTTP Stream.
 
-
-Provides a detailed description of all active streams. 
-
-**Note:** This page is refreshing when there is an update with the EMS connection.
+![](images/userguide/activedropdown.jpg)
 
 
 
-## Inbound Live Stream
+## Inbound Streams
 
-Displays the list of all active pulled streams
+Displays the list of all active inbound stream
 
 ![](images/userguide/Active_inbound.JPG)
 
@@ -28,9 +26,22 @@ Displays the list of all active pulled streams
 
 
 
+### Playing Inbound Streams
+
+All active playable inbound streams can be played using the Web UI. SImply click on the play button to start streaming!
+
+![](images/userguide/active_playhtml5.JPG)
+
+**Notes:**
+
+- The HTML5 player uses the evohtml5player-2.0.13.bundle.js
+- Unique window in each playback
+
+
+
 ## Outbound Streams
 
-Displays the list of outbound streams
+Displays the list of all active outbound streams
 
 ![](images/userguide/Active_outbound.JPG)
 
@@ -46,6 +57,8 @@ Displays the list of active HTTP streams
 
 ![](images/userguide/Active_http.jpg)
 
+
+
 - ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
 - ![](images/userguide/VOD_play.JPG)   **Play** - streams the HTTP file
 - ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
@@ -53,16 +66,33 @@ Displays the list of active HTTP streams
 
 
 
-## File Media
-
-Displays the list active VOD streams
-
-![](images/userguide/Active_file.JPG)
-
-- ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
-- ![](images/userguide/VOD_play.JPG)   **Play** - streams the VOD files
 
 
+**Note:**
+
+- The Active page is automatically refreshing when there is an update with the EMS.
+
+
+
+## Playing HTTP Streams
+
+The Web UI can now play HLS and DASH streams. Simply click on the Play button and start streaming!
+
+#### Play HLS Stream
+
+![](images/userguide/active_playhls.JPG)
+
+
+
+#### Play DASH Stream
+
+![](images/userguide/active_playdash.JPG)
+
+**Notes:**
+
+- The HLS player uses Video.js HLS build version 2.0.1
+- The DASH player uses DASH-IF v2.5.0-d389aed
+- Unique window in each playback
 
 ------
 

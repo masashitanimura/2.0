@@ -19,7 +19,7 @@ Will create a server-side playlist with the specified sources.
 |   pathToFile   | string  |   true    |        *null*        | The path to the output server playlist file |
 | sourceOffsets  | integer |   false   | *zero-length string* | The corresponding offsets for the source streams/files listed in sources. This can be a comma-delimited list |
 |   durations    | integer |   false   | *zero-length string* | The corresponding durations for the source streams/files listed in sources. This can be a comma-delimited list |
-|     reset      | boolean |   false   |      0 *false*       | If **enabled**, will repeat playback from the start of the playlist |
+|     repeat     | boolean |   false   |      0 *false*       | If **enabled**, will repeat playback from the start of the playlist |
 
 
 
@@ -64,7 +64,7 @@ The JSON response contains the following details:
 - data – The data to parse
   - durations – An array of durations for each stream/file in the list, expressed in seconds
   - pathToFile – The full path and filename of the playlist file
-  - repear - If **enabled**, will repeat playback from the start of the playlist
+  - repeat - If **enabled**, will repeat playback from the start of the playlist
   - sourceOffsets – An array of offsets for each stream/file in the list
   - sources – An array of streams or media files
 

@@ -954,20 +954,21 @@ Settings for the server-wide event sinks.
 ```
 eventLogger=
 			{
+				--customData=123,
 				sinks=
 				{
 					--[=[
 					{
 						type="file",
 						--[[
-						customData =
+						customData=
 						{
 							some="string",
 							number=123.456,
 							array={1, 2.345, "Hello world", true, nil}
 						},
 						]]--
-						filename="..\\logs\\events.txt",
+						filename="C:\\EvoStream_2.0_5477\\logs\\events.txt",
 						format="text",
 						--format="xml",
 						--format="json",
@@ -980,10 +981,10 @@ eventLogger=
 						fileChunkTime="18:00:00",
 						]]--
 						enabledEvents=
-						{
+						{	-- common events enabled by default for eventLogger type "file":
 							"inStreamCreated",
 							"outStreamCreated",
-							--removed other list of event for clarity--	
+							-- NOTE: add more events by copying items from the sorted list of VALID EVENTS below
 						},
 					},
 ```
@@ -992,41 +993,70 @@ eventLogger=
 
 1. This section is disabled by default. 
 
-2. The event log files will be stored in the path where EMS logs are configured
+2. You can add more events in the list below.
+
+3. The event log files will be stored in the path where EMS logs are configured
 
    ​
 
-**B. RPC**
+**B. RPC - Evowebservices** 
 
 ```
-
-					{
+{
 						type="RPC",
-						url="http://127.0.0.1:4100/evowebservices/evowebservices",
+						url="http://127.0.0.1:4000/evowebservices",
 						serializerType="JSON",
 						enabledEvents=
-						{  --These are the events sent by default and tend to be the most commonly used
+						{	-- common events enabled by default for eventLogger type "RPC":
 							"inStreamCreated",
-                                 "outStreamCreated",
-                                 "inStreamClosed",
-                                 "outStreamClosed",
-							"streamingSessionStarted",
-                                 "streamingSessionEnded",
-                                 "recordChunkClosed",
+							"inStreamClosed",
+							"outStreamCreated",
+							"outStreamClosed",
+							"timerTriggered",
+							"hdsMasterPlaylistUpdated",
+							"hdsChildPlaylistUpdated",
+							"hdsChunkClosed",
+							"hlsMasterPlaylistUpdated",
 							"hlsChunkClosed",
-							--removed other list of event for clarity--						
+							"dashPlaylistUpdated",
+							"dashChunkClosed",
 						},
 					},
-				},
-			},
 ```
 
 **Notes:** 
 
 1. This section is enabled by default. 
 2. Replace URL depending on the evowebservices to be used (Node.js or PHP). See evowebservices user guide
+3. These are the events are used by EMS webservices, no need to make any changes on this configuration
 
-See [Event Notification System](eventoverview.html) for more information.
+
+
+**B. RPC - WebUI** 
+
+```
+{
+						type="RPC",
+						url="http://127.0.0.1:4100/streams/update-list",
+						serializerType="JSON",
+						enabledEvents=
+						{	-- common events enabled by default for eventLogger type "RPC":
+							"inStreamCreated",
+							"inStreamClosed",
+							"outStreamCreated",
+							"outStreamClosed",
+							"processStarted",
+							"processStopped",
+							"recordChunkCreated",
+							"recordChunkClosed",
+							"webRtcServiceStarted",
+							"webRtcServiceStopped",
+						},
+```
+
+**Note:**
+
+- These events are used by EMS Web UI, no need to make any changes on this configuration
 
 
 
