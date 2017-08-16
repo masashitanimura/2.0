@@ -25,12 +25,14 @@ The VOD page is where you can access your streams in your EMS media folder. You 
 
    ![](images/userguide/VOD_load.JPG)
 
-3. Select the **Action** you want to perform
-
    ​
+
+3. Select the **Action** you want to perform
 
    - ![](images/userguide/VOD_play.JPG)   **Play** - streams the VOD file from the media folder
    - ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the VOD file in the media folder
+
+
 
 
 

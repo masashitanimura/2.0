@@ -32,10 +32,14 @@ All active playable inbound streams can be played using the Web UI. SImply click
 
 ![](images/userguide/active_playhtml5.JPG)
 
+
+
 **Notes:**
 
 - The HTML5 player uses the evohtml5player-2.0.13.bundle.js
 - Unique window in each playback
+
+
 
 
 
@@ -47,6 +51,8 @@ Displays the list of all active outbound streams
 
 - ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
 - ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
+
+
 
 
 
@@ -66,17 +72,19 @@ Displays the list of active HTTP streams
 
 
 
-
-
 **Note:**
 
 - The Active page is automatically refreshing when there is an update with the EMS.
 
 
 
+
+
 ## Playing HTTP Streams
 
 The Web UI can now play HLS and DASH streams. Simply click on the Play button and start streaming!
+
+
 
 #### Play HLS Stream
 
