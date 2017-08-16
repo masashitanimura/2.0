@@ -13,7 +13,7 @@ The VOD page is where you can access your streams in your EMS media folder. You 
 
 1. Select the server's media folder directory to be viewed
 
-   ![](images/userguide/VOD_dir.jpg)
+   ![](images/userguide/VOD_dir.JPG)
 
    ​
 
@@ -23,7 +23,7 @@ The VOD page is where you can access your streams in your EMS media folder. You 
 
 2. The files will automatically listed in the table.
 
-   ![](images/userguide/VOD_load.jpg)
+   ![](images/userguide/VOD_load.JPG)
 
 3. Select the **Action** you want to perform
 
