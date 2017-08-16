@@ -348,6 +348,9 @@ entries:
       url: /shutdownService.html
       output: web, pdf
 
+    - title: addMetadataListener
+      url: /addMetadataListener.html
+      output: web, pdf	  
 
 
   - title: Event Notification System
