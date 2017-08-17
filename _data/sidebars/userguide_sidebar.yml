@@ -252,6 +252,10 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: Using IPv6
+      url: /userguide_ipv6support.html
+      output: web, pdf
+	  
     - title: EMS Demo.html
       url: /userguide_emsdemo.html
       output: web, pdf

@@ -16,11 +16,12 @@ Starting the Web UI using `run_console_webui` will open a separate console for t
 
 1. Run `run_console_webui.sh` in Linux,  `run_console_webui.bat` in Windows
 
-   ![](images/userguide/start_ui.jpg)
+   ![](images/userguide/startui_console.jpg)
 
 **Note:**
 
 - You may configure the logging level of UI in `../node-webui/config/logging.json`
+
 
 
 
@@ -32,8 +33,10 @@ For Linux environment only, running Web UI via Daemon mode is also available. Th
 
 **Note:**
 
+- Run ps -ef|grep node to see if web ui is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
 - You may check the Web UI logs in `../node-webui/logs/`
 - The configuration of the log level is the same with console logs and file logs
+
 
 
 
@@ -53,6 +56,8 @@ Same with EMS, you may add a Web UI service in Windows Registry. Running Web UI 
    C:\EvoStream\services\webui> create_webui_service.bat
    ```
 
+   or run as Administrator the `create_webui_service.bat` in the location
+
    d. A confirmation will be asked, click **Yes**
 
    ![](images/userguide/register.JPG)
@@ -63,10 +68,38 @@ Same with EMS, you may add a Web UI service in Windows Registry. Running Web UI 
 
    f. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
 
-   ![](images/userguide/registry_services.jpg)
+   ![](images/userguide/service_ui_.jpg)
+
 
 
 
 ## Stopping Web UI
 
-The EMS Web UI process will not be killed when EMS is stopped. You may still access the Web UI but will not be able to do 
+The EMS Web UI process will not be killed when EMS is stopped. You may still access the Web UI but will not be able to do show the EMS functionalities.
+
+
+
+### Stopping Console UI
+
+If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or `run_daemon_ems.sh`:
+
+1. Run run_stop_webui.bat in Windows or run_stop_webui.sh in Linux
+
+   ```
+   $ ./run_stop_webui.sh 
+   webui will now be stopped
+   ```
+
+This will end the process of the WebUI running in Console.
+
+
+
+### Stopping Web UI Service
+
+If you Start the Web UI as a service (for Windows only):
+
+1. Go to Services, click on the EMS Web UI service entry
+
+2. Click **Stop**
+
+   or go to the services folder of EMS Web UI, double click on `stop_webui_service.bat`
