@@ -68,11 +68,28 @@ header.carousel .fill {
 }
 
 /* Footer Styles */
-
-footer {
-    margin: 50px 0;
+footer img {
+    width: 150px;
+}
+.menu ul {
+    padding: 0;
 }
 
+.copyright {
+     padding-left: 10px;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #fff!important;
+    margin-top: 20px;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .copyright {
+        text-align: left;
+    }
+}
 /* Responsive Styles */
 
 @media(max-width:991px) {

@@ -129,7 +129,6 @@ th {
     text-align: left;
 }
 table {
-    max-width: 90%;
     margin-bottom: 20px;
     border: 1px solid #dedede;
 }
@@ -140,7 +139,7 @@ table > tfoot > tr > th,
 table > thead > tr > td,
 table > tbody > tr > td,
 table > tfoot > tr > td {
-    padding: 8px;
+    padding: 0px;
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
@@ -213,9 +212,9 @@ p.post-meta {font-size: 80%; color: #777;}
     font-size: 12px;
     background-color: white;
     position: absolute;
-    top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
+    top: 45px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
     left: 20px;
-    z-index: -1;
+    z-index: 5;
     width:223px;
     border-left: 1px solid #dedede;
     box-shadow: 2px 3px 2px #dedede;
@@ -236,13 +235,11 @@ ul#results-container a:hover {
 }
 #search-input {
     padding: .5em;
-    margin-left:20px;
-    width:20em;
+    width:100%;
     font-size: 0.8em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    float: right;
     margin-top:10px;
 }
 /* end search */
@@ -310,6 +307,11 @@ li.dropdownActive a {
 
 footer {
     font-size: smaller;
+    background-color: #005f8d;
+    color: #fff;
+}
+.fixed-fr {
+    min-height: 100%;
 }
 
 /* FAQ page */
@@ -549,7 +551,8 @@ button.cursorNorm {
 }
 
 a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
-    margin-left: 10px;
+    /*margin-left: 10px;*/
+    margin-left: -5px;
 }
 
 hr.faded {
@@ -605,7 +608,7 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
+h3 {/* color: #ED1951; */ font-weight:normal; font-size:130%;}
 h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
 
 .alert, .callout {
@@ -874,9 +877,12 @@ span.soft {
 }
 
 @media (min-width: 1000px) {
-
+    #mysidebar {
+        position: relative;
+    } 
     ul#mysidebar {
-        width: 225px;
+        /*width: 100%; */
+		width: 225px; 
     }
 }
 
@@ -1181,9 +1187,14 @@ h4.panel-title {
 
 /* Defined by Evostream Web Designer */
 
-
+.support-fm {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 5px;
+    margin-top: 8px;
+}
 .nav-inc-size{
-    max-width: 1300px;
+    max-width: 1400px;
 }
 
 .release-btn-grp{
@@ -1193,4 +1204,147 @@ h4.panel-title {
 
 .release-btn-grp .dropdown-menu{
     margin: -8px 0 0;
+}
+
+.edit-ongithub{
+	margin-top: 38px;
+	margin-bottom: -20px;
+}
+
+
+/* Google Search */
+
+
+.gsc-input-box {
+    border: 1px solid #D9D9D9;
+    background: #fff;
+    height: 30px!important;
+}
+
+.gsc-input{
+    width: 100%;
+    padding: 0px;
+    border: medium none;
+    margin: 0px;
+    height: auto;
+    outline: medium none;
+    background: rgb(255, 255, 255) url("https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png") no-repeat scroll left center;
+    text-indent: 48px;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    padding-right: 12px;
+}
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    padding-right: 12px;
+}
+.gsc-input input.gsc-input {
+    background: url("https://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif") no-repeat scroll left center white;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    border-color: #000000;
+}
+input.gsc-input {
+    border-color: #000000;
+}
+input.gsc-input {
+    font-size: 16px;
+    padding: 4px 9px;
+    border: 1px solid #D9D9D9;
+    width: 99%;
+}
+input.gsc-input {
+    padding: 1px 6px;
+    border: 1px solid #DDD;
+    width: 99%;
+}
+input.gsc-input {
+    font-size: 16px;
+    padding: 4px 9px;
+    border: 1px solid #D9D9D9;
+    width: 99%;
+}
+input.gsc-input {
+    padding: 1px 6px;
+    border: 1px solid #DDD;
+    width: 99%;
+}
+input:-moz-read-write, textarea:-moz-read-write {
+    -moz-user-modify: read-write !important;
+}
+[dir="ltr"] {
+    direction: ltr;
+}
+[dir] {
+    unicode-bidi: isolate;
+}
+input {
+    -moz-appearance: textfield;
+    padding: 1px;
+    border: 2px inset ThreeDLightShadow;
+    background-color: -moz-Field;
+    color: -moz-FieldText;
+    font: -moz-field;
+    text-rendering: optimizeLegibility;
+    line-height: normal;
+    text-align: start;
+    text-transform: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    cursor: text;
+    -moz-binding: url("chrome://global/content/platformHTMLBindings.xml#inputFields");
+    text-indent: 0;
+    -moz-user-select: text;
+    text-shadow: none;
+    overflow-clip-box: content-box;
+}
+
+
+table.gsc-search-box td {
+    vertical-align: middle;
+}
+table.gsc-search-box td {
+    vertical-align: middle;
+}
+.gsib_a, .gsib_b {
+    vertical-align: top;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: inherit;
+    padding: 1px;
+}
+
+
+.gsst_a {
+    display: inline-block;
+}
+a {
+    color: #248EC2;
+    text-decoration: none;
+}
+
+
+.gsib_b {
+	float: right;
+}
+input.gsc-search-button-v2 {
+	 width: 60px!important;
+    height: 26px!important;
+    padding: 6px 23px!important;
+}
+
+.gsc-search-button {
+	border: 0;
+}
+.gsib_a {
+	width: 92%!important;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+      .gsc-input {
+    margin-left: -50px!important;   
+}
 }
