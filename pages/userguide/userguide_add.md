@@ -19,7 +19,7 @@ This is similar to the `pullStream` command. If you wan't to add a RTSP or RTMP 
 3. Enter the **Local Stream Name**
 4. Click **Add Stream**
 
-![](images/userguide/addstream.JPG)
+<center> ![](images/userguide/addstream.JPG) </center>
 
 **Notes:**
 
