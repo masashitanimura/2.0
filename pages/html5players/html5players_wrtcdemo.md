@@ -32,7 +32,7 @@ toc: false
 
 
 
-![](images/html5players/webrtc.jpg)
+![](images/html5/webrtc.jpg)
 
 
 
