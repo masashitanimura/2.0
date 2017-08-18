@@ -32,6 +32,10 @@ entries:
       url: /html5players_ersinstallation.html
       output: web, pdf
 
+    - title: ERS Admin Page
+      url: /html5players_ersadminpage.html
+      output: web, pdf
+
     - title: ERS API
       url: /html5players_ersapi.html
       output: web, pdf

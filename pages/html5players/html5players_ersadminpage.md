@@ -1,8 +1,8 @@
 ---
-title: ERS API
+title: ERS Admin Page
 keywords: html5
 sidebar: html5players_sidebar
-permalink: html5players_ersapi.html
+permalink: html5players_ersadminpage.html
 folder: html5players
 toc: true
 ---
