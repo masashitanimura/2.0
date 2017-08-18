@@ -256,10 +256,6 @@ entries:
       url: /userguide_ipv6support.html
       output: web, pdf
 
-    - title: EMS Demo.html
-      url: /userguide_emsdemo.html
-      output: web, pdf
-
     - title: Protocol Support and Specifics
       url: /userguide_protocols.html
       output: web, pdf

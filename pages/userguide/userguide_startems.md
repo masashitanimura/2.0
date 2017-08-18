@@ -158,12 +158,32 @@ The evostreamms executable can be run with a few different options. The command 
 
 **Format:** evostreamms [OPTIONS][config_file_path]
 
-| Command                        | Function                                 |
-| ------------------------------ | ---------------------------------------- |
-| –help                          | Prints this help and exit.               |
-| –version                       | Prints the version and exit.             |
-| –use-implicit-console-appender | Adds extra logging at runtime, but is only effective when the server is started as a console application. This is particularly useful when the server starts and stops immediately for an unknown reason. It will allow you users to see if something is wrong, particularly with the config file. |
-| –daemon                        | Overrides the daemon setting inside the config file and forces the server to start in daemon mode. |
-| –uid=                          | Run the process with the specified user id. |
-| –gid=                          | Run the process with the specified group id. |
-| –pid=<pid_file>                | Create PID file. Works only if –daemon option is specified. |
+| Command                          | Function                                 |
+| -------------------------------- | ---------------------------------------- |
+| `–help`                          | Prints this help and exit.               |
+| `–version`                       | Prints the version and exit.             |
+| `–use-implicit-console-appender` | Adds extra logging at runtime, but is only effective when the server is started as a console application. This is particularly useful when the server starts and stops immediately for an unknown reason. It will allow you users to see if something is wrong, particularly with the config file. |
+| `–daemon`                        | Overrides the daemon setting inside the config file and forces the server to start in daemon mode. |
+| `–uid=`                          | Run the process with the specified user id. |
+| `–gid=`                          | Run the process with the specified group id. |
+| `–pid=<pid_file>`                | Create PID file. Works only if –daemon option is specified. |
+
+------
+
+## Notes
+
+- Starting EMS will also start the following:
+
+  - EMS Web Server
+  - EMS Web UI
+  - EMS Webservices
+
+- You can configure the startup processes in config.lua
+
+  - [runWebServer](userguide_configlua.html#runwebserver)
+
+  - [runWebUI](userguide_configlua.html#runwebui)
+
+  - [eventLogger](userguide_configlua.html#eventlogger)
+
+    ​
