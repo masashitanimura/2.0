@@ -58,13 +58,10 @@ If you already have your local account registered you will be redirected to logi
 
 6. You are now logged in using Facebook account!
 
-   **Note:**
 
-- You can unlink your Facebook account in Profile Page
 
-- Unlinking account in the UI will not remove the EMS Web UI entry in the user's Facebook account. Go to Facebook's *Settings > Apps* page to modify
 
-  ​
+
 
 ## Login Using Google+
 
@@ -72,8 +69,27 @@ If you already have your local account registered you will be redirected to logi
 
 ![](images/userguide/login_g+.jpg)
 
+
+
 2. Sign in the Google account to be used
-3. ​
+
+   ![](images/userguide/g+_signin.JPG)
+
+   ​
+
+3. Google+ will prompt for application permission, click **Allow**
+
+   ![](images/userguide/G+_allow.JPG)
+
+   ​
+
+4. You are now logged in using Google+!
 
 
+------
+
+##Notes
+
+- You can unlink your Facebook or Google+ account in Profile Page
+- Unlinking account in the UI will not remove the EMS Web UI entry in the user's Facebook account. Go to Facebook's *Settings > Apps* page to modify
 
