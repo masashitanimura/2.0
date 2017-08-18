@@ -4,7 +4,7 @@ keywords: html5
 sidebar: html5players_sidebar
 permalink: html5players_ersadminpage.html
 folder: html5players
-toc: true
+toc: false
 ---
 
 ERS has its own Admin page. You can use this in sending ERS API's more conveniently. Simply enter the URI below in your browser to access the Admin page:
@@ -24,12 +24,19 @@ http://localhost:3030/ersadmin.html
 
 3. Click **Send**
 
-   **Notes:**
+   ![](images/html5/ers_sendapi_.JPG)
 
-   - You will see logs in the log pane for the result
+   ​
 
-   - Logs are in json format
+------
 
-     ​
+## Notes
 
-     ![](images/html5/ers_sendapi_.JPG)
+- You will see logs in the log pane for the result
+- Logs are written in json format
+
+------
+
+## Related Links
+
+- [ERS API](html5players_ersapi.html)
