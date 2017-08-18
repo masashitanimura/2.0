@@ -29,10 +29,8 @@ toc: false
 
 4. Hit **Play** to start streaming!
 
+   ![](images/html5/webrtc.jpg)
 
-
-
-![](images/html5/webrtc.jpg)
 
 
 
