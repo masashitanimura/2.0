@@ -22,7 +22,11 @@ This is similar to the `pullStream` command. If you wan't to add a RTSP or RTMP 
 
 4. Click **Add Stream**
 
-   <center> ![](images/userguide/addstream.JPG) </center>
+   <center>
+
+    ![](images/userguide/addstream.JPG) 
+
+   </center>
 
 **Notes:**
 
