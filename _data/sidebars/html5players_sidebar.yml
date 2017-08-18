@@ -45,7 +45,7 @@ entries:
       url: /html5players_wrtcoverview.html
       output: web, pdf
 
-    - title: Playing Videos Using WebRTC Demo Player
+    - title: Playing Videos Using evoplayer.html
       url: /html5players_wrtcdemo.html
       output: web, pdf
 
@@ -67,7 +67,7 @@ entries:
       url: /html5players_wsmetadata.html
       output: web, pdf
 
-    - title: Playing Videos Using WebSocket Demo Player
+    - title: Playing Videos Using evoplayer.html
       url: /html5players_wsdemo.html
       output: web, pdf
 
