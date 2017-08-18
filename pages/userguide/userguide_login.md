@@ -35,11 +35,36 @@ If you already have your local account registered you will be redirected to logi
 
 1. Simply click on the **Log in with Facebook** link to log in
 
-![](images/userguide/login_fb.jpg)
+![](images/userguide/login_fb.JPG)
 
 
 
+2. You will ask to log in if you are not yet logged in to Facebook
+3. Facebook will prompt for application permission form, click **Continue** to proceed
 
+![](images/userguide/fb_allow.JPG)
+
+
+
+4. Facebook will prompt for application permission to post on user's timeline, <u>select the audience</u> in the drop down list then click **OK**
+
+![](images/userguide/fb_allowpost.JPG)
+
+5. Facebook will prompt for the application permission for pages and group posts, <u>select what to allow</u> and click **OK**
+
+   ![](images/userguide/fb_manage.JPG)
+
+   ​
+
+6. You are now logged in using Facebook account!
+
+   **Note:**
+
+- You can unlink your Facebook account in Profile Page
+
+- Unlinking account in the UI will not remove the EMS Web UI entry in the user's Facebook account. Go to Facebook's *Settings > Apps* page to modify
+
+  ​
 
 ## Login Using Google+
 
@@ -47,7 +72,8 @@ If you already have your local account registered you will be redirected to logi
 
 ![](images/userguide/login_g+.jpg)
 
-
+2. Sign in the Google account to be used
+3. ​
 
 
 
