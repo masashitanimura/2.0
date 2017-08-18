@@ -24,7 +24,7 @@ http://localhost:3030/ersadmin.html
 
 3. Click **Send**
 
-   ![](images/html5/ers_sendapi_.JPG)
+   ![](images/html5/ers_sendapi.JPG)
 
    ​
 

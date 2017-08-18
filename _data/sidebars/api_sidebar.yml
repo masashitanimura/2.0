@@ -352,6 +352,10 @@ entries:
       url: /addMetadataListener.html
       output: web, pdf	  
 
+    - title: listMetadataListeners
+      url: /listMetadataListeners.html
+      output: web, pdf	  
+
 
   - title: Event Notification System
     output: web, pdf
