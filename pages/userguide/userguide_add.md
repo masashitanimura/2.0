@@ -15,11 +15,14 @@ This is where you can add a stream to your EMS. You can add simple streams and H
 This is similar to the `pullStream` command. If you wan't to add a RTSP or RTMP stream, simply do the following:
 
 1. Choose  **Inbound Live Stream** under Choose the Stream Type to Add
+
 2. Enter the **URI Stream Source**
+
 3. Enter the **Local Stream Name**
+
 4. Click **Add Stream**
 
-<center> ![](images/userguide/addstream.JPG) </center>
+   <center> ![](images/userguide/addstream.JPG) </center>
 
 **Notes:**
 
