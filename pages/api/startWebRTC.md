@@ -7,8 +7,6 @@ folder: api
 toc: false
 ---
 
-
-
 Starts a WebRTC signalling client to an ERS (Evostream Rendezvous Server).
 
 This will open the port in the given IP address and will open doors for the room ID which can be accessed using the evowrtcclient.html
@@ -24,13 +22,14 @@ This will open the port in the given IP address and will open doors for the room
 |     ersIp      | string |   true    |    *null*     | IP address (xx.yy.zz.xx) of ERS          |
 |    ersPort     | string |   true    |    *null*     | Port of ERS                              |
 |     roomId     | string |   true    |    *null*     | Unique room Identifier within ERS that will be used by client browsers to connect to this EMS |
+|     token      | string |   false   |    *null*     | The security token to be used within ERS |
 
 
 
 ## API Call Template
 
 ``` 
-startWebrtc ersip=<<ERS_IPAddress> ersport=<ERS_Port> roomid=<roomID>
+startWebrtc ersip=<ERS_IPAddress> ersport=<ERS_Port> roomid=<roomID>
 ```
 
 

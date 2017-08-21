@@ -18,10 +18,11 @@ Starting the Web UI using `run_console_webui` will open a separate console for t
 
    ![](images/userguide/startui_console.jpg)
 
-**Note:**
+   ​
 
-- You may configure the logging level of UI in `../node-webui/config/logging.json`
+   **Note:**
 
+   - You may configure the logging level of UI in `../node-webui/config/logging.json`
 
 
 
@@ -31,12 +32,11 @@ For Linux environment only, running Web UI via Daemon mode is also available. Th
 
 1. Run `run_daemon_webui.sh`
 
-**Note:**
+   **Note:**
 
-- Run ps -ef|grep node to see if web ui is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
-- You may check the Web UI logs in `../node-webui/logs/`
-- The configuration of the log level is the same with console logs and file logs
-
+   - Run ***ps -ef|grep node*** to see if Web UI is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
+   - You may check the Web UI logs in `../node-webui/logs/`
+   - The configuration of the log level is the same with console logs and file logs
 
 
 

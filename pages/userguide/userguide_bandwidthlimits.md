@@ -21,4 +21,4 @@ Default for in and out is zero (0) which means no limit.
 </MAP>
 ```
 
-See [enableCheckBandwidth](# enableCheckBandwidth).
+See [enableCheckBandwidth](userguide_configlua.html#enablecheckbandwidth).

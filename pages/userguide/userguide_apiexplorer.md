@@ -41,4 +41,4 @@ This tool lets you use the EMS Core API by helping you build the commands that w
 
 
 
-**For more information with the EMS API, see API documentation [here](/api/overview.html).**
+**For more information with the EMS API, see API documentation [here](/overview.html).**

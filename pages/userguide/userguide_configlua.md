@@ -15,25 +15,27 @@ The EMS configuration file, config.lua, is a hierarchical data structure of assi
 
   where `value` could be any of the following types:
 
-- string = series of alpha numeric characters (should be enclosed in double quotes)
+  - string = series of alpha numeric characters (should be enclosed in double quotes)
 
-  ```
-  Example:	pushPullPersistenceFile="..\\config\\pushPullSetup.xml",
-  ```
+    ```
+    Example:	pushPullPersistenceFile="..\\config\\pushPullSetup.xml",
+    ```
 
-- number = digits
+  - number = digits
 
-  ```
-  ​```
-  Example:	streamsExpireTimer=10,
-  ​```
-  ```
+    ```
+    ​```
+    Example:	streamsExpireTimer=10,
+    ​```
+    ```
 
-- array = list of values (separated by comma and is grouped by braces {}, each value enclosed in double quotes)
+  - array = list of values (separated by comma and is grouped by braces {}, each value enclosed in double quotes)
 
-  ```
-  Example:	aliases = {“flvplayback1”, “vod1”, “live”}
-  ```
+    ```
+    Example:	aliases = {“flvplayback1”, “vod1”, “live”}
+    ```
+
+    ​
 
 
 - **`<keyname>= <object>`**
@@ -50,41 +52,41 @@ The EMS configuration file, config.lua, is a hierarchical data structure of assi
   }
   ```
 
-**Note:** 
+  **Note:** 
 
-If you modify this file and the server then fails to start, you have made an error. You can either roll-back your changes or you can use the `--use-implicit-console-appender` command line parameter to get extra debug information about what failed during startup.
+  If you modify this file and the server then fails to start, you have made an error. You can either roll-back your changes or you can use the `--use-implicit-console-appender` command line parameter to get extra debug information about what failed during startup.
 
-- For Linux Package:
+  - For Linux Package:
 
-  ```
-  cd /usr/bin/evostreamms –use-implicit-console-appender /etc/evostreamms/config.lua
-  ```
+    ```
+    cd /usr/bin/evostreamms –use-implicit-console-appender /etc/evostreamms/config.lua
+    ```
 
-- For Linux Archive:
 
-  ```
-  cd EMS_INSTALL_DIRECTORY
-  ./evostreamms --use-implicit-console-appender ../config/config.lua
-  ```
+  - For Linux Archive:
 
-- For Windows:
+    ```
+    cd EMS_INSTALL_DIRECTORY
+    ./evostreamms --use-implicit-console-appender ../config/config.lua
+    ```
 
-  ```
-  cd EMS_INSTALL_DIRECTORY
-  evostreamms --use-implicit-console-appender config\config.lua
-  ```
 
-where:
+  - For Windows:
 
-EMS_INSTALL_DIRECTORY is the `bin` directory within the EvoStream Media Server Archive directory.
+    ```
+    cd EMS_INSTALL_DIRECTORY
+    evostreamms --use-implicit-console-appender config\config.lua
+    ```
 
-1. The “daemon” value is read. The server now will either fork to become daemon or continue as is in console mode.
+  **Where:**
 
-2. The “logAppenders” value is read. This is where all log appenders are configured and brought up to running state. Depending on the collection of your log appenders, you may (not) see further log messages.
+  EMS_INSTALL_DIRECTORY is the `bin` directory within the EvoStream Media Server Archive directory.
 
-3. The “applications” value is taken into consideration. Up until now, the server doesn’t do much. After this stage completes, all the applications are fully functional and the server is online and ready to do stuff.
+  1. The “daemon” value is read. The server now will either fork to become daemon or continue as is in console mode.
+  2. The “logAppenders” value is read. This is where all log appenders are configured and brought up to running state. Depending on the collection of your log appenders, you may (not) see further log messages.
+  3. The “applications” value is taken into consideration. Up until now, the server doesn’t do much. After this stage completes, all the applications are fully functional and the server is online and ready to do stuff.
 
-   ​
+
 
 ## daemon
 
@@ -370,6 +372,8 @@ Enables or disables stream name aliases
 hasStreamAliases=false,
 ```
 
+See [addStreamAlias](addStreamAlias.html)
+
 
 
 ### hasIngestPoints
@@ -383,6 +387,8 @@ The configuration of the ingest point
 ```
 hasIngestPoints=false
 ```
+
+See [createIngestPoint](createIngestPoint.html)
 
 
 
@@ -490,6 +496,8 @@ Reads the bandwidth.xml if set to true
 ```
 enableCheckBandwidth=true,
 ```
+
+See [bandwidths.xml](userguide_bandwidthlimits.html)
 
 
 
@@ -626,7 +634,9 @@ There are several uses of the media folder:
 |    seekGranularity    | number  |   False   | Seeking only occurs at key-frames if true. If false, seeking may occur on inter-frame packets, which may cause garbage to be shown on the client player until a keyframe is reached |
 | externalSeekGenerator | boolean |   False   | The fidelity, in seconds, of seeking for the files in this mediaFolder |
 
-   
+See [addStorage](addStorage.html) 
+
+
 
 ### acceptors
 
@@ -819,7 +829,9 @@ The “acceptors” block is found within the “applications” section named �
 |   inboundWSFMP4    |  0.0.0.0   |     8410     |              -              |                       |
 |   inboundWSSFMP4   |  0.0.0.0   |     8420     |       sslKey, sslCert       |                       |
 
-  **Protocol Group Table:**
+
+
+**Protocol Group Table:**
 
 |    Protocol Group    |   Tag    | Protocol Type          |
 | :------------------: | :------: | ---------------------- |
@@ -931,7 +943,7 @@ authentication=
 |   \|\|    |      token       |   false   |          "secretstring"          |
 |   RTSP    |    usersFile     |   true    |      ”../config/users.lua”       |
 |   \|\|    | authenticatePlay |   false   |              false               |
-| WebSocket |      token       |           |            "<blank>"             |
+| WebSocket |      token       |           |           "< blank >"            |
 
 **Notes:**
 
@@ -1032,7 +1044,8 @@ eventLogger=
 
 
 
-**B. RPC - WebUI** 
+
+**C. RPC - WebUI** 
 
 ```
 {
@@ -1060,9 +1073,10 @@ eventLogger=
 
 
 
+
 ### transcoder
 
-the configuration for the transcoder
+The configuration for the transcoder
 
 **Type:** Object
 

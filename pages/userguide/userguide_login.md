@@ -23,9 +23,10 @@ You can log in to the EMS Web UI using the following:
 If you already have your local account registered you will be redirected to login page when you go to `<EMSIPaddress>:4100`
 
 1. Enter the registered email address and password
+
 2. Click Log In
 
-![](images/userguide/locallogin.JPG)
+   ![](images/userguide/locallogin.JPG)
 
 
 

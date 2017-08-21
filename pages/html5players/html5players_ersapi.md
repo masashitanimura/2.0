@@ -165,3 +165,54 @@ Displays all rooms with their corresponding descriptions and status.
 ```
 http://127.0.0.1:3030/?c=listRooms
 ```
+
+
+### Add EMS Token
+
+Displays all rooms with their corresponding descriptions and status.
+
+| **Field**    | **Value**      |
+| ------------ | -------------- |
+| Command Name | addEMSToken    |
+| Parameter Id | < token name > |
+
+**API Call**
+
+```
+http://127.0.0.1:3030/?c=addEMSToken&i=tokenName
+```
+
+
+
+### List EMS Tokens
+
+Displays all rooms with their corresponding descriptions and status.
+
+| **Field**    | **Value**    |
+| ------------ | ------------ |
+| Command Name | listEMSToken |
+| Parameter Id | (ignored)    |
+
+**API Call**
+
+```
+http://127.0.0.1:3030/?c=listEMSToken
+```
+
+
+
+### Delete EMS Token
+
+Deletes all tokens with their corresponding descriptions and status.
+
+| **Field**    | **Value**      |
+| ------------ | -------------- |
+| Command Name | delEMSToken    |
+| Parameter Id | < token name > |
+
+**API Call**
+
+```
+http://127.0.0.1:3030/?c=delEMSToken&i=tokenName
+```
+

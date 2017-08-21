@@ -204,6 +204,10 @@ entries:
       url: /userguide_pushstream.html
       output: web, pdf
 
+    - title: Push-in a Stream
+      url: /userguide_pushin.html
+      output: web, pdf
+  
     - title: Create HLS Stream
       url: /userguide_createhls.html
       output: web, pdf

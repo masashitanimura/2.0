@@ -219,7 +219,7 @@ Following is the content of the `default.json` config file:
 |      adminIP       |        127.0.0.1         | Allowed IP address that can connect to ERS as an admin. This needs to be adjusted to match the actual IP address of the machine used to access the admin APIs of ERS |
 |     adminPort      |           3030           | Port number where ERS admin access listens to |
 |    allowedrooms    |            -             | List of room names as strings that will only allowed to be created by ERS. Leave this empty to allow any rooms to be created. Or create one room for each running ems instance so that only intended rooms get created which also serves as an additional layer of security |
-|     emsTokens      |            -             |                                          |
+|     emsTokens      |            -             | Security token of ERS                    |
 |    stunservers     | stun:162.209.96.37:55555 | List of STUN servers that ERS can use    |
 |    turnservers     |            -             | List of TURN servers that ERS can use    |
 

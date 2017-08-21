@@ -242,6 +242,10 @@ entries:
       url: /setLogLevel.html
       output: web, pdf
 
+    - title: getLicenseId
+      url: /getLicenseId.html
+      output: web, pdf
+
     - title: version
       url: /version.html
       output: web, pdf
@@ -350,11 +354,11 @@ entries:
 
     - title: addMetadataListener
       url: /addMetadataListener.html
-      output: web, pdf	  
+      output: web, pdf
 
     - title: listMetadataListeners
       url: /listMetadataListeners.html
-      output: web, pdf	  
+      output: web, pdf
 
 
   - title: Event Notification System

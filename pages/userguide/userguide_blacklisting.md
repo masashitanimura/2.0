@@ -6,7 +6,7 @@ folder: userguide
 toc: false
 ---
 
-Blacklisting allows you to limit access to your EMS. This will affect anything that accesses the web port which is by default 8888. This feature works with the two configuration files which are the [blacklist.txt](userguide_blacklist.html) and [whitelist.txt](userguide_whitelist.html)
+Blacklisting allows you to limit access to your EMS. This will affect anything that accesses the web port which is by default **8888**. This feature works with the two configuration files which are the [blacklist.txt](userguide_blacklist.html) and [whitelist.txt](userguide_whitelist.html)
 
 
 
@@ -51,23 +51,26 @@ Blacklisting allows you to limit access to your EMS. This will affect anything t
 
 3. Run EMS
 
+   In this example, only IP addresses listed in the whitelist.txt will be granted access to the web server port of EMS, the rest are blacklisted. See the implementation below.
+
+   **Implementation:**
+
+   | Blacklist | Whitelist | Allowed IPs                            |
+   | :-------: | :-------: | -------------------------------------- |
+   |   empty   |   empty   | all IPs are allowed                    |
+   |  x.x.x.x  |   empty   | all IPs are allowed except for x.x.x.x |
+   |   empty   |  y.y.y.y  | only y.y.y.y is allowed                |
+   |  x.x.x.x  |  y.y.y.y  | only y.y.y.y is allowed                |
+   |  no file  |  y.y.y.y  | only y.y.y.y is allowed                |
+   |  x.x.x.x  |  no file  | all IPs are allowed except for x.x.x.x |
+   |  no file  |  no file  | error                                  |
 
 
-In this example, only IP addresses listed in the whitelist.txt will be granted access to the web server port of EMS, the rest are blacklisted. See the implementation below.
+------
 
-**Implementation:**
+## Notes
 
-| Blacklist | Whitelist | Allowed IPs                            |
-| --------- | --------- | -------------------------------------- |
-| empty     | empty     | all IPs are allowed                    |
-| x.x.x.x   | empty     | all IPs are allowed except for x.x.x.x |
-| empty     | y.y.y.y   | only y.y.y.y is allowed                |
-| x.x.x.x   | y.y.y.y   | only y.y.y.y is allowed                |
-| no file   | y.y.y.y   | only y.y.y.y is allowed                |
-| x.x.x.x   | no file   | all IPs are allowed except for x.x.x.x |
-| no file   | no file   | error                                  |
-
-
+- You can use IPv6 in this list
 
 ------
 

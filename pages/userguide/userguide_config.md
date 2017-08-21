@@ -17,6 +17,7 @@ This page lists all the push/pull configurations in EMS. There we're several con
 - dash - list of DASH streams in EMS
 - hds - list of HDS streams in EMS
 - mss - list of MSS streams in EMS
+- metalistener - list of metadata listeners in EMS
 - record - list of record streams in EMS
 - process - list of processes in EMS
 
