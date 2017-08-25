@@ -236,6 +236,10 @@ entries:
       url: /userguide_addstreamauth.html
       output: web, pdf
 
+    - title: Play Over HTTP
+      url: /userguide_playoverhttp.html
+      output: web, pdf
+
     - title: Blacklisting
       url: /userguide_blacklisting.html
       output: web, pdf

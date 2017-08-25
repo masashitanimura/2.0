@@ -62,21 +62,19 @@ The EMS configuration file, config.lua, is a hierarchical data structure of assi
     cd /usr/bin/evostreamms –use-implicit-console-appender /etc/evostreamms/config.lua
     ```
 
+    - For Linux Archive:
 
-  - For Linux Archive:
+      ```
+      cd EMS_INSTALL_DIRECTORY
+      ./evostreamms --use-implicit-console-appender ../config/config.lua
+      ```
 
-    ```
-    cd EMS_INSTALL_DIRECTORY
-    ./evostreamms --use-implicit-console-appender ../config/config.lua
-    ```
+    - For Windows:
 
-
-  - For Windows:
-
-    ```
-    cd EMS_INSTALL_DIRECTORY
-    evostreamms --use-implicit-console-appender config\config.lua
-    ```
+      ```
+      cd EMS_INSTALL_DIRECTORY
+      evostreamms --use-implicit-console-appender config\config.lua
+      ```
 
   **Where:**
 
@@ -84,7 +82,7 @@ The EMS configuration file, config.lua, is a hierarchical data structure of assi
 
   1. The “daemon” value is read. The server now will either fork to become daemon or continue as is in console mode.
   2. The “logAppenders” value is read. This is where all log appenders are configured and brought up to running state. Depending on the collection of your log appenders, you may (not) see further log messages.
-  3. The “applications” value is taken into consideration. Up until now, the server doesn’t do much. After this stage completes, all the applications are fully functional and the server is online and ready to do stuff.
+  3. The “applications” value is taken into consideration. Up until now, the server doesn't do much. After this stage completes, all the applications are fully functional and the server is online and ready to do stuff.
 
 
 
@@ -661,6 +659,11 @@ The “acceptors” block is found within the “applications” section named �
 				},
 				{
 					ip="0.0.0.0",
+					port=9999,
+					protocol="inboundHttpFmp4" 
+				},
+				{
+					ip="0.0.0.0",
 					port=1222,
 					protocol="inboundAsciiCli",
 					useLengthPadding=true
@@ -892,7 +895,15 @@ autoMSS=
 
 
 
-**Note:** You can add other parameters associated with the API. See [createDASHStream](api_createDASHStream.html),[createHLSStream](api_createHLSStream.html), [createHDSStream](api_createHDSStream.html), [createMSSStream](api_createMSSStream.html), for parameter lists.
+**Note:** You can add other parameters associated with the API. See [createDASHStream](api_createDASHStream.html),[createHLSStream](api_createHLSStream.html), [createHDSStream](api_createHDSStream.html), [createMSSStream](api_createMSSStream.html), for parameter lists but below are the parameters that **cannot be modified** using auto:
+
+| Parameter            | Value   |
+| -------------------- | ------- |
+| keepAlive            | false   |
+| cleanupDestination   | true    |
+| createMasterPlaylist | false   |
+| overwriteDestination | true    |
+| playlistType         | rolling |
 
 
 
@@ -1028,10 +1039,13 @@ eventLogger=
 							"hdsMasterPlaylistUpdated",
 							"hdsChildPlaylistUpdated",
 							"hdsChunkClosed",
+							"hdsChunkDeleted",							
 							"hlsMasterPlaylistUpdated",
 							"hlsChunkClosed",
+							"hlsChunkDeleted",									
 							"dashPlaylistUpdated",
 							"dashChunkClosed",
+							"dashChunkDeleted",									
 						},
 					},
 ```

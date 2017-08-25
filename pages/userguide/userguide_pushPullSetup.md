@@ -44,7 +44,7 @@ When the EMS is started, it parses this file and attempts to recreate all of the
 
 ------
 
-**Notes:** 
+##Notes:
 
 - Do not modify this file or else this file will be corrupted.
 - If you wish to have a “clean start” of the server, with no previous streams, you may delete this file before starting the EMS.

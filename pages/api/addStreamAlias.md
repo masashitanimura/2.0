@@ -41,6 +41,8 @@ addStreamAlias localStreamName=<localStreamName> aliasName=<aliasName>
 addStreamAlias localStreamName=testpullStream aliasName=testStreamAlias expirePeriod=0
 ```
 
+Stream with “**testpullStream**” as `localStreamName` will have an alias of “**testStreamAlias**”.
+
 
 
 ### Success Response in JSON
@@ -71,11 +73,24 @@ The JSON response contains the following details:
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 
+
+
+##Alias in VOD
+
+You can also set an alias for the VOD streams:
+
+```
+addStreamAlias localStreamName=mp4:myfile.mp4 aliasName=myVODalias expirePeriod=0
+```
+
+Media file with “**myfile.mp4**” filename will have an alias of “**myVODalias**”
+
 ------
 
 ## Notes
 
 - **hasStreamAliases** in config.lua should be **TRUE**
+- If you will use VOD as a stream source, you need to issue the VOD's alias first or else the file will not be seen by EMS
 
 
 ------

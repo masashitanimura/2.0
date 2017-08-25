@@ -50,19 +50,23 @@ This **enables** the service with an id of 5.
 
 ```
 {
-    "data":{
-        "acceptedConnectionsCount":0,
-        "appId":1,
-        "appName":"evostreamms",
-        "droppedConnectionsCount":0,
-        "enabled":true,
-        "id":5,
-        "ip":"0.0.0.0",
-        "port":6666,
-        "protocol":"inboundLiveFlv",
-    },
-    "description":"Status changed",
-    "status":"SUCCESS"
+          "data": {
+                    "data": {
+                              "acceptedConnectionsCount": 3,
+                              "appId": 1,
+                              "appName": "evostreamms",
+                              "droppedConnectionsCount": 0,
+                              "enabled": true,
+                              "id": 5,
+                              "ip": "0.0.0.0",
+                              "port": 9556,
+                              "protocol": "inboundRtmp,
+                              "sslCert": "",
+                              "sslKey": ""
+                    },
+                    "description": "Status changed",
+                    "status": "SUCCESS"
+          }
 }
 ```
 
