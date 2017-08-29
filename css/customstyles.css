@@ -1053,7 +1053,7 @@ ol li ul li ol li ul li{
 }
 
 .post-content table th {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 table thead th code.highlighter-rouge {
