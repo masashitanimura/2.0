@@ -15,10 +15,6 @@ entries:
       url: /titlepage
       output: pdf
       type: frontmatter
-    - title:
-      url: /tocpage
-      output: pdf
-      type: frontmatter
 
   - title: Discussion
     output: web, pdf
