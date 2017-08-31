@@ -42,7 +42,7 @@ addMetadataListener port=3535 localstreamname=meta
 ``` 
 {
 "data":{
-"acceptedConnection sCount":0,
+"acceptedConnectionsCount":0,
 "appId":1,
 "appName":"evostreamms",
 "droppedConnectionsCount":0,
@@ -53,7 +53,7 @@ addMetadataListener port=3535 localstreamname=meta
 "port":3535,
 "protocol":"inboundJsonMeta"
 },
-"description":"Metadata listener created",
+"description":"Metadatalistener created",
 "status":"SUCCESS"
 }
 ```
@@ -68,7 +68,7 @@ The JSON response contains the following details:
   - acceptedConnectionsCount - Number of active connections
   - appId - ID of application using the service
   - appName - Application using the service
-  -  droppedConnectionsCount - Number of dropped connections
+  - droppedConnectionsCount - Number of dropped connections
   - enabled - `true` if the service is enabled, `false` if not
   - id - ID of the service
   - ip - IP address used by the service
