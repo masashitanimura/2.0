@@ -271,16 +271,11 @@ C:\EvoStream
    ├── services
    │   ├── ems
    │   │   ├── create.bat
-   │   │   ├── nssm.exe
    │   │   ├── remove.bat
    │   │   ├── start.bat   
    │   │   ├── stop.bat      
    │   │   └── uninstall.bat    
-   │   └── webui     
-   │   │   ├── create_webui_service.bat
-   │   │   ├── remove_webui_service.bat
-   │   │   ├── start_webui_service.bat
-   │   └── └── stop_webui_service.bat 
+   │   └── nssm.exe   
    ├── emsTranscoder.bat
    ├── evo-avconv.exe
    ├── evo-mp4writer.exe
