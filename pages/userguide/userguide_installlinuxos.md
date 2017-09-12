@@ -372,9 +372,6 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   ├── users.lua
   │   ├── webconfig.json
   │   └── whitelist.txt
-  ├── demo
-  │   ├── base64.js
-  │   └── emsdemo.html
   ├── evo-avconv-presets
   │   └── [30 transcode preset files]
   ├── evo-webroot

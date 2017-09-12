@@ -19,14 +19,12 @@ http://localhost:3030/ersadmin.html
 ![](images/html5/ersadminpage.JPG)
 
 1. Select **Command** to send
-
 2. Enter **Parameter** for the command if there's any
-
 3. Click **Send**
 
-   ![](images/html5/ers_sendapi.JPG)
+![](images/html5/ers_sendapi.JPG)
 
-   ​
+
 
 ------
 

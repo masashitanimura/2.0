@@ -103,9 +103,6 @@ C:\EvoStream
    │   ├── users.lua
    │   ├── webconfig.json
    │   └── whitelist.txt
-   ├── demo
-   │   ├── base64.js
-   │   └── emsdemo.html
    ├── evo-avconv-presets
    │   ├── libx264-baseline.avpreset
    │   ├── libx264-fast.avpreset

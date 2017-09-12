@@ -803,7 +803,7 @@ The “acceptors” block is found within the “applications” section named �
 
 
 
-**acceptor Structure Table:**
+**Acceptor Structure Table:**
 
 |   Key    |  Type  | Mandatory | Description                              |
 | :------: | :----: | :-------: | ---------------------------------------- |
@@ -943,7 +943,7 @@ authentication=
 			},
 ```
 
-**authentication Structure Table:**
+**Authentication Structure Table:**
 
 | Protocol  |    Parameter     | Mandatory |         Typical Setting          |
 | :-------: | :--------------: | :-------: | :------------------------------: |
@@ -1103,6 +1103,14 @@ transcoder = {
 				dstUriPrefix="-f flv tcp://localhost:6666/"
 			},
 ```
+
+**Transcoder Structure Table:**
+
+|     Key      |  Type  | Mandatory | Description                              |
+| :----------: | :----: | :-------: | ---------------------------------------- |
+|  scriptPath  | string |    yes    | The location for the helper script for the transcoder. The transcode API function calls this script instead of calling the binary directly so that the binary can be replaced should you want to use a custom transcoder. |
+| srcUriPrefix | string |    yes    | When using the `transcode` API function, you can specify just a `localStreamName` as the source stream. This is the prefix that will be pre-pended to the provided `localStreamName` when actually pulling that source stream. For example, if `srcUriPrefix="rtsp://localhost:5544"` and the stream name `"test1"` is given to the transcode command, the following URI will be used: `rtsp://localhost:5544/test1` |
+| dstUriPrefix | string |    yes    | This is the converse of the srcUriPrefix, in that if just a `localStreamName` is given as a destination in the transcode command, this is the string that will be prepended to the stream name. That complete command will then be used by the transcoder to send the stream back to the EMS. |
 
 
 
