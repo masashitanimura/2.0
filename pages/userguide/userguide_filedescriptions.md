@@ -27,11 +27,11 @@ toc: true
 
 | File Name     | Description                              |
 | ------------- | ---------------------------------------- |
-| create.bat    | Script to create a **Windows** service for the EMS. This will also start the EMS as a background process. This must be run with Administrative privileges as it writes to the Windows Registry. *This only needs to be run once.* |
-| remove.bat    | Script to remove the **Windows** service for the EMS and remove the relevant Windows Registry entries. This must be run with Administrative privileges. |
-| start.bat     | Script to start the EMS **Windows** service. This script will not work if create.bat has not been run first. |
-| stop.bat      | Script to stop the EMS **Windows** Service. |
-| uninstall.bat | Script used to uninstall EMS **Windows** Service during uninstallation. |
+| create.bat    | Script to create a Windows service for the EMS. This will also start the EMS as a background process. This must be run with Administrative privileges as it writes to the Windows Registry. *This only needs to be run once.* |
+| remove.bat    | Script to remove the Windows service for the EMS and remove the relevant Windows Registry entries. This must be run with Administrative privileges. |
+| start.bat     | Script to start the EMS Windows service. This script will not work if create.bat has not been run first. |
+| stop.bat      | Script to stop the EMS Windows Service.  |
+| uninstall.bat | Script used to uninstall EMS Windows Service during uninstallation. |
 
 
 
@@ -49,12 +49,14 @@ toc: true
 
 | File Name           | Description                              |
 | ------------------- | ---------------------------------------- |
-| config.lua          | The main configuration file used by the EMS. The contents of this file are detailed later in this document. |
-| webconfig.json      | The EvoStream Web Server (EWS) configuration file. The contents of this file are detailed later in this document. |
-| users.lua           | Defines the valid authentication the server will require when streams are pushed into the EMS. |
-| pushPullSetup.xml   | This file is used by the EMS to store stream action commands that are made through the Runtime API. This file may not be modified. At startup, if the EMS detects that the file has been modified it will rename the file and start with a blank/fresh copy. |
-| connlimits.xml      | Defines the maximum number of concurrent connections you want the EMS to accept |
+| auth.xml            | The configuration of users.lua.          |
 | bandwidthlimits.xml | Defines the maximum amount of bandwidth you want the server to be able to use (set the instantaneous bandwidth cap). |
+| config.lua          | The main configuration file used by the EMS. The contents of this file are detailed later in this document. |
+| connlimits.xml      | Defines the maximum number of concurrent connections you want the EMS to accept |
+| ingestpoints.xml    | The configuration file where the ingest points are saved. |
+| pushPullSetup.xml   | This file is used by the EMS to store stream action commands that are made through the Runtime API. This file may not be modified. At startup, if the EMS detects that the file has been modified it will rename the file and start with a blank/fresh copy. |
+| users.lua           | Defines the valid authentication the server will require when streams are pushed into the EMS. |
+| webconfig.json      | The EvoStream Web Server (EWS) configuration file. The contents of this file are detailed later in this document. |
 
 
 
@@ -68,11 +70,17 @@ toc: true
 
 ## Miscellaneous
 
-| File/Folder Name   | Description                              |
-| ------------------ | ---------------------------------------- |
-| tests.exe          |                                          |
-| media/             | The media directory is the default location for video-on-demand files. This is where the EMS will look when VOD requests are made. This default location can be changed in the EMS main configuration file, which is typically `config/config.lua` |
-| logs/              | This is the directory that EMS will write its logs to. This default location can be changed in the EMS main configuration file, which is typically `config/config.lua` |
-| License.lic        | This is the license file required to run the EMS. It can be placed in the `config/` , `bin/` , or `/etc/evostreamms/` folders, or in whatever folder the evostreamms binary resides. |
-| evowebservices.log | This is an auto-generated file which contains the logs for the evowebservices. The file will be placed in `../evo-webroot/evowebservices`. |
+| File/Folder Name       | Description                              |
+| ---------------------- | ---------------------------------------- |
+| blacklist.txt          | The list of the blacklisted IP addresses |
+| whitelist.txt          | The list of the whitelisted IP addresses |
+| server.key             | The private key used for security authentication. |
+| server.cert            | The certificate used for security authentication. |
+| tests.exe              | A binary file in Windows that performs series of tests to verify if there is an issue with your Windows. |
+| platformTests          | A binary file in Linux that performs series of tests to verify if there is an issue with your Linux environment. |
+| media/                 | The media directory is the default location for video-on-demand files. This is where the EMS will look when VOD requests are made. This default location can be changed in the EMS main configuration file, which is typically `config/config.lua` |
+| logs/                  | This is the directory that EMS and EvoWebserver will write its logs to. This default location can be changed in the config.lua for EMS logs and webconfig.json for EvoWebserver logs. |
+| License.lic            | This is the license file required to run the EMS. It can be placed in the `config/` , `bin/` , or `/etc/evostreamms/` folders, or in whatever folder the evostreamms binary resides. |
+| /node-webservices/logs | The directory of the node-webservices logs. |
+| /node-webui/logs       | The directory of the node-webui logs.    |
 

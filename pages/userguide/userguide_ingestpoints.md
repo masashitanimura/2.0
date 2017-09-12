@@ -39,7 +39,7 @@ createIngestPoint privateStreamName=theIngestPoint5 publicStreamName=Stream5
 
 ```
 <?xml version="1.0" ?>
-<MAP isArray="false" name="">
+<MAP isArray="true" name="">
     <STR name="theIngestPoint1">Stream1</STR>
     <STR name="theIngestPoint2">Stream2</STR>
     <STR name="theIngestPoint3">Stream3</STR>
@@ -47,3 +47,8 @@ createIngestPoint privateStreamName=theIngestPoint5 publicStreamName=Stream5
     <STR name="theIngestPoint5">Stream5</STR>
 </MAP>
 ```
+------
+
+## Related Links
+
+- [hasIngestPoints](userguide_configlua.html#hasingestpoints)
