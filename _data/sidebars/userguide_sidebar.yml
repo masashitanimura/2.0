@@ -261,15 +261,15 @@ entries:
 
     folderitems:
     - title: Events Overview
-      url: /eventsoverview.html
+      url: /userguide_eventsoverview.html
       output: web, pdf
 
     - title: Events List
-      url: /eventlist.html
+      url: /userguide_eventlist.html
       output: web, pdf
 
     - title: Events Definitions
-      url: /eventsdefinition.html
+      url: /userguide_eventsdefinition.html
       output: web, pdf
 
   - title: Appendix
