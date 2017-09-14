@@ -256,6 +256,22 @@ entries:
       url: /userguide_userdefined.html
       output: web, pdf
 
+  - title: Event Notification System
+    output: web, pdf
+
+    folderitems:
+    - title: Events Overview
+      url: /eventsoverview.html
+      output: web, pdf
+
+    - title: Events List
+      url: /eventlist.html
+      output: web, pdf
+
+    - title: Events Definitions
+      url: /eventsdefinition.html
+      output: web, pdf
+
   - title: Appendix
     output: web, pdf
 

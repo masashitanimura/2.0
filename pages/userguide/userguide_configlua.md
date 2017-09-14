@@ -1,5 +1,5 @@
 ---
-title: config.lua
+=title: config.lua
 keywords: configuration
 sidebar: userguide_sidebar
 permalink: userguide_configlua.html
@@ -228,8 +228,6 @@ appDir="./",
 ```
 
 **Note:** Be mindful of the application directory when using relative paths. You may misplace your files if you overlooked this setting
-
-
 
 
 
@@ -633,9 +631,9 @@ There are several uses of the media folder:
 
 |          Key           |  Type  | Mandatory | Description                              |
 | :--------------------: | :----: | :-------: | ---------------------------------------- |
-| recordedStreamsStorage | String |   True    | The path of the media folder to be used in record streams |
-|      description       | String |   False   | The description of the media storage     |
-|      mediafolder       | String |   True    | The path of the media storage folder     |
+| recordedStreamsStorage | string |   true    | The path of the media folder to be used in record streams |
+|      description       | string |   false   | The description of the media storage     |
+|      mediafolder       | string |   true    | The path of the media storage folder     |
 
 
 
@@ -643,12 +641,12 @@ There are several uses of the media folder:
 
 |          Key          |  Type   | Mandatory | Description                              |
 | :-------------------: | :-----: | :-------: | ---------------------------------------- |
-|      metaFolder       | string  |   False   | The folder path of the seek and meta files generated |
-|      enableStats      | boolean |   False   | The location where the EMS will create statistic, seek and meta files for each of the VOD files. The EMS must be able to write to this folder |
-|   clientSideBuffer    | number  |   False   | If true, the EMS will record statistics about each VOD file played. The stats will be kept in a .stats file named the same as the media file stored in the metaFolder and will include the number of times accessed and the amount of bytes served from it |
-|     keyframeSeek      | boolean |   False   | The number of seconds the EMS will buffer content when doing VOD playback for an RTMP client |
-|    seekGranularity    | number  |   False   | Seeking only occurs at key-frames if true. If false, seeking may occur on inter-frame packets, which may cause garbage to be shown on the client player until a keyframe is reached |
-| externalSeekGenerator | boolean |   False   | The fidelity, in seconds, of seeking for the files in this mediaFolder |
+|      metaFolder       | string  |   false   | The folder path of the seek and meta files generated |
+|      enableStats      | boolean |   false   | The location where the EMS will create statistic, seek and meta files for each of the VOD files. The EMS must be able to write to this folder |
+|   clientSideBuffer    | number  |   false   | If true, the EMS will record statistics about each VOD file played. The stats will be kept in a .stats file named the same as the media file stored in the metaFolder and will include the number of times accessed and the amount of bytes served from it |
+|     keyframeSeek      | boolean |   false   | The number of seconds the EMS will buffer content when doing VOD playback for an RTMP client |
+|    seekGranularity    | number  |   false   | Seeking only occurs at key-frames if true. If false, seeking may occur on inter-frame packets, which may cause garbage to be shown on the client player until a keyframe is reached |
+| externalSeekGenerator | boolean |   false   | The fidelity, in seconds, of seeking for the files in this mediaFolder |
 
 See [addStorage](addStorage.html) 
 
@@ -825,9 +823,9 @@ The “acceptors” block is found within the “applications” section named �
 
 |   Key    |  Type  | Mandatory | Description                              |
 | :------: | :----: | :-------: | ---------------------------------------- |
-|    ip    | string |    yes    | The IP where the service is located. A value of 0.0.0.0 means all interfaces and all IPs. |
-|   port   | string |    yes    | Port number that the service will listen to. |
-| protocol | string |    yes    | The protocol stack handled by the ip:port combination. |
+|    ip    | string |   true    | The IP where the service is located. A value of 0.0.0.0 means all interfaces and all IPs. |
+|   port   | string |   true    | Port number that the service will listen to. |
+| protocol | string |   true    | The protocol stack handled by the ip:port combination. |
 
 
 
@@ -884,11 +882,52 @@ The “acceptors” block is found within the “applications” section named �
 |         \|\|         |   ORPC   | Outbound RPC           |
 | Passthrough Protocol |    PT    | Passthrough            |
 
-  ​
+  
 
-### autoDASH/HLS/HDS/MSS
+### deviceStreams
 
-if enabled, will automatically create the HTTP streams from the pulled entries. 
+---insert definition here
+
+**Type:** Object
+
+**Mandatory:** No
+
+```
+deviceStreams=
+{
+	{
+		name="camera01",
+		video=
+		{
+			type="v4l2",
+			path="/dev/video0",
+		},
+		audio=
+		{
+			type="v4l2",
+			path="/dev/video1",
+		},
+	},
+},
+```
+
+
+
+**deviceStreams Structure Table**
+
+|     Key      |  Type  | Mandatory | Description |
+| :----------: | :----: | :-------: | ----------- |
+|     name     | string |   true    |             |
+| video - type | string |   true    |             |
+| video - path | string |   true    |             |
+| audio - type | string |   true    |             |
+| audio - path | string |   true    |             |
+
+
+
+###autoDASH/HLS/HDS/MSS
+
+If enabled, will automatically create the HTTP streams from the ingested streams. 
 
 **Type:** Object
 
@@ -967,16 +1006,36 @@ authentication=
 
 **Authentication Structure Table:**
 
-| Protocol  |    Parameter     | Mandatory |         Typical Setting          |
-| :-------: | :--------------: | :-------: | :------------------------------: |
-|   RTMP    |       type       |   true    |             “adobe”              |
-|   \|\|    |  encoderAgents   |   true    |   "FMLE, Wirecast, EvoStream"    |
-|   \|\|    |    usersFile     |   true    |      ”../config/users.lua”       |
-|   \|\|    |   verifierUri    |   false   | "http://authserver/verifier.php" |
-|   \|\|    |      token       |   false   |          "secretstring"          |
-|   RTSP    |    usersFile     |   true    |      ”../config/users.lua”       |
-|   \|\|    | authenticatePlay |   false   |              false               |
-| WebSocket |      token       |           |           "< blank >"            |
+- **FOR RTMP**
+
+  |      Key      |  Type  | Mandatory | Description                              |
+  | :-----------: | :----: | :-------: | ---------------------------------------- |
+  |     type      | string |   true    |                                          |
+  | encoderAgents | string |   true    | The encoder agent to be used             |
+  |   usersFile   | string |   true    | The path to users.lua configuration file |
+  |  verifierUri  | string |   false   |                                          |
+  |     token     | string |   false   |                                          |
+
+  ​
+
+
+- **FOR RTSP**
+
+  |       Key        |  Type   | Mandatory | Description                              |
+  | :--------------: | :-----: | :-------: | ---------------------------------------- |
+  |    usersFile     | string  |   true    | The path to users.lua configuration file |
+  | authenticatePlay | boolean |   false   | If enabled, the player will ask for a password in every stream request |
+
+  ​
+
+
+- **FOR WEBSOCKET**
+
+  |  Key  |  Type  | Mandatory | Description |
+  | :---: | :----: | :-------: | ----------- |
+  | token | string |   true    |             |
+
+  ​
 
 **Notes:**
 
@@ -988,138 +1047,13 @@ authentication=
 
 ### eventLogger
 
-Settings for the server-wide event sinks. 
+Settings for the server-wide event sinks. See [Events Overview](userguide_eventsoverview.html) for more details.
 
 **Type:** Object
 
 **Mandatory:** No
 
-There are two types of event sinks: 
-
-1. **File Event Sink** - Event details are written to a log file located relative to the current directory. The log file is overwritten each time the EMS starts up.
-
-   A typical configuration of a File sink:
-
-   ```
-   eventLogger=
-     {
-         sinks=
-         {
-             {
-                 type="file",
-                 filename="../logs/events.txt",
-                 format="w3c",
-                 timestamp=true,
-                 appendTimestamp=true,
-                 appendInstance=true,
-                 fileChunkLength=43200, -- 12 hours (in seconds)
-                 fileChunkTime="18:00:00",
-                 enabledEvents=
-                 {
-                     -- list of events
-                 },
-             },
-         },
-     },
-   ```
-
-   ​
-
-   **File Sink Structure Table:**
-
-   |    Protocol     | Parameter | Mandatory | Description                              |
-   | :-------------: | :-------: | :-------: | :--------------------------------------- |
-   |   customData    |  object   |    no     | Custom data that will be appended to all events generated by this sink. It overrides the custom data node defined on the upper level. It can also be a complex structure, see illustration above |
-   |      type       |  string   |    yes    | The type of sink, “file”                 |
-   |    filename     |  string   |    yes    | The base name of the file                |
-   |     format      |  string   |    yes    | Sets the file format. Can use **text**, **xml**, **json** or **w3c** |
-   |    timestamp    |  boolean  |    no     | If true, the log file will have an appending timestamp on the filename |
-   | appendTimestamp |  boolean  |    no     | Sets the option to append a timestamp. If true, timestamp (YYYYMMDD_HHmmSS) is appended on every log file created. Otherwise, a 4-digit running number is appended. Default value is true |
-   | appendInstance  |  boolean  |    no     | Appends a random 4-digit instance ID after every log file. Default is false |
-   | fileChunkLength |  number   |    no     | Number of seconds to create new file     |
-   |  fileChunkTime  |  string   |    no     | Time of the day to chunk log file, in HH:MM:SS format. *Note: No file chunking when fileChunkLength and fileChunkTime are both present* |
-   |  enabledEvents  |  object   |    no     | Events that are logged. If not set, all are logged. But for W3C, non-stream-related events are ignored |
-
-   ​
-
-2. **RPC (Remote Procedure Calls) Event Sink** - Event details are transmitted to a remote host via HTTP POST. The EMS will ignore any response from the remote host.
-
-   RPC sink configuration:
-
-   ```
-   type="RPC",
-   url="http://192.168.1.5:5555/something/service",
-   serializerType="JSON",
-   customData="my custom data"
-   ```
-
-   The `url` field specifies the destination which will be accepting the HTTP POST event notifications..
-
-   The `serializer` type can be one of the following formats: **JSON**, **XML**, **XMLRPC**
-
-   - Format of JSON POST:
-
-     ```
-     {"payload":{"creationTimestamp":1349335053486.4370,"name":"","queryTimestamp":1349335053487.4370,"type":"NR","uniqueId":1,"upTime":1.0000},"type":"streamCreated"}
-     ```
-
-   - Format of XML POST:
-
-     ```
-     <?xml version="1.0" ?>
-     <MAP isArray="false" name="">
-         <MAP isArray="false" name="payload">
-             <DOUBLE name="creationTimestamp">1349335287346.813</DOUBLE>
-             <STR name="name"></STR>
-             <DOUBLE name="queryTimestamp">1349335287346.813</DOUBLE>
-             <STR name="type">NR</STR>
-             <UINT64 name="uniqueId">1</UINT64>
-             <DOUBLE name="upTime">0.000</DOUBLE>
-         </MAP>
-     <STR name="type">streamCreated</STR>
-     </MAP>
-     ```
-
-   - Format of XMLRPC POST: (indented for clarity)
-
-     ```
-     <?xml version="1.0"?>
-     <methodCall>
-         <methodName>event.Log</methodName>
-         <params>
-             <param>
-                 <value>
-                     <struct>
-                         <member>
-                             <name>payload</name>
-                             <value>
-                                 <struct>
-                                 <member>
-                                     <name>creationTimestamp</name>
-                                     <value><double>0.000000</double></value>
-                                 </member>
-                                 <!-- contents removed for clarity -->
-                                 </struct>
-                             </value>
-                         </member>
-                         <member>
-                             <name>type</name>
-                             <value><string>streamCreated</string></value>
-                         </member>
-                     </struct>
-                 </value>
-             </param>
-         </params>
-     </methodCall>
-     ```
-
-     The `customData` parameter for both File and RPC Event Sinks can be *optionally* used to extra data to each event for that sink. This could be used to identify the particular EMS instance which is generating the event, return a particular ID or Key which is pertinent to your handling of the event, or anything really! A customData parameter can be a simple sting value or a complex LUA object.
-
-     If a `customData` parameter is not specified for a node, the value of the parent eventLogger customData node will be used. If that is also not specified, the value will be V_NULL.
-
-
-
-**EMS Events Sinks**
+####EMS Events Sinks
 
 **A. File**
 
@@ -1165,11 +1099,11 @@ eventLogger=
 
 1. This section is disabled by default. 
 
-2. You can add more events in the list below.
+2. You can add more events in the list of events below
 
 3. The event log files will be stored in the path where EMS logs are configured
 
-4. Log files for events will be saved at the filename specified
+4. See list of events [here](api_eventlist.html)
 
    ​
 
@@ -1258,7 +1192,7 @@ eventLogger=
 
 ### transcoder
 
-The configuration for the transcoder
+Within the application section you can find the configuration for the EvoStream Transcoder. The default settings are generally going to be fine for all applications, but under certain circumstances they may need to be adjusted. The transcoder section looks like the following:
 
 **Type:** Object
 
@@ -1272,6 +1206,10 @@ transcoder = {
 			},
 ```
 
+The `srcUriPrefix` tells the transcoder how to get the stream from the EMS. The `dstUriPrefix` tells the transcoder how to push the stream back to the EMS. The ports used in these two values must match the acceptors the EMS is actively listening on. By default this is i`5544` for RTSP and `6666` for liveFLV.
+
+
+
 **Transcoder Structure Table:**
 
 |     Key      |  Type  | Mandatory | Description                              |
@@ -1284,7 +1222,7 @@ transcoder = {
 
 ### mp4BinPath
 
-the path to the mp4 writer executable file
+The path to the mp4 writer executable file
 
 **Type:** String
 
@@ -1298,7 +1236,7 @@ mp4BinPath="..\\evo-mp4writer.exe",
 
 ### webRTC
 
-the security configuration for the webRTC
+The security configuration for the webRTC.
 
 **Type:** Object
 
@@ -1313,9 +1251,18 @@ webrtc = {
 
 
 
+**webRTC Structure Table:**
+
+|   Key   |  Type  | Mandatory | Description                              |
+| :-----: | :----: | :-------: | ---------------------------------------- |
+| sslKey  | string |    yes    | The path of the ssl key to be used       |
+| sslCert | string |    yes    | The path of the ssl certificate to be used |
+
+
+
 ### drm
 
-the configuration for the HLS security 
+The DRM section provides the configuration values for any DRM that needs to be activated. This section is commented out by default (wrapped in “–[[” and “]]–”). It must be un-commented-out before DRM will be activated.
 
 **Type:** Object
 
@@ -1331,3 +1278,15 @@ drm={
 			urlPrefix="http://vcas3multicas1.verimatrix.com:12684/CAB/keyfile"
 	},
 ```
+
+
+**DRM Structure Table:**
+
+|     Key      |  Type  |         Mandatory         | Description                              |
+| :----------: | :----: | :-----------------------: | ---------------------------------------- |
+|     type     | string |            yes            | The type of DRM to be used. Options are: “**verimatrix**” – Enables Verimatrix DRM on HLS “**evo**” – Enables AES encryption on HLS ”**none**” – disables DRM. This is the same as commenting out this section of the config file. |
+| requestTimer | number | yes, when type=verimatrix | The key request timer period in seconds. Right after startup, the EMS will request keys from the Verimatrix Key Server every timer period. Default=1, Min=1, Max=none. (If set below min, the min value will be used.) |
+| reserveKeys  | number | yes, when type=verimatrix | The number of keys buffered per ID.Default=10, Min=5, Max=none. (If set below min, the min value will be used.) |
+|  reserveIds  | number | yes, when type=verimatrix | The number of reserve IDs with key buffers to be filled in addition to active IDs.Default=10, Min=5, Max=none. (If set below min, the min value will be used.) |
+|  urlPrefix   | string | yes, when type=verimatrix | The location of your Verimatrix VCAS Key Server |
+
