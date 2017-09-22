@@ -265,7 +265,7 @@ entries:
       output: web, pdf
 
     - title: Events List
-      url: /userguide_eventlist.html
+      url: /userguide_eventslist.html
       output: web, pdf
 
     - title: Events Definitions

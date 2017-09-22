@@ -33,29 +33,29 @@ hard nproc 16384
 
 ### Linux Package (Linux apt/yum Installer)
 
-**Pre-requisites:**
+#### Pre-requisites:
 
-Administrative privileges are required. This can be accomplished in many ways.
+- Disable firewall making sure that keys will be downloaded
 
-If the sudo utility is available:
+- Administrative privileges are required. This can be accomplished in many ways.
 
-```
-$ su –
-```
+  If the sudo utility is available:
 
-If the sudo utility is not available:
+  ```
+  $ su –
+  ```
 
-```
-$ sudo su –
-```
+  If the sudo utility is not available:
 
-**Note:**
+  ```
+  $ sudo su –
+  ```
 
-The prompt changes from `$` to `#` when administrative privileges are enabled.
+  **Note:** The prompt changes from `$` to `#` when administrative privileges are enabled.
 
 
 
-**Installation Procedure:**
+#### Installation Procedure:
 
 1\. Retrieve the script used to install the EvoStream software repository and store it
 
@@ -86,6 +86,8 @@ The prompt changes from `$` to `#` when administrative privileges are enabled.
   ```
 
 At this stage, the EvoStream software repository and keys are successfully installed and you can install packages from it.
+
+
 
 **Note:** Steps 1 and 2 above must be executed only once.
 
@@ -132,13 +134,11 @@ To install the license, simply copy the `License.lic` file to `../config/License
 
 
 
-
-
 ## Distribution Content
 
 ### Linux Package
 
-**A.1. Configuration files**
+**A. Configuration Files**
 
 ```
 ├── etc
@@ -152,21 +152,51 @@ To install the license, simply copy the `License.lic` file to `../config/License
 │       └── whitelist.txt
 ```
 
-**A. 2. XXX Files**
+**B. Executable and Node Files**
 
 ```
 ├── usr
 │   ├── bin
-│   │   ├── evo-phpengine
-│   │   │   └── php.cgi
 │   │   ├── evo-avconv
 │   │   ├── evo-mp4writer
+│   │   ├── evo-node
 │   │   ├── evostreamms
-│   │   └── evo-webserver
+│   │   ├── node-ews
+│   │   ├── node-webservices
+│   │   ├── node-webui
 │   └── share
 │       ├── evo-avconv
 │       │   └── presets
-│       │       └── [30 transcode preset files]
+│       │       ├── libx264-baseline.avpreset
+│       |       ├── libx264-fast.avpreset
+│       |       ├── libx264-fast.avpreset
+│       |       ├── libx264-faster.avpreset
+│       |       ├── libx264-faster.avpreset
+│       |       ├── libx264-ipod320.avpreset
+│       |       ├── libx264-ipod640.avpreset
+│       |       ├── libx264-lossless_fast.avpreset
+│       |       ├── libx264-lossless_max.avpreset
+│       |       ├── libx264-lossless_medium.avpreset
+│       |       ├── libx264-lossless_slow.avpreset
+│       |       ├── libx264-lossless_slower.avpreset
+│       |       ├── libx264-lossless_ultrafast.avpreset
+│       |       ├── libx264-main.avpreset
+│       |       ├── libx264-medium.avpreset
+│       |       ├── libx264-medium_firstpass.avpreset
+│       |       ├── libx264-placebo.avpreset
+│       |       ├── libx264-placebo_firstpass.avpreset
+│       |       ├── libx264-slow.avpreset
+│       |       ├── libx264-slow_firstpass.avpreset
+│       |       ├── libx264-slower.avpreset
+│       |       ├── libx264-slower_firstpass.avpreset
+│       |       ├── libx264-superfast.avpreset
+│       |       ├── libx264-superfast_firstpass.avpreset
+│       |       ├── libx264-ultrafast.avpreset
+│       |       ├── libx264-ultrafast_firstpass.avpreset
+│       |       ├── libx264-veryfast.avpreset
+│       |       ├── libx264-veryfast_firstpass.avpreset
+│       |       ├── libx264-veryslow.avpreset
+│       |       └── libx264-veryslow_firstpass.avpreset
 │       └── doc
 │           └── evostreamms
 │               ├── copyright
@@ -181,7 +211,136 @@ To install the license, simply copy the `License.lic` file to `../config/License
 │                   └── RELEASE_NUMBER
 ```
 
-**A.3. XML Files**
+**B.1. Node-WebServer Files**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-ews
+│   │   |   ├── evo-phpengine
+│   │   |   ├── ews.node
+│   │   |   ├── fileRotateSize.js
+│   │   |   ├── helper.js
+│   │   |   ├── node-ews.js
+│   │   |   ├── node_modules
+│   │   │   |   ├── basic-auth
+│   │   │   |   ├── connect
+│   │   │   |   └── winston
+│   │   |   └── req_handlers     
+│   │   │   |   ├── authproxy.js
+│   │   │   |   ├── default.js
+│   │   │   |   ├── httpstream.js
+│   │   │   |   ├── php.js
+│   │   │   |   └── resphdrs.js  
+```
+
+**B.2. Node-Webservices Files**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-webservices
+│   │   |   ├── app.js
+│   │   |   ├── base_plugins
+│   │   │   |   ├── basehdsplugin.js
+│   │   │   |   ├── basehlsplugin.js
+│   │   │   |   └── baseplugin.js    
+│   │   |   ├── bin
+│   │   │   |   └── www       
+│   │   |   ├── config
+│   │   │   |   ├── logging.json
+│   │   │   |   └── plugins.json    
+│   │   |   ├── core_modules
+│   │   │   |   └── ems-api-core.js      
+│   │   |   ├── LICENSE
+│   │   |   ├── logs
+│   │   │   |   └── evowebservices.log          
+│   │   |   ├── node_modules
+│   │   │   |   ├── body-parser
+│   │   │   |   ├── comment-json
+│   │   │   |   ├── concat-stream
+│   │   │   |   ├── debug
+│   │   │   |   ├── express
+│   │   │   |   ├── morgan
+│   │   │   |   ├── request-enhanced
+│   │   │   |   ├── s3
+│   │   │   |   └── winston
+│   │   |   ├── package.json
+│   │   |   ├── plugins
+│   │   │   |   ├── amazondashupload.js
+│   │   │   |   ├── amazonhdsupload.js
+│   │   │   |   ├── amazonhlsupload.js
+│   │   │   |   ├── streamautorouter.js
+│   │   │   |   ├── streamloadbalancer.js
+│   │   │   |   └── streamrecorder.js   
+│   │   |   ├── README.md
+│   │   |   ├── README.txt
+│   │   |   ├── routes
+│   │   │   |   ├── evowebservices.js
+│   │   │   |   └── index.js      
+│   │   |   ├── services
+│   │   │   |   └── plugin-service.js
+│   │   |   ├── views
+│   │   │   |   ├── error.hbs
+│   │   │   |   ├── index.hbs
+│   │   │   └── └── layout.hbs
+```
+
+**B.3. Node-WebUI Files**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-webui
+│   │   |   ├── app.js
+│   │   |   ├── auth
+│   │   │   │   ├── passport-config.js
+│   │   │   │   └── restrict.js
+│   │   |   ├── bin
+│   │   │   │   └── webui_activate
+│   │   |   ├── config
+│   │   │   │   ├── dir-config.js
+│   │   │   │   ├── logging.json
+│   │   │   │   └── social-auth-config.js
+│   │   |   ├── core_modules
+│   │   │   │   ├── ems-api-core.js
+│   │   │   │   ├── ems-api-proxy.js 
+│   │   │   │   ├── ems-config-core.js
+│   │   │   │   └──  socket-io-api.js
+│   │   |   ├── data
+│   │   │   │   ├── help.json
+│   │   │   │   └──  user.json   
+│   │   |   ├── logs
+│   │   │   │   ├── webui.log 
+│   │   |   ├── models
+│   │   │   │   ├── list-config.js
+│   │   │   │   ├── list-streams.js
+│   │   │   │   └──  user.js
+│   │   |   ├── node_modules
+│   │   │   │   └──  [168 node_module files]
+│   │   |   ├── public
+│   │   │   │   ├── css
+│   │   │   │   ├── fonts
+│   │   │   │   ├── images
+│   │   │   │   ├── js
+│   │   │   │   └──  media
+│   │   |   ├── routes
+│   │   │   │   ├── api-explorer.js   
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── ems.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── tream.js
+│   │   │   │   └── users.js
+│   │   |   ├── services 
+│   │   │   │   └──  stream-service.js
+│   │   |   ├── views
+│   │   │   │   ├── admin
+│   │   │   │   ├── index
+│   │   │   │   ├── error.hbs
+│   │   │   └── └──  index.hbs  
+```
+
+**4. XML Files**
 
 ```
 └── var
@@ -195,26 +354,26 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │       └── pushPullSetup.xml
 ```
 
-**A.4. Evo-webroot Files**
+**5. Evo-Webroot Files**
 
 ```
 └── var
     ├── evo-webroot
     │   ├── demo
     │   │   ├── css
-    │   │   ├── evo.png
     │   │   ├── evoplayers.html
+    │   │   ├── evo.png
     │   │   ├── evowsabrvideo.html
+    │   │   ├── js
+    │   │   │   └── evohtml5player-latest.bundle.js 
     │   │   ├── jsonMetaTest.html
     │   │   ├── jsonMetaWriteTest.html
     │   │   └── loading.gif
     │   ├── clientaccesspolicy.xml
     │   └── crossdomain.xml    
-    │   ├── clientaccesspolicy.xml
-    │   └── crossdomaim.xml
 ```
 
-**A.5. Log Files**
+**6. Log Files**
 
 ```
 └── var
@@ -222,7 +381,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │   └── evostreamms
 ```
 
-**A.6. Executable Files**
+**7. Executable Files**
 
 ```
 └── var
