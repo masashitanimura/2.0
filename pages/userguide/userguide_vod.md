@@ -42,8 +42,16 @@ Using the UI, you can stream your VOD in an instant. Just select on the list you
 
 ![](images/userguide/vod_playvod.JPG)
 
-**Notes:** 
+Files you can play in VOD page:
+
+- MP4 files
+- TS files
+- VOD files (.vod) generated from [generateLazyPull](api_generateLazyPullFile.html)
+- Playlist files (.lst) generated from [generateServerPlaylist](api_generateServerPlaylist.html)
+
+------
+
+##Notes:
 
 - A window will open in every play instance
-- You can only play mp4 and vod files
 - The player uses JSplayer version 5.8.8
