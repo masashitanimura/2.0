@@ -7,9 +7,11 @@ folder: html5players
 toc: false
 ---
 
+Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use webRTC for streaming:
 
 
-1. To play streams from EMS using webRTC, the following command needs to be executed first on EMS. See `startWebRTC`API [here](api/startWebRTC.html):
+
+1. To play streams from EMS using webRTC, the `startWebrtc` command needs to be executed first. See `startWebRTC`API [here](api/startWebRTC.html):
 
    ```
    startwebrtc ersip=54.174.188.145 ersport=4545 roomid=MyRoom
@@ -27,10 +29,30 @@ toc: false
 
 3. Enter the **EMS IP**, **Room Name** and **Stream Name** 
 
+   **Note:** The Stream Name can be a pulled stream, a lazypulled file or a playlist file. Lazy pull and playlist files should be in the media folder.
+
+   ​
+
 4. Hit **Play** to start streaming!
+
+   ​
+
+   **Playing RTMP/RTSP Pulled Streams:**
 
    ![](images/html5/webrtc.jpg)
 
+   ​
+
+   **Playing Lazy Pulled File:**
+
+
+![](images/html5/play_wrtc_lazypull.jpg)
+
+
+
+​	**Playing Playlist File:**
+
+![](images/html5/play_wrtc_playlist.jpg)
 
 
 
@@ -38,7 +60,7 @@ toc: false
 
 There are two players available for WebRTC. You can stream the same source or stream two different sources at the same time!
 
-
+------
 
 ## Related Links
 
