@@ -45,14 +45,14 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
 
    **Playing Lazy Pulled File:**
 
+   ![](images/html5/play_wrtc_lazypull.jpg)
 
-![](images/html5/play_wrtc_lazypull.jpg)
+   ​
 
+   **Playing Playlist File:**
 
+   ![](images/html5/play_wrtc_playlist.jpg)
 
-​	**Playing Playlist File:**
-
-![](images/html5/play_wrtc_playlist.jpg)
 
 
 
