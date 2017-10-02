@@ -6,9 +6,23 @@ folder: userguide
 toc: true
 ---
 
-Once EMS is started, you can now connect to its UI. There are several ways to start the UI:
+##Automatic Start-up
 
-## Starting EMS Web UI
+If you started EMS and `rubWebUI` is `true` in config.lua, the EMS Web UI will also get started. All you need to do is to open the UI in your browser:
+
+```
+format: <EMS_IP>:<WebUI_Port>
+
+sample: localhost:4100
+```
+
+
+
+## Manual Start-up
+
+If you set `runWebUI` to `false` in config.lua, you can still run the UI via:
+
+
 
 ### Via Console
 
@@ -17,6 +31,17 @@ Starting the Web UI using `run_console_webui` will open a separate console for t
 1. Run `run_console_webui.sh` in Linux,  `run_console_webui.bat` in Windows
 
    ![](images/userguide/startui_console.jpg)
+
+   ​
+
+2. Open the UI in your browser: 
+
+   ```
+   format: <EMS_IP>:<WebUI_Port>
+
+   sample: localhost:4100
+   ```
+
 
    ​
 
@@ -32,43 +57,23 @@ For Linux environment only, running Web UI via Daemon mode is also available. Th
 
 1. Run `run_daemon_webui.sh`
 
-   **Note:**
+2. Open the UI in your browser: 
 
-   - Run ***ps -ef|grep node*** to see if Web UI is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
+   ```
+   format: <EMS_IP>:<WebUI_Port>
+
+   sample: localhost:4100
+   ```
+
+   ​
+
+   **Notes:**
+
+   - Run `ps -ef|grep node` to see if Web UI is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
    - You may check the Web UI logs in `../node-webui/logs/`
    - The configuration of the log level is the same with console logs and file logs
 
-
-
-### Via Service
-
-Same with EMS, you may add a Web UI service in Windows Registry. Running Web UI via service is like running the Web UI in Daemon mode on Linux environment.
-
-1. Create the service first
-
-   a. Open a command prompt
-
-   b. Locate the services folder: `C:\EvoStream\services\webui`
-
-   c. Send command: `create.bat`
-
-   ```
-   C:\EvoStream\services\webui> create_webui_service.bat
-   ```
-
-   or run as Administrator the `create_webui_service.bat` in the location
-
-   d. A confirmation will be asked, click **Yes**
-
-   ![](images/userguide/register.JPG)
-
-   e. EMS keys are now registered! Click **OK**
-
-   ![](images/userguide/register_success.JPG)
-
-   f. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
-
-   ![](images/userguide/service_ui_.jpg)
+   ​
 
 
 
@@ -83,7 +88,7 @@ The EMS Web UI process will not be killed when EMS is stopped. You may still acc
 
 If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or `run_daemon_ems.sh`:
 
-1. Run run_stop_webui.bat in Windows or run_stop_webui.sh in Linux
+1. Run `run_stop_webui.bat` in Windows or `run_stop_webui.sh` in Linux
 
    ```
    $ ./run_stop_webui.sh 
@@ -91,15 +96,3 @@ If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or
    ```
 
 This will end the process of the WebUI running in Console.
-
-
-
-### Stopping Web UI Service
-
-If you Start the Web UI as a service (for Windows only):
-
-1. Go to Services, click on the EMS Web UI service entry
-
-2. Click **Stop**
-
-   or go to the services folder of EMS Web UI, double click on `stop_webui_service.bat`

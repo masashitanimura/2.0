@@ -119,6 +119,10 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: EMS Web UI Overview
+      url: /userguide_webuioverview.html
+      output: web, pdf
+
     - title: Create Local Account
       url: /userguide_createaccount.html
       output: web, pdf

@@ -26,7 +26,7 @@ entries:
 
     folderitems:
     - title: Overview
-      url: /overview.html
+      url: /api_overview.html
       output: web, pdf
 
 

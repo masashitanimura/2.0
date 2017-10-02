@@ -7,7 +7,9 @@ folder: home
 toc: false
 ---
 
-##Highlights
+
+
+## Highlights
 
 - HEVC/H.265 support - HLS and DASH playback
 - New Web UI - Node.js based with full access to EMS API
@@ -18,6 +20,7 @@ toc: false
 - New Raspberry-Pi hardware-enabled transcoder
 
 
+------
 
 ## New Features
 
@@ -32,6 +35,7 @@ toc: false
 - Metadata delivery over websockets
 
 
+------
 
 ## New APIs
 
@@ -41,6 +45,7 @@ toc: false
 - getLicenseId - to programatically retrieve your license id. used by the new UI
 
 
+------
 
 ## New Events
 
@@ -51,6 +56,7 @@ toc: false
 - webRtcServiceStopped
 
 
+------
 
 ## Noteable Bug Fixes
 
