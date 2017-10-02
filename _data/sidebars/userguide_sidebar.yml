@@ -160,6 +160,10 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: The Streams Page
+      url: /userguide_streams.html
+      output: web, pdf
+ 
     - title: Adding Streams
       url: /userguide_add.html
       output: web, pdf
