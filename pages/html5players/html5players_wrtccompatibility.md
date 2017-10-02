@@ -9,7 +9,7 @@ toc: false
 
 The following diagram shows the compatibility of various browsers with the EvoStream WebRTC feature. 
 
-![](images/html5/proto2.png)
+![](images/html5/webrtc_compatibility.JPG)
 
 
 

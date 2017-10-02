@@ -9,7 +9,7 @@ toc: false
 
 The following diagram shows the compatibility of various browsers with the EvoStream WebSocket feature. 
 
-![](images/emscloud/proto2.png)
+![](images/html5/ws_compatibility.JPG)
 
 
 
