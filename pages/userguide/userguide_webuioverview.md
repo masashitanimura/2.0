@@ -3,7 +3,7 @@ title: EMS Web UI Overview
 sidebar: userguide_sidebar
 permalink: userguide_webuioverview.html
 folder: userguide
-toc: true
+toc: false
 ---
 
 The new web UI ensures a better handling of the stream in your Evostream Media Server. With the all new and intuitive design, users can find every setting much more easily and see what’s happening on their streams. Monitoring and controlling stream status has never been easier. 
@@ -29,9 +29,14 @@ the following URL:  **http://[EMS IP ADDRESS]:4100/**
 | :--: | :---------: | ---------------------------------------- |
 |  1   | EMS Status  | This will determine if your EMS is still alive. Green for Online, Red for Offline. |
 |  2   |    Menu     | The Menu contains the main pages of the UI (Dashboard, Streams, EMS API Explorer) |
-|  3   |  The Page   | The page area is the working area of the UI |
+|  3   |  The Page   | The page area is the working area of the UI. Here, you can see your Dashboard, work with Streams in Streams Page and send commands in API Explorer |
 |  4   |    Help     | The link to EMS documentation            |
 |  5   |   Profile   | Contains the information about the current user |
 
 
 
+To know more about the menu please see:
+
+- [EMS Dashboard](userguide_dashboard.html)
+- [Streams](userguide_streams.html)
+- [API Explorer](userguide_apiexplorer.html)
