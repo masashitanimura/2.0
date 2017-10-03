@@ -6,7 +6,7 @@ folder: userguide
 toc: true
 ---
 
-##Automatic Start-up
+## Automatic Start-up
 
 If you started EMS and `rubWebUI` is `true` in config.lua, the EMS Web UI will also get started. All you need to do is to open the UI in your browser:
 
@@ -43,11 +43,10 @@ Starting the Web UI using `run_console_webui` will open a separate console for t
    ```
 
 
-   ​
-
-   **Note:**
+​      **Note:**
 
    - You may configure the logging level of UI in `../node-webui/config/logging.json`
+
 
 
 
@@ -65,8 +64,6 @@ For Linux environment only, running Web UI via Daemon mode is also available. Th
    sample: localhost:4100
    ```
 
-   ​
-
    **Notes:**
 
    - Run `ps -ef|grep node` to see if Web UI is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
@@ -80,12 +77,6 @@ For Linux environment only, running Web UI via Daemon mode is also available. Th
 
 ## Stopping Web UI
 
-The EMS Web UI process will not be killed when EMS is stopped. You may still access the Web UI but will not be able to do show the EMS functionalities.
-
-
-
-### Stopping Console UI
-
 If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or `run_daemon_ems.sh`:
 
 1. Run `run_stop_webui.bat` in Windows or `run_stop_webui.sh` in Linux
@@ -95,4 +86,4 @@ If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or
    webui will now be stopped
    ```
 
-This will end the process of the WebUI running in Console.
+This will end the process of the Web UI running.

@@ -7,8 +7,6 @@ folder: userguide
 toc: true
 ---
 
-
-
 ## Unable to Run EMS
 
 **Debug:**
@@ -20,7 +18,8 @@ toc: true
 4. **Check if you have a network connection**. If your license is an online type, EMS won't be able to connect to the License Manager who will verify your license.
 5. **Check if you have a running instance of EMS.** You cannot run EMS simultaneously.
 6. **Check if EMS is installed properly**. There may be some components that were not installed.
-7. ​
+
+   ​
 
 
 
@@ -49,14 +48,13 @@ toc: true
 
 4. **Check if the localStreamName is correct.** EMS will search for the localStreamName in the API call, the stream will not be pushed if localStreamName is not found.
 
-5. ​
+   ​
+
 
 
 
 
 ## Stream is Not Recording
-
-
 
 **Debug:**
 
@@ -110,9 +108,6 @@ toc: true
 
    ​
 
-5. ​
-
-   ​
 
 
 ## Flickering and/or Freezing of the Video Using HTML5 player
@@ -121,11 +116,15 @@ toc: true
    [http://ers.evostream.com:5050/demo/evoplayersv3.html](http://ers.evostream.com:5050/demo/evoplayersv3.html)
 
    The options variable should look like this:
+
+   ```
    var opts = {
-   ​                   emsIp: emsIp,
-   ​                   streamName: streamName,
-   ​                   videoTagId: 'video' + number,
-   ​                   debugDivId: 'debug' + number,
-   ​                   queueSize: 5
-   ​               };
+   		emsIp: emsIp,
+   		streamName: streamName,
+   		videoTagId: 'video' + number,
+   		debugDivId: 'debug' + number,
+   		queueSize: 5
+   		};
+   ```
+
    queueSize is measured in GOP’s. The higher the GOP size, the less buffer it has but take note that it will also increase the size of footprint in your computer. The important thing to note is that this will increase playback latency!
