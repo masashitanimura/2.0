@@ -46,6 +46,7 @@ Files you can play in VOD page:
 
 - MP4 files
 - TS files
+- FLV files
 - VOD files (.vod) generated from [generateLazyPull](api_generateLazyPullFile.html)
 - Playlist files (.lst) generated from [generateServerPlaylist](api_generateServerPlaylist.html)
 
