@@ -13,11 +13,18 @@ toc: true
 
 
 1. **Check your License if already installed**. Maybe you forget to place your License file before running EMS. 
+
 2. **Check your License if already expired**. You can no longer use EMS if your license is expired.
+
 3. **Check if there are ports used by other applications**. There are many ports used by EMS, make sure that it is dedicated to EMS otherwise, there may be some errors with the connections.
+
 4. **Check if you have a network connection**. If your license is an online type, EMS won't be able to connect to the License Manager who will verify your license.
+
 5. **Check if you have a running instance of EMS.** You cannot run EMS simultaneously.
+
 6. **Check if EMS is installed properly**. There may be some components that were not installed.
+
+7. **Check Date and Time.** Date and Time should be the actual date and time. EMS will not run if it detects that date and time is adjusted.
 
    ​
 
@@ -109,7 +116,6 @@ toc: true
    ​
 
 
-
 ## Flickering and/or Freezing of the Video Using HTML5 player
 
 1. **Adjust GOP size.** This is likely caused by a too-small video buffer.  In the page JS you can modify the queueSize variable to control the size of that buffer.  It is a variable in the option parameter you send to the EvoWsPlayer function/constructor.  In the source code from this example page:
@@ -128,3 +134,10 @@ toc: true
    ```
 
    queueSize is measured in GOP’s. The higher the GOP size, the less buffer it has but take note that it will also increase the size of footprint in your computer. The important thing to note is that this will increase playback latency!
+
+
+
+## Unable to Run Web UI
+
+1. **Check config.lua.** Check if `runWebUI` is set to `false`. It should be set to `true`.
+2. **Check port availability**. Make sure that the port that UI listens to is available.
