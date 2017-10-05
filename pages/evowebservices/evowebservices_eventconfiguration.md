@@ -7,7 +7,9 @@ folder: evowebservices
 toc: false
 ---
 
-EMS Event Notifications must be configured to communicate with the EMS Web Services. The EMS configuration file must be modified as follows. Please view the [EMS User’s Guide](http://docs.evostream.com/2.0/userguide_overview.html) for more detailed information on configuring Event Notifications.
+EMS Event Notifications must be configured to communicate with the EMS Web Services. The EMS configuration file must be modified as follows. Please view the [Configuring Event Notification](userguide_eventsoverview.html#configuring-event-notificationl) for more detailed information on configuring Event Notifications.
+
+
 
 **config.lua:**
 
@@ -43,7 +45,7 @@ eventLogger=
 }, 
 ```
 
-The **enabledEvents** parameter is optional and allows you to specify only the events which you wish to receive. **If the enabledEvents section is not specified, all events will be generated.** The list of all possible events can be found above, and more detail on each event can be found in the EMS API Definition document.
+The **enabledEvents** parameter allows you to specify only the events which you wish to receive.It is highly recommended **not to add or delete** in the list. The listed events are those that the node webservices are using. If the event is missing, the service will not work. Additional events are ignored. 
 
 The evowebservices rely on EMS Events being generated as follows:
 
