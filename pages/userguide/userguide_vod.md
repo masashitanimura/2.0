@@ -54,5 +54,6 @@ Files you can play in VOD page:
 
 ## Notes:
 
+- Make sure that Flash is allowed in the browser
 - A window will open in every play instance
-- The player uses JSplayer version 5.8.8
+- The player uses JSplayer version 5.8.8, the player s not supported in Firefox, please use Chrome

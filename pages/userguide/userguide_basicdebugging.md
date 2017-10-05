@@ -26,6 +26,8 @@ toc: true
 
 7. **Check Date and Time.** Date and Time should be the actual date and time. EMS will not run if it detects that date and time is adjusted.
 
+8. **Check your Text Editor.** If you make changes in your config.lua file, make sure that you use a text editor that will not add additional characters on the file. This will corrupt the file and EMS will not run if the config.lua is corrupted.
+
    ​
 
 
@@ -68,6 +70,8 @@ toc: true
 1. **Do preliminary checking**. Test you stream source by playing first on a player before recording.
 2. **Make sure your pathToFile value is writable**. EMS will not able to record if the path given is read-only.
 3. **Check if your network connection is stable**. There might be a problem occur when the network connection is not stable.
+
+
 
 
 
@@ -118,6 +122,8 @@ toc: true
 
 ## Flickering and/or Freezing of the Video Using HTML5 player
 
+**Debug:**
+
 1. **Adjust GOP size.** This is likely caused by a too-small video buffer.  In the page JS you can modify the queueSize variable to control the size of that buffer.  It is a variable in the option parameter you send to the EvoWsPlayer function/constructor.  In the source code from this example page:
    [http://ers.evostream.com:5050/demo/evoplayersv3.html](http://ers.evostream.com:5050/demo/evoplayersv3.html)
 
@@ -137,7 +143,38 @@ toc: true
 
 
 
+
+
+
 ## Unable to Run Web UI
+
+**Debug:**
 
 1. **Check config.lua.** Check if `runWebUI` is set to `false`. It should be set to `true`.
 2. **Check port availability**. Make sure that the port that UI listens to is available.
+
+
+
+
+
+## Unable to Stream VOD from Web UI
+
+**Debug:**
+
+1. **Check Flash.** Make sure that Flash is set to Allow in the browser.
+
+   ![](images/userguide/debug_flash.jpg)
+
+   ​
+
+2. **Please Use Google Chrome.**  The Video. Js player is not supported in Firefox, therefore, the stream will not be played. 
+
+
+
+
+
+## Unable to Stream HLS from WebUI
+
+**Debug:**
+
+1. **Please Use Google Chrome.**  The Video. Js HLS build player is not supported in Firefox, therefore, the stream will not be played. 

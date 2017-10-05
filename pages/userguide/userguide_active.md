@@ -79,26 +79,26 @@ Displays the list of active HTTP streams
 
 
 
-
 ## Playing HTTP Streams
 
 The Web UI can now play HLS and DASH streams. Simply click on the Play button and start streaming!
 
 
 
-#### Play HLS Stream
+###Play HLS Stream
 
 ![](images/userguide/active_playhls.JPG)
 
 
 
-#### Play DASH Stream
+###Play DASH Stream
 
 ![](images/userguide/active_playdash.JPG)
 
 **Notes:**
 
 - The HLS player uses Video.js HLS build version 2.0.1
+- The Video.js HLS build version 2.0.1 is not supported in Firefox browser, please use Chrome
 - The DASH player uses DASH-IF v2.5.0-d389aed
 - Unique window in each playback
 
