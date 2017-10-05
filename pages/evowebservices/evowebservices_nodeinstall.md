@@ -7,16 +7,16 @@ folder: evowebservices
 toc: false
 ---
 
-## Pre-requisites:
+## Pre-requisites
 
 - Node.js
 - npm
-- EMS (events enabled)
+- For EMS v2.0.0
 
 
 
 
-## Getting evowebservices
+## Getting EvoWebservices
 
 ### A. Windows
 
@@ -68,7 +68,9 @@ toc: false
 
    ​
 
-## Starting evowebservices:
+   ​
+
+## Starting EvoWebservices
 
 1. Run the evowebservices before starting EMS. Make sure the plugins in evowebservices is configured as well as the event notification system in the config.lua of the EMS.
 
