@@ -77,7 +77,7 @@ There are two main types of event sinks, the **File Event Sink** and the **Remot
 
 
 
-###File Event Sink
+### File Event Sink
 
 File sinks simply write events to a file, as defined by the “filename” parameter. This works much like a system logger. Users can choose the format of the output between JSON, XML, W3C and text. The file sink is **off** by default, but can be turned on by creating the sink in the `config.lua` file.
 
@@ -143,7 +143,7 @@ eventLogger=
 
 
 
-####File Sink Structure Table
+#### File Sink Structure Table
 
 |       Key       |  Type   | Mandatory | Description                              |
 | :-------------: | :-----: | :-------: | ---------------------------------------- |
