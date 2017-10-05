@@ -4,7 +4,7 @@ keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_streamloadbalancer.html
 folder: evowebservices
-toc: false
+toc: true
 ---
 
 The Load Balancer web service ensures that a group of EMS instances maintain the same collection of inbound (source) streams.
@@ -15,7 +15,7 @@ The list of EMS instances the Load Balancer will maintain is defined in the conf
 
 
 
-##Using Node.js
+## Using Node.js
 
 1. **destination_ems_apiproxies**. The array of ip address where the inbound streams would be replicated to. The details in this parameter is seen in the webconfig.json of the address to be used.
 
