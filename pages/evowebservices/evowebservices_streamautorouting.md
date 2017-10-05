@@ -24,10 +24,9 @@ The AutoRouting web service has two configuration values which can be set in the
                "token": "stream",
                "destination_uri": "192.168.2.3"
            }
-       },  
-
+       },
    ```
 
 In this configuration, all the localstreamnames with “**stream**” in the host EMS will forward the stream to the destination URI which is the *192.168.2.3*.
 
-To verify, do `listStreams` on the destination server. You should see all the streams pushed to the destination.​
+To verify, do `listStreams` on the destination server. You should see all the streams pushed to the destination.

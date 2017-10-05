@@ -7,8 +7,6 @@ folder: evowebservices
 toc: false
 ---
 
-
-
 ## Pre-requisites:
 
 - Node.js
@@ -22,9 +20,7 @@ toc: false
 
 ### A. Windows
 
-1. **Download** the evowebservices Windows batch file installer from our Github
-
-   Link: [https://github.com/EvoStream/evowebservices-archives/tree/master/installers](https://github.com/EvoStream/evowebservices-archives/tree/master/installers)
+1. **Download** the evowebservices Windows batch file installer from our [Github](https://github.com/EvoStream/evowebservices-archives/tree/master/installers).
 
 2. Double click on the .bat file to **install** evowebservices
 
@@ -49,17 +45,15 @@ toc: false
 
 ###  B. Linux Installation
 
-1.  **Download** the evowebservices Bash Script file installer from our Github.
+1.  **Download** the evowebservices Bash Script file installer from our [Github](https://github.com/EvoStream/evowebservices-archives/tree/master/installers).
 
-   Link: [https://github.com/EvoStream/evowebservices-archives/tree/master/installers](https://github.com/EvoStream/evowebservices-archives/tree/master/installers)
-
-2. Locate the installer file, **install** the script by typing this in terminal:
+2.  Locate the installer file, **install** the script by typing this in terminal:
 
    ```
    ./evowebservices-0.0.1-linux-x64.sh
    ```
 
-3. If the installation is successful, evowebservices will start automatically
+3.  If the installation is successful, evowebservices will start automatically
 
    ```
    Starting EVOWEBSERVICES...
@@ -84,4 +78,6 @@ toc: false
    npm start
    ```
 
-**Note:** You may check the node console terminal and evowebservice log for errors. The evowebservices log is located on the evowebservices/logs directory
+   **Note:** 
+
+   You may check the node console terminal and evowebservice log for errors. The evowebservices log is located on the evowebservices/logs directory

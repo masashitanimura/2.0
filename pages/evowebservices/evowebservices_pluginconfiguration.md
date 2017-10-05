@@ -31,10 +31,8 @@ StreamAutoRouter = disabled
 StreamRecorder = disabled
 AmazonHDSUpload = disabled
 AmazonHLSUpload = disabled 
-
+AmazonDASHUpload = disabled (for EMS v.2.0.0. only)
 ```
-
-See [EMS Web Service Plugins](http://docs.evostream.com/ems_web_services_user_guide/ems_web_services_plugins) for the detailed information of plugins.
 
 
 

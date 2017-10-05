@@ -7,9 +7,7 @@ folder: evowebservices
 toc: false
 ---
 
-
-
-EMS Event Notifications must be configured to communicate with the EMS Web Services. The EMS configuration file must be modified as follows. Please view the [EMS User’s Guide](http://docs.evostream.com/ems_user_guide/table_of_contents) for more detailed information on configuring Event Notifications.
+EMS Event Notifications must be configured to communicate with the EMS Web Services. The EMS configuration file must be modified as follows. Please view the [EMS User’s Guide](http://docs.evostream.com/2.0/userguide_overview.html) for more detailed information on configuring Event Notifications.
 
 **config.lua:**
 
@@ -20,31 +18,29 @@ eventLogger=
   { 
     {
       type="RPC", 
-      url="http://192.168.2.39/evowebservices/evowebservices.php",    -- for php
-      url="http://localhost:4000/evowebservices/",                    -- for node       
+      url="http://127.0.0.1:4000/evowebservices/",
       serializerType="JSON",
-      -- serializerType="XML" 
-      -- serializerType="XMLRPC"
       enabledEvents= 
       { 
 		"inStreamCreated",
 		"inStreamClosed",
 		"outStreamCreated",
-		"timerCreated",
+		"outStreamClosed",
 		"timerTriggered",
-		"timerClosed",						
-		"hlsMasterPlaylistUpdated",
-		"hlsChildPlaylistUpdated",
-		"hlsChunkClosed",
 		"hdsMasterPlaylistUpdated",
 		"hdsChildPlaylistUpdated",
 		"hdsChunkClosed",
+		"hdsChunkDeleted",
+		"hlsMasterPlaylistUpdated",
+		"hlsChunkClosed",
+		"hlsChunkDeleted",
+		"dashPlaylistUpdated",
 		"dashChunkClosed",
-		"dashPlaylistUpdated"	
+		"dashChunkDeleted",
       }, 
     }, 
   }, 
-
+}, 
 ```
 
 The **enabledEvents** parameter is optional and allows you to specify only the events which you wish to receive. **If the enabledEvents section is not specified, all events will be generated.** The list of all possible events can be found above, and more detail on each event can be found in the EMS API Definition document.
@@ -59,8 +55,8 @@ The evowebservices rely on EMS Events being generated as follows:
 
   ```
   type="RPC",
-  url="http://localhost/evowebservices/evowebservices.php",       -- for php
-  url="http://localhost:4000/evowebservices/",                    -- for node     
+  url="http://localhost:4000/evowebservices/",                    -- for node      (EMS v2.0.0)
+  url="http://localhost/evowebservices/evowebservices.php",       -- for php		(EMS v1.7.1)
   serializerType="JSON" 
   ```
 
@@ -83,11 +79,6 @@ The evowebservices rely on EMS Events being generated as follows:
 
 ## Related Links
 
-- [EvoWebservices Event](evowebservices_event.html)
-- [Event Overview](eventoverview.html)
-- [Configuring Event Notifications](eventnotification.html)
-- [Event Sinks](eventsinks.html)
-- [Application vs. Server Events](eventappvsserver.html)
-- [Events List](eventlist.html)
-- [Event Definition](eventdefinition.html)
-- [Event Logger](userguide_configlua.html#eventLogger)
+- [Event Overview](userguide_eventsoverview.html)
+- [Events List](userguide_eventslist.html)
+- [Event Definition](userguide_eventsdefinition.htmll)

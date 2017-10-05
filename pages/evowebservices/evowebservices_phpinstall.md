@@ -13,13 +13,14 @@ toc: false
 
 - Web Server (EWS, Apache, Nginx)
 - EMS (events enabled)
+- For EMS 1.7.0 - 1.7.1 only
 
 
 
 
 ## Getting evowebservices
 
-The default evowebservices in EMS package is the one that runs on PHP. To be able to install the EMS with evowebservices, please see the installation guide [here](http://docs.evostream.com/ems_user_guide/installation).
+The default evowebservices in EMS package 1.7.1 below is the one that runs on PHP. To be able to install the EMS with evowebservices, please see the installation guide [here](http://docs.evostream.com/ems_user_guide/installation).
 
 After installation, the evowebservices will be found here: `..\evo-webroot\evowebservices`
 

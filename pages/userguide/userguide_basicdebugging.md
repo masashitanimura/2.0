@@ -13,23 +13,17 @@ toc: true
 
 
 1. **Check your License if already installed**. Maybe you forget to place your License file before running EMS. 
-
 2. **Check your License if already expired**. You can no longer use EMS if your license is expired.
-
 3. **Check if there are ports used by other applications**. There are many ports used by EMS, make sure that it is dedicated to EMS otherwise, there may be some errors with the connections.
-
 4. **Check if you have a network connection**. If your license is an online type, EMS won't be able to connect to the License Manager who will verify your license.
-
 5. **Check if you have a running instance of EMS.** You cannot run EMS simultaneously.
-
 6. **Check if EMS is installed properly**. There may be some components that were not installed.
-
 7. **Check Date and Time.** Date and Time should be the actual date and time. EMS will not run if it detects that date and time is adjusted.
-
 8. **Check your Text Editor.** If you make changes in your config.lua file, make sure that you use a text editor that will not add additional characters on the file. This will corrupt the file and EMS will not run if the config.lua is corrupted.
 
-   ​
 
+
+------
 
 
 
@@ -57,8 +51,9 @@ toc: true
 
 4. **Check if the localStreamName is correct.** EMS will search for the localStreamName in the API call, the stream will not be pushed if localStreamName is not found.
 
-   ​
 
+
+------
 
 
 
@@ -72,7 +67,7 @@ toc: true
 3. **Check if your network connection is stable**. There might be a problem occur when the network connection is not stable.
 
 
-
+------
 
 
 
@@ -117,7 +112,10 @@ toc: true
 
    The log means, although connection was indeed established, the stream that is being requested is not available.
 
-   ​
+
+
+------
+
 
 
 ## Flickering and/or Freezing of the Video Using HTML5 player
@@ -142,7 +140,7 @@ toc: true
    queueSize is measured in GOP’s. The higher the GOP size, the less buffer it has but take note that it will also increase the size of footprint in your computer. The important thing to note is that this will increase playback latency!
 
 
-
+------
 
 
 
@@ -153,6 +151,8 @@ toc: true
 1. **Check config.lua.** Check if `runWebUI` is set to `false`. It should be set to `true`.
 2. **Check port availability**. Make sure that the port that UI listens to is available.
 
+
+------
 
 
 
@@ -170,6 +170,8 @@ toc: true
 2. **Please Use Google Chrome.**  The Video. Js player is not supported in Firefox, therefore, the stream will not be played. 
 
 
+------
+
 
 
 
@@ -178,3 +180,6 @@ toc: true
 **Debug:**
 
 1. **Please Use Google Chrome.**  The Video. Js HLS build player is not supported in Firefox, therefore, the stream will not be played. 
+
+------
+

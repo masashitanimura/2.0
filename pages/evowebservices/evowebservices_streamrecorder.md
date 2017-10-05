@@ -31,8 +31,7 @@ The destination for the recorded file must be set in the config.ini file.
                "file_location": "C:\\EvoStream\\media",
                "period_time": 3600
            }
-       },    
-
+       },
    ```
 
-In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 3600 seconds (60 minutes) each file as long as the plugin and or the stream is running.​
+In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 3600 seconds (60 minutes) each file as long as the plugin and or the stream is running.
