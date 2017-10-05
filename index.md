@@ -8,7 +8,7 @@ toc: false
 
 <a href="userguide_overview.html"><img src="images/home/userguide.jpg"></a>
 
-<a href="overview.html"><img src="images/home/api.jpg"></a>
+<a href="api_overview.html"><img src="images/home/api.jpg"></a>
 
 <a href="html5players_ersoverview.html"><img src="images/home/html5.jpg"></a>
 
