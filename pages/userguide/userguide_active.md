@@ -85,13 +85,13 @@ The Web UI can now play HLS and DASH streams. Simply click on the Play button an
 
 
 
-###Play HLS Stream
+### Play HLS Stream
 
 ![](images/userguide/active_playhls.JPG)
 
 
 
-###Play DASH Stream
+### Play DASH Stream
 
 ![](images/userguide/active_playdash.JPG)
 
