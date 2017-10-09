@@ -18,7 +18,9 @@ This document provides instructions on how to use the EvoStream Rendezvous Serve
 
 EvoStream Rendezvous Server (ERS) allows EMS and client browser to be able to meet and communicate with each other without knowing each other’s IP addresses. It acts as the signaling server needed to establish connection between these endpoints.
 
-Click [here](http://ers.evostream.com:5050/demo/evoplayersv5.html) to view the player. 
+Click [here](http://ers.evostream.com:5050/demov2/evoplayers.html) to view the public player. 
+
+
 
 
 

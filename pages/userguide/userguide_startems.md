@@ -53,7 +53,16 @@ There are two “run” scripts that can be used to start the EvoStream Media Se
 **Notes:**
 
 - Either command can be directly executed.
-- For `run_daemon_ems.sh`, if the `evostream` user does not exist, an error will be printed to the screen. Despite the error, the EMS will probably have been started. To check if the server is running, user can issue `ps –ef | grep evostream` in terminal.
+
+- For `run_daemon_ems.sh`, if the `evostream` user does not exist, an error will be printed to the screen. Despite the error, the EMS will probably have been started. To check if the server is running, user can issue `ps –e | grep evo` in terminal. You should see:
+
+  ```
+  user@ubuntu:~$ ps –e|grep evo
+  10727 pts/4 00:00:22 evostreamms
+  10728 pts/4 00:00:05 evo-node (for webserver)
+  10729 pts/4 00:00:00 evo-node (for webui)
+  10730 pts/4 00:00:00 evo-node (for webservices)
+  ```
 
 This command will print differently on different operating systems, but it should let you know that the server is running.
 
@@ -130,11 +139,11 @@ It is needed to add EMS into your Window's registry to enable the use of service
 
 User may directly run the EMS using the shortcut icon if added during installation
 
- ![](images/userguide/emsShortcut.jpg)
+ ![](images/home/startupicon.JPG)
 
 This will open a console running EMS.
 
-The shotcut icon calls the `run_console_ems.bat`. You may also run this executable found in the installed EMS. Simply double-clicked to start the server. This script simply runs the Media Server through the command prompt, using `config/config.lua` as the main server configuration. 
+The shortcut icon calls the `run_console_ems.bat`. You may also run this executable found in the installed EMS. Simply double-click to start the server. This script simply runs the Media Server through the command prompt, using `config/config.lua` as the main server configuration. 
 
 ```
 C:\EvoStream\run_console_ems.bat
@@ -149,6 +158,17 @@ For either Windows or Linux/BSD/OSX, when you run the EMS as a console applicati
 ![](images/userguide/start1.png)
 
 **Tip!** A successful EMS start will show GO! GO! GO! in console.
+
+To check running applications, open the Task Manager and you should see:
+
+```
+evostreamms.exe
+evo-node.exe    (for webserver)
+evo-node.exe    (for webui)
+evo-node.exe    (for webservices)
+```
+
+
 
 
 

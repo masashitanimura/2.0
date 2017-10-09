@@ -29,6 +29,14 @@ entries:
       url: /home_overview.html
       output: web, pdf
 
+    - title: Quick Start Guide for Windows
+      url: /home_quickstartguidewindows.html
+      output: web, pdf
+
+    - title: Quick Start Guide for Linux
+      url: /home_quickstartguidelinux.html
+      output: web, pdf
+
     - title: Release Notes
       url: /home_releasenotes.html
       output: web, pdf

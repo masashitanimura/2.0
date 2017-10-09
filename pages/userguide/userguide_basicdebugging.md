@@ -22,7 +22,6 @@ toc: true
 8. **Check your Text Editor.** If you make changes in your config.lua file, make sure that you use a text editor that will not add additional characters on the file. This will corrupt the file and EMS will not run if the config.lua is corrupted.
 
 
-
 ------
 
 
@@ -50,7 +49,6 @@ toc: true
 3. **Check if the address of the server to push in is correct**. EMS will only look for the target address so make sure that the address in the API call is correct.
 
 4. **Check if the localStreamName is correct.** EMS will search for the localStreamName in the API call, the stream will not be pushed if localStreamName is not found.
-
 
 
 ------
@@ -113,7 +111,6 @@ toc: true
    The log means, although connection was indeed established, the stream that is being requested is not available.
 
 
-
 ------
 
 
@@ -122,8 +119,7 @@ toc: true
 
 **Debug:**
 
-1. **Adjust GOP size.** This is likely caused by a too-small video buffer.  In the page JS you can modify the queueSize variable to control the size of that buffer.  It is a variable in the option parameter you send to the EvoWsPlayer function/constructor.  In the source code from this example page:
-   [http://ers.evostream.com:5050/demo/evoplayersv3.html](http://ers.evostream.com:5050/demo/evoplayersv3.html)
+1. **Adjust GOP size.** This is likely caused by a too-small video buffer.  In the page JS you can modify the queueSize variable to control the size of that buffer.  It is a variable in the option parameter you send to the EvoWsPlayer function/constructor.  In the source code from this example [page](http://ers.evostream.com:5050/demov2/evoplayers.html):
 
    The options variable should look like this:
 
