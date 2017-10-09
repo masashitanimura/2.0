@@ -29,11 +29,11 @@ entries:
       url: /home_overview.html
       output: web, pdf
 
-    - title: Quick Start Guide for Windows
+    - title: Quick Start Guide on Windows
       url: /home_quickstartguidewindows.html
       output: web, pdf
 
-    - title: Quick Start Guide for Linux
+    - title: Quick Start Guide on Linux
       url: /home_quickstartguidelinux.html
       output: web, pdf
 

@@ -150,7 +150,8 @@ After successful start-up, you can now open the EMS Web UI.
 
 
 
-## Stream Playback Using UI
+
+### Stream Playback Using UI
 
 Pulled streams are automatically saved in EMS. To play the pulled stream, use a media player that supports the media format that was pulled or simply use the UI to stream the pulled video source.
 
@@ -181,7 +182,7 @@ The EMS will fetch the pulled stream via `localStreamName` and playback will sta
 
 
 
-## Stopping the EMS server
+### Stopping the EMS server
 
 If the user wants to shut down the EMS, just send the command:
 

@@ -16,7 +16,7 @@ The document also provide instructions for some basic features of the EMS such a
 
 ## Getting EvoStream Media Server
 
-###Linux Archive
+### Linux Archive
 
 1. Download the EMS tarball at https://evostream.com/software-downloads
 
@@ -49,20 +49,23 @@ The prompt changes from ‘$’ to ‘#’ when administrative privileges are en
 **Installation:**
 
 1. Retrieve the script used to install the EvoStream software repository and store it
-  a. Debian based Linux distributions (Ubuntu or Debian)
 
-  ```
-  # wget http://apt.evostream.com/installkeys.sh -O /tmp/installkeys.sh
-  ```
+   - Debian based Linux distributions (Ubuntu or Debian)
 
-  b. RedHat based Linux distributions (CentOS, Fedora, RHEL)
+     ```
+     # wget http://apt.evostream.com/installkeys.sh -O /tmp/installkeys.sh
+     ```
 
-  ```
-  # curl http://yum.evostream.com/installkeys.sh -o /tmp/installkeys.sh
-  ```
+   - RedHat based Linux distributions (CentOS, Fedora, RHEL)
+
+     ```
+     # curl http://yum.evostream.com/installkeys.sh -o /tmp/installkeys.sh
+     ```
+
+     ​
 
 
-2. Execute the script to install the EvoStream software repository
+2. Execute the script to install the EvoStream software repository and keys
 
    ```
    # sh /tmp/installkeys.sh
@@ -73,27 +76,32 @@ The prompt changes from ‘$’ to ‘#’ when administrative privileges are en
    ```
    "EvoStream keys installed successfully"
    ```
-   At this stage, the EvoStream software repository is successfully installed and you can install packages from it.
-   The following steps are used to install the EvoStream Media Server, and can be repeated to update the EMS to the most recent release.
 
-**Note:**
-Steps 1 and 2 must be executed only once
+   ​
+
+At this stage, the EvoStream software repository and keys are successfully installed and you can install packages from it.
+
+**Note:** Steps 1 and 2 above must be executed only once.
+
+The following steps are used to install the EvoStream Media Server, and can be repeated to update the EMS to the most recent release.
 
 
 
-3. Install EvoStream Media Server
-   a. Debian based Linux distributions (Ubuntu or Debian)
+3. Install EvoStream Media Server.
 
-   ```
-   # apt-get install evostream-mediaserver
-   ```
+   - Debian based Linux distributions (Ubuntu or Debian)
 
-   b.  RedHat based Linux distributions (CentOS, Fedora, RHEL)
+     ```
+     # apt-get install evostream-mediaserver
+     ```
 
-   ```
-   # yum install evostream-mediaserver
-   ```
+   - RedHat based Linux distributions (CentOS, Fedora, RHEL)
 
+     ```
+     # yum install evostream-mediaserver
+     ```
+
+     ​
 
 
 
@@ -125,7 +133,7 @@ EMS will read first the ../etc/evostreamms path for the License upon start-up. M
 
 ## Starting EvoStream Media Server
 
-###Linux Archive
+### Linux Archive
 
 You may run EMS via following:
 
@@ -151,7 +159,7 @@ You may run EMS via following:
 
   ​
 
-###APT/YUM
+### APT/YUM
 
 You may run EMS via following:
 
@@ -193,6 +201,7 @@ After successful start-up, you can now open the EMS Web UI.
 
 
 
+
 ## Basic EMS API
 
 ### pullStream using UI
@@ -213,7 +222,10 @@ After successful start-up, you can now open the EMS Web UI.
 
 
 
-## Stream Playback Using UI
+
+
+
+### Stream Playback Using UI
 
 Pulled streams are automatically saved in EMS. To play the pulled stream, use a media player that supports the media format that was pulled or simply use the UI to stream the pulled video source.
 
@@ -244,7 +256,7 @@ The EMS will fetch the pulled stream via `localStreamName` and playback will sta
 
 
 
-## Stopping the EMS server
+### Stopping the EMS server
 
 If the user wants to shut down the EMS, just send the command:
 
