@@ -58,6 +58,10 @@ All documents can be found inside the `../config` folder
    					usersFile="/<path_to>/users.lua",
    					--authenticatePlay=false,
    				},
+   				--ws=
+   				--{
+   				--	token="",
+   				--},
     },  
     ]]-- //remove
    ```
