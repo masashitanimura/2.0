@@ -27,7 +27,7 @@ There are several ways that the EMS can use RTMP as a stream source. The first m
 pullstream uri=rtmp://192.168.1.5/live/MyTestStream localStreamName=TestStream
 ```
 
-This command tells the EMS to go and get **MyTestStream** from the server at **192.168.1.5**, and then name the stream locally **TestStream**. Please see `pullStream` [API](insert link here) for more information on local stream names.
+This command tells the EMS to go and get **MyTestStream** from the server at **192.168.1.5**, and then name the stream locally **TestStream**. Please see [`pullStream` API](pullStream.html) for more information on local stream names.
 
 The typical URI format for requesting RTMP streams is as follows:
 
@@ -111,13 +111,13 @@ hasingestpoints=true,
 
 ```
 
-Ingest Points have a full set of API functions which must beused to add and remove Ingest Points. The API functions are listed here, but please see the [API Definition document]((insert link here)) for a full description.
+Ingest Points have a full set of API functions which must beused to add and remove Ingest Points. The API functions are listed here, but please see the [API Definition document](api_overview.html) for a full description.
 
-- createIngestPoint
-- removeIngestPoint
-- listIngestPoints
+- [createIngestPoint](createIngestPoint.html)
+- [removeIngestPoint](removeIngestPoint.html)
+- [listIngestPoints](listIngestPoints.html)
 
-Ingest Points are stored by the EMS into the **config/ingestPoints.xml** file. See [ingstpoints.xml]().
+Ingest Points are stored by the EMS into the **config/ingestPoints.xml** file. See [ingstpoints.xml](userguide_ingestpoints.html).
 
 
 
@@ -143,7 +143,7 @@ There are several ways that the EMS can use RTSP as a stream source.  The first
 pullstream uri=rtsp://192.168.1.5/MyTestStream localStreamName=TestStream
 ```
 
-This command tells the EMS to go and get **MyTestStream** from the server at **192.168.1.5**, and then name the stream locally **TestStream**. Please see `pullStream` [API](insert link here) for more information on local stream names.
+This command tells the EMS to go and get **MyTestStream** from the server at **192.168.1.5**, and then name the stream locally **TestStream**. Please see [`pullStream` API](pullStream.html) for more information on local stream names.
 
 The typical URI format for requesting RTSP streams is as follows:
 
@@ -169,7 +169,7 @@ The `httpProxy=self` parameter simply implies that there is NO proxy, and to p
 
 The EMS also allows you to Push an RTSP stream into it. The EMS listens for RTSP streams on port 5544, which is NOT the default RTSP port of 554. This requires you to specify the port of 5544 when pushing streams into the EMS. The port the EMS listens on can be modified by changing the appropriate value in the config.lua file. You will need to consult the manuals for your stream source to understand how to push a stream.
 
-The EMS can require authentication for streams that are being pushed to it. If authentication is enabled, you will need to either supply authentication details along with your pushed stream, or disable authentication for the EMS before the EMS will accept your streams. Please see the [authentication]() for more information.
+The EMS can require authentication for streams that are being pushed to it. If authentication is enabled, you will need to either supply authentication details along with your pushed stream, or disable authentication for the EMS before the EMS will accept your streams. Please see the [authentication](userguide_aliasingandauthentication.html) for more information.
 
 
 
@@ -280,86 +280,7 @@ The EMS utilizes this technology to provide the following functions:
 - Metadata Ingest – accepts incoming Metadata.
 - FMP4 Player – an acceptor which transmits a fragmented MP4 (FMP4) stream.
 
-Both Metadata Outbound Push and Metadata Ingest use a **Web Sockets Metadata Acceptor**. The EMS uses this to receive and/or send metadata.
-
-The definition for this is found in the acceptors section of the EMS configuration file (*config.lua*):
-
-```
-acceptors =
-{
-    -- content removed for clarity
-    -- WebSockets JSON Metadata
-    {
-        ip="0.0.0.0",
-        port=8210,
-        protocol="wsJsonMeta",
-        -- streamname="~0~0~0~"
-    },
-    -- content removed for clarity
-},
-
-```
-
-The `streamname` parameter is optional, default will match **all** incoming streams.
-
-```
-ws://host:port/streamname
-
-```
-
-Use the GET format to open a websocket channel:
-
-The `streamname` above, if not empty, will override what is specified in the acceptor definition in config.lua.
-
-Matching JSON metadata arrives as text. Use WS.send() to input JSON metadata.
-
-Below is a sample minimal metadata page:
-
-```
-<script>
-    var ws= new WebSocket("ws://myems:8210/");
-    ws.onmessage= function (msg) {
-        console.log(msg.data);
-    }
-    Function doSend() {
-        var x={fred:{wife:"Wilma",friend:"Barney"}};
-        ws.send(JSON.stringify(x));
-    }
-</script>
-<button onclick="doSend();">SEND</button>
-
-```
-
-For the FMP4 Player, a Web Sockets acceptor is defined in `config.lua`:
-
-```
-acceptors =
-{
-    -- content removed for clarity
-    -- WebSockets FMP4 Fetch
-    {
-        ip="0.0.0.0",
-        port=8410,
-        protocol="inboundWSFMP4",
-    },
-    -- content removed for clarity
-},
-```
-
-The above defines an outbound FMP4 acceptor. It does say “inbound” because the Web Socket connector is inbound, it being an acceptor.
-
-```
-ws://host:port/streamname
-
-```
-
-To connect, a Web Socket “GET” call is used. Following is the “GET” URI format
-
-The *streamname* is a local stream name of a stream that is pulled in the EMS.
-
-A sample HTML file with an FMP4 player, `evowsvideo.html`, is provided. You may use this to try out the Web Socket FMP4 functionality.
-
-For convenience, a demo page is already available upon installation: `..\evo-webroot\demo\evowsvideo.html` Another option for playback is using `http://ers.evostream.com:5050/demo/evowsvideo.html`.
+Click [here](html5players_wsoverview.html) more information
 
 
 

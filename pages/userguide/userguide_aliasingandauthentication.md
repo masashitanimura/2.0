@@ -14,10 +14,10 @@ Stream Aliasing allows the protection of streams on servers that are available t
 
 Aliases can be managed using four API commands:
 
-- [addStreamAlias](api_addStreamAlias.html)
-- [removeStreamAlias](api_removeStreamAlias.html)
-- [listStreamAliases](api_listStreamAliases.html)
-- [flushStreamAliases](api_flushStreamAliases.html)
+- [addStreamAlias](addStreamAlias.html)
+- [removeStreamAlias](removeStreamAlias.html)
+- [listStreamAliases](listStreamAliases.html)
+- [flushStreamAliases](flushStreamAliases.html)
 
 
 
@@ -74,11 +74,11 @@ The _hasGroupNameAliases_ option in the web server configuration file, _webconfi
 
 Group name aliases can be managed using five API commands:
 
-- [addGroupNameAlias](api_addGroupNameAlias.html)
-- [removeGroupNameAlias](api_removeGroupNameAliases.html)
-- [getGroupNameByAlias](api_getGroupNameByAlias.html)
-- [listGroupNameAliases](api_listGroupNameAliases.html)
-- [flushGroupNameAliases](api_flushStreamAliases.html)
+- [addGroupNameAlias](addGroupNameAlias.html)
+- [removeGroupNameAlias](removeGroupNameAliases.html)
+- [getGroupNameByAlias](getGroupNameByAlias.html)
+- [listGroupNameAliases](istGroupNameAliases.html)
+- [flushGroupNameAliases](flushStreamAliases.html)
 
 A typical use case for Group Name Aliases is shown below. The use case also applies to HDS, MSS, and DASH streams (simply replace createHLSstream with createHDSstream, createMSSstream, or createDASHstream, respectively, and use a compatible player.
 

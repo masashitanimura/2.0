@@ -127,6 +127,6 @@ realms=
 
 ## Related Links:
 
-- [pushStream API](api_pushStream.html)
+- [pushStream API](pushStream.html)
 - [Send Stream To Facebook](userguide_send.html#facebook-live)
 - [Send Stream To Youtube](userguide_send.html#youtube-live)
