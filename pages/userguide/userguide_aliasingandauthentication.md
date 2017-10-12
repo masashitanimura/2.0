@@ -47,7 +47,7 @@ Value of 0: Zero is a special case in which the alias is made permanent. The ali
 
 
 
-###Common Alias Configuration
+### Common Alias Configuration
 
 Example: Pay-wall/Registered User Section
 

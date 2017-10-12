@@ -449,11 +449,11 @@ includeResponseHeaders=
 
 **webServer includeResponseHeaders Structure Table:**
 
-| Key      | Type    | Mandatory | Description                              |
-| -------- | ------- | --------- | ---------------------------------------- |
-| header   | string  | yes       | The response header.                     |
-| content  | string  | yes       | The value particular to the response header. |
-| override | boolean | No        | Indicates if the header should be overridden if the existing header has this already included. |
+|   Key    |  Type   | Mandatory | Description                              |
+| :------: | :-----: | :-------: | ---------------------------------------- |
+|  header  | string  |    yes    | The response header.                     |
+| content  | string  |    yes    | The value particular to the response header. |
+| override | boolean |    No     | Indicates if the header should be overridden if the existing header has this already included. |
 
 
 
@@ -464,32 +464,36 @@ Proxy authentication provides a way to secure the HTTP based EMS API. All API co
 To enable Proxy Authentication you will open the *webconfig.lua* config file and uncomment the “apiProxy” section near the bottom of the file.
 
 ```
-apiProxy=
-			{
-				authentication="basic", -- none, basic			
-				pseudoDomain="<domain>",
-				address="127.0.0.1",
-				port=7777,
-				userName="<username>",
-				password="<password>",
-			},
+"apiProxy": 
+	{
+		"enable" : true,
+		"authentication": "basic", 			
+		"pseudoDomain": "apiproxy",
+		"address": "127.0.0.1",
+		"port": 7777,
+		"userName": "username",
+		"password": "password"
+	}
 ```
 **apiProxy Structure Table:**
 
-|      Key       |  Type  | Mandatory | Description                              |
-| :------------: | :----: | :-------: | ---------------------------------------- |
-| authentication | object |    yes    | The type of authentication. Currently, there are only 2 available values: “basic” which is basic HTTP authentication that uses a username and password; and “none” which disables authentication. |
-|  pseudoDomain  | object |    yes    | The domain name or folder                |
-|    address     | number |    yes    | The address using the inboundHTTPJsonCLI |
-|      port      | number |    yes    | Port, referring to the config.lua’s acceptors for inboundHTTPJsonCLI |
-|    userName    | string |    No     | Basic authentication username            |
-|    password    | string |    No     | Password for the userName                |
+|      Key       |  Type   | Mandatory | Description                              |
+| :------------: | :-----: | :-------: | ---------------------------------------- |
+|     enable     | boolean |    yes    | If true, will read the configuration of apiProxy |
+| authentication | object  |    yes    | The type of authentication. Currently, there are only 2 available values: “basic” which is basic HTTP authentication that uses a username and password; and “none” which disables authentication. |
+|  pseudoDomain  | object  |    yes    | The domain name or folder                |
+|    address     | number  |    yes    | The address using the inboundHTTPJsonCLI |
+|      port      | number  |    yes    | Port, referring to the config.lua’s acceptors for inboundHTTPJsonCLI |
+|    userName    | string  |    No     | Basic authentication username            |
+|    password    | string  |    No     | Password for the userName                |
 
-See [Using API Proxy Authentication]().
+See [Using API Proxy Authentication](userguide_usingapiproxy.html).
 
 
 
 ### auth
+
+For EMS 1.7.0 and 1.7.1 only.
 
 The authentication settings for the EMS Web UI. This is disabled for non-Amazon EMS packages.
 

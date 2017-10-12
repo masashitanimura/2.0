@@ -253,15 +253,7 @@ entries:
       output: web, pdf
 
     - title: Using API Proxy Authentication
-      url: /userguide_apiproxy.html
-      output: web, pdf
-
-    - title: Configuring and Receiving Event Notifications
-      url: /userguide_confevents.html
-      output: web, pdf
-
-    - title: Using User Defined Variables
-      url: /userguide_userdefined.html
+      url: /userguide_usingapiproxy.html
       output: web, pdf
 
   - title: Event Notification System

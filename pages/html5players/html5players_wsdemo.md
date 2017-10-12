@@ -1,5 +1,5 @@
 ---
-title: Playing Videos Using evoplayer.html
+title: Playing Videos Using evoplayers.html
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html
