@@ -4,7 +4,7 @@ keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsmetadata.html
 folder: html5players
-toc: false
+toc: true
 ---
 
 Metadata is data about data, or in this case, data about and/or related to streams. However, EMS offers ingest and delivery of these data that can virtually be anything: location data, images (like thumbnails), heart-rate data, etc. The current input format uses JSON but other forms can be added as needed. These metadata can then be sent to different players and/or another EMS endpoint.
@@ -107,8 +107,6 @@ pushMetadata localStreamName=test ip=192.168.2.1 port=8110
 This will push updated metadata to a server which has an IP address of _192.168.2.1_ and is able to listen to incoming traffic on port _8110_.
 
 The third mechanism of delivering metadata is through websockets. Any clients connected to the metadata websocket acceptor would be able to, not only send out metadata to EMS, but also receive metadata updates from EMS as well.
-
-
 
 See [getMetadata](api_getMetadata.html) and [pushMetadata](api_pushMetadata.html) APIs.
 

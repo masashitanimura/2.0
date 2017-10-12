@@ -1,5 +1,5 @@
 ---
-title: webconfig.lua
+title: webconfig.json
 keywords: webconfig
 sidebar: userguide_sidebar
 permalink: userguide_webconfig.html

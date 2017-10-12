@@ -71,6 +71,10 @@ entries:
       url: /html5players_wsmetadata.html
       output: web, pdf
 
+    - title: Websockets Metadata Read and Write Demo Page
+      url: /html5players_wsmetademo.html
+      output: web, pdf
+
     - title: Playing Videos Using Websockets
       url: /html5players_wsdemo.html
       output: web, pdf

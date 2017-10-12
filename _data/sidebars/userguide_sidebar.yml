@@ -105,7 +105,7 @@ entries:
       url: /userguide_users.html
       output: web, pdf
 
-    - title: webconfig.lua
+    - title: webconfig.json
       url: /userguide_webconfig.html
       output: web, pdf
 
@@ -253,7 +253,7 @@ entries:
       output: web, pdf
 
     - title: Using API Proxy Authentication
-      url: /userguide_usingapiproxy.html
+      url: /userguide_apiproxy.html
       output: web, pdf
 
     - title: Configuring and Receiving Event Notifications
