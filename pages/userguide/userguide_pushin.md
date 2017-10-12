@@ -11,13 +11,13 @@ EMS is capable of receiving streams that are pushed to it from other servers. An
 
 
 
-##How To
+## How To
 
 Steps on how to do the actual stream push needs to be consulted with the stream source, as every system has different ways of accomplishing this.
 
 
 
-##Push-In Authentication
+## Push-In Authentication
 
 For security, EMS has an option to require all streams which are pushed into the server be authenticated using authentication details that are specified in `config.lua` and `users.lua`. By default, the authentication configuration is disabled.
 
