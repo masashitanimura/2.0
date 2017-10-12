@@ -34,7 +34,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
 
 ## Windows Embedded
 
-Contact Sales Support if you need a build for Windows Embedded. See [installation procedure on Windows](#Windows).
+Contact Sales Support if you need a build for Windows Embedded. See [installation procedure on Windows](userguide_installwinos.html).
 
 
 
@@ -50,15 +50,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
 
 
 
-## Android
-
-Contact Sales Support if you need a build for Android.
-
-
-
-## iOS
-
-Contact Sales Support if you need a build for iOS.
+**Note:** The Raspberry Pi package does not contain the EMS Webserver, EMS Web UI and EMS Webservices.
 
 
 
