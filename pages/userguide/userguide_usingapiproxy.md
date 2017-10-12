@@ -54,11 +54,15 @@ http://username:password@localhost:8888/apiproxy/version
 
 **Command with Parameters:**
 
-You need to encode the parameters to base64. You can use any online tools available. Place the encoded parameters in the URL next to "param=".
+You need to encode the parameters to base64 format. You can use any online tools available for encoding. Place the encoded parameters in the URL next to "param=".
 
 ```
 http://username:password@localhost:8888/apiproxy/pullstream?params=dXJpPQlydG1wOi8vczJwY2h6eG10eW1uMmsuY2xvdWRmcm9udC5uZXQvY2Z4L3N0L21wNDpzaW50ZWwubXA0IGxvY2Fsc3RyZWFtbmFtZT1teVN0cmVhbQ==
 ```
+
+
+
+**Command Result:**
 
 ![](images/userguide/proxytwo.jpg)
 
