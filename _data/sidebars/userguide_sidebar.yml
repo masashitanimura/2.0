@@ -240,8 +240,8 @@ entries:
       url: /userguide_transcode.html
       output: web, pdf
 
-    - title: Adding Stream Authentication
-      url: /userguide_addstreamauth.html
+    - title: Aliasing and Authentication
+      url: /userguide_securityandauthentication.html
       output: web, pdf
 
     - title: Play Over HTTP

@@ -17,3 +17,8 @@ The EMS utilizes this technology to provide the following functions:
 - Metadata Ingest – accepts incoming Metadata.
 - FMP4 Player – an acceptor which transmits a fragmented MP4 (FMP4) stream.
 
+
+
+
+
+

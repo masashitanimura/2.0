@@ -1,11 +1,17 @@
 ---
-title: Playing Videos Using evoplayers.html
+title: Streaming Using WebRTC
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtcdemo.html
 folder: html5players
 toc: false
 ---
+
+**Peer to Peer streaming uses the EvoStream HTML5 Streaming capabilities. It is recommended you also review the HTML5 Streaming section.**
+
+
+
+##Using Demo Player
 
 Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use webRTC for streaming:
 
@@ -17,7 +23,7 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
    startwebrtc ersip=54.174.188.145 ersport=4545 roomid=MyRoom
    ```
 
-   **Note:** The room name should be unique as much as possible, especially when using the public ERS to prevent room name conflicts. If the room name is already taken, EMS would return an error on the console logs to indicate such scenario.
+   **Note:** The room name should be **unique** as much as possible, especially when using the public ERS to prevent room name conflicts. If the room name is already taken, EMS would return an error on the console logs to indicate such scenario.
 
    ​
 
