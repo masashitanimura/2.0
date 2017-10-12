@@ -2,7 +2,7 @@
 title: Push-in a Stream
 keywords: push-in
 sidebar: userguide_sidebar
-permalink: userguide_pushIn.html
+permalink: userguide_pushin.html
 folder: userguide 
 toc: true
 ---
