@@ -241,7 +241,7 @@ entries:
       output: web, pdf
 
     - title: Aliasing and Authentication
-      url: /userguide_securityandauthentication.html
+      url: /userguide_aliasingandauthentication.html
       output: web, pdf
 
     - title: Play Over HTTP
