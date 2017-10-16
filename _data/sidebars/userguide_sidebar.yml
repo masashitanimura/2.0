@@ -288,6 +288,10 @@ entries:
       url: /userguide_streamtypes.html
       output: web, pdf
 
+    - title: Sample Content
+      url: /userguide_samplecontent.html
+      output: web, pdf
+
     - title: Basic Debugging
       url: /userguide_basicdebugging.html
       output: web, pdf
