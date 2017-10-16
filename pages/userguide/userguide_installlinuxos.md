@@ -114,7 +114,7 @@ The following steps are used to install the EvoStream Media Server, and can be r
 
 #### License Installation
 
-To install the license, simply copy the `License.lic` file to `/etc/evostream/License.lic`.
+To install the license, simply copy the `License.lic` file to `/etc/evostreamms/`.
 
 
 
