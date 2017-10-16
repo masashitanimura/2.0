@@ -488,31 +488,3 @@ To enable Proxy Authentication you will open the *webconfig.lua* config file and
 |    password    | string  |    No     | Password for the userName                |
 
 See [Using API Proxy Authentication](userguide_usingapiproxy.html).
-
-
-
-### auth
-
-For EMS 1.7.0 and 1.7.1 only.
-
-The authentication settings for the EMS Web UI. This is disabled for non-Amazon EMS packages.
-
-```
-auth=
-{
-	{
-		domain="EMS_Web_UI", --the domain folder
-     	 digestFile="../evo-webroot/EMS_Web_UI/settings/passwords/.htdigest", --relative path to digest file
-     	 enable=false,
-	},
-},
-```
-To enable the EMS Web UI Authentication you will open the webconfig.lua configuration file and change “enable” value to “true”.
-
-|    Key     |  Type   | Mandatory | Description                              |
-| :--------: | :-----: | :-------: | ---------------------------------------- |
-|   domain   | object  |    yes    | The domain name or folder                |
-| digestFile | object  |    yes    | The relative path to digest file         |
-|   enable   | boolean |    yes    | Tells if the authentication is enabled or disabled |
-
-If enabled, the Authentication window will open if the EMS Web UI is accessed.
