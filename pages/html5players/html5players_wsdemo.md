@@ -1,15 +1,17 @@
 ---
-title: Playing Videos Using evoplayers.html
+title: Playing Videos Using WebSockets
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html
 folder: html5players
-toc: false
+toc: true
 ---
 
 Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use webSocket for streaming:
 
 
+
+## WebSocket Streaming
 
 1.  Access the test page `demo/evoplayers.html`
 
@@ -27,12 +29,9 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
 
 4. Hit **Play** to start streaming!
 
-   ​
-
    **Playing RTMP/RTSP Pulled Streams:**
 
    ![](images/html5/websocket.JPG)
-
 
    ​
 
@@ -42,12 +41,43 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
 
    ​
 
-   **Playing Playlist File:**
+    **Playing Playlist File:**
 
    ![](images/html5/play_ws_playlist.jpg)
 
    ​
 
-**Note:**
+   **Note:**
 
-There are two players available for WebSocket. You can stream the same source or stream two different sources at the same time!
+   There are two players available for WebSocket. You can stream the same source or stream two different sources at the same time!
+
+
+
+
+## WebSocket Over SSL
+
+This WebSocket player uses an encrypted transport (SSL) to secure the websocket connection. To stream using this:
+
+1. Enable WebSockets over SSL FMP4 Fetch in config.lua
+
+   ```
+   -- WebSockets over SSL FMP4 Fetch
+   				--[[                                               ---- remove comments to enable
+   				{
+   					ip="0.0.0.0",
+   					port=8420,
+   					protocol="inboundWSSFMP4",
+   					sslKey="C:\\EvoStream_2.0\\config\\server.key",
+   					sslCert="C:\\EvoStream_2.0\\config\\server.cert",
+   				},
+   				]]--                                               ---- remove comments to enable
+   ```
+
+2. Modify the parameters if needed
+
+3. Restart EMS
+
+4. Access the test page `demo/evoplayers.html` and you can now stream using the WebSocket Over SSL player!
+
+   ![](images/html5/play_wsssl.jpg)
+
