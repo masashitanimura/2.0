@@ -13,11 +13,13 @@ toc: false
 
 ##Using Demo Player
 
-Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use webRTC for streaming:
+Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use WebRTC for streaming:
 
 
 
-1. To play streams from EMS using webRTC, the `startWebrtc` command needs to be executed first. See `startWebRTC`API [here](api/startWebRTC.html):
+##WebRTC Streaming
+
+1. To play streams from EMS using webRTC, the `startWebrtc` command needs to be executed first. See `startWebRTC`API [here](api_startWebRTC.html):
 
    ```
    startwebrtc ersip=54.174.188.145 ersport=4545 roomid=MyRoom
@@ -65,6 +67,16 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
 **Note:**
 
 There are two players available for WebRTC. You can stream the same source or stream two different sources at the same time!
+
+
+
+## WebRTC using SRTP
+
+This player uses SRTP as transport instead of fragmented MP4. To stream using this player, just follow the same steps as above but use the WebRTC SRTP player. 
+
+![](images/html5/play_wrtcsrtp.jpg)
+
+
 
 ------
 
