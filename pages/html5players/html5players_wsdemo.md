@@ -7,7 +7,7 @@ folder: html5players
 toc: true
 ---
 
-Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use webSocket for streaming:
+Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use WebSocket for streaming:
 
 
 
@@ -54,6 +54,8 @@ Starting release 2.0, the HTML5 web player of EMS or what we've called the evopl
 
 
 
+
+
 ## WebSocket Over SSL
 
 This WebSocket player uses an encrypted transport (SSL) to secure the websocket connection. To stream using this:
@@ -62,15 +64,15 @@ This WebSocket player uses an encrypted transport (SSL) to secure the websocket 
 
    ```
    -- WebSockets over SSL FMP4 Fetch
-   				--[[                                               ---- remove comments to enable
+   				--[[                                           ---- remove comments to enable
    				{
    					ip="0.0.0.0",
    					port=8420,
    					protocol="inboundWSSFMP4",
-   					sslKey="C:\\EvoStream_2.0\\config\\server.key",
-   					sslCert="C:\\EvoStream_2.0\\config\\server.cert",
+   					sslKey="C:\\EvoStream\\config\\server.key",
+   					sslCert="C:\\EvoStream\\config\\server.cert",
    				},
-   				]]--                                               ---- remove comments to enable
+   				]]--                                           ---- remove comments to enable
    ```
 
 2. Modify the parameters if needed
@@ -80,4 +82,14 @@ This WebSocket player uses an encrypted transport (SSL) to secure the websocket 
 4. Access the test page `demo/evoplayers.html` and you can now stream using the WebSocket Over SSL player!
 
    ![](images/html5/play_wsssl.jpg)
+
+   ​
+
+**Notes:**
+
+- We encourage to use a signed certificate for this
+
+- If you will use a self-signed certificate, add the certificate to the exception/trusted publishers of the browser before using the player
+
+  ​
 
