@@ -1,5 +1,5 @@
 ---
-title: Playing Videos Using WebSockets
+title: Streaming Using WebSockets
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html
