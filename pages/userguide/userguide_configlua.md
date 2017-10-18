@@ -925,7 +925,7 @@ deviceStreams=
 
 
 
-###autoDASH/HLS/HDS/MSS
+### autoDASH/HLS/HDS/MSS
 
 If enabled, will automatically create the HTTP streams from the ingested streams. 
 
@@ -956,12 +956,12 @@ autoMSS=
 
 **Note:** You can add other parameters associated with the API. See [createDASHStream](api_createDASHStream.html),[createHLSStream](api_createHLSStream.html), [createHDSStream](api_createHDSStream.html), [createMSSStream](api_createMSSStream.html), for parameter lists but below are the parameters that **cannot be modified** using auto:
 
-| Parameter            | Value   |
-| -------------------- | ------- |
-| keepAlive            | false   |
-| cleanupDestination   | true    |
-| createMasterPlaylist | false   |
-| overwriteDestination | true    |
+| Parameter            |  Value  |
+| -------------------- | :-----: |
+| keepAlive            |  false  |
+| cleanupDestination   |  true   |
+| createMasterPlaylist |  false  |
+| overwriteDestination |  true   |
 | playlistType         | rolling |
 
 
@@ -1011,9 +1011,9 @@ authentication=
   |      Key      |  Type  | Mandatory | Description                              |
   | :-----------: | :----: | :-------: | ---------------------------------------- |
   |     type      | string |   true    |                                          |
-  | encoderAgents | string |   true    | The encoder agent to be used             |
+  | encoderAgents | string |   true    | The encoder agent/s to be used           |
   |   usersFile   | string |   true    | The path to users.lua configuration file |
-  |  verifierUri  | string |   false   |                                          |
+  |  verifierUri  | string |   false   | The path of the verifier file to be used |
   |     token     | string |   false   |                                          |
 
   ​
@@ -1043,7 +1043,7 @@ authentication=
 2. Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
 
 
-###  
+
 
 ### eventLogger
 
@@ -1053,46 +1053,48 @@ Settings for the server-wide event sinks. See [Events Overview](userguide_events
 
 **Mandatory:** No
 
-####EMS Events Sinks
+
+
+#### EMS Events Sinks
 
 **A. File**
 
 ```
 eventLogger=
+	{
+		--customData=123,
+		sinks=
+		{
+			--[=[
 			{
-				--customData=123,
-				sinks=
+				type="file",
+				--[[
+				customData=
 				{
-					--[=[
-					{
-						type="file",
-						--[[
-						customData=
-						{
-							some="string",
-							number=123.456,
-							array={1, 2.345, "Hello world", true, nil}
-						},
-						]]--
-						filename="C:\\EvoStream_2.0_5477\\logs\\events.txt",
-						format="text",
-						--format="xml",
-						--format="json",
-						--format="w3c",
-						--[[
-						timestamp=true,
-						appendTimestamp=true,
-						appendInstance=true,
-						fileChunkLength=43200, -- 12 hours (in seconds)
-						fileChunkTime="18:00:00",
-						]]--
-						enabledEvents=
-						{	-- common events enabled by default for eventLogger type "file":
-							"inStreamCreated",
-							"outStreamCreated",
-							-- NOTE: add more events by copying items from the sorted list of VALID EVENTS below
-						},
-					},
+					some="string",
+					number=123.456,
+					array={1, 2.345, "Hello world", true, nil}
+				},
+				]]--
+				filename="C:\\EvoStream\\logs\\events.txt",
+				format="text",
+				--format="xml",
+				--format="json",
+				--format="w3c",
+				--[[
+				timestamp=true,
+				appendTimestamp=true,
+				appendInstance=true,
+				fileChunkLength=43200, -- 12 hours (in seconds)
+				fileChunkTime="18:00:00",
+				]]--
+				enabledEvents=
+				{	-- common events enabled by default for eventLogger type "file":
+					"inStreamCreated",
+					"outStreamCreated",
+					-- NOTE: add more events by copying items from the sorted list of VALID EVENTS below
+				},
+			},
 ```
 
 **Notes:** 
@@ -1103,7 +1105,7 @@ eventLogger=
 
 3. The event log files will be stored in the path where EMS logs are configured
 
-4. See list of events [here](api_eventlist.html)
+4. See list of events [here](userguide_eventlist.html)
 
    ​
 
@@ -1124,32 +1126,32 @@ eventLogger=
 
 
 
-**B. RPC - Evowebservices** 
+**B. RPC - EvoWebservices** 
 
 ```
 {
-						type="RPC",
-						url="http://127.0.0.1:4000/evowebservices",
-						serializerType="JSON",
-						enabledEvents=
-						{	-- common events enabled by default for eventLogger type "RPC":
-							"inStreamCreated",
-							"inStreamClosed",
-							"outStreamCreated",
-							"outStreamClosed",
-							"timerTriggered",
-							"hdsMasterPlaylistUpdated",
-							"hdsChildPlaylistUpdated",
-							"hdsChunkClosed",
-							"hdsChunkDeleted",							
-							"hlsMasterPlaylistUpdated",
-							"hlsChunkClosed",
-							"hlsChunkDeleted",									
-							"dashPlaylistUpdated",
-							"dashChunkClosed",
-							"dashChunkDeleted",									
-						},
-					},
+		type="RPC",
+		url="http://127.0.0.1:4000/evowebservices",
+		serializerType="JSON",
+		enabledEvents=
+		{	-- common events enabled by default for eventLogger type "RPC":
+			"inStreamCreated",
+			"inStreamClosed",
+			"outStreamCreated",
+			"outStreamClosed",
+			"timerTriggered",
+			"hdsMasterPlaylistUpdated",
+			"hdsChildPlaylistUpdated",
+			"hdsChunkClosed",
+			"hdsChunkDeleted",							
+			"hlsMasterPlaylistUpdated",
+			"hlsChunkClosed",
+			"hlsChunkDeleted",									
+			"dashPlaylistUpdated",
+			"dashChunkClosed",
+			"dashChunkDeleted",									
+		},
+},
 ```
 
 **Notes:** 
@@ -1165,22 +1167,23 @@ eventLogger=
 
 ```
 {
-						type="RPC",
-						url="http://127.0.0.1:4100/streams/update-list",
-						serializerType="JSON",
-						enabledEvents=
-						{	-- common events enabled by default for eventLogger type "RPC":
-							"inStreamCreated",
-							"inStreamClosed",
-							"outStreamCreated",
-							"outStreamClosed",
-							"processStarted",
-							"processStopped",
-							"recordChunkCreated",
-							"recordChunkClosed",
-							"webRtcServiceStarted",
-							"webRtcServiceStopped",
-						},
+	type="RPC",
+	url="http://127.0.0.1:4100/streams/update-list",
+	serializerType="JSON",
+	enabledEvents=
+	{	-- common events enabled by default for eventLogger type "RPC":
+		"inStreamCreated",
+		"inStreamClosed",
+		"outStreamCreated",
+		"outStreamClosed",
+		"processStarted",
+		"processStopped",
+		"recordChunkCreated",
+		"recordChunkClosed",
+		"webRtcServiceStarted",
+		"webRtcServiceStopped",
+	},
+}	
 ```
 
 **Note:**
@@ -1206,7 +1209,7 @@ transcoder = {
 			},
 ```
 
-The `srcUriPrefix` tells the transcoder how to get the stream from the EMS. The `dstUriPrefix` tells the transcoder how to push the stream back to the EMS. The ports used in these two values must match the acceptors the EMS is actively listening on. By default this is i`5544` for RTSP and `6666` for liveFLV.
+The `srcUriPrefix` tells the transcoder how to get the stream from the EMS. The `dstUriPrefix` tells the transcoder how to push the stream back to the EMS. The ports used in these two values must match the acceptors the EMS is actively listening on. By default this is `5544` for RTSP and `6666` for liveFLV.
 
 
 
