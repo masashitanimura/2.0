@@ -85,11 +85,10 @@ The JSON response contains the following details:
   - hasAudio – Indicates if the recorded stream has audio, false if none
   - keepAlive – If **true**, the stream will attempt to reconnect if the connection is severed
   - localStreamName – The local name for the stream
-  - mp4BinPath-??
-  - operationType – The type of operation
+  - mp4BinPath - The path of the mp4 writer
+  - operationType – The type of operation, for internal use only
   - overwrite – If **true**, files with the same name will be overwritten
   - pathToFile – Path to the folder where recorded files will be written
-  - preset - ??
   - type – Type of file for recording. Either \`**flv**\`,\`**ts**\`, or ‘**mp4’**
   - waitForIDR – If **true**, new files will only be created on IDR boundaries
   - winQtCompat – If **true**, andates 32bit header fields to ensure compatibility with Windows QuickTime

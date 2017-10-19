@@ -68,16 +68,9 @@ addGroupNameAlias groupName=testAliasGroupName aliasName=testGroupAlias
 
 The JSON response contains the following details:
 
-- data – The data to parse.
+- data – The data to parse
   - aliasName – The alias alternative to the `localStreamName`
-  - cliProtocolId - ??
-  - edges - ??
-  - edgesCount - ??
   - groupName – The assigned groupName where alias is applied
-  - lastUpdate - ??
-  - operation - ??
-  - result - ??
-  - uniqueRequestId - ??
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 

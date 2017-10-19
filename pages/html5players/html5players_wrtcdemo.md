@@ -78,6 +78,10 @@ This player uses SRTP as transport instead of fragmented MP4. To stream using th
 
 
 
+**Note:** 
+
+- In case your stream audio is not working, it means that the browser does not support WebRTC AAC
+
 ------
 
 ## Related Links

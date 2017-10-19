@@ -20,7 +20,7 @@ This will open the port in the given IP address and will open doors for the room
 | Parameter Name |  Type  | Mandatory | Default Value | Description                              |
 | :------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
 |     ersIp      | string |   true    |    *null*     | IP address (xx.yy.zz.xx) of ERS          |
-|    ersPort     | string |   true    |    *null*     | Port of ERS                              |
+|    ersPort     | string |   true    |    *null*     | Port number where ERS will listen to     |
 |     roomId     | string |   true    |    *null*     | Unique room Identifier within ERS that will be used by client browsers to connect to this EMS |
 |     token      | string |   false   |    *null*     | The security token to be used within ERS |
 
@@ -75,17 +75,17 @@ The JSON response contains the following details:
 
 - data – The data to parse.
   - configId - The configuration ID for this command
-  - ers - 
+  - ers - The name of the ERS
   - ersOverSsl - The configuration of the SSL
   - ersip – The IP address of the ERS
-  - ersport – The port of the ERS
-  - keepAlive - If keepAlive is set to true, EMS will reconnect to ERS in the event that it gets disconnected
-  - name - ??
-  - operationType – The type of operation
+  - ersport – The port of the ERS where it listens to
+  - keepAlive - If `keepAlive` is set to true, EMS will reconnect to ERS in the event that it gets disconnected
+  - name - The name of the application using the ERS
+  - operationType – The type of operation, for internal use only
   - roomId – The room identifier
   - sslCert - The SSL certificate
   - sslKey - The SSL key certificate
-  - token - ??
+  - token - The security token used within ERS
 - description – Describes the result of parsing/executing the command
 - status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 

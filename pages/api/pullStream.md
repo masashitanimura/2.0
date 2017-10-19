@@ -88,7 +88,7 @@ pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 locals
       "fullDocumentPathWithParameters":"\/cfx\/st\/mp4:sintel.mp4",
       "fullParameters":"",
       "fullUri":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cf x\/st\/mp4:sintel.mp4",
-     "fullUriWithAuth":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
+      "fullUriWithAuth":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
       "host":"s2pchzxmtymn2k.cloudfront.net",
       "ip":"54.239.131.57",
       "original Uri":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
@@ -100,6 +100,7 @@ pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 locals
       "scheme":"rtmp",
       "userName":""
       }
+    "videoSourceIndex":"high"
 },
 "description":"Stream rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4 enqueued for pulling",
 "status":"SUCCESS”
@@ -113,7 +114,7 @@ pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 locals
 The JSON response contains the following details:
 
 - data – The data to parse
-  - audioCodecBytes - The audio codec setup of thisRTP stream if it is audio
+  - audioCodecBytes - The audio codec setup of this RTP stream if it is audio
   - configID – The configuration ID for this command
   - emulateUserAgent – This is the string that the EMS uses to identify itself with the other server. It can be modified so that EMS identifies itself as, say, a Flash Media Server
   - forceTcp – Whether TCP MUST be used, or if UDP can be used
@@ -121,7 +122,7 @@ The JSON response contains the following details:
   - isAudio - Indicates if the currently pulled stream is an audio source
   - keepAlive – If **true**, the stream will attempt to reconnect if the connection is severed
   - localStreamName – The local name for the stream
-  - operationType – The type of operation
+  - operationType – The type of operation, for internal use only
   - pageUrl – A link to the page that originated the request (often unused)
   - ppsBytes - The video PPS bytes of this RTP stream if it is video
   - rangeEnd - The length in seconds for the playback
@@ -134,7 +135,7 @@ The JSON response contains the following details:
   - tcUrl – An RTMP parameter that is essentially acopy of the URI
   - tos – Type of Service network flag
   - ttl – Time To Live network flag
-  - uri – Contains key/value pairs describing thesource stream’s URI
+  - uri – Contains key/value pairs describing the source stream’s URI
     - document – The document name of the source stream
     - documentPath – The document path of the source stream
     - documentWithFullParameters – The document name with parameters of the source stream
@@ -152,6 +153,7 @@ The JSON response contains the following details:
     - portSpecified – True if the port for the source stream is specified
     - scheme – The protocol used by the source stream
     - userName – The user name for authenticating the source stream (if required)
+  - videoSourceIndex - The resolution of the video
 
 
 - description– Describes the result of parsing/executing the command

@@ -71,12 +71,12 @@ The JSON response contains the following details:
 
 - data – The data to parse
   - type - response type
-  - timestamp -  
+  - timestamp -  The timestamp when metadata is generated
   - lat - latitude value
   - lon - longitude value
   - alt -altitude value
   - speed - speed value
-  - dir -
+  - dir - direction value
 
 
 - description – Describes the result of parsing/executing the command

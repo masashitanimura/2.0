@@ -50,78 +50,92 @@ getStreamInfo localStreamName=testpullStream
 
 ``` 
 {
-"data":{
-    "appName":"evostreamms",
-    "audio":{
-        "bytesCount":168860,
-        "codec":"AAAC",
-        "codecNumeric":4702111241970122752,
-        "droppedBytesCount":0,
-        "droppedPacketsCount":0,
-        " packetsCount":521
-        },
-    "bandwidth":0,
-    "connectionType":1,
-    "creationTimestamp":1448003954598.3130,
-    "farIp":"54.239.131.151",
-    "farPort":1935,
-    "ip":"192.168.2.35",
-    "name":"testpullStream",
-    "nearIp":"192.168.2.35",
-    "nearPort":1299,
-    "outStreamsUniqueIds":null,
-    "pageUrl":"",
-    "port":1299,
-    "processId":12848,
-    "processType":"origin",
-    "pullSettings":{
-        "_callback":null,
-        "audioCodecBytes":"",
-        "configId":1,
-        "emulateUserAgent":"EvoStream Media Server (www.evostream.com) player",
-        "forceTcp":false,
-        "httpProxy":"",
-        "isAudio":true,
-        "keepAlive":true,
-        "localStreamName":"testpullStream",
-        "operationType":1,
-        "pageUrl":"",
-        "ppsBytes":"",
-        "rangeEnd":-1,
-        "rangeStart":-2,
-        "rtcpDetectionInterval":10,
-        "sendRenewStream":false,
-        "spsBytes":"",
-        "ssmIp":"",
-        "swfUrl":"",
-        "tcUrl":"",
-        "tos":256,
-        "ttl":256,
-        "uri":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4"
-        },
-    "queryTimestamp":1448003961907.7310,
-    "serverAgent":"FMS\/3,5,7,7009",
-    "swfUrl":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
-    "tcUrl":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
-    "type":"INR ",
-    "typeNumeric":5282249572905648128,
-    "uniqueId":1,
-    "upTime":7309.4180,
-    "video":{
-        "bytesCount":825054,
-        "codec":"VH264",
-        "codecNumeric":6217274493967007744,
-        "droppedByte sCount":0,
-        "droppedPacketsCount":0,
-        "height":306,
-        "level":30,
-        "packetsCount":291,
-        "profile":66,
-        "width":720
-        }
-},
-"description":"Stream information",
-"status":"SUCCESS"
+          "data": {
+                    "data": {
+                              "appName": "evostreamms",
+                              "audio": {
+                                        "aveAudioBitRate": 116761.3333,
+                                        "bytesCount": 216936,
+                                        "codec": "AAAC",
+                                        "codecNumeric": 4702111241970123000,
+                                        "currAudioBitRate": 102160,
+                                        "droppedBytesCount": 0,
+                                        "droppedPacketsCount": 0,
+                                        "packetsCount": 668
+                              },
+                              "bandwidth": 0,
+                              "connectionType": 1,
+                              "creationTimestamp": 1508319520541.517,
+                              "farIp": "54.240.169.199",
+                              "farPort": 1935,
+                              "ip": "192.168.2.193",
+                              "name": "testpullStream",
+                              "nearIp": "192.168.2.193",
+                              "nearPort": 4882,
+                              "outStreamsUniqueIds": null,
+                              "pageUrl": "",
+                              "port": 4882,
+                              "processId": 612,
+                              "processType": "origin",
+                              "pullSettings": {
+                                        "_callback": null,
+                                        "audioCodecBytes": "",
+                                        "configId": 3,
+                                        "emulateUserAgent": "EvoStream Media Server (www.evostream.com) player",
+                                        "forceTcp": false,
+                                        "httpProxy": "",
+                                        "httpStreamType": "ts",
+                                        "isAudio": true,
+                                        "keepAlive": true,
+                                        "localStreamName": "testpullStream",
+                                        "operationType": 1,
+                                        "pageUrl": "",
+                                        "ppsBytes": "",
+                                        "rangeEnd": -1,
+                                        "rangeStart": -2,
+                                        "rtcpDetectionInterval": 10,
+                                        "saveToConfig": true,
+                                        "sendDummyPayload": false,
+                                        "sendRenewStream": false,
+                                        "spsBytes": "",
+                                        "ssmIp": "",
+                                        "swfUrl": "",
+                                        "tcUrl": "",
+                                        "tos": 256,
+                                        "ttl": 256,
+                                        "uri": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                                        "videoSourceIndex": "high"
+                              },
+                              "queryTimestamp": 1508319534447.312,
+                              "serverAgent": "FMS/3,5,7,7009",
+                              "swfUrl": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                              "tcUrl": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                              "type": "INR",
+                              "typeNumeric": 5282249572905648000,
+                              "uniqueId": 26,
+                              "upTime": 13905.7949,
+                              "video": {
+                                        "aveFrameRate": 25,
+                                        "aveKeyFramesPerSec": 0.5,
+                                        "aveVideoBitRate": 592722,
+                                        "bytesCount": 1174564,
+                                        "codec": "VH264",
+                                        "codecNumeric": 6217274493967008000,
+                                        "currFrameRate": 21.8571,
+                                        "currKeyFramesPerSec": 0.2857,
+                                        "currVideoBitRate": 505884.5714,
+                                        "droppedBytesCount": 0,
+                                        "droppedPacketsCount": 0,
+                                        "height": 306,
+                                        "level": 30,
+                                        "packetsCount": 373,
+                                        "profile": 66,
+                                        "width": 720
+                              }
+                    },
+                    "description": "Stream information",
+                    "status": "SUCCESS"
+          }
 }
 ```
 
@@ -134,9 +148,11 @@ The JSON response contains the following details:
 - data – The data to parse
   - appName - The name of the application using the service
   - audio – stats about the audio portion of the stream
+    - aveAudioBitRate - The average bitrate of the audio frames from the start of the stream
     - bytesCount - Total amount of audio data received
     - codec - The name of the audio codec 
     - codecNumeric - Code used for internal use only
+    - currAudioBitRate - The bitrate of the last audio frame received when calling the command
     - droppedBytesCount - The number of video bytes lost
     - droppedPacketsCount – The number of lost audio packets
     - packetsCount – Total number of audio packets received
@@ -178,7 +194,7 @@ The JSON response contains the following details:
     - ttl – Time To Live network flag
     - uri – The parsed values of the source streams URI
   - queryTimestamp – The time (in UNIX seconds) when the information in this request was populated
-  - serverAgent - ??
+  - serverAgent - The server agent used
   - swfUrl - The location of the Flash Client that is generating the stream (if any)
   - tcUrl - An RTMP parameter that is essentially a copy of the URI
   - type – The type of stream this is. The first two characters are of most interest:
@@ -190,9 +206,15 @@ The JSON response contains the following details:
   - uniqueId – The unique ID of the stream (integer)
   - upTime – The time in seconds that the stream has been alive/running for.
   - video – Stats about the video portion of the stream
+    - aveFrameRate- The average frame rate since the stream has started
+    - aveKeyFramesPerSec - The average keyframe per second since the stream has started
+    - aveVideoBitRate -  The average bitrate of the video frames from the start of the stream
     - bytesCount - Total amount of video data received
     - codec - The name of the video codec 
     - codecNumeric - Code used for internal use only
+    - currFrameRate - The number of video frames processed within a one second time frame
+    - currKeyFramesPerSec - The number of video keyframes processed within a one second time frame
+    - currVideoBitRate - The bitrate of the last video frame received when calling the command
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
     - height - The video stream’s pixel height

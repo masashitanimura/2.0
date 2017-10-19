@@ -31,55 +31,231 @@ listInboundStreams
 
 ``` 
 {
-"data":[
-  {
-  "appName":"evostreamms",
-  "audio":{
-    "bytesCount":0,
-    "codec":"AAAC",
-    "codecNumeric":4702111241970122752,
-    "droppedBytesCount":0,
-    "droppedPacketsCount":0,
-    "packetsCount":0
-    },
-  "bandwidth":512,
-  "connectionType":0,
-  "creationTimestamp":1462950774977.0740,
-  "edgePid":0,
-  "farIp":"127.0.0.1",
-  "farPort":36968,
-  "ip":"127.0.0.1",
-  "name":"teststream",
-  "nearIp":"127.0.0.1",
-  "nearPort":5544,
-  "outStreamsUniqueIds":[
-    67
-    ],
-  "port":5544,
-  "processId":5785,
-  "processType":"origin",
-  "queryTimestamp":1462950861518.4170,
-  "type":"IFP",
-  "typeNumeric":5279995574068707328,
-  "uniqueId":66,
-  "upTime":86541.3430,
-  "userAgent":"EvoStream Media Server (www.evostream.com)",
-  "video":{
-    "bytesCount":0,
-    "codec":"VH264",
-    "codecNumeric":6217274493967007744,
-    "droppedBytesCount":0,
-    "droppedPacketsCount":0,
-    "height":240,
-    "level":30,
-    "packetsCount":0,
-    "profile":66,
-    "width":424
-  }
-  },
-],
-"description":"Available inbound streams",
-"status":"SUCCESS"
+          "data": {
+                    "data": [
+                              {
+                                        "appName": "evostreamms",
+                                        "audio": {
+                                                  "aveAudioBitRate": 102226.8169,
+                                                  "bytesCount": 940870,
+                                                  "codec": "AAAC",
+                                                  "codecNumeric": 4702111241970123000,
+                                                  "currAudioBitRate": 96889.6,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "packetsCount": 3523
+                                        },
+                                        "bandwidth": 0,
+                                        "connectionType": 1,
+                                        "creationTimestamp": 1508320715972.891,
+                                        "edgePid": 0,
+                                        "farIp": "127.0.0.1",
+                                        "farPort": 1935,
+                                        "ip": "127.0.0.1",
+                                        "name": "bunnyqwe",
+                                        "nearIp": "127.0.0.1",
+                                        "nearPort": 6448,
+                                        "outStreamsUniqueIds": null,
+                                        "pageUrl": "",
+                                        "port": 6448,
+                                        "processId": 612,
+                                        "processType": "origin",
+                                        "pullSettings": {
+                                                  "_callback": null,
+                                                  "audioCodecBytes": "",
+                                                  "configId": 1,
+                                                  "emulateUserAgent": "EvoStream Media Server (www.evostream.com) player",
+                                                  "forceTcp": false,
+                                                  "httpProxy": "",
+                                                  "httpStreamType": "ts",
+                                                  "isAudio": true,
+                                                  "keepAlive": true,
+                                                  "localStreamName": "bunnyqwe",
+                                                  "operationType": 1,
+                                                  "pageUrl": "",
+                                                  "ppsBytes": "",
+                                                  "rangeEnd": -1,
+                                                  "rangeStart": -2,
+                                                  "rtcpDetectionInterval": 10,
+                                                  "saveToConfig": true,
+                                                  "sendDummyPayload": false,
+                                                  "sendRenewStream": false,
+                                                  "spsBytes": "",
+                                                  "ssmIp": "",
+                                                  "swfUrl": "",
+                                                  "tcUrl": "",
+                                                  "tos": 256,
+                                                  "ttl": 256,
+                                                  "uri": "rtmp://localhost/vod/bunny.mp4",
+                                                  "videoSourceIndex": "high"
+                                        },
+                                        "queryTimestamp": 1508320789466.095,
+                                        "serverAgent": "FMS/3,0,1,123",
+                                        "swfUrl": "rtmp://localhost/vod/bunny.mp4",
+                                        "tcUrl": "rtmp://localhost/vod/bunny.mp4",
+                                        "type": "INR",
+                                        "typeNumeric": 5282249572905648000,
+                                        "uniqueId": 56,
+                                        "upTime": 73493.2039,
+                                        "video": {
+                                                  "aveFrameRate": 24.3944,
+                                                  "aveKeyFramesPerSec": 0.3239,
+                                                  "aveVideoBitRate": 395857.2394,
+                                                  "bytesCount": 3605399,
+                                                  "codec": "VH264",
+                                                  "codecNumeric": 6217274493967008000,
+                                                  "currFrameRate": 24,
+                                                  "currKeyFramesPerSec": 0.6,
+                                                  "currVideoBitRate": 259859.2,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "height": 240,
+                                                  "level": 30,
+                                                  "packetsCount": 1806,
+                                                  "profile": 66,
+                                                  "width": 424
+                                        }
+                              },
+                              {
+                                        "appName": "evostreamms",
+                                        "audio": {
+                                                  "aveAudioBitRate": 0,
+                                                  "bytesCount": 0,
+                                                  "codec": "AAAC",
+                                                  "codecNumeric": 4702111241970123000,
+                                                  "currAudioBitRate": 0,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "packetsCount": 0
+                                        },
+                                        "bandwidth": 512,
+                                        "connectionType": 0,
+                                        "creationTimestamp": 1508320715979.892,
+                                        "edgePid": 0,
+                                        "farIp": "127.0.0.1",
+                                        "farPort": 6448,
+                                        "ip": "127.0.0.1",
+                                        "name": "C:\\EvoStream_2.0\\media\\bunny.mp4",
+                                        "nearIp": "127.0.0.1",
+                                        "nearPort": 1935,
+                                        "outStreamsUniqueIds": [
+                                                  57
+                                        ],
+                                        "port": 1935,
+                                        "processId": 612,
+                                        "processType": "origin",
+                                        "queryTimestamp": 1508320789466.095,
+                                        "type": "IFR",
+                                        "typeNumeric": 5279997773091963000,
+                                        "uniqueId": 58,
+                                        "upTime": 73486.2029,
+                                        "userAgent": "EvoStream Media Server (www.evostream.com) player",
+                                        "video": {
+                                                  "aveFrameRate": 0,
+                                                  "aveKeyFramesPerSec": 0,
+                                                  "aveVideoBitRate": 0,
+                                                  "bytesCount": 0,
+                                                  "codec": "VH264",
+                                                  "codecNumeric": 6217274493967008000,
+                                                  "currFrameRate": 0,
+                                                  "currKeyFramesPerSec": 0,
+                                                  "currVideoBitRate": 0,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "height": 240,
+                                                  "l,evel": 30,
+                                                  "packetsCount": 0,
+                                                  "profile": 66,
+                                                  "width": 424
+                                        }
+                              },
+                              {
+                                        "appName": "evostreamms",
+                                        "audio": {
+                                                  "aveAudioBitRate": 124868.9032,
+                                                  "bytesCount": 549716,
+                                                  "codec": "AAAC",
+                                                  "codecNumeric": 4702111241970123000,
+                                                  "currAudioBitRate": 117090.6667,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "packetsCount": 1686
+                                        },
+                                        "bandwidth": 0,
+                                        "connectionType": 1,
+                                        "creationTimestamp": 1508320754242.08,
+                                        "edgePid": 0,
+                                        "farIp": "204.246.165.52",
+                                        "farPort": 1935,
+                                        "ip": "192.168.2.193",
+                                        "name": "testpullStream",
+                                        "nearIp": "192.168.2.193",
+                                        "nearPort": 6492,
+                                        "outStreamsUniqueIds": null,
+                                        "pageUrl": "",
+                                        "port": 6492,
+                                        "processId": 612,
+                                        "processType": "origin",
+                                        "pullSettings": {
+                                                  "_callback": null,
+                                                  "audioCodecBytes": "",
+                                                  "configId": 3,
+                                                  "emulateUserAgent": "EvoStream Media Server (www.evostream.com) player",
+                                                  "forceTcp": false,
+                                                  "httpProxy": "",
+                                                  "httpStreamType": "ts",
+                                                  "isAudio": true,
+                                                  "keepAlive": true,
+                                                  "localStreamName": "testpullStream",
+                                                  "operationType": 1,
+                                                  "pageUrl": "",
+                                                  "ppsBytes": "",
+                                                  "rangeEnd": -1,
+                                                  "rangeStart": -2,
+                                                  "rtcpDetectionInterval": 10,
+                                                  "saveToConfig": true,
+                                                  "sendDummyPayload": false,
+                                                  "sendRenewStream": false,
+                                                  "spsBytes": "",
+                                                  "ssmIp": "",
+                                                  "swfUrl": "",
+                                                  "tcUrl": "",
+                                                  "tos": 256,
+                                                  "ttl": 256,
+                                                  "uri": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                                                  "videoSourceIndex": "high"
+                                        },
+                                        "queryTimestamp": 1508320789466.095,
+                                        "serverAgent": "FMS/3,5,7,7009",
+                                        "swfUrl": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                                        "tcUrl": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
+                                        "type": "INR",
+                                        "typeNumeric": 5282249572905648000,
+                                        "uniqueId": 59,
+                                        "upTime": 35224.0149,
+                                        "video": {
+                                                  "aveFrameRate": 26.6774,
+                                                  "aveKeyFramesPerSec": 0.4839,
+                                                  "aveVideoBitRate": 1053309.6774,
+                                                  "bytesCount": 4407924,
+                                                  "codec": "VH264",
+                                                  "codecNumeric": 6217274493967008000,
+                                                  "currFrameRate": 25.3333,
+                                                  "currKeyFramesPerSec": 0.3333,
+                                                  "currVideoBitRate": 1299993.3333,
+                                                  "droppedBytesCount": 0,
+                                                  "droppedPacketsCount": 0,
+                                                  "height": 306,
+                                                  "level": 30,
+                                                  "packetsCount": 940,
+                                                  "profile": 66,
+                                                  "width": 720
+                                        }
+                              }
+                    ],
+                    "description": "Available inbound streams",
+                    "status": "SUCCESS"
+          }
 }
 ```
 
@@ -95,11 +271,12 @@ The JSON response contains the following details:
 
   - audio – stats about the audio portion of the stream
 
-    - bytesCount – Total amount of audio data received
+    - aveAudioBitRate - The average bitrate of the audio frames from the start of the stream
+    - bytesCount - Total amount of audio data received
     - codec - The name of the audio codec 
     - codecNumeric - Code used for internal use only
+    - currAudioBitRate - The bitrate of the last audio frame received when calling the command
     - droppedBytesCount - The number of video bytes lost
-    - droppedBytesCount – The number of audio bytes lost
     - droppedPacketsCount – The number of lost audio packets
     - packetsCount – Total number of audio packets received
 
@@ -139,6 +316,8 @@ The JSON response contains the following details:
 
   - queryTimestamp – The time (in UNIX seconds) when the information in this request was populated
 
+  - serverAgent - The server agent used
+
   - type – The type of stream this is. The first two characters are of most interest:
 
     - char 1 = I for inbound, O for outbound
@@ -159,12 +338,18 @@ The JSON response contains the following details:
 
   - video – Stats about the video portion of the stream
 
-    - bytesCount – Total amount of video data received
+    - aveFrameRate- The average frame rate since the stream has started
+    - aveKeyFramesPerSec - The average keyframe per second since the stream has started
+    - aveVideoBitRate -  The average bitrate of the video frames from the start of the stream
+    - bytesCount - Total amount of video data received
     - codec - The name of the video codec 
     - codecNumeric - Code used for internal use only
+    - currFrameRate - The number of video frames processed within a one second time frame
+    - currKeyFramesPerSec - The number of video keyframes processed within a one second time frame
+    - currVideoBitRate - The bitrate of the last video frame received when calling the command
     - droppedBytesCount – The number of video bytes lost
     - droppedPacketsCount – The number of lost video packets
-    - height – The video stream’s pixel height
+    - height - The video stream’s pixel height
     - level - H264 level
     - packetsCount – Total number of video packets received
     - profile - H264 profile
