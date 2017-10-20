@@ -34,15 +34,16 @@ listConfig
 ``` 
 {
 "data":{
-    "dash":[details of dash streams ],
-    "hds":[details of hds streams ],
+    "dash":[details of dash streams],
+    "hds":[details of hds streams],
     "hls":[details of hls streams],
+    "metalistener":[details of metalistener added],    
     "mss":[details of mss streams],
-    "process":[ details of on process streams],
-    "pull":[ details of pulled streams],
+    "process":[details of on process commands sent],
+    "pull":[details of pulled streams],
     "push":[details of pushed streams],
     "record":[details of recorded streams],
-    "webrtc":[details of webRTC streams ]
+    "webrtc":[details of started webRTC channels]
     },
 "description":"Run-time configuration",
 "status":"SUCCESS"
@@ -56,17 +57,16 @@ listConfig
 The JSON response contains the following details:
 
 - data – The data to parse
-  - hds (see fields of `createHDSStream` command)
-  - hls (see fields of `createHLSStream` command)
-  - mss (see fields of `createMSSStream` command)
-  - dash (see fields of `createDASHStream` command)
-  - pull (see fields of `pullStream` command)
-  - push (see fields of `pushStream` command)
-  - record (see fields of `record` command)status (within the stream types shown above) – array of current and previous states
-- current/previous
-  - code – An integer representing the state of the stream.
-  - description – Describes the state of the stream.
-  - timestamp – The time (in Unix secs) the state was updated.
+  - dash - the details of [`createDASHStream`](createDASHStream.html)
+  - hds - the details of [`createHDSStream`](createHDSStream.html)
+  - hls - the details of [`createHLSStream`](createHLSStream.html)
+  - metalistener - the details of [addMetadataListener](addMetadataListener.html)
+  - mss - the details of [`createMSSStream`](createMSSStream.html)
+  - process - the details of process commands
+  - pull - the details of  [`pullStream`](pullStream.html)
+  - push - the details of [`pushStream`](pushStream.html)
+  - record - the details of [`record`](record.html)
+  - webrtc - the details of [`startWebrtc`](startWebRTC.html)
 
 
 - description – Describes the result of parsing/executing the command

@@ -41,53 +41,50 @@ getConfigInfo id=1
 
 ``` 
 {
-          "data": {
-                    "data": {
-                              "_callback": null,
-                              "audioCodecBytes": "",
-                              "configId": 3,
-                              "emulateUserAgent": "EvoStream Media Server (www.evostream.com) player",
-                              "forceTcp": false,
-                              "httpProxy": "",
-                              "httpStreamType": "ts",
-                              "isAudio": true,
-                              "keepAlive": true,
-                              "localStreamName": "testpullStream",
-                              "operationType": 1,
-                              "pageUrl": "",
-                              "ppsBytes": "",
-                              "rangeEnd": -1,
-                              "rangeStart": -2,
-                              "rtcpDetectionInterval": 10,
-                              "saveToConfig": true,
-                              "sendDummyPayload": false,
-                              "sendRenewStream": false,
-                              "spsBytes": "",
-                              "ssmIp": "",
-                              "status": {
-                                        "current": {
-                                                  "code": 0,
-                                                  "description": "Streaming",
-                                                  "timestamp": 1508319624,
-                                                  "uniqueStreamId": 31
-                                        },
-                                        "previous": {
-                                                  "code": 3,
-                                                  "description": "Connected",
-                                                  "timestamp": 1508319624,
-                                                  "uniqueStreamId": 0
-                                        }
-                              },
-                              "swfUrl": "",
-                              "tcUrl": "",
-                              "tos": 256,
-                              "ttl": 256,
-                              "uri": "rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4",
-                              "videoSourceIndex": "high"
-                    },
-                    "description": "Configuration Info",
-                    "status": "SUCCESS"
-          }
+"data":{
+"audioCodecBytes":"",
+"configId":1,
+"emulateUserAgent":"EvoStream Media Server (www.evostream.com) player",
+"forceTcp":false,
+"httpProxy":"",
+"httpStreamType":"ts",
+"isAudio":true,
+"keepAlive":true,
+"localStreamName":"testpullStream",
+"operationType":1,
+"pageUrl":"",
+"ppsBytes":"",
+"rangeEnd":-1,
+"rangeStart":-2,
+"rtcpDetectionInterval":10,
+"saveToConfig":true,
+"sendDummyPayload":false,
+"sendRenewStream":false,
+"spsBytes":"",
+"ssmIp":"",
+"status":{
+"current":{
+"code":0,
+"description":"Streaming",
+"timestamp":1508500111,
+"uniqueStreamId":1
+},
+"previous":{
+"code":3,
+"description":"Connected",
+"timestamp":1508500111,
+"uniqueStreamId":0
+}
+},
+"swfUrl":"",
+"tcUrl":"",
+"tos":256,
+"ttl":256,
+"uri":"rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4",
+"videoSourceIndex":"high"
+},
+"description":"Configuration Info",
+"status":"SUCCESS"
 }
 ```
 

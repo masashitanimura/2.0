@@ -7,7 +7,7 @@ folder: api
 toc: false
 ---
 
-Create a HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. 
+Create a HTTP Live Stream (HLS) out of an existing H.264/AAC, H.265/AACstream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. 
 
 
 
@@ -39,7 +39,7 @@ Create a HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is us
 |     useByteRange     | boolean |   false   |                0 *false*                 | If **true**, will use the EXT-X-BYTERANGE feature of HLS (version 4 and up) |
 |      fileLength      | integer |   false   |                0 *false*                 | When using `useByteRange=1`, this parameter needs to be set too. This will be the size of file before chunking it to another file, this replace the`chunkLength` in case of EXT-X-BYTERANGE, since `chunkLength` will be the byte range chunk |
 |    useSystemTime     | boolean |   false   |                0 *false*                 | If **true**, uses UTC in playlist time stamp otherwise will use the local server time |
-|      offsetTime      | integer |   false   |                    0                     |                                          |
+|      offsetTime      | integer |   false   |                    0                     | The offset in seconds to start playing the video |
 |     startOffset      | integer |   false   |                    0                     | A parameter valid only for HLS v.6 onwards. This will indicate the start offset time (in seconds) for the playback of the playlist |
 
 
@@ -126,7 +126,7 @@ The JSON response contains the following details:
   - keepAlive–  If **true**, the stream will attempt to reconnect if the connection is severed
   - localStreamNames– An array of local names for the streams
   - maxChunkLength - The maximum length the EMS willallow any single chunk to be
-  - offsetTime - ??
+  - offsetTime - The offset in seconds to start playing the video
   - overwriteDestination –  If **true**, forced overwrite was enabled during HLS creation
   - playlistLength – The number of elements in the playlist. Useful only for rolling playlistType
   - playlistName– The file name of the playlist (*.m3u8)
