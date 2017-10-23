@@ -41,11 +41,7 @@ createHLSStream localstreamnames=<localstreamname> targetFolder=<target_folder_p
   createHLSStream localstreamnames=myStream targetfolder=/path_to_evo-webroot groupname=myHLSGroup
   ```
 
-To make call easier, a **relative path** can be used:
 
-```
-createHLSStream localstreamnames=myStream targetfolder=../evo-webroot groupname=myHLSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -92,11 +88,7 @@ createHLSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstr
   createHLSStream localstreamnames=myStream1,myStream2  targetfolder=/path_to_evo-webroot groupname=myHLSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHLSStream localstreamnames=myStream1,myStream2  targetfolder=../evo-webroot groupname=myHLSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -120,13 +112,13 @@ myHLSGroup                             --> groupname
 
 ## JSON CLI Response
 
-**API Call:**
+**Sample API Call:**
 
 ```
-createHLSStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=hls playlisttype=rolling
+createHLSStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=hls playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI Response:**
 
 ```
 Command entered successfully!
@@ -137,7 +129,7 @@ HLS stream created
       -- testpullStream
     playlistName: playlist.m3u8
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
@@ -255,7 +247,7 @@ The EMS can be configured to automatically create an HLS stream for every new in
 ```
 autoHLS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
 ```
 

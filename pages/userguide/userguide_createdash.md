@@ -40,11 +40,7 @@ createDASHStream localstreamnames=<localstreamname> bandwidths=<bandwidth> targe
   createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=/path_to_evo-webroot groupname=myDASHGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=../evo-webroot groupname=myDASHGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -95,11 +91,7 @@ createDASHStream localstreamnames=<localstreamname1>,<localstreamname2>,<localst
   createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/path_to_evo-webroot groupname=myDASHGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=myDASHGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -135,13 +127,13 @@ myDASHroup                             --> groupname
 
 ## JSON CLI Response
 
-**API Call:**
+**Sample API Call:**
 
 ```
-createDASHStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=dash
+createDASHStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=dash
 ```
 
-**JSON Response:**
+**JSON CLI Response:**
 
 ```
 Command entered successfully!
@@ -152,7 +144,7 @@ DASH stream created
       -- testpullStream
     manifestName: manifest.mpd
     playlistType: appending
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
@@ -172,25 +164,25 @@ http://<EMS_IP_Address:<Web_Server_Port>/<DASH_groupname>/<manifest_filename>
 - **Single Stream**
 
   ```
-  http://192.168.2.34:8888/myHDSGroup/manifest.mpd
+  http://192.168.2.34:8888/myDASHGroup/manifest.mpd
   ```
 
 
 - **Multiple Stream**
 
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream1/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/myStream1/manifest.ismc
   ```
 
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream2/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/myStream2/manifest.ismc
   ```
 
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream3/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/myStream3/manifest.ismc
   ```
 
-The player will now automatically play the stream once the MSS manifest is read.
+The player will now automatically play the stream once the DASH manifest is read.
 
 
 
@@ -201,9 +193,8 @@ The EMS can be configured to automatically create a DASH stream for every new in
 ```
 autoDASH=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
-
 ```
 
 To enable automatic DASH section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).

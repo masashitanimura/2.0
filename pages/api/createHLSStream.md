@@ -7,7 +7,7 @@ folder: api
 toc: false
 ---
 
-Create a HTTP Live Stream (HLS) out of an existing H.264/AAC, H.265/AACstream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. 
+Create a HTTP Live Stream (HLS) out of an existing H.264/AAC, H.265/AAC streams.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. 
 
 
 
@@ -57,7 +57,7 @@ createHLSStream localStreamname=<localStreamName> targetfolder=<webrootFolder> g
 ### Sample API Call
 
 ``` 
-createHLSStream localstreamnames=testpullStream targetfolder=../evo-webroot groupname=testHLS playlisttype=rolling
+createHLSStream localstreamnames=testpullStream targetfolder=/var/evo-webroot groupname=testHLS playlisttype=rolling
 ```
 
 
@@ -81,7 +81,7 @@ createHLSStream localstreamnames=testpullStream targetfolder=../evo-webroot grou
     "fileLength":0,
     "groupName":"testHLS",
     "hlsResume":false,
-    "hlsVersion":3,
+    "hlsVersion":6,
     "keepAlive":true,
     "localStreamNames":["testpullStream"],
     "maxChunkLength":0,
@@ -90,9 +90,10 @@ createHLSStream localstreamnames=testpullStream targetfolder=../evo-webroot grou
     "playlistLength":10,
     "playlistName":"playlist.m3u8",
     "playlistType":"rolling",
+    "publishingPoint":"",
     "staleRetentionCount":10,
     "startOffset":0,
-    "targetFolder":"..\/evo-webroot",
+    "targetFolder":"\/var\/evo-webroot",
     "useByteRange":false,
     "useSystemTime":false
 },

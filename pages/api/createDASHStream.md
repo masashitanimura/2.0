@@ -9,7 +9,7 @@ toc: false
 
 
 
-Create Dynamic Adaptive Streaming over HTTP (DASH) out of an existing H.264/AAC stream. DASH was developed by the Moving Picture Experts Group (MPEG) to establish a standard for HTTP adaptive-bitrate streaming that would be accepted by multiple vendors and facilitate interoperability.
+Create Dynamic Adaptive Streaming over HTTP (DASH) out of an existing H.264/AAC, H.265/AAC streams. DASH was developed by the Moving Picture Experts Group (MPEG) to establish a standard for HTTP adaptive-bitrate streaming that would be accepted by multiple vendors and facilitate interoperability.
 
 
 
@@ -47,7 +47,7 @@ createDASHStream localStreamname=<localStreamName> targetfolder=<webrootFolder> 
 ### Sample API Call
 
 ``` 
-createDASHStream localstreamnames=testpullStream targetfolder=../evo-webroot groupname=testDASH
+createDASHStream localstreamnames=testpullStream targetfolder=/var/evo-webroot groupname=testDASH
 ```
 
 
@@ -70,8 +70,9 @@ createDASHStream localstreamnames=testpullStream targetfolder=../evo-webroot gro
     "overwriteDestination":true,
     "playlistLength":10,
     "playlistType":"appending",
+    "publishingPoint":"",
     "staleRetentionCount":10,
-    "targetFolder":". .\/evo-webroot"
+    "targetFolder":"\/var\/evo-webroot"
 },
 "description":"DASH stream created",
 "status":"SUCCESS"

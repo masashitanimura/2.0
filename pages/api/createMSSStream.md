@@ -48,7 +48,7 @@ createMSSStream localStreamname=<localStreamName> targetfolder=<webrootFolder> g
 ### Sample API Call
 
 ``` 
-createMSSStream localstreamnames=testpullStream targetfolder=../evo-webroot groupname=testMSS playlisttype=rolling
+createMSSStream localstreamnames=testpullStream targetfolder=/var/evo-webroot groupname=testMSS playlisttype=rolling
 ```
 
 
@@ -75,7 +75,7 @@ createMSSStream localstreamnames=testpullStream targetfolder=../evo-webroot grou
     "playlistType":"appending",
     "publishingPoint":"http://192.168.2.35:88/liveingest.isml",
     "staleRetentionCount":10,
-    "targetFolder":"..\/evo-webroot"
+    "targetFolder":"\/var\/evo-webroot"
 },
 "description":"MSS stream created",
 "status":"SUCCESS"

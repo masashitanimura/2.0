@@ -40,11 +40,7 @@ createHDSStream localstreamnames=<localstreamname> targetFolder=<target_folder_p
   createHDSStream localstreamnames=myStream targetfolder=/path_to_evo-webroot groupname=myHDSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHDSStream localstreamnames=myStream targetfolder=../evo-webroot groupname=myHDSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -89,11 +85,7 @@ createHDSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstr
   createHDSStream localstreamnames=myStream1,myStream2  targetfolder=/path_to_evo-webroot groupname=myHDSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHDSStream localstreamnames=myStream1,myStream2  targetfolder=../evo-webroot groupname=myHDSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -116,13 +108,13 @@ myHDSGroup                             --> groupname
 
 ## JSON CLI Response
 
-**API Call:**
+**Sample API Call:**
 
 ```
-createHDSStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=hds playlisttype=rolling
+createHDSStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=hds playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI Response:**
 
 ```
 Command entered successfully!
@@ -133,7 +125,7 @@ HDS stream created
       -- testpullStream
     manifestName:
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
@@ -182,7 +174,7 @@ The EMS can be configured to automatically create an HDS stream for every new in
 ```
 autoHDS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
 ```
 

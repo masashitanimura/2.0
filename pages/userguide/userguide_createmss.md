@@ -40,11 +40,7 @@ createMSSStream localstreamnames=<localstreamname> bandwidths=<bandwidth> target
   createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=/path_to_evo-webroot groupname=myMSSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=../evo-webroot groupname=myMSSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -93,11 +89,7 @@ createMSSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstr
   createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/path_to_evo-webroot groupname=myMSSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=myHDSGroup
-```
 
 The created files will automatically save in the `targetFolder` path.
 
@@ -125,13 +117,13 @@ myMSSGroup                             --> groupname
 
 ## JSON CLI Response
 
-**API Call:**
+**Sample API Call:**
 
 ```
 createMSSStream localstreamnames=testpullstream,testpullstream bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=mss playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI Response:**
 
 ```
 Command entered successfully!
@@ -142,7 +134,7 @@ MSS stream created
       -- testpullStream
     manifestName: manifest.ismc
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
@@ -191,9 +183,8 @@ The EMS can be configured to automatically create an MSS stream for every new in
 ```
 autoMSS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
-
 ```
 
 To enable automatic MSS a section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).

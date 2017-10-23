@@ -42,7 +42,7 @@ createHDSStream localStreamname=<localStreamName> targetfolder=<webrootFolder> g
 ### Sample API Call
 
 ``` 
-createHDSStream localstreamnames=testpullStream targetfolder=../evo-webroot groupname=testHDS playlisttype=rolling
+createHDSStream localstreamnames=testpullStream targetfolder=/var/evo-webroot groupname=testHDS playlisttype=rolling
 ```
 
 
@@ -67,7 +67,7 @@ createHDSStream localstreamnames=testpullStream targetfolder=../evo-webroot grou
     "playlistLength":10,
     "playlistType":"rolling",
     "staleRetentionCount":10,
-    "targetFolder":"..\/evo-webroot"
+    "targetFolder":"\/var\/evo-webroot",
 },
 "description":"HDS stream created",
 "status":"SUCCESS"
