@@ -113,6 +113,37 @@ For Linux only.  The number of virtual instances of EMS server where load balanc
 instancesCount=-1
 ```
 
+Saying you have a 4-core machine:
+
+```
+instancesCount=0 : 1 origin + 0 edge
+  2593 ?        00:00:00 evostreamms
+  
+instancesCount=1 : 1 origin + 0 edge
+  2593 ?        00:00:00 evostreamms
+
+instancesCount=2 : 1 origin + 1 edge 
+  2593 ?        00:00:00 evostreamms
+  2607 ?        00:00:00 evostreamms
+  
+instancesCount=3 : 1 origin + 2 edges
+  2593 ?        00:00:00 evostreamms
+  2607 ?        00:00:00 evostreamms
+  2608 ?        00:00:00 evostreamms
+
+instancesCount=4 : 1 origin + 3 edges
+  2593 ?        00:00:00 evostreamms
+  2607 ?        00:00:00 evostreamms
+  2608 ?        00:00:00 evostreamms
+  2609 ?        00:00:00 evostreamms
+
+instancesCount=-1 : 1 origin + 3 edges
+  2593 ?        00:00:00 evostreamms
+  2607 ?        00:00:00 evostreamms
+  2608 ?        00:00:00 evostreamms
+  2609 ?        00:00:00 evostreamms
+```
+
 
 
 ## pathSeparator
