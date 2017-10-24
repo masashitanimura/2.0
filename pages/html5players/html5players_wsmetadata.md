@@ -47,8 +47,8 @@ acceptors =
 	  port=8433,
 	  protocol="wssJsonMeta",
 	  -- streamname="~0~0~0~"
-	  sslKey="C:\\EvoStream_2.0\\config\\server.key",
-	  sslCert="C:\\EvoStream_2.0\\config\\server.cert",
+	  sslKey="C:\\EvoStream\\config\\server.key",
+	  sslCert="C:\\EvoStream\\config\\server.cert",
     },
     -- content removed for clarity
 },
