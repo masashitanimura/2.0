@@ -11,14 +11,18 @@ toc: false
 
 - Node.js
 - npm
-- For EMS v2.0.0
+- EMS v2.0
 
 
 
 
 ## Getting EvoWebservices
 
-### A. Windows
+The EvoWebservices is included in EMS package 2.0 however, you can still install the services separately. 
+
+
+
+### Windows
 
 1. **Download** the evowebservices Windows batch file installer from our [Github](https://github.com/EvoStream/evowebservices-archives/tree/master/installers).
 
@@ -43,7 +47,7 @@ toc: false
 
    ​
 
-###  B. Linux Installation
+### Linux
 
 1.  **Download** the evowebservices Bash Script file installer from our [Github](https://github.com/EvoStream/evowebservices-archives/tree/master/installers).
 
@@ -71,6 +75,8 @@ toc: false
 
 ## Starting EvoWebservices
 
+If you start EMS v2.0, it will automatically start the EvoWebservices node. If you will run a separate console for EvoWebservice, follow the instructions below:
+
 1. Run the evowebservices before starting EMS. Make sure the plugins in evowebservices is configured as well as the event notification system in the config.lua of the EMS.
 
 2. Open your node command prompt and go to your evowebservices directory. Start the evowebservices by executing command:
@@ -79,6 +85,9 @@ toc: false
    npm start
    ```
 
-   **Note:** 
+**Note:** 
 
-   You may check the node console terminal and evowebservice log for errors. The evowebservices log is located on the evowebservices/logs directory
+You may check the node console terminal and evowebservice log for errors. The evowebservices log is located on the evowebservices/logs directory
+
+
+

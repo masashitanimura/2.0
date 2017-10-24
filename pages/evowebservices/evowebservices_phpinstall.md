@@ -18,7 +18,7 @@ toc: false
 
 
 
-## Getting evowebservices
+## Getting EvoWebservices
 
 The default evowebservices in EMS package 1.7.1 below is the one that runs on PHP. To be able to install the EMS with evowebservices, please see the installation guide [here](http://docs.evostream.com/ems_user_guide/installation).
 
@@ -29,6 +29,7 @@ After installation, the evowebservices will be found here: `..\evo-webroot\evow
 **Distribution Content:**
 
 ```
+evo-webroot
 /evowebservices
 ├── config
 │ 	├── config.ini
@@ -57,27 +58,16 @@ After installation, the evowebservices will be found here: `..\evo-webroot\evow
 
 
 
-## Starting evowebservices
+## Starting EvoWebservices
 
 1. Enable the services to be used by configuring the `config.ini` file
-2. Start the web server to be used, if EWS will be used, it is automatically started when EMS starts
-3. Run EMS
-4. The Event Notification System would now be receiving data from EMS and trigger the all enabled plugins
+2. Check/Enable the EvoWebservices sink in config.lua 
+3. Start the web server to be used, if EWS will be used, it is automatically started when EMS starts
+4. Run EMS
+5. The Event Notification System would now be receiving data from EMS and trigger the all enabled plugins
 
 
+**Note:** 
 
-
-**Checking evowebservices:**
-
-Linux: send `ps -e|grep evowebservices`
-
-```
-Node: 
-```
-
-Windows: check in task manager
-
-```
-process name: evo-node.exe
-```
+You may check the evowebservices logs for errors and information. The evowebservices log is located on the evowebservices folder directory
 
