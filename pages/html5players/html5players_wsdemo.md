@@ -7,7 +7,13 @@ folder: html5players
 toc: true
 ---
 
-Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use WebSocket for streaming:
+Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: 
+
+- Pulled RTMP/RTSP streams
+- Lazy pulled streams 
+- Playlist files
+
+Follow the instructions below on how to use WebSocket for streaming:
 
 
 

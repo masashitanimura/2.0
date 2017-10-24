@@ -11,13 +11,19 @@ toc: false
 
 
 
-##Using Demo Player
+## Using Demo Player
 
-Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: pulled RTMP/RTSP streams, lazy pulled streams and playlist files. Follow the instructions below on how to use WebRTC for streaming:
+Starting release 2.0, the HTML5 web player of EMS or what we've called the evoplayers, can now play different streams such as: 
+
+- Pulled RTMP/RTSP streams
+- Lazy pulled streams
+- Playlist files
+
+Follow the instructions below on how to use WebRTC for streaming:
 
 
 
-##WebRTC Streaming
+## WebRTC Streaming
 
 1. To play streams from EMS using webRTC, the `startWebrtc` command needs to be executed first. See `startWebRTC`API [here](api_startWebRTC.html):
 
