@@ -3,7 +3,7 @@ title: Browser Compatibility
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: emscloud_wscompatibility.html
-folder: emscloud
+folder: html5players
 toc: false
 ---
 
