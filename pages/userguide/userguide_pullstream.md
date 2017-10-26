@@ -126,7 +126,7 @@ The basic commands in playing a pulled stream in EMS are the following:
   rtmp://<EMS_IP_ADDRESS>/live/localStreamName
   ```
 
-- **RTMP**
+- **RTSP**
 
   The format of the RTSP URI is as follows:
 
@@ -147,7 +147,7 @@ The basic commands in playing a pulled stream in EMS are the following:
   By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
 
   ```
-  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamNam
+  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamName
   ```
 
 ------

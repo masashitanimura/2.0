@@ -123,11 +123,11 @@ Simply place the License.lic file in the following location:
 ### APT/YUM
 
 ```
-../etc/evostreamms/
+/etc/evostreamms/
 ```
 
 **Note:**
-EMS will read first the ../etc/evostreamms path for the License upon start-up. Make sure to check your License if you have an apt/yum installed and you run an archive.
+EMS will read first the /etc/evostreamms path for the License upon start-up. Make sure to check your License if you have an apt/yum installed and you run an archive.
 
 
 
