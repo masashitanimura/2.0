@@ -19,7 +19,7 @@ The **WebRTC** initiative is a project supported by Google, Mozilla and Opera, a
 
 ## Peer to Peer
 
-The EMS supports direct peering to HTML5 browsers and devices that support WebRTC. Over the WebRTC channel, the EMS streams low-latency (sub-second) H.264 video and AAC audio for delivery directly to the HTML5 video player.
+The EMS supports direct peering to HTML5 browsers and devices that support WebRTC. Over the WebRTC channel, the EMS streams low-latency (sub-second) H.264 video and AAC audio for delivery directly to the HTML5 video player. The TCP TURN is now also available for WebRTC connections.
 
 By moving the streaming directly between the end client and the stream originator (for example, a security camera) you remove the largest cost driver of hosting any kind of live streaming service: the bandwidth cost!
 

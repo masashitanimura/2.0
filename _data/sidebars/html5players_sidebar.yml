@@ -81,4 +81,12 @@ entries:
 
     - title: Browser Compatibility
       url: /html5players_wscompatibility.html
+      output: web, pdf  
+
+  - title: Appendix
+    output: web, pdf
+
+    folderitems:
+    - title: Player Events
+      url: /html5players_playerevents.html
       output: web, pdf
