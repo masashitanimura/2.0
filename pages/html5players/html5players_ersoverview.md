@@ -22,12 +22,12 @@ Click [here](http://ers.evostream.com:5050/demov2/evoplayers.html) to view the p
 
 
 
-
-
 ### Key Features
 
 - Acts as signaling server
 - Capable of serving static html pages
 - Protect streams through tokens
+- Can now be setup to use dedicated TURN server such as COTURN
+- Can now configure ERS to get STUN and/or TURN addresses from Twilio Services
 
 

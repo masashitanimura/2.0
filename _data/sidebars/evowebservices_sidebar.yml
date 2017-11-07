@@ -28,20 +28,13 @@ entries:
       url: /evowebservices_overview.html
       output: web, pdf
 
-  - title: Installation
+  - title: Installation and Configuration
     output: web, pdf
 
     folderitems:
     - title: Using Node.js
       url: /evowebservices_nodeinstall.html
       output: web, pdf
-
-    - title: Using PHP
-      url: /evowebservices_phpinstall.html
-      output: web, pdf
-
-  - title: Configuration
-    output: web, pdf
 
     folderitems:
     - title: Configuring EMS Event Notifications

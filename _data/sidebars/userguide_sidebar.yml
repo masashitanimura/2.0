@@ -256,6 +256,10 @@ entries:
       url: /userguide_usingapiproxy.html
       output: web, pdf
 
+    - title: Raspberry Pi OMX-based Transcoder
+      url: /userguide_rpitranscoder.html
+      output: web, pdf
+
   - title: Event Notification System
     output: web, pdf
 

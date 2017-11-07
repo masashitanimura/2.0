@@ -17,21 +17,14 @@ Every EMS Web Service is contained within a “**plugin**”. Each plugin can be
 
 The EMS Web Services has a primary configuration file for the plugins.
 
-**For php:** evowebservices > config > config.ini
-
-**For node:** evowebservices > config > plugins.json
+**Location:** evowebservices > config > plugins.json
 
 Turn on a plugin by changing the **disabled** to **enabled**. By default all plugins are disabled.
 
 Plugin Configuration:
 
 ```
-StreamLoadBalancer = disabled 
-StreamAutoRouter = disabled
-StreamRecorder = disabled
-AmazonHDSUpload = disabled
-AmazonHLSUpload = disabled 
-AmazonDASHUpload = disabled (for EMS v.2.0.0. only)
+"plugin_switch": "enabled",
 ```
 
 

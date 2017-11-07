@@ -57,8 +57,7 @@ The evowebservices rely on EMS Events being generated as follows:
 
   ```
   type="RPC",
-  url="http://localhost:4000/evowebservices/",                    -- for node      (EMS v2.0.0)
-  url="http://localhost/evowebservices/evowebservices.php",       -- for php		(EMS v1.7.1)
+  url="http://localhost:4000/evowebservices/",
   serializerType="JSON" 
   ```
 
