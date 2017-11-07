@@ -13,10 +13,6 @@ When a new stream is created on one EMS, this web service will tell all the othe
 
 The list of EMS instances the Load Balancer will maintain is defined in the config.ini file:
 
-
-
-## Using Node.js
-
 1. **destination_ems_apiproxies**. The array of ip address where the inbound streams would be replicated to. The details in this parameter is seen in the webconfig.json of the address to be used.
 
    ```
@@ -62,28 +58,6 @@ The list of EMS instances the Load Balancer will maintain is defined in the conf
    - **password** - the password of the address used in api proxy
 
 In this configuration, all the server IPs listed *(192.168.2.3, 192.168.2.4)* will have the same pulled streams as the host EMS.
-
-To verify, do `listconfig` in all destination IPs. All pulled streams from the host EMS should also be pulled by the destination servers.
-
-
-
-## Using PHP
-
-1. **destination_uri**. The array of ip address where the inbound streams would be replicated to
-
-```
-    "StreamLoadBalancer": {
-        "plugin_switch": "enabled", 
-        "parameters": {
-            "destination_uri": [
-                "192.168.2.3",
-                "192.168.2.4",
-                "192.168.2.5"
-            ]
-        }
-```
-
-In this configuration, all the server IPs listed *(192.168.2.3, 192.168.2.4, 192.168.2.5)* will have the same pulled streams as the host EMS.
 
 To verify, do `listconfig` in all destination IPs. All pulled streams from the host EMS should also be pulled by the destination servers.
 

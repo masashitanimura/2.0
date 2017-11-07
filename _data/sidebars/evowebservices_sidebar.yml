@@ -32,16 +32,15 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Using Node.js
+    - title: Install and Start EvoWebservices
       url: /evowebservices_nodeinstall.html
       output: web, pdf
 
-    folderitems:
-    - title: Configuring EMS Event Notifications
+    - title: Configuring EvoWebservices Event Notifications
       url: /evowebservices_eventconfiguration.html
       output: web, pdf
 
-    - title: Configuring the EMS Web Service Plugins
+    - title: Configuring the EvoWebservices Plugins
       url: /evowebservices_pluginconfiguration.html
       output: web, pdf
 
