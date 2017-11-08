@@ -88,6 +88,40 @@ This player uses SRTP as transport instead of fragmented MP4. To stream using th
 
 - In case your stream audio is not working, it means that the browser does not support WebRTC AAC
 
+
+
+
+
+## WebRTC ERS connections using SSL
+
+Connections to ERS, from the client (browser) and server (EMS), can now also use SSL to prevent any sniffing of the traffic. To enable SSL connections:
+
+1. On the ERS, modify the following in default.json configuration file
+
+   ```
+   "secure": true,
+   "key": "/path/to/server.key",
+   "cert": "/path/to/server.cert"
+   ```
+
+2. In EMS, add `ersOverSsl` parameter in webrtc in config.lua
+
+   ```
+   webrtc={
+   		ersOverSsl=true,                              --> Add parameter
+   		sslKey="/path/to/server.key",
+   		sslCert="/path/to/server.cert",
+   	   },
+   ```
+
+3. In the JS player, modify this value in the "opts" object that is used to configure the player
+
+   ```
+   ersOverSsl=true
+   ```
+
+   ​
+
 ------
 
 ## Related Links
