@@ -4,7 +4,7 @@ keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtcdemo.html
 folder: html5players
-toc: false
+toc: true
 ---
 
 **Peer to Peer streaming uses the EvoStream HTML5 Streaming capabilities. It is recommended you also review the HTML5 Streaming section.**
@@ -117,10 +117,10 @@ Connections to ERS, from the client (browser) and server (EMS), can now also use
 3. In the JS player, modify this value in the "opts" object that is used to configure the player
 
    ```
-   ersOverSsl=true
+   ersOverSsl: true
    ```
 
-   ​
+4. Restart EMS and start streaming!
 
 ------
 
