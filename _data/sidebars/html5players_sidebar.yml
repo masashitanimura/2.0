@@ -90,3 +90,11 @@ entries:
     - title: Player Events
       url: /html5players_playerevents.html
       output: web, pdf
+
+    - title: EMS Integration Ready Player Libraries
+      url: /html5players_emsjslib.html
+      output: web, pdf
+
+    - title: Basic Debugging
+      url: /html5players_basicdebugging.html
+      output: web, pdf
