@@ -24,9 +24,9 @@ The EvoStream Media Server does not rely on Java, which means a secure platform 
 
 
 
-## Available Template for EMS 2.0
+## Available Image for EMS 2.0
 
 EMS templates available in Azure marketplace:
 
-- EvoStream Media Server PYOG (Pay As You Go) - this template has the  EvoStream Media Server 2.0 for Ubuntu 16.04. It already has a license installed so you don't have to worry bringing your own license! Check plans and pricing [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/evostream-inc.evostream-media-server?tab=PlansAndPrice).
+- EvoStream Media Server PAYG (Pay As You Go) - this image has the  EvoStream Media Server 2.0 for Ubuntu 16.04. It already has a license installed so you don't have to worry bringing your own license! Check plans and pricing [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/evostream-inc.evostream-media-server?tab=PlansAndPrice).
 
