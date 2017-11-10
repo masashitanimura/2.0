@@ -44,10 +44,18 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
    user@111.221.105.202's password:
    ```
 
-3. Enter password, press **Enter**. A welcome note will open. You then need to **<u>install the license</u>** to be able to use the EMS capabilities.
+3. Enter password, press **Enter**. You can now use EMS capabilities!
 
 
-**Note:** The license should be placed in `/etc/evostreamms` for Linux and in `./config` in Windows
+**Note:** EMS is already running. You can check it by sending ps -e|grep evo
+
+```
+$ ps -e|grep evo
+  4627 pts/0    00:00:01 evostreamms
+  4628 pts/0    00:00:00 evo-node
+  4629 pts/0    00:00:00 evo-node
+  4635 pts/0    00:00:01 evo-node
+```
 
 
 
@@ -91,79 +99,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
    EvoStream@111.221.105.202's password: 
    ```
 
-7. You are now connected to the machine! You then need to **<u>install the license</u>** to be able to use the EMS capabilities.
-
-
-**Note:** The license should be placed in `/etc/evostreamms` for Linux and in `./config` in Windows
-
-
-
-
-
-### Connecting via Remote Desktop
-
-1. Run the **Remote Desktop Application** to be used
-
-   **Note:** The remote desktop application will depend on the OS you will use.
-
-2. Enter the details of the virtual machine image, click **Connect**
-
-   **Computer** -  the IP address of the image
-
-   **Username** -  the username set for the image
-
-   ![](images/emscloud/remotedesktop.jpg)
-
-   ​
-
-3. Enter the **password** for the user, click **OK**
-
-4. The connection will be established. You may now **install the license** to use the EMS capabilities!
-
-   **Note:** The EMS is installed in ``C:\EvoStream``
-
-
-
-
-### EMS Web UI
-
-While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: `http://<DomainOrPublicIP>:8888/EMS_Web_UI/index.php`
-
-**< DomainOrPublicIP >** will need to be replaced with the Public Domain or Public IP of your new  EMS instance.
-
-**Note:** EMS should be running to be able to access the EMS Web UI.
-
-
-
-#### Determining Public IP
-
-1. Sign in to *http://portal.azure.com/*
-
-2. Click on virtual machine created under Virtual Machines menu
-
-3. Start the virtual machine
-
-4. In the Essentials pane, the Public IP address/DNS name label is displayed
-
-   **Note:** The IP address is changing everytime the virtual machine is restarted
-
-   ![](images/emscloud/IPinAzure.jpg)
-
-
-#### Authentication
-
-The authentication is only enabled starting the 1.7.1 version of EMS. The Authentication is enabled by default in EMS Web UI and HTTP Based API.
-
-
-
-#### Login for Web UI
-
-The Web UI is protected by default when using the EMS on Azure.  When accessing the Web UI you will be prompted for a username and password.
-
-![](images/emscloud/authentication.JPG)
-
-- Username: evostream
-- Password: "UID" - the unique identifier of the virtual machine, this will be seen in webconfig.lua
+7. You are now connected to the machine! 
 
 
 
