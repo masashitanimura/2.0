@@ -21,7 +21,21 @@ Click on the Virtual Machine name. Click on **Start**.
 
 ## Connecting To EMS
 
-After starting the EMS instance, you will need to connect to your EMS to use it. Here are the steps on how you can connect to EMS using **SSH Terminal**, **Windows PuTTy**, **Remote Desktop**, **EMS Web UI** and **EMS HTTP Based API**.
+After starting the EMS instance, you will need to connect to your EMS to use it. Here are the steps on how you can connect to EMS using  **EMS WebUI**, **SSH Terminal**, **Windows PuTTy**, and **EMS HTTP Based API**.
+
+
+
+### EMS WebUI
+
+Using a browser, you can access your EMS with the help of UI.  The WebUI is started by default,  all you need to do is to open the UI in your browser:
+
+```
+format: <EMS_IP>:<WebUI_Port>
+
+sample: 55.66.77.901:4100
+```
+
+Click [here](http://docs.evostream.com/2.0/userguide_login.html) on how to log in to UI.
 
 
 
