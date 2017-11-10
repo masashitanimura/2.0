@@ -47,7 +47,7 @@ After starting the EMS instance, you will need to connect to your EMS to use it.
 3. Enter password, press **Enter**. You can now use EMS capabilities!
 
 
-**Note:** EMS is already running. You can check it by sending ps -e|grep evo
+**Note:** EMS is already running. You can check it by sending `ps -e|grep evo`
 
 ```
 $ ps -e|grep evo

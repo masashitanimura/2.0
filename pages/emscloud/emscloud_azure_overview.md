@@ -24,9 +24,9 @@ The EvoStream Media Server does not rely on Java, which means a secure platform 
 
 
 
-## Available Templates
+## Available Template for EMS 2.0
 
-There are two EMS templates available in Azure marketplace:
+EMS templates available in Azure marketplace:
 
-- EvoStream Media Server BYOL (Bring Your Own License) - this template has the EMS v1.7.1  installed in it. Bring Your Own License means you have to place your own license since the template does not include any.
-- EvoStream HTML5 Low-Latency Broadcast Template - this template includes the load balancing feature. The template leverages and optimize from the load balancing and auto-scaling capability to increase the performance, scalability and TCO. Click [here](https://evostream.com/evostream-html5-microsoft-azure/) to read more of the template.
+- EvoStream Media Server PYOG (Pay As You Go) - this template has the  EvoStream Media Server 2.0 for Ubuntu 16.04. It already has a license installed so you don't have to worry bringing your own license! Check plans and pricing [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/evostream-inc.evostream-media-server?tab=PlansAndPrice).
+

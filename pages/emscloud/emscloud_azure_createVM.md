@@ -3,9 +3,7 @@ title: Creating Virtual Machine
 keywords: azure
 sidebar: emscloud_sidebar
 permalink: emscloud_azure_createVM.html
-simple_map: false
-map_name: usermap
-box_number: 1
+toc: false
 folder: emscloud
 ---
 
@@ -18,7 +16,7 @@ folder: emscloud
 
 
 
-##Setup Virtual Machine Environment
+## Setup Virtual Machine Environment
 
 1. Sign in to your Azure Marketplace account and search for the EvoStream Media Server or simply follow this [link](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/evostream-inc.evostream-media-server?tab=Overview). Click **GET IT NOW**.
 
