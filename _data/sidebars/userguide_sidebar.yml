@@ -245,7 +245,7 @@ entries:
       output: web, pdf
 
     - title: Video On Demand
-      url: /userguide_videoondemand.html.html
+      url: /userguide_videoondemand.html
       output: web, pdf
 
     - title: Play Over HTTP
