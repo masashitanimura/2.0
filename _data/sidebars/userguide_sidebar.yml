@@ -244,6 +244,10 @@ entries:
       url: /userguide_aliasingandauthentication.html
       output: web, pdf
 
+    - title: Video On Demand
+      url: /userguide_videoondemand.html.html
+      output: web, pdf
+
     - title: Play Over HTTP
       url: /userguide_playoverhttp.html
       output: web, pdf
