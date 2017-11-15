@@ -1,8 +1,8 @@
 ---
 title: Using EMS on Docker
-keyword: liststreams
+keyword: docker
 sidebar: userguide_sidebar
-permalink: userguide_active.html
+permalink: userguide_docker.html
 folder: userguide
 toc: false
 ---
