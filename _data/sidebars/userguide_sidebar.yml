@@ -288,6 +288,10 @@ entries:
       url: /userguide_ipv6support.html
       output: web, pdf
 
+    - title: Using EMS on Docker
+      url: /userguide_docker.html
+      output: web, pdf
+
     - title: Protocol Support and Specifics
       url: /userguide_protocols.html
       output: web, pdf
