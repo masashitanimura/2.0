@@ -13,7 +13,7 @@ This is a simplified document on how to build and run Docker images for EMS 2.0.
 
 
 
-##Running EMS on Docker
+## Running EMS on Docker
 
 **Pre-requisite:**
 
