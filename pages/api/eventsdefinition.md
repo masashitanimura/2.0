@@ -1,9 +1,9 @@
 ---
 title: Events Definition
 keyword: events
-sidebar: userguide_sidebar
-permalink: userguide_eventsdefinition.html
-folder: userguide
+sidebar: api_sidebar
+permalink: eventsdefinition.html
+folder: api
 toc: true
 ---
 

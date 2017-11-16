@@ -1,9 +1,9 @@
 ---
 title: Events Overview
 keyword: events
-sidebar: userguide_sidebar
-permalink: userguide_eventsoverview.html
-folder: userguide
+sidebar: api_sidebar
+permalink: eventsoverview.html
+folder: api
 toc: true
 ---
 
