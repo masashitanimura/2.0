@@ -826,7 +826,7 @@ The server has started.
 00001	serverStarted
 	PID: 9180
 	banner: EvoStream Media Server (www.evostream.com) version 2.0.0 build 5550 with hash: eab81ed5ed39d3794e77408249f51817142b90ba - QBert - (built for Microsoft Windows 10 Pro-10.0.14393-x86_64 on 2017-10-04T10:12:53.000)
-	branchName: 
+	branchName: release_2.0.0
 	buildDate: 2017-10-04T10:12:53.000
 	buildNumber: 5550
 	codeName: QBert
@@ -844,7 +844,7 @@ The server is just about to stop.
 00002	serverStopping
 	PID: 9180
 	banner: EvoStream Media Server (www.evostream.com) version 2.0.0 build 5550 with hash: eab81ed5ed39d3794e77408249f51817142b90ba - QBert - (built for Microsoft Windows 10 Pro-10.0.14393-x86_64 on 2017-10-04T10:12:53.000)
-	branchName: 
+	branchName: release_2.0.0
 	buildDate: 2017-10-04T10:12:53.000
 	buildNumber: 5550
 	codeName: QBert
@@ -863,6 +863,6 @@ The server is just about to stop.
 
 ## Related Links
 
-- [List of Events](userguide_eventslist.html)
+- [List of Events](eventslist.html)
 
   ​

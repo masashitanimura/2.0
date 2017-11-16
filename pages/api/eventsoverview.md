@@ -256,9 +256,7 @@ The `serializer` type can be one of the following formats:
 
 The `customData` parameter for both File and RPC Event Sinks can be *optionally* used to extra data to each event for that sink. This could be used to identify the particular EMS instance which is generating the event, return a particular ID or Key which is pertinent to your handling of the event, or anything really! A `customData` parameter can be a simple sting value or a complex LUA object.
 
-
-
-If a `customData` parameter is not specified for a node, the value of the parent eventLogger `customData` node will be used. If that is also not specified, the value will be V_NULL.
+If a `customData` parameter is not specified for a node, the value of the parent `eventLogger` `customData` node will be used. If that is also not specified, the value will be V_NULL.
 
 ------
 
@@ -273,6 +271,6 @@ If a `customData` parameter is not specified for a node, the value of the parent
 
 ## Related Links
 
-- [List of Events](userguide_eventslist.html)
+- [List of Events](eventslist.html)
 
   ​

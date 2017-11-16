@@ -359,3 +359,19 @@ entries:
     - title: listMetadataListeners
       url: /listMetadataListeners.html
       output: web, pdf
+  
+  - title: Event Notification System
+    output: web, pdf
+
+    folderitems:
+    - title: Events Overview
+      url: /eventsoverview.html
+      output: web, pdf
+
+    - title: Events List
+      url: /eventslist.html
+      output: web, pdf
+
+    - title: Events Definitions
+      url: /eventsdefinition.html
+      output: web, pdf  

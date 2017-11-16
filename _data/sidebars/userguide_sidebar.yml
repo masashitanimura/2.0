@@ -264,21 +264,6 @@ entries:
       url: /userguide_rpitranscoder.html
       output: web, pdf
 
-  - title: Event Notification System
-    output: web, pdf
-
-    folderitems:
-    - title: Events Overview
-      url: /userguide_eventsoverview.html
-      output: web, pdf
-
-    - title: Events List
-      url: /userguide_eventslist.html
-      output: web, pdf
-
-    - title: Events Definitions
-      url: /userguide_eventsdefinition.html
-      output: web, pdf
 
   - title: Appendix
     output: web, pdf
