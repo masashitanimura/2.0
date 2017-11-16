@@ -304,13 +304,9 @@ appName: evostreamms
 Event triggered when an audio or video packet is lost
 
 ```
-
 audioFeedStopped
 
-
 videoFeedStopped
-
-
 ```
 
 - streamId – The stream ID
@@ -355,27 +351,19 @@ playlistName: stream.lst
 Event triggered when an HLS/HDS/MSS/DASH chunk file was opened on disk.
 
 ```
-
 hlsChunkCreated
-
 /evo-webroot/hls/stream1/segment_1362025844863_1362025844863\_14.ts
 
 
-
 hdsChunkCreated
-
 evo-webroot/hds/stream1/f4vSeg1-Frag1
 
 
-
 mssChunkCreated
-
 /evo-webroot/mss/stream1/video/524288/1413797685000.m4s
 
 
-
 dashChunkCreated
-
 /evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
 ```
 
@@ -396,7 +384,6 @@ hdsChunkClosed
 
 mssChunkClosed
 /evo-webroot/mss/stream1/video/524288/1413797685000.m4s
-
 
 dashChunkClosed
 /evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
@@ -425,15 +412,11 @@ segment_1362025844863_1362025844863_14.ts
 Event triggered when an HLS or HDS stream specific playlist file was modified
 
 ```
-
 hlsChildPlaylistUpdated
-
 /evo-webroot/hls/stream1/playlist.m3u8
 
 
-
 hdsChildPlaylistUpdated
-
 /evo-webroot/hds/stream1/stream1.f4m
 ```
 
@@ -446,15 +429,11 @@ hdsChildPlaylistUpdated
 Event triggered when an HLS or HDS group playlist file was modified
 
 ```
-
 hlsMasterPlaylistUpdated
-
 /evo-webroot/hls/playlist.m3u8
 
 
-
 hdsMasterPlaylistUpdated
-
 /evo-webroot/hds/stream1.f4m
 ```
 
@@ -558,14 +537,9 @@ The EMS has received a Runtime API command.
 **Example:**
 
 ```
-
 command: launchProcess
-
     parameters:
-
         fullBinaryPath: d:\demoplay.bat
-
-
 ```
 
 
@@ -600,15 +574,10 @@ data:
 A process has been started/stopped at the request of the launchProcess API command.
 
 ```
-
 arguments: 
-
 configId: 1
-
     fullBinaryPath: d:\demoplay.bat
-
     keepAlive: true
-
     operationType: 6
 ```
 
@@ -652,11 +621,8 @@ configId: 1
 A timer has triggered.
 
 ```
-
 timerId: 9
-
 triggerCount: 0
-
 value: 100
 ```
 
@@ -740,10 +706,7 @@ A connection has been disconnected.
 
 Some IO handler, such as a TCP socket, has been created.
 
-```
 
-
-```
 
 
 
@@ -751,10 +714,7 @@ Some IO handler, such as a TCP socket, has been created.
 
 Some IO handler, such as a UDP socket, has been closed.
 
-```
 
-
-```
 
 
 
@@ -863,7 +823,15 @@ name: evostreamms
 The server has started.
 
 ```
-
+00001	serverStarted
+	PID: 9180
+	banner: EvoStream Media Server (www.evostream.com) version 2.0.0 build 5550 with hash: eab81ed5ed39d3794e77408249f51817142b90ba - QBert - (built for Microsoft Windows 10 Pro-10.0.14393-x86_64 on 2017-10-04T10:12:53.000)
+	branchName: 
+	buildDate: 2017-10-04T10:12:53.000
+	buildNumber: 5550
+	codeName: QBert
+	hash: eab81ed5ed39d3794e77408249f51817142b90ba
+	releaseNumber: 2.0.0
 ```
 
 
@@ -873,7 +841,15 @@ The server has started.
 The server is just about to stop.
 
 ```
-
+00002	serverStopping
+	PID: 9180
+	banner: EvoStream Media Server (www.evostream.com) version 2.0.0 build 5550 with hash: eab81ed5ed39d3794e77408249f51817142b90ba - QBert - (built for Microsoft Windows 10 Pro-10.0.14393-x86_64 on 2017-10-04T10:12:53.000)
+	branchName: 
+	buildDate: 2017-10-04T10:12:53.000
+	buildNumber: 5550
+	codeName: QBert
+	hash: eab81ed5ed39d3794e77408249f51817142b90ba
+	releaseNumber: 2.0.0
 ```
 
 ------
@@ -887,6 +863,6 @@ The server is just about to stop.
 
 ## Related Links
 
-- [List of Events](userguide/eventslist.html)
+- [List of Events](userguide_eventslist.html)
 
   ​
