@@ -7,7 +7,7 @@ folder: userguide
 toc: true
 ---
 
-Create an HTTP Live Stream (HLS) out of an existing H.264/AAC stream.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. Please see `createHLSStream` [API](api_createHLSStream.html) for more details.
+Create an HTTP Live Stream (HLS) out of an existing H.264/AAC, H.265/AAC streams.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. Please see `createHLSStream` [API](api_createHLSStream.html) for more details.
 
 
 
