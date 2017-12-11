@@ -40,13 +40,13 @@ folder: emscloud
 
 4. Configure the virtual machine settings based on your preferences:
 
-   - Configure basic settings, click OK
+   - Configure basic settings, click **OK**
 
      ![](images/emscloud/basics.jpg)
 
      ​
 
-   - Choose virtual machine size, click OK
+   - Choose virtual machine size, click **OK**
 
      **Note:** Click on View all to see all the available machine size, click OK
 
@@ -54,13 +54,13 @@ folder: emscloud
 
      ​
 
-   - Configure optional features, click OK
+   - Configure optional features, click **OK**
 
      ![](images/emscloud/optional.jpg)
 
      ​
 
-   - Review Summary and click Create
+   - Review Summary and click **Create**
 
      ![](images/emscloud/buy.jpg)
 

@@ -123,7 +123,7 @@ $ ps -e|grep evo
 For the EMS on Azure, the HTTP based API is exposed, but it requires authentication to be used.  We call this **Proxy Authentication**. Basic Authentication is used and so just a username and password are required:
 
 - Username: evostream
-- Password: "UID" - the unique identifier of the virtual machine, this will be seen in webconfig.lua
+- Password: "`<computer_name>`" - the computer name set to the virtual machine, this will be seen in webconfig.json
 
 **Command will take this general format:**
 
@@ -136,20 +136,20 @@ Run the command in a browser.
 **Sample Command:** 
 
 ```
-http://evostream:i-D817E76F-B6F2-CC4F-ACAC-EAE9D84CEE3F@52.91.237.115:8888/apiproxy/version
+http://evostream:EvoStream@52.91.237.115:8888/apiproxy/version
 ```
 
-**Note:** username is “**evostream**” and password is the “**instance ID**”
+**Note:** username is “**evostream**” and password is the “**computer name set**”
 
 See EMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli) for more details.
 
 
 
-#### Getting the Unique ID
+#### Checking the Password in Webconfig.json
 
-The UID will serves as the password for the Proxy and Web UI authentication. The UID is obtained once a virtual machine is made. It can only be checked in the EMS webconfig.lua.
+The computer name will serve as the default password for the Proxy and Web UI authentication. The UID is obtained once a virtual machine is made. It can only be checked in the EMS webconfig.json. It is encouraged to **change the default password** for further security.
 
-**in webconfig.lua:**
+**in webconfig.json:**
 
 ```
 apiProxy=
@@ -159,6 +159,5 @@ apiProxy=
    address="127.0.0.1",
    port=7777,
    userName="evostream",
-   password="D817E76F-B6F2-CC4F-ACAC-EAE9D84CEE3F",   --> sample UID
-}
+   password="EvoStream",   --> password for proxy authentication
 ```
