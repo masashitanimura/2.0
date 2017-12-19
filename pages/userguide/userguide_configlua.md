@@ -1041,11 +1041,19 @@ authentication=
 
   |      Key      |  Type  | Mandatory | Description                              |
   | :-----------: | :----: | :-------: | ---------------------------------------- |
-  |     type      | string |   true    |                                          |
+  |     type      | string |   true    | "adobe"                                  |
   | encoderAgents | string |   true    | The encoder agent/s to be used           |
   |   usersFile   | string |   true    | The path to users.lua configuration file |
   |  verifierUri  | string |   false   | The path of the verifier file to be used |
-  |     token     | string |   false   |                                          |
+  |     token     | string |   false   | The token to be used for token based authentication. The token is calculated by hashing the secret string, the requested stream name and a unix time. The secret string should match the one in configuration. The unix time should be set in the future. |
+
+  **RTMP URI with Token Format:** rtmp://hostname/streamName?e=ValidUntilUnixTime&h=Token
+
+  **Where:** Token = MD5 (SecretString + "/" + StreamName + "?e=" + ValidUntilUnixTime)
+
+  ```
+  Sample: rtmp://127.0.0.1/live/bunny?e=1508895239&h=3C23875455CACF2D44C3608C146D7C87
+  ```
 
   ​
 
@@ -1062,16 +1070,25 @@ authentication=
 
 - **FOR WEBSOCKET**
 
-  |  Key  |  Type  | Mandatory | Description |
-  | :---: | :----: | :-------: | ----------- |
-  | token | string |   true    |             |
+  |  Key  |  Type  | Mandatory | Description                              |
+  | :---: | :----: | :-------: | ---------------------------------------- |
+  | token | string |   true    | The token to be used for token based authentication. The token is calculated by hashing the secret string, the requested stream name and a unix time. The secret string should match the one in configuration. The unix time should be set in the future. |
+
+  **Where:** Token = MD5 (SecretString + "/" + StreamName + "?e=" + ValidUntilUnixTime)
 
   ​
+
+  **Token Authentication**
+  The EMS accepts play requests that contains token authenticaion. Prior to serving the requested stream the EMS validates that the timestamp is for a time and date that is in the future. The EMS then recomputes the MD5 hash using the timestamp in the play request with the secret string and validates that the resultant hash value matches the value passed in on the play request. If any validation step fails, the EMS will not serve the requested stream. If all validation steps succeed, the EMS will serve the requested stream to the player.
+
+
 
 **Notes:**
 
 1. Authentication is disabled if the “authentication” block in the “config.lua” file is missing or incomplete. For RTMP protocol, authentication is disabled if the “auth.xml” file is missing or contains a “false” setting. For RTSP protocol, authentication is disabled if **“authenticatePlay**” in the “rtsp” block is omitted or set to “false”.
 2. Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
+3. You can use  this [link](http://www.onlineconversion.com/unix_time.htm) for UNIX time conversion.
+4. You can use this [link](http://passwordsgenerator.net/md5-hash-generator/) for MD5 hash generation.
 
 
 
