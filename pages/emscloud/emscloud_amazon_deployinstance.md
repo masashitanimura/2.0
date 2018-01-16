@@ -37,9 +37,7 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
 1. Search for the EvoStream Media Server in the AWS marketplace, or simply follow this [link](https://aws.amazon.com/marketplace/pp/B00VTR946Y)
 
-   ![](images/emscloud/image1.JPG)
-
-2. Click **Continue** and **Sign in** your AWS account
+2. Click **Continue to Subscribe** and **Sign in** your AWS account
 
    ![](images/emscloud/image2.png)
 
@@ -54,6 +52,8 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 ### 1-Click Launch
 
 ![](images/emscloud/1click.JPG)
+
+
 
 **How To:**
 
@@ -132,7 +132,7 @@ These Security Settings can be changed but it will impact the accessibility of t
 
 E.	Choose or create a **Key Pair**
 
-![](/images/emscloud/image8.JPG)
+![](images/emscloud/image8.JPG)
 
 
 
@@ -152,6 +152,8 @@ F.	Review the settings created, click on **Launch with 1-Click**
 
 ![](images/emscloud/manual.JPG)
 
+
+
 **How To:**
 
 **Step 1: Choose AMI**
@@ -164,11 +166,11 @@ A.	Select the **EMS version** to be used
 
 B.	Click the **Launch with EC2 Console** of the chosen **Region**
 
-![](/images/emscloud/region_man.JPG)
+![](images/emscloud/region_man.JPG)
 
 **Note:** The security group used in this is the default settings
 
-![](/images/emscloud/manualsecgrp.JPG)
+![](images/emscloud/manualsecgrp.JPG)
 
 
 
@@ -225,3 +227,4 @@ A window for the keys will prompt. Select an existing key pair or create or proc
 
 
 **Note:** You will find the instance created in Instances under **Instances Menu**.
+
