@@ -1,5 +1,5 @@
 ---
-=title: config.lua
+title: config.lua
 keywords: configuration
 sidebar: userguide_sidebar
 permalink: userguide_configlua.html
@@ -779,7 +779,7 @@ The “acceptors” block is found within the “applications” section named �
 				{
 					ip="0.0.0.0",
 					port=9898,
-					localStreamName="testUcp",
+					localStreamName="testUdp",
 					protocol="inboundUdpTs",
 				},
 ```
