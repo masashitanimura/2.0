@@ -40,7 +40,7 @@ This will try to push a local stream to an external destination. The pushed stre
 ## API Call Template
 
 ``` 
-pullStream uri=<AddressOfStream> localStreamname=<localStreamName> targetStreamName=<targetStreamName>
+pushStream uri=<AddressOfStream> localStreamname=<localStreamName> targetStreamName=<targetStreamName>
 ```
 
 
@@ -48,7 +48,7 @@ pullStream uri=<AddressOfStream> localStreamname=<localStreamName> targetStreamN
 ### Sample API Call
 
 ``` 
-pushStream uri=rtmp://1.2.3.4/live localStreamName=testpullStream targetStreamName=testpushStream 
+pushStream uri=rtmp://192.168.1.200/live localStreamName=testpullStream targetStreamName=testpushStream 
 ```
 
 
@@ -78,10 +78,10 @@ pushStream uri=rtmp://1.2.3.4/live localStreamName=testpullStream targetStreamNa
         "fullDocumentPath":"\/",
         "fullDocumentPathWithParameters":"\/",
         "fullParameters":"",
-        "fullUri":"rtmp:\/\/127.0.0.1",
-        "fullUriWithAuth":"rtmp:\/\/127.0.0.1",
+        "fullUri":"rtmp:\/\/192.168.1.200",
+        "fullUriWithAuth":"rtmp:\/\/192.168.1.200",
         "host":"localhost",
-        "ip":"127.0.0.1",
+        "ip":"192.168.1.200",
         "originalUri":"rtmp:\/\/localhost",
         "parameters":{
         },
@@ -96,7 +96,7 @@ pushStream uri=rtmp://1.2.3.4/live localStreamName=testpullStream targetStreamNa
     "ttl":256,
     "useSourcePts":false
 },
-"description":"Local stream testpullStream enqueued for pushing to rtmp:\/\/localhost as testpushStream",
+"description":"Localstream testpullStream enqueued for pushing to rtmp:\/\/192.168.1.200 as testpushStream",
 "status":"SUCCESS"
 }
 ```
