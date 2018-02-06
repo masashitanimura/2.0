@@ -263,7 +263,7 @@ format: <EMS_IP>:<WebUI_Port>
 sample: 55.66.77.901:4100
 ```
 
-Click [here](http://docs.evostream.com/2.0/userguide_login.html) on how to log in to UI.
+Click [here](http://docs.evostream.com/2.0/userguide_createaccount.html) on how to log in to UI.
 
 
 
