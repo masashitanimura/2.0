@@ -43,7 +43,7 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 
    ​
 
-3. Launch EMS using **1-Click Launch** or **Manual Launch**
+3. Launch EMS using **1-Click Launch** or **Manual Launch** or using the **Service Catalog**
 
    ![](images/emscloud/launchas.JPG)
 
@@ -228,3 +228,86 @@ A window for the keys will prompt. Select an existing key pair or create or proc
 
 **Note:** You will find the instance created in Instances under **Instances Menu**.
 
+
+
+
+
+### Service Catalog
+
+![](images/emscloud/ami_servicecat.JPG)
+
+
+
+**How To:**
+
+**Note: Should use an administrator account**
+
+**Step 1: Choose and Copy AMI**
+
+A.	Select the **EMS version** to be used
+
+![](images/emscloud/image11.JPG)
+
+
+
+B.	Select **Service Catalog Region** and tick on the **Version** to be copied  to the selected region. Click on **Copy to Service Catalog**.
+
+![](images/emscloud/ami_copyservice.JPG)
+
+
+
+​	This will show upon successful copy:
+
+![](images/emscloud/ami_servicecopysuccess.JPG)
+
+
+
+
+
+**Step 2: Create Portfolio**
+
+A.	Create a portfolio for the image. Go to **AWS Dashboard > Management Tools > Service Catalog > Portfolios list**. Click on **CREATE PORTFOLIO**.
+
+![](images/emscloud/ami_createport.jpg)
+
+
+
+B.	Add Portfolio details, click **CREATE**.
+
+![](images/emscloud/ami_createport2.jpg)
+
+
+
+C.	You can now see the portfolio made under Portfolios List.
+
+![](images/emscloud/ami_addport.JPG)
+
+
+
+
+
+**Step 3: Add EMS to Portfolio**
+
+A.	On the **Portfolios List**, click on the created portfolio. Click on **ADD PRODUCT** under Products
+
+![](images/emscloud/ami_addprod.jpg)
+
+
+
+B.	**Select the EMS** copied in Step 1. Click **ADD PRODUCT TO PORTFOLIO**
+
+![](images/emscloud/ami_addprod2.jpg)
+
+
+
+C.	**Add Constraints** if applicable. See Amazon documentation about Constraints [here](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html)
+
+D.	**Add Users** that can access the portfolio. If no users are added, the portfolio can only be accessed by Administrator
+
+E.	**Add the consumer's AWS Account ID** where portfolio is being shared
+
+F.	**Add Tags** and **TagOptions** if needed
+
+G.	Click **RETURN TO PORTFOLIO LIST** when configuration is done
+
+**Note:** The configuration is saved already when returned to portfolios list.

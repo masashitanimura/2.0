@@ -42,7 +42,7 @@ When the web server starts, the following sequence of operations is performed:
 
   ​
 
-## logAppenders
+## loggers
 
 the configuration for the web server logs and log files
 
