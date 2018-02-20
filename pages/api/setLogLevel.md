@@ -63,6 +63,7 @@ The JSON response contains the following details:
   - 4– Debug
   - 5 – Fine
   - 6 – Finest
+  - -1 - Disabled
 
 
 
