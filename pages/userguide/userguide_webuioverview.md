@@ -12,7 +12,7 @@ To meet different feature requirements of the EMS, the web UI is separated into 
 
 This guide provides instructions on how to use the Web-based User Interface for the EvoStream Media Server. It will cover the basics using the Web-based User Interface. 
 
-After [starting the Evostream Media Server](http://docs.evostream.com/2.0/userguide_startems.html), you can open the Web-based User Interface on a browser by going to the 
+After [starting the EvoStream Media Server](http://docs.evostream.com/2.0/userguide_startems.html), you can open the Web-based User Interface on a browser by going to the 
 the following URL:  **http://[EMS IP ADDRESS]:4100/**
 
 
