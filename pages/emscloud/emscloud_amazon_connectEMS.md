@@ -9,7 +9,9 @@ toc: true
 
 
 
-After creating the EMS instance, you will need to connect to your EMS to use it. Here are the steps on how you can connect to EMS using **SSH Terminal**, **Windows PuTTy**, **EMS Web UI** and **EMS HTTP Based API**.
+After creating the instance, **EMS and its node components are already started**. All you need to do is to connect to your EMS to be able to use it. Here are the steps on how you can connect to EMS using **SSH Terminal**, **Windows PuTTy**, **EMS Web UI** and **EMS HTTP Based API**.
+
+**Note:** Restart EMS is you have made changes in config.lua or webconfig.json
 
 
 
