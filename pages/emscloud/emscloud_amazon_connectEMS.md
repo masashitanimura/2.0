@@ -218,46 +218,6 @@ If you previously saved the SSH session information for this Amazon EC2 instance
 
 
 
-
-
-### Remote Desktop Connection
-
-1. Run the **Remote Desktop Application**
-
-2. Enter the details of the virtual machine image, click **Connect**
-
-   **Computer** - the IP address of the image
-
-   **Username** -Administrator
-
-   **Password**- *see below*
-
-   ​
-
-   2.1.	How to obtain the password?
-
-   To get the password, right click on the instance under the Instances list. Click **Connect** and you will be prompted with this:
-
-   ![](images/emscloud/password.jpg)
-
-   ​
-
-   2.2. Click on **Get Password**. Choose the **[key-pair-name].pem** then click **Decrypt Password**. 
-
-   A **password** will be shown on the window.
-
-   ![](images/emscloud/decrypt.JPG)
-
-   ​
-
-3. Enter the **password** for the user, click **OK**
-
-4. The connection will be established. Run EMS by double clicking the desktop shortcut icon or running the `run_console_ems.bat`. You can now use the EMS capabilities!
-
-**Note:** The EMS is installed in `C:\EvoStream`. 
-
-
-
 ### EMS Web UI
 
 Using a browser, you can access your EMS with the help of UI.  The EMS and its UI are started by default,  all you need to do is to open the UI in your browser:
