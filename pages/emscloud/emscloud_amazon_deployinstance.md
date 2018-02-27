@@ -310,4 +310,7 @@ F.	**Add Tags** and **TagOptions** if needed
 
 G.	Click **RETURN TO PORTFOLIO LIST** when configuration is done
 
-**Note:** The configuration is saved already when returned to portfolios list.
+**Notes:** 
+
+- The configuration is saved already when returned to portfolios list.
+- The users added in Step3-D can see and launch the EMS in the portfolio
