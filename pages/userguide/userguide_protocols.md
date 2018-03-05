@@ -284,5 +284,17 @@ Click [here](html5players_wsoverview.html) more information
 
 
 
+## Protocol Support Player Matrix
 
+The following diagram shows the compatibility of various players with the EvoStream 2.0 supported protocols.
+
+![](images/userguide/protocolsupport_h264.JPG.JPG)
+
+
+
+![](images/html5/ws_compatibility.JPG)
+
+
+
+![](images/html5/webrtc_compatibility.JPG)
 
