@@ -137,8 +137,8 @@ entries:
       url: /listGroupNameAliases.html
       output: web, pdf
 
-    - title: removeGroupNameAliases
-      url: /removeGroupNameAliases.html
+    - title: removeGroupNameAlias
+      url: /removeGroupNameAlias.html
       output: web, pdf
 
     - title: flushGroupNameAliases

@@ -1,8 +1,8 @@
 ---
-title: removeGroupNameAliases
+title: removeGroupNameAlias
 keywords: api
 sidebar: api_sidebar
-permalink: removeGroupNameAliases.html
+permalink: removeGroupNameAlias.html
 folder: api
 toc: false
 ---

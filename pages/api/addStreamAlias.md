@@ -75,7 +75,7 @@ The JSON response contains the following details:
 
 
 
-##Alias in VOD
+## Alias in VOD
 
 You can also set an alias for the VOD streams:
 

@@ -38,7 +38,7 @@ realms=
 
 ------
 
-##Notes:
+## Notes:
 
 - You may add or delete number of users in this file
 - Authentication (auth.xml) should be enabled to use this file
@@ -48,4 +48,4 @@ realms=
 
 ## Related Links
 
-- [auth.xml](/userguide_auth.html)
+- [auth.xml](userguide_auth.html)

@@ -1,5 +1,5 @@
 ---
-title: Release Notes 2.0
+title: Release Notes
 keywords: release notes
 sidebar: home_sidebar
 permalink: /home_releasenotes.html
@@ -7,7 +7,22 @@ folder: home
 toc: false
 ---
 
+# EMS 2.0.1
 
+## Notable Bug Fixes
+
+- Removed Google and Facebook account login options on the UI login page to prevent unauthorized access
+- Fixed an issue where you were unable to play VOD files using aliasing in Windows
+- Restricted API’s used by angular for better UI security
+- Fixed playback of RTMP streams when the EMS is running in daemon clustered mode
+- Fixed playback in Edge where buffer clearing (which is used to maintain low latency) caused playback skipping
+- Minor UI improvements such as fixing API names in API explorer and corrected port number entry in dashboard
+
+
+
+
+
+# EMS 2.0.0
 
 ## Highlights
 
@@ -58,7 +73,7 @@ toc: false
 
 ------
 
-## Noteable Bug Fixes
+## Notable Bug Fixes
 
 - Log files will now roll appropriately including between runs of the EMS
 - HTTP-Proxy now properly uses "?" instead of "%3f" to separate the parameters from the URL

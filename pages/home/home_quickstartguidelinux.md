@@ -165,7 +165,7 @@ You may run EMS via following:
 
 1. Open a terminal
 
-2. Send **`service_evostreamms_start_console`**
+2. Send **`service evostreamms_start_console`**
 
    ![](images/userguide/start1.png)
 
