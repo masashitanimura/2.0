@@ -76,4 +76,4 @@ folder: emscloud
 **Notes:**
 
 - The machine is started after the deployment
-- You cannot use a free trial or other License to the created machine
+- You cannot use the License file in Azure in other EMS instance

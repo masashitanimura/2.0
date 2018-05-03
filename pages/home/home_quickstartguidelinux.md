@@ -139,7 +139,7 @@ You may run EMS via following:
 
 1. Open a terminal
 
-2. Locate the **..EvoStream/bin folder**
+2. Locate the **EvoStream/bin folder**
 
 3. Send **./run_console_ems.sh**
 
@@ -165,7 +165,7 @@ You may run EMS via following:
 
 1. Open a terminal
 
-2. Send **`service evostreamms_start_console`**
+2. Send **`service evostreamms start_console`**
 
    ![](images/userguide/start1.png)
 

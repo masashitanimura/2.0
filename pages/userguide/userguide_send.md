@@ -15,7 +15,7 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
 
 
-1. **Log in** to your Facebook account if not yet logged in
+1. **Log in** to your Facebook account
 
 2. **Select a stream** to push to Facebook. Note that a list active streams will be listed under the selections
 
@@ -120,3 +120,11 @@ This will try to push a local stream to YouTube Live Stream using Events. Below 
    ​
 
 7. **Check your YouTube channel** where the stream is pushed
+
+
+
+## Notes:
+
+- You can unlink your Facebook or Google+ account in Profile Page
+- Unlinking account in the UI will not remove the EMS Web UI entry in the user's Facebook account. Go to Facebook's *Settings > Apps* page to modify
+
