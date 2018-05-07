@@ -15,13 +15,13 @@ toc: true
 
 STUN is a set of methods and network protocols to allow an end host to discover its public IP address even if it’s located behind a NAT. This server is used by ERS to allow both EMS and the client end-point (browser) to discover their respective IP addresses. Restund is the recommended open-source STUN/TURN server to be used with ERS.
 
-EvoStream recommends using the STUN/TURN server COTURN, which can be obtained from its GitHub project here: https://github.com/coturn/coturn.  Installation instructions can be found on that project site.
+EvoStream recommends using the STUN/TURN server COTURN, which can be obtained from its GitHub project here: [https://github.com/coturn/coturn](https://github.com/coturn/coturn).  Installation instructions can be found on that project site.
 
 
 
 
 
-##Installation Procedure
+## Installation Procedure
 
 ### Manual Installation
 
