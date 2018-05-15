@@ -21,7 +21,27 @@ This is a simplified document on how to build and run Docker images for EMS 2.0.
 
 **Steps:**
 
-1. Run Docker from the console in privileged mode.
+1. **Pull** the EMS docker image:
+
+   ```
+   sudo docker pull evostream/<EMS version>-<OS>:<build number>
+
+   sample:
+   sudo docker pull evostream/ems201-ubuntu1604:5649
+   ```
+
+   **Available images:**
+
+   - evostream/ems200-ubuntu1604:5550
+
+
+   - evostream/ems201-ubuntu1604:5649
+
+   **Note:** You can check the available images in the [Docker store](https://store.docker.com)
+
+   ​
+
+2. **Run** Docker from the console in privileged mode.
 
    ```
    $ sudo su
@@ -35,9 +55,11 @@ This is a simplified document on how to build and run Docker images for EMS 2.0.
    - The `#` prompt is shown while in privileged (or root) mode. The `$` prompt is shown while in non-privileged (or user) mode. In the commands below, `sudo` may be omitted if in privileged mode
    - Check docker if running by sending `ps -e|grep docker`
 
-2. Test Docker
+   ​
 
-   Run the "hello world" demo to test your Docker installation. Remove the "hello world" image afterwards.
+3. **Test** Docker
+
+   Run the "hello world" demo to test your Docker installation. You may remove the "hello world" image afterwards.
 
    ```
    $ sudo docker run --name hello hello-world
@@ -46,12 +68,12 @@ This is a simplified document on how to build and run Docker images for EMS 2.0.
    $ sudo docker rmi hello-world
    ```
 
-3. Run the pre-built Docker Image for 2.0
+4. **Run** the EMS Docker Image
 
-   Run the script below to use the pre-built Docker image for EMS 2.0.0 on the EvoStream public repository on Docker Hub.
+   Run the script below to use the pre-built Docker image for EMS on the EvoStream public repository on Docker Hub.
 
    ```
-   sudo docker run --name ems5550 -i -t \
+   sudo docker run --name <container_name> -i -t -p \
      -p 1112:1112/tcp \
      -p 1222:1222/tcp \
      -p 1935:1935/tcp \
@@ -69,33 +91,39 @@ This is a simplified document on how to build and run Docker images for EMS 2.0.
      -p 9898:9898/UDP \
      -p 9998:9998/tcp \
      -p 9999:9999/tcp \
-     evostream/ems200-ubuntu1604:5550 bash
+     <image_name> bash
    ```
 
-4. Start EMS
+5. **Login** to container
 
-   The Docker image doesn't include an EMS license. You may obtain a trial license from the [EvoStream website](http://evostream.com/). From your host machine, copy the license file `License.lic` to `/etc/evostreamms` in the container.
+   If you are not automatically logged in to the container, send the command below:
 
    ```
-   $ sudo docker cp /path/to/License.lic myems:/etc/evostreamms
+   sudo docker exec -i -t <container_id> /bin/bash
+
+   sample:
+   sudo docker exec -i -t 3cb068bca5b6 /bin/bash
    ```
 
-   Replace `myems` with `ems5550` or whatever container name was used for running the Docker image. Use the `sudo docker ps -a` command to check the container names of running instances.
+   **Note:**  The prompt changes to `root@<instance_id>`  successful login.
+
+   ​
+
+6. **Start** EMS
+
+   The Docker image doesn't include an EMS license. You may obtain a trial license from the [EvoStream website](http://evostream.com/). From your host machine, copy the license file `License.lic` to `/etc/evostreamms` or `/config` folder in the container.
+
+   ```
+   $ sudo docker cp /path/to/License.lic <container_name>:/etc/evostreamms
+
+   sample:
+   $ sudo docker cp /path/to/License.lic evostream/ems201-ubuntu1604:5649:/etc/evostreamms
+   ```
+
+   Use the `sudo docker ps -a` command to check the container names of running instances.
 
    Inside the Docker container, start the EMS (in privileged mode):
 
    ```
    # service evostreamms start
    ```
-
-
-
-## Logging into a Container
-
-To login to a container, use the following commands at your host machine:
-
-```
-$ sudo docker ps -a
-$ sudo docker exec -i -t <container-id> /bin/bash
-```
-
