@@ -35,7 +35,16 @@ format: <EMS_IP>:<WebUI_Port>
 sample: 55.66.77.901:4100
 ```
 
-Click [here](http://docs.evostream.com/2.0/userguide_login.html) on how to log in to UI.
+This will redirect you to the login page. Log in using the following:
+
+```
+Username: admin
+Password: <VM_Name>
+```
+
+After logging in, you may [change your password](http://docs.evostream.com/2.0/userguide_profile.html#change-password) in the Web UI's Profile page ![](images/emscloud/profile.JPG). 
+
+To more know about the the EMS Web UI, please click [here](http://docs.evostream.com/2.0/userguide_webuioverview.html).
 
 
 
@@ -71,6 +80,8 @@ $ ps -e|grep evo
   4635 pts/0    00:00:01 evo-node
 ```
 
+**Note:** SSH is not enabled in Windows template
+
 
 
 ### Connecting  via SSH from Windows (PuTTy)
@@ -94,7 +105,7 @@ $ ps -e|grep evo
 
    ![](images/emscloud/putty.JPG)
 
-   **Host Name** – the public IP address in Amazon EC2 instance running EvoStream Media Server
+   **Host Name** – the public IP address of the instance running EvoStream Media Server
 
    **Port** – 22 (default)
 
