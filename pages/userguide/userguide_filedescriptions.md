@@ -6,52 +6,80 @@ folder: userguide
 toc: true
 ---
 
-## Command Files
+## コマンドファイル
 
-| File                | Description                              |
+| ファイル名             | 内容                              |
+| --------------------- | ---------------------------------------- |
+| emsTranscoder.bat     | EMSトランスコーダーバイナリ            |
+| evo-avconv(.exe)      | The EvoStreamトランスコーダーバイナリ。 `transcode` APIコマンドにより呼び出されます |
+| evo-mp4writer(.exe)   | さまざまなMP4収録ファイルをファイナライズするバイナリアプリケーション |
+| evo-node(.exe)        | EvoStream Web Server (EWS) バイナリ。 HTTP経由でのすべてのファイルサービスを扱います |
+| evostreamms(.exe)     | EvoStream バイナリ本体             |
+| run_console_ems.bat   | EMSをコンソールアプリケーションとして実行するバッチファイル／スクリプト。 コマンドに対するフィードバックやエラーなどがすぐに確認できるので初心者に便利です |
+| run_console_webui.bat | EMS Web UIアプリケーションを実行するバッチファイル／スクリプト。 UIとコンソールを分けて使いたい際に便利です。コマンドに対するフィードバックやエラーなどがすぐに確認できるので初心者に便利です。 |
+| run_stop_webui.bat    | EMS Web UIアプリケーションを**停止する**バッチファイル／スクリプト |
+| run_daemon_ems.sh     | **Linux/Unix** 環境においてEMSをバックグラウンドで実行するシェルスクリプト。スクリプト実行のためには"evostream"というユーザーが必要です。スクリプトを編集して別のユーザー権限で実行させることも可能です。daemonの実行状況を確認するには `ps –ef`を実行してください |
+| run_console_ems.bat   | Batch file/script on **Windows**環境でEMSをコンソールアプリケーションとして実行するためのバッチファイル／スクリプト。コマンドに対するフィードバックやエラーなどがすぐに確認できるので初心者に便利です。  |
+
+
+
+## Windows サービス
+
+| ファイル名      | 内容                              |
+| ------------- | ---------------------------------------- |
+| create.bat    | EMSウインドウズサービスを生成するスクリプト。本スクリプトはEMSをバックグラウンドプロセスとして実行します。レジストリの変更を行うため管理者権限で実行する必要があります。*実行が必要なのは１回のみです* |
+| remove.bat    | EMSウインドウズサービスを削除するスクリプト。レジストリからも適宜削除されます。管理者権限で実行する必要があります。|
+| start.bat     | EMSウインドウズサービスを開始するスクリプト。上記のcreate.batが先に実行されている必要があります |
+| stop.bat      | EMSウインドウズサービスを停止するスクリプト。 |
+| uninstall.bat | EMSウインドウズサービスをアンインストールするスクリプト。 |
+
+
+
+## Evo-Node アプリケーション
+
+| Application Name | 内容                              |
+| ---------------- | ---------------------------------------- |
+| node-ews         | ファイルサービスやグループ名エイリアスやauthproxyなどのEMSに特定のコールのためのファイルが含まれています。 |
+| node-webservices | Amazon S3やStreamロードバランサーへHLSファイルをアップロードするといったwebサービス用のファイルが含まれています。 |
+| node-webui       | EMS Web UIのファイルが含まれています。 |
+
+
+
+## 設定ファイル
+
+| ファイル名           | 内容                              |
 | ------------------- | ---------------------------------------- |
-| evostreamms(.exe)   | The EvoStream binary itself              |
-| evo-webserver(.exe) | The EvoStream Web Server (EWS) binary. This handles the serving of all files over HTTP |
-| evo-mp4writer(.exe) | This binary application combines the various pieces of each MP4 recording once the file is ready to be finalized |
-| evo-avconv(.exe)    | The EvoStream Transcoder binary. This gets called in reaction to the `transcode` API command |
-| run_daemon_ems.sh   | Shell script used on **Linux/Unix** environments to start the EMS as a background application. Use this for production deployments. It requires that the user “evostream” exists, the script will not work without it. Please feel free to modify this script to use a different user. When using the daemon script, to validate that the server is running, you can issue the command `ps –ef` |
-| run_console_ems.bat | Batch file/script on **Windows** which runs the EMS as a console application. This is useful for new users as it provides instant feedback on the console when commands are entered and shows errors if they occur in new streams. |
-| create.bat          | Script to create a **Windows** service for the EMS. This will also start the EMS as a background process. This must be run with Administrative privileges as it writes to the Windows Registry. *This only needs to be run once.* |
-| remove.bat          | Script to remove the **Windows** service for the EMS and remove the relevant Windows Registry entries. This must be run with Administrative privileges. |
-| start.bat           | Script to start the EMS **Windows** service. This script will not work if create.bat has not been run first. |
-| stop.bat            | Script to stop the EMS **Windows** Service. |
-| srvany.exe          | This is a binary provided by Microsoft and is used to create the Windows Service. |
+| auth.xml            | users.luaの設定ファイル          |
+| bandwidthlimits.xml | サーバーが使用可能な最大帯域幅が定義されています。 |
+| config.lua          | EMSの主要な設定ファイル |
+| connlimits.xml      | EMSが許容する最大同時接続最大数が定義されています。 |
+| ingestpoints.xml    | インジェストポイントの定義ファイル |
+| pushPullSetup.xml   | EMSがランタイムAPIによりコマンド実行されたストリームアクションコマンドを保存しているファイル。本ファイルをマニュアルで編集する必要はありません。ファイルに変更があるとEMSはスタートアップ時に検出し、本ファイルを別名保存して、空白・新規で本ファイルが再作成され適用されます。 |
+| users.lua           | ストリームがEMSにプッシュされる際の認証定義 |
+| webconfig.json      | EvoStream Web Server (EWS) 設定ファイル |
 
 
 
-## Configuration Files
+## ドキュメント
 
-| File                | Description                              |
-| ------------------- | ---------------------------------------- |
-| config.lua          | The main configuration file used by the EMS. The contents of this file are detailed later in this document. |
-| webconfig.lua       | The EvoStream Web Server (EWS) configuration file. The contents of this file are detailed later in this document. |
-| users.lua           | Defines the valid authentication the server will require when streams are pushed into the EMS. |
-| pushPullSetup.xml   | This file is used by the EMS to store stream action commands that are made through the Runtime API. This file may not be modified. At startup, if the EMS detects that the file has been modified it will rename the file and start with a blank/fresh copy. |
-| connlimits.xml      | Defines the maximum number of concurrent connections you want the EMS to accept |
-| bandwidthlimits.xml | Defines the maximum amount of bandwidth you want the server to be able to use (set the instantaneous bandwidth cap). |
-
-
-
-## Documentation
-
-| File                               | Description                              |
+| ファイル名                          | 内容                              |
 | ---------------------------------- | ---------------------------------------- |
-| EvoStream Media Server EULA v2.pdf | The End User License Agreement for the EMS |
+| EvoStream Media Server EULA v2.pdf | EMSエンドユーザ使用許諾契約 |
 
 
 
-## Miscellaneous
+## その他
 
-| File                            | Description                              |
-| ------------------------------- | ---------------------------------------- |
-| demo/emsdemo.htmldemo/base64.js | The emsdemo.html file can be opened directly in a web browser and provides some example commands which can be sent to the EMS. |
-| media/                          | The media directory is the default location for video-on-demand files. This is where the EMS will look when VOD requests are made. This default location can be changed in the EMS main configuration file, which is typically `config/config.lua` |
-| logs/                           | This is the directory that EMS will write its logs to. This default location can be changed in the EMS main configuration file, which is typically `config/config.lua` |
-| License.lic                     | This is the license file required to run the EMS. It can be placed in the `config/` , `bin/` , or `/etc/evostreamms/` folders, or in whatever folder the evostreamms binary resides. |
-| evowebservices.log              | This is an auto-generated file which contains the logs for the evowebservices. The file will be placed in `../evo-webroot/evowebservices`. |
-
+| ファイル/フォルダ名       | 内容                              |
+| ---------------------- | ---------------------------------------- |
+| blacklist.txt          | ブラックリストIPアドレスのリスト |
+| whitelist.txt          | ホワイトリストIPアドレスのリスト |
+| server.key             | セキュリティ認証に使用するプライベートキー |
+| server.cert            | セキュリティ認証の証明書 |
+| tests.exe              | Windows用のテストアプリケーション |
+| platformTests          | Linux用のテストアプリケーション |
+| media/                 | mediaディレクトリはビデオオンデマンド用ファイルのデフォルトの保存場所です。VODリクエストがあるとEMSはここを見に行きます。デフォルトの保存場所は`/config/config.lua`ファイルを編集することにより変更が可能です。 |
+| logs/                  | EMSおよびEvoWebserverがログを保存するディレクトリです。デフォルトの保存場所はconfig.luaのEMS logsおよびWebconfig.jsonの項で変更が可能です。 |
+| License.lic            | EMSを実行するために必要となるライセンスファイルです。 `config/` または `bin/` または `/etc/evostreamms/` またはevostreammsのバイナリがある場所のいずれかに置いても有効です。 |
+| /node-webservices/logs | node-webservicesのログの保存ディレクトリです |
+| /node-webui/logs       | node-webuiログの保存ディレクトリです   |

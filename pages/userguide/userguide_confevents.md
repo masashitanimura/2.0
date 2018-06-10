@@ -7,10 +7,12 @@ folder: userguide
 toc: false
 ---
 
-EMS generates notifications based upon events that occur at runtime. These events are formatted as HTTP calls and can be delivered to any address and port desired.
+EMSはランタイム時に起きたイベントをもとにした通知を生成します。イベントはHTTPコール書式で指定したアドレス／ポートに配信することが可能です。
 
-Event Notifications are enabled by default and are configured to send to the local web services provided within your EMS installation. The Web Services are **disabled** by default, and so do not take any action on the events. Please review the EvoStream Web Services documentation for instructions on enabling and working with each of the web services.
+Event Notificationはデフォルトで有効化されており、EMSインストールの際に含まれているWebサービス宛てに送信するよう設定されています。
+一方Webサービスはデフォルトでは**有効化されておらず**、イベントが送られてきてもなにもアクションを起こしません。webサービスの有効化と使用方法についてはEvoStream Web Servicesの資料を参照してください
 
-Additional Event Notification destinations can be enabled (or disabled) by modifying the EMS config file: `config.lua`.
 
-To enable Event Notifications you will need to Enable/Uncomment the *eventLogger* section of the config.lua file. Comments in LUA are specified by either a `--` for a single line, or denoted by a `--[[` to start a comment block and a `]]--` to end a comment block. By default the eventLogger section is commented out using block style comments, so you will need to remove both the `--[[` and `]]--`strings. See the Configuration Files section for more information.
+イベント通知の宛先を追加的に指定することが可能で、`config.lua`ファイルを編集することで設定、有効化・無効化等が行えます。
+
+イベント通知を有効化するにはconfig.luaファイルの*eventLogger*セクションのコメントを外す必要があります。LUAスクリプトでのコメントは一行の場合は`--` で複数ブロックに渡る場合は`--[[`から`]]--` までで指定できます。デフォルトではeventLoggerセクションはブロックスタイルでコメントされておりますので、`--[[` と `]]--`の２つを削除することでアンコメントできます。詳しくはConfiguration Filesセクションをご参照ください。

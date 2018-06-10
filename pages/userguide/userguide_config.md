@@ -8,60 +8,61 @@ toc: false
 ---
 
 
-
-This page lists all the push/pull configurations in EMS. There we're several configurations listed in this page: 
-
-- pull - list of pulled streams in EMS
-- push - list of pushed streams from EMS
-- hls - list of HLS streams in EMS
-- dash - list of DASH streams in EMS
-- hds - list of HDS streams in EMS
-- mss - list of MSS streams in EMS
-- record - list of record streams in EMS
-- process - list of processes in EMS
+EMSのすべてのプッシュ／プル設定をリスト表示します。以下のような項目があります
 
 
+- pull - EMSにプルされたストリームのリスト
+- push - EMSからプッシュされたストリームのリスト
+- hls - HLSストリームのリスト
+- dash - DASHストリームのリスト
+- hds - HDSストリームのリスト
+- mss - MSSストリームのリスト
+- metalistener - メタデータリスト
+- record - レコードストリームのリスト
+- process - プロセスのリスト
 
-1. Choose the **configuration type** to filter
+
+
+1. 項目別にフィルタ表示ができます
 
    ![](images/userguide/Config_filter.jpg)
 
    ​
 
-2. A list of stream type will display, select the **Action** you want to perform
+2. ストリームがリスト表示されます。**Action** 欄から下記のアクションを選択できます
 
    ![](images/userguide/Config_filtered.JPG)
 
    ​
 
-   - ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a window
-   - ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
+   - ![](images/userguide/Config_info.JPG)   **情報表示** - ストリーム情報を表示します
+   - ![](images/userguide/VOD_delete.JPG)   **削除** - ストリームを削除します
 
    ​
 
    ​
 
-## Information
+## 情報
 
-Displays the basic information and status of the stream. It also allows you to play or delete the stream.
+ストリーム基本情報およびステータスを表示します。ストリームの再生・削除も可能です
 
-**Play**:  plays the stream in a new window
+**Play**:  新規ウインドウでストリーム再生
 
 ![](images/userguide/Config_playstream.jpg)
 
 
 
-**Delete** - deletes the stream in the configuration
+**Delete** - ストリームを削除します
 
 
 
-**Basic Information**: displays the information of the stream 
+ストリームの**基本情報**が表示されます:
 
 ![](images/userguide/Config_basicinfo.jpg)
 
 
 
-**Stream Status**: displays the connection status of the stream
+**ストリームステータス**が表示されます: 
 
 - Current:
 - Previous:

@@ -9,30 +9,32 @@ toc: false
 
 
 
-This tool lets you use the EMS Core API by helping you build the commands that will create and manipulate the streams in the EMS
+API ExplorerはEMS上でストリームの生成や操作をする一連のコマンドを構成するEMS Core APIを使用しています。
+
 
 ![](images/userguide/apiexplorer.jpg)
 
 
 
-## Sending API Commands
+## APIコマンドを送るには
 
-1. Choose the API command under the command drop down list
+1. ドロップダウンリストからAPIコマンドを選択
 
    ![](images/userguide/pullstreamcommand.JPG)
 
-2. A list of parameter will show if there's any. There are two types of parameter in list: the **required** and **non-required**. Required parameters are the mandatory parameters that needs to be filled up to send the command. The non-required are the optional parameters that can be added for their use. Enter the parameters needed for the command.
+2. 可能な場合はパラメータのリストが表示されます。（パラメータには**必須**のものとそうでないものがあります）
+
 
    ![](images/userguide/parameters.JPG)
 
    ​
 
-3. Check the generated command in the command text. If your'e  good to go just click on **Send Command**
+3. command text欄で生成されたパラメータ付きコマンドを確認します。**Send Command**ボタンをクリックしコマンドを送ることができます。
 
    ![](images/userguide/commandtext.JPG)
 
 
-4. A JSON response will appear in the JSON box
+4. JSONレスポンスが表示されます
 
    ![](images/userguide/json.jpg)
 
@@ -41,4 +43,4 @@ This tool lets you use the EMS Core API by helping you build the commands that w
 
 
 
-**For more information with the EMS API, see API documentation [here](/api/overview.html).**
+**EMS APIに関する詳細は  [ここ](/overview.html)をご参照ください.**

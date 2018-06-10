@@ -7,31 +7,31 @@ folder: userguide
 toc: false
 ---
 
-While the EMS provides an extensive set of API functions, there may be times where the variables provided are not sufficient, or where you may need extra information to be associated with individual streams. To support these needs, the EMS API implements *User Defined Variables*. User Defined Variables can be used with any API function where information is maintained by the EMS (i.e. pulling a stream, creating a timer, starting a transcode job, etc.).
+EMSは豊富なAPI関数を持っていますが、変数が足りない場合や個別ストリームにより多くの関連情報を付加させたいという場合があるかもしれません。これに対応するため、EMS APIでは*ユーザ定義変数*を実装しております。ユーザ定義変数はEMSが管理している情報（ストリームのプルやタイマー作成、トランスコードジョブの開始等）であればどのAPI関数からでも利用できます。
 
-To specify a User Defined Variable, you simply need to append an underscore (`_`) to the beginning of your variable name. The User Defined variables are reported back whenever you get information about the command: listStreams, listConfig, Event Notifications, etc.
+ユーザ定義関数を指定するにはアンダースコア(`_`)を編集の最初に使用します。コマンド（listStreamsやlistConfig等）についての情報が得られる場合はユーザ定義関数についてもリポートされます。
 
-Some common use cases for User Defined Variables are as follows:
+ユーザ定義変数のよくあるユースケースを下記に例示します:
 
 ```
 setTimer value=120 _streamName=MyStreamsetTimer value=120 _streamID=5
 
 ```
 
-Setting a timer to stop a stream after a set period of time
+指定時間経過後にストリームを停止するタイマー設定
 
 ```
 pullstream uri=rtmp://192.168.1.5/live/myStream localstreamname=test1 _myID=5 _myName=secretSquirrel
 
 ```
+ストリーム名とストリームidが設定されるコマンドのタイマーイベントが120秒後に実行される
 
-These commands will fire a timer event after 120 seconds with the set stream name or stream id respectively.
 
-1. Attach a custom identifier to a local stream
+1. ローカルストリームにカスタムidをつける
 
    ```
      pushstream uri=rtmp://192.168.1.5/live/myStream localstreamname=test1 _myID=5 _myName=secretSquirrel
 
    ```
 
-Set a custom value on a pushed stream
+カスタム値をプッシュストリームに設定する

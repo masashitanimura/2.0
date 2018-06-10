@@ -7,28 +7,29 @@ folder: userguide
 toc: true
 ---
 
-Provides a detailed description of all active streams. Select from Inbound  Streams, Outbound Streams or Adaptive HTTP Stream.
+アクティブなストリームに関する情報を表示します。インバウンド、アウトバウンド、アダプティブHTTPストリームから選択してください。
 
 ![](images/userguide/activedropdown.jpg)
 
 
 
-## Inbound Streams
+## インバウンドストリーム
 
-Displays the list of all active inbound stream
+アクティブなインバウンドストリームをリスト表示します
 
 ![](images/userguide/Active_inbound.JPG)
 
-- ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
-- ![](images/userguide/VOD_play.JPG)   **Play** - streams the inbound file
-- ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
+- ![](images/userguide/Config_info.JPG)   **情報表示** - ストリーム情報を表示します
+- ![](images/userguide/VOD_play.JPG)   **再生** - インバウンドファイルを再生します
+- ![](images/userguide/VOD_delete.JPG)   **削除** - ストリームを削除します
 
 
 
 
-### Playing Inbound Streams
+### インバウンドストリームの再生
 
-All active playable inbound streams can be played using the Web UI. SImply click on the play button to start streaming!
+アクティブなインバウンドストリームはWeb UI上で再生できます。再生ボタンをクリックすると再生を開始します
+
 
 ![](images/userguide/active_playhtml5.JPG)
 
@@ -36,75 +37,75 @@ All active playable inbound streams can be played using the Web UI. SImply click
 
 **Notes:**
 
-- The HTML5 player uses the evohtml5player-2.0.13.bundle.js
-- Unique window in each playback
+- HTML5プレーヤーにはevohtml5player-2.0.13.bundle.jsを使用します
+- 再生には個別ウインドウが開きます
 
 
 
 
 
-## Outbound Streams
+## アウトバウンドストリーム
 
-Displays the list of all active outbound streams
+アクティブなアウトバウンドストリームをリスト表示します
 
 ![](images/userguide/Active_outbound.JPG)
 
-- ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
-- ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
+- ![](images/userguide/Config_info.JPG)   **情報表示** - ストリーム情報を表示します
+- ![](images/userguide/VOD_delete.JPG)   **削除** - ストリームを削除します
 
 
 
 
 
 
-## Adaptive HTTP Streams
+## アダプティブHTTPストリーム
 
-Displays the list of active HTTP streams
+アクティブなHTTPストリームをリスト表示します
 
 ![](images/userguide/Active_http.jpg)
 
 
 
-- ![](images/userguide/Config_info.JPG)   **Information** - displays the stream information in a new window
-- ![](images/userguide/VOD_play.JPG)   **Play** - streams the HTTP file
-- ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the stream in the configuration
+- ![](images/userguide/Config_info.JPG)   **情報表示** - ストリーム情報を表示します
+- ![](images/userguide/VOD_play.JPG)   **再生** - HTTPファイルを再生します
+- ![](images/userguide/VOD_delete.JPG)   **削除** - ストリームを削除します
 
 
 
 
 **Note:**
 
-- The Active page is automatically refreshing when there is an update with the EMS.
+- EMS内で更新があった場合、アクティブなページは自動的更新されます
 
 
 
 
+## HTTPストリームの再生
 
-## Playing HTTP Streams
-
-The Web UI can now play HLS and DASH streams. Simply click on the Play button and start streaming!
-
+Web UI上でHLSおよびDASHストリームを再生できます。再生ボタンをクリックすると再生を開始します
 
 
-#### Play HLS Stream
+
+### HLSストリームの再生
 
 ![](images/userguide/active_playhls.JPG)
 
 
 
-#### Play DASH Stream
+### DASHストリームの再生
 
 ![](images/userguide/active_playdash.JPG)
 
 **Notes:**
 
-- The HLS player uses Video.js HLS build version 2.0.1
-- The DASH player uses DASH-IF v2.5.0-d389aed
-- Unique window in each playback
+- HLSプレーヤーはVideo.js HLS build version 2.0.1を使用します
+- Video.js HLS build version 2.0.1はFirefoxブラウザではサポートされていません。代わりにChromeをお使いください
+- DASHプレーヤーはDASH-IF v2.5.0-d389aedを使用します
+- 再生ごとに個別のウインドウを開きます
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listStreams]([](/api/listStreams.html))
 

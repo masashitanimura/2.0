@@ -7,52 +7,51 @@ folder: userguide
 toc: true
 ---
 
-Records any inbound stream. The record command allows users to record a stream that may not yet exist. When a new stream is brought into the server, it is checked against a list of streams to be recorded.
+インバウンドストリームをRecordします。recordコマンドをつかってユーザーはストリームの録画ができます。サーバーに新規ストリームが入ってきてない場合、録画すべきストリームリストの確認を行います。
 
-Streams can be recorded as FLV files, MPEG-TS files or as MP4 files.
+FLV、MPEG-TS、MP4ファイル等でストリームを録画することができます。
 
-**Note:** If you wan't to record the very first frames in your stream, you need to issue the `record` command first before adding the stream to be recorded. This will make sure that there will be no lost frames  
+**Note:** ストリームの先頭のフレームを録画したい場合はストリーム追加よりも前にrecord`コマンドを実行しておく必要があります。
 
 
 
-## How To
+## 手順
 
-### Recording MP4 File
+### Recording MP4ファイル
 
-This is the default format of the `record` command.
+`record`コマンドのデフォルトフォーマットです
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 record localstreamname=<localstreamname> pathtofile=../path_to_media/filename type=<fileType>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   record localstreamname=myStream pathtofile=C:\EvoStream\media\myRecord type=mp4
   ```
 
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   record localstreamname=myStream pathtofile=/var/evostreamms/myRecord type=mp4
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   record localstreamname=myStream pathtofile=/path_to_media/myRecord type=mp4
   ```
 
-To make the call easier, a **relative path** can be used:
+**相対パス**も使用可能です:
 
 ```
 record localstreamname=myStream pathtofile=../media/myRecord type=mp4
 ```
-
-The created files will automatically save in the folder declared in `pathtofile`.
+生成されたファイルは`pathtofile`パスに自動的に保存されます
 
 ```
 media:                           --> targetfolder
@@ -62,14 +61,15 @@ media:                           --> targetfolder
 -testRecord.mp4.track2           --> mp4 file on creation   
 ```
 
-If the stream source ended or disconnected, the MP4 files will be compiled as one MP4 file: See [MP4 File Creation](userguide_record.html#mp4-file-creation).
+ストリームソースが終了または接続断となった場合、MP4ファイルはひとつにコンパイルされます:
+ 詳しくは [MP4 File Creation](userguide_record.html#mp4-file-creation)をご参照ください。
 
 ```
 media:                           --> targetfolder
 -testRecord.mp4                  --> completed mp4 file
 ```
 
-If `chunkLength` parameter is added:
+`chunkLength`パラメータが与えられている場合:
 
 ```
 media:                           --> targetfolder
@@ -82,9 +82,9 @@ media:                           --> targetfolder
 
 
 
-#### MP4 File Creation
+#### MP4 ファイルの作成
 
-When recording to an MP4 file format the EMS will create three (if video or audio only stream) or four (if sream has audio and video) different files:
+MP4ファイル作成時、EMSは３つ（ビデオまたはオーディオのみ）ないし４つ（ビデオおよびオーディオ）のファイルを作成します
 
 - filename.info
 
@@ -94,72 +94,78 @@ When recording to an MP4 file format the EMS will create three (if video or audi
 
 - filename.track2 (only if audio and video)
 
-  These files will all exist within the destination folder specified in the Record command issued.
+  これらのファイルはRecordコマンドで指定した保存先フォルダに保存されます
 
-  At the end of recording, or when the recording file is closed by the EMS to start a new chunk, the EMS will automatically combine these files into the final .mp4 file. This is done to ensure optimal MP4 file formatting with the header “atoms” at the beginning of the file.
+  録画終了時またはEMSが新規チャンク作成するためにファイルをクローズする際、これらのファイルは.mp4ファイルとしてひとつにまとめられます。ファイルの先頭に"atoms"ヘッダを備えた最適化されたMP4ファイルが作成されます。
 
-  The EMS uses the **evo-mp4writer** binary to perform the combination of files into the final MP4 file.
 
-  If for any reason an MP4 file fails to be combined you can manually use the evo-mp4writer binary to create the MP4 file. Typically this failure to combine will only occur if the EMS or the server itself is shutdown mid-record and so the evo-mp4writer is not given a chance to run.
 
-  The syntax for the evo-mp4writer is as follows:
+  **evo-mp4writer**バイナリを使用してEMSは複数のファイルからMP4ファイルを作成します
+
+
+  なんらかの理由でMP4ファイルの作成ができなかった場合、手動でevo-mp4writerバイナリを使用してMP4ファイルを作成することができます。一般的にこのような不具合は録画中にEMSまたはサーバーがシャットダウンした際に起きます。
+
+
+
+  evo-mp4writerのコマンド書式は以下です:
 
   ```
   evo-mp4writer -path=/path/to/file.mp4
   ```
 
-  The `-path` parameter here should be the same as was used in the record `pathtofile` parameter.
+  `-path`パラメータはrecordの`pathtofile` パラメータと一致させる必要があります
 
-  If the above command fails, you can add a `--recovery` parameter to the end to provide some additional resiliency:
+  上記コマンドがうまくいかない場合に備えて、`--recovery`パラメータを最後に加えておくこともできます:
+
 
   ```
   evo-mp4writer -path=/path/to/file.mp4 --recovery
   ```
 
-  **Note:**  `--recovery` option is going to be deprecated in the upcoming 1.7.0 revision or in 1.7.1. Previously this option is useful in saving time as it only needs to re write the ftyp and moov atom without changing the mdat. Since both moov and mdat are reordered in our internal codebase, both of them needs to be re-written always in the event that evo-mp4writer is invoked manually.
+  **Note:**  `--recovery` オプションは1.7.0または1.7.1バージョンでは廃止される予定です。このオプションは以前はmdatを変更せずにftypやmoovアトムを上書きすることで手間を省くことができましたが、現状はmoovもmdatも内部コードベースで常に処理されるためevo-mp4writerを手動で動作させる場合も無効となりました。
 
   ​
 
 ### Recording TS File
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 record localstreamname=<localstreamname> pathtofile=../path_to_media/filename type=<fileType>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   record localstreamname=myStream pathtofile=C:\EvoStream\media\myRecord type=ts
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   record localstreamname=myStream pathtofile=/var/evostreamms/myRecord type=ts
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   record localstreamname=myStream pathtofile=/path_to_media/myRecord type=ts
   ```
 
-To make the call easier, a **relative path** can be used:
+**相対パス**も使用可能です:
 
 ```
 record localstreamname=myStream pathtofile=../media/myRecord type=ts
 ```
 
-The created files will automatically save in the folder declared in `pathtofile`.
+生成されたファイルは`pathtofile`パスに自動的に保存されます
 
 ```
 media:                           --> targetfolder
 -testRecord.ts  		       --> ts file         
 ```
 
-If `chunkLength` parameter is added:
+`chunkLength`パラメータが与えられている場合:
 
 ```
 media:                           --> targetfolder
@@ -170,50 +176,50 @@ media:                           --> targetfolder
 ...
 ```
 
-The length of the recorded TS files will depend on the `chunkLength` declared. If the stream source is ended or disconnected, the TS files will remain as it is. 
+TSファイルの長さは`chunkLength`パラメータによって決まります。ストリームソースが終了または接続断となった場合はTSファイルはそのまま残ります。
 
 
 
 ### Recording FLV File
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 record localstreamname=<localstreamname> pathtofile=../path_to_media/filename type=<fileType>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   record localstreamname=myStream pathtofile=C:\EvoStream\media\myRecord type=flv
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   record localstreamname=myStream pathtofile=/var/evostreamms/myRecord type=flv
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   record localstreamname=myStream pathtofile=/path_to_media/myRecord type=flv
   ```
 
-To make the call easier, a **relative path** can be used:
+**相対パス**も使用可能です:
 
 ```
 record localstreamname=myStream pathtofile=../media/myRecord type=flv
 ```
 
-The created files will automatically save in the folder declared in `pathtofile`.
+生成されたファイルは`pathtofile`パスに自動的に保存されます
 
 ```
 media:                           --> targetfolder
 testRecord.flv                   --> flv file
 ```
 
-If `chunkLength` parameter is added:
+`chunkLength`パラメータが与えられている場合:
 
 ```
 media:                            --> targetfolder
@@ -224,19 +230,19 @@ media:                            --> targetfolder
 ...
 ```
 
-The length of the recorded FLV files will depend on the `chunkLength` declared. If the stream source is ended or disconnected, the FLV files will remain as it is. 
+FLVファイルの長さは`chunkLength`パラメータによって決まります。ストリームソースが終了または接続断となった場合はFLVファイルはそのまま残ります。
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
-**API Call:**
+**API コール:**
 
 ```
 record localStreamName=testpullstream pathtofile=../media/testRecord type=mp4 overwrite=1
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -251,13 +257,14 @@ Recording Stream
 
 
 
-## Stopping a Record
+## 録画の停止
 
-A recorded stream is just like any other stream in the EMS, it is simply directed to a file instead of towards the network. Users may therefore use either of the normal shutdown stream commands to stop a recording. This will cause the recording of this stream to stop, which will close the file that is being written to. All data that had previously been recorded will remain stored in that file. If the stream had not yet been recorded (because a stream with that name was not yet available) then the recording will be canceled.
+録画しているストリームもEMSでは他のストリームと同様に扱われます。ネットワークに向けられるかわりにファイルとして保存されるだけです。したがって録画の停止のコマンドもストリームのシャットダウンと同じです。ストリームのシャットダウンと同様に録画書き出し中のファイルはクローズされます。ストリームが録画されていなかった場合（指定したストリーム名のストリームがなかった）は、録画はキャンセルされます。
+
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [record API](api_record.html)
 - [Stream Recorder Service](evowebservices_streamrecorder.html)

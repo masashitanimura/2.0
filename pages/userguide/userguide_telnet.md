@@ -7,34 +7,40 @@ folder: userguide
 toc: true
 ---
 
-You can also connect to EMS using the telnet and HTTP request aside from the EMS Web UI. Below are the ways on how to connect to EMS.
+EMS Web UIの他にtelnetやHTTPリクエストでEMSに接続することができます。下記はその手順です。
 
 
 
-## Manual Command Line
+## 手動コマンドライン
 
-**Pre-requisite in Windows OS**
+**ウインドウズOSでの事前準備**
 
-Telnet may need to be enabled using Windows OS. To enabled the feature, go to the *Control Panel -> Programs -> Turn Windows Features on and off*. Turn **ON** the Telnet Client program.
+TelnetはWindows® OSでは明示的に有効化する必要がある場合があります。スタートメニューから コントロールパネル>プログラム>Windows機能の有効化または無 効化 をクリックし、Telnetクライエントを有効化してください。
+
 
 ![](images/userguide/enabletelnet.jpg)
 
-Please also note that on Windows, the default telnet behavior will need to be changed. The local echo and new line mode should be set for proper behavior. Once telnet is launched, exit the telnet session by typing `CTRL`+`]`. Then enter the following commands:
+またWindows OSではtelnetのlocal echoおよびnew line設定に若干の変更が必要です。
+telnetが起動している場合は、ctrl+]でセッションから一旦exitし、下記コマンドを入力してください:
+
 
 ```
 set localecho
 set crlf
 ```
 
-To return to the Windows telnet session, press **Enter** or **Return** key.
+Windows telnetセッションに戻るには Enter または Return キーを押してください。
+
+
 
 
 
 ### ASCII CLI
 
-This ASCII-based interface is often the first interface used by users. It can be accessed easily through the telnet application (available on all operating systems) or through common scripting languages.
+ユーザが最初に触れるインターフェースはしばしばASCIIベースのインターフェースです。telnetアプリケーションやその他スクリプト言語を用いて簡単にアクセス可 能です。
 
-Configuration in config.lua:
+
+config.luaでの設定:
 
 ```
 {
@@ -45,23 +51,23 @@ Configuration in config.lua:
 },
 ```
 
-To access the API via the telnet interface, a telnet application will need to be launched on the same computer that the EMS is running on. The command to open telnet from a command prompt should look something like the following:
+telnetインターフェースでAPIにアクセスするには、telnetアプリケーションがEMSが実行しているのと同じコンピューター上にある必要があります。telnetをopenするにはコマンドプロンプトで以下のようにします:
+
 
 ```
 telnet localhost 1222
 ```
 
-Once the telnet session is established, type out the desired commands which will be immediately executed on the server after the Enter/Return key is pressed.
+telnetセッションが開いたら、サーバーにコマンドを送りすぐに実行させることができます。 コマンドリクエストの例とその返り値は以下のようなものです。
 
-An example of a command request and response from a telnet session would be the following:
 
-**Request:**
+**コマンドリクエスト:**
 
 ```
 version
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 Command entered successfully!
@@ -80,7 +86,9 @@ with hash: 64b305253110afc4acd5aeaf87f0a0b0f9b53526 on branch: origin/release/1.
 
 ### ASCII JSON CLI
 
-Accessing the API over the same Telnet interface, but by using the port **1112** will yield the same results as the ASCII CLI, but the results will all be returned formatted in JSON. This is very convenient for CGI and BASH scripting against the EMS API.
+port 1112をつかってtelnetでAPIにアクセスすると、JSONでフォーマットされた返り値となります。CGIやBASHスクリプトで便利です。 ***JSONレスポンスにおける最初のキャラクタはJASON payloadのLENGTHです***
+
+
 
 **Please note that the first character returned by the JSON response is the LENGTH of the JSON payload, allowing you to allocate properly sized structures at runtime.**
 
@@ -94,23 +102,24 @@ Configuration in config.lua:
 	useLengthPadding=true
 },
 ```
+ telnetセッション開始とリクエスト/返り値の例を以下に挙げます:
 
-An example of a command request/response from a telnet session would be the following:
 
 ```
 telnet localhost 1112
 
 ```
 
-An example of a command request and response from a telnet session would be the following:
+コマンドリクエストの例とその返り値は以下のようなものです。
 
-**Request:**
+
+**コマンドリクエスト:**
 
 ```
 version
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {"data":{"banner":"EvoStream Media Server (www.evostream.com) version 1.7.1 build 4491 with hash:64b305253110afc4acd5aeaf87f0a0b0f9b53526 on branch: origin\/release\/1.7.0.1 - PacMan|m| - (built for Windows-8.1-x86_64 on 2016-06-17T09:33:23.000)","branchName":"origin\/release\/1.7.0.1","buildDate":"2016-06-17T09:33:23.000","buildNumber":"4491","codeName":"PacMan|m|","hash":"64b305253110afc4acd5aeaf87f0a0b0f9b53526","releaseNumber":"1.7.1"},"description":"Version","status":"SUCCESS"}
@@ -120,7 +129,9 @@ version
 
 ## HTTP JSON CLI
 
-To access the API via the HTTP interface, simply make an HTTP request on the server using any browser with the command to be executed. By default, the port used for these HTTP requests is **7777**. The HTTP interface port can be changed in the main configuration file used by the EMS (config.lua).
+HTTPインターフェース経由でAPIにアクセスするには、ブラウザでHTTPリクエストをサーバーにおくるだけです。デフォルトで使用するポートは**7777**です。ポート番号は設定ファイル（config.lua）で変更可能です。
+
+
 
 Configuration in config.lua:
 
@@ -132,22 +143,23 @@ Configuration in config.lua:
 },
 ```
 
-A general HTTP format request would be the following:
+一般的なhttpフォーマットのリクエストは以下のようなものです:
 
 ```
 http://[EMS_IP]:7777/[API]
 ```
 
-An example of a command request and response from an HTTP session would be the following:
+コマンドリクエストの例とHTTPセッションからのレスポンスは以下のようなものです:
 
-**Request:**
+
+**リクエスト:**
 
 ```
 http://localhost:7777/version
 
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {"data":{"banner":"EvoStream Media Server (www.evostream.com) version 1.7.1 build 4491 with hash:64b305253110afc4acd5aeaf87f0a0b0f9b53526 on branch: origin\/release\/1.7.0.1 - PacMan|m| - (built for Windows-8.1-x86_64 on 2016-06-17T09:33:23.000)","branchName":"origin\/release\/1.7.0.1","buildDate":"2016-06-17T09:33:23.000","buildNumber":"4491","codeName":"PacMan|m|","hash":"64b305253110afc4acd5aeaf87f0a0b0f9b53526","releaseNumber":"1.7.1"},"description":"Version","status":"SUCCESS"}
@@ -155,9 +167,10 @@ http://localhost:7777/version
 
 
 
-### Using  Multiple Parameters
+### 複数のパラメータを使用する
 
-All of the API functions are available via HTTP, but the request must be formatted slightly different if parameters are included. To make an API call over HTTP, the parameters to be used should be in base64 format.
+HTTPではAPI全関数が使用可能ですが、パラメータを入れる場合はフォーマットをbase64にする必要があります。
+
 
 ```
 http://[EMS_IP]:7777/[API]?params=([base64_encoded_parameters])
@@ -165,27 +178,27 @@ http://[EMS_IP]:7777/[API]?params=([base64_encoded_parameters])
 
 
 
-#### Converting Parameters to base64 format
+#### base54にパラメータを変換する
 
-Sampling a `pullstream` command:
+`pullstream`コマンドでの例:
 
 ```
 pullStream uri=rtsp://localhost:5544/vod/mp4.bunny.mp4 localStreamName=bunny keepAlive=1 forceTcp=1
 ```
 
-1. Type in the parameters first: `uri=rtsp://localhost:5544/vod/mp4.bunny.mp4 localStreamName=bunny keepAlive=1 forceTcp=1`
+1. パラメータ付きでコマンドを記述し: `uri=rtsp://localhost:5544/vod/mp4.bunny.mp4 localStreamName=bunny keepAlive=1 forceTcp=1`
 
-2. Convert the parameters using a base64 encoder: 
+2. base64コンバータで変換します:
 
    Encode [here](https://www.base64encode.org/).
 
-   **Converted parameter:**
+   **変換されたパラメータ:**
 
    ```
    dXJpPXJ0c3A6Ly9sb2NhbGhvc3Q6NTU0NC92b2QvbXA0LmJ1bm55Lm1wNCBsb2NhbFN0cmVhbU5hbWU9YnVubnkga2VlcEFsaXZlPTEgZm9yY2VUY3A9MQ==
    ```
 
-3. The corresponding request in HTTP format would be:
+3. 	これをHTTPフォーマットでリクエストする場合は以下のようになります
 
    ```
    http://localhost:7777/pullstream?params= dXJpPXJ0c3A6Ly9sb2NhbGhvc3Q6NTU0NC92b2QvbXA0LmJ1bm55Lm1wNCBsb2NhbFN0cmVhbU5hbWU9YnVubnkga2VlcEFsaXZlPTEgZm9yY2VUY3A9MQ==
@@ -195,14 +208,19 @@ pullStream uri=rtsp://localhost:5544/vod/mp4.bunny.mp4 localStreamName=bunny kee
 
 - **Base64**
 
-A group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. There are available base64 encoders online to get the encoded result.
+radix–64形式でバイナリーデータを ASCII文字列フォーマットで表現するバイナリーテキストエンコードスキームのひとつです。base64エンコードはオンラインにあるエンコーダを使用することもできます。
 
-- **PHP and JavaScript**
+- **PHPおよびJavaScript**
 
-PHP and JavaScript functions are also provided. These functions simply wrap the HTTP interface calls and can be found in the EMS Web UI directory.
+PHPおよびJavaScript関数を使うこともできます。これらの関数はHTTPインターフェースコールをwrappingしたものでEMS Web UIディレクトリで見出すことができます。
 
-- **Securing the API**
+- **APIのセキュリティ**
 
-By default, the ASCII API is protected, and access from any outside computer is prohibited. This can of course be modified within the config.lua file, but keeping this restriction is recommended for maintaining server security.
+ASCII APIはデフォルトで保護されており、外部コンピューターからのアクセスはできないようになっており、config.lua設定ファイルを編集することでこれを変更することもできますが、サーバーセキュリティを維持する観点から変更なさらないことを推奨します。
 
-The HTTP based API is also restricted by default to only local access. However, unlike the ASCII API interface, there are often good reasons to expose the HTTP API. To secure the HTTP based API in this case, you will enable Proxy Authentication on the EWS (details found in the EWS section of this doc). This will enforce that a valid username and password be provided for each and every API call made, ensuring on authorized access to the EMS API.
+HTTPベースのAPIもデフォルトで保護されており、外部からのアクセスはできませんが、HTTP APIを外部アクセス許可とすることで便利なこともあります。この場 合セキュリティを確保するには別途EWSのProxy Authenticationを有効化することができます。これによりAPIコール毎にユーザ認証が必要となるため、EMS APIへの アクセスは認証されたアクセスのみとすることができます。
+
+イベント通知の設定と受信について
+
+EMSではランタイムで発生したイベントを通知することができます。これらのイベントはHTTPコールでフォーマットされて、必要なアドレスやポートに送ることが できます。
+デフォルトでイベント通知機能は有効となっており、EMSインストールによって提供されたローカルwebサービスに対してイベントを送る設定となっています。Web サービスはデフォルトでは無効状態になっていますので、イベントが通知されてきても何もアクションはとりません。webサービスの有効化その他については EvoStream Web Serviceをご参照ください。

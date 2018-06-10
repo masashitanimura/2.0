@@ -11,35 +11,36 @@ toc: true
 
 ## Facebook Live
 
-This will try to push a local stream to Facebook Live using port  80. Below are the steps on how to push a stream to Facebook:
+ローカルストリームをport80を使用してFaceBook liveにプッシュする手順は以下のとおりです：
 
 
 
-1. **Log in** to your Facebook account if not yet logged in
 
-2. **Select a stream** to push to Facebook. Note that a list active streams will be listed under the selections
+1. Facebookアカウントに**Log in**します
+
+2. Facebookにプッシュするストリームを選択してください。アクティブなストリームがリスト表示されます
 
    ![](images/userguide/FB_choosestream.JPG)
 
-3. **Enter a description** for the stream to be pushed
+3. プッシュしたいストリームの**description** を入力してください
 
    ![](images/userguide/FB_adddescription.JPG)
 
-4. **Choose where to publish** the live stream. You have several options where to publish the stream:
+4. ライブストリームをどこに**publish**（公開）するかを選択してください。選択肢は:
 
-   - User Timeline: publishes the stream to the user's timeline
+   - ユーザーのタイムライン: ユーザーのタイムラインにストリームを公開する
 
-   - Page: publishes the stream to the selected page you manage
+   - ページ: 選択したページにストリームを公開する
 
-   - Event: publishes the stream to the selected  event you manage
+   - イベント: 選択イベントにストリームを公開する
 
-   - Group: publishes the stream to the selected  group you manage
+   - グループ: 選択グループにストリームを公開する
 
-     **Notes**: 
+     **Notes**:
 
-     - If you have multiple pages, events or groups, a list of pages, events or groups will display under the selected category
-     - You can only select one page, event and group
-     - You can only publish on the pages, events, groups you manage 
+     - 複数のページやイベント、グループから選択が可能です
+     - 選択できるのはひとつのページ、イベント、グループです
+     - 管理しているページやイベント、グループにのみ公開ができます
 
      ​
 
@@ -47,23 +48,22 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
    ​
 
-5. **Select the privacy setting** for the stream
+5. **プライバシー設定**
 
    ![](images/userguide/FB_privacy.JPG)
 
-   See Facebook's privacy settings [here](https://www.facebook.com/help/325807937506242/).
+   Facebookのプライバシー設定を参照 [here](https://www.facebook.com/help/325807937506242/).
 
    ​
 
-6. **Click Send Stream to Facebook Video** to publish the stream
+6. **Post to Facebook**ボタンをクリックして公開してください
 
    ![](images/userguide/FB_sendstream.JPG)
 
-   **Note:** In this example, a stream named **testStream** will be pushed in **Group A** page which will be seen by **Public**.
 
    ​
 
-7. **Check the page** where the stream is pushed
+7. プッシュされたストリームを確認します
 
    ![](images/userguide/FB_live.JPG)
 
@@ -71,52 +71,59 @@ This will try to push a local stream to Facebook Live using port  80. Below are 
 
 ## YouTube Live
 
-This will try to push a local stream to YouTube Live Stream using Events. Below are the steps on how to push a stream to YouTube:
+イベントを利用してローカルストリームをYouTubeライブにプッシュする手順は以下です:
 
-**Note:** The pushed stream can only use the RTMP
+**Note:** プッシュされるストリームはRTMPのみ使用可能です
 
-**Pre-requisite:**
+**事前準備:**
 
-- Enabled Live Streaming in YouTube account 
+- YouTubeアカウントでLiveストリーミングを有効にしてください
 
   ​
 
-1. **Log in** to your Google+ account if not yet logged in
+1. Google+アカウントに**ログイン**してください
 
-2. **Select a stream** to push to YouTube. Note that a list active streams will be listed under the selections
+2. YouTubeにプッシュする**ストリームを選択**してください。アクティブなストリームがリスト表示されます。
 
    ![](images/userguide/FB_choosestream.JPG)
 
-3. **Enter a Title and Description** for the stream to be pushed
+3. プッシュしたいストリームの**Titleおよびdescription** を入力してください
 
    ![](images/userguide/G+_titledesc.JPG)
 
-4. **Select the privacy setting** for the stream
+4. ストリームの**プライバシー設定を選択**してください
 
-   - **Public** - videos and playlists can be seen by and shared with anyone
-   - **Private ** - videos and playlists can only be seen by you and the users you choose
-   - **Unlisted** -  videos and playlists can be seen and shared by anyone with the link
+   - **Public** - ビデオおよびプレイリストをだれでも閲覧できます
+   - **Private ** - ビデオおよびプレイリストをあなたおよび選択したユーザのみ閲覧できます
+   - **Unlisted** -  ビデオおよびプレイリストをリンクを知っていればだれでも閲覧できます
+
 
    ![](images/userguide/FB_privacy.JPG)
 
-   See YouTube's privacy settings [here](https://support.google.com/youtube/answer/157177?co=GENIE.Platform%3DDesktop&hl=en).
+   YouTubeのプライバシー設定について [here](https://support.google.com/youtube/answer/157177?co=GENIE.Platform%3DDesktop&hl=en).
 
    ​
 
-5. **Choose the stream format** of the stream
+5. ストリームの**フォーマットを選択**してください
 
    ![](images/userguide/G+_vidformat.JPG)
 
-   **Note:** The video format should be the same or lesser than the stream format or else the stream published will fail to play
+   **Note:** ビデオフォーマットはストリームフォーマットと同一または低位の設定にする必要があります
 
    ​
 
-6. **Click Send Stream to YouTube** to publish the stream
+6. **Send Stream to YouTube**ボタンをクリックしストリームを公開します
 
    ![](images/userguide/G+_sendstream.JPG)
 
-   **Note:** In this example, a stream named **testStream** will be pushed to YouTube which will be viewed by **Publicly**.
 
    ​
 
-7. **Check your YouTube channel** where the stream is pushed
+7. プッシュされたストリームを確認します
+
+
+
+## Notes:
+
+- ProfileページでFacebookおよびGoogle+アカウントをアンリンクできます
+- UI上でアカウントをアンリンクしても、Facebookアカウント内のEMS Web UIエントリは削除されません、Facebook設定で修正してください

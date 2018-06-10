@@ -8,12 +8,12 @@ toc: false
 ---
 
 
+認証設定がtrueの場合、ストリーミングが開始される前にusers.luaで設定された認証が行われます
 
-The configuration for the authentication. If true, the authentication declared in users.lua will be read before the streaming starts.
 
 ```
 <?xml version="1.0" ?>
 <BOOL name="">true</BOOL>
 ```
 
-See [users.lua](userguide_users.html).
+ [users.lua](userguide_users.html)を見る

@@ -3,17 +3,18 @@ title: Push a Stream
 keywords: pushstream
 sidebar: userguide_sidebar
 permalink: userguide_pushstream.html
-folder: userguide 
+folder: userguide
 toc: true
 ---
 
-Steps on how to do the actual stream push needs to be consulted with the stream source, as every system has different ways of accomplishing this.
+ソースストリームによってストリームをプッシュする手順は異なります。
 
-## How To
 
-Below are the examples of how to push a stream in different formats:
+## プッシュの手順
 
-### RTMP stream
+それぞれのフォーマットについてストリームをプッシュする手順の例を以下に記述します stream in different formats:
+
+### RTMP ストリーム
 
 ```
 pushStream uri=rtmp://DestinationAddress localStreamName=SomeLocalStreamName
@@ -21,7 +22,7 @@ pushStream uri=rtmp://DestinationAddress localStreamName=SomeLocalStreamName
 
 
 
-### RTSP stream
+### RTSP ストリーム
 
 ```
 pushStream uri=rtsp://DestinationAddress:port localStreamName=SomeLocalStreamName
@@ -29,17 +30,17 @@ pushStream uri=rtsp://DestinationAddress:port localStreamName=SomeLocalStreamNam
 
 
 
-### MPEG-TS stream
+### MPEG-TS ストリーム
 
-MPEG-TS streams, in general, don't have the concept of a stream identifier (name). The EMS will assign a name to an inbound MPEG-TS stream for internal uses, but outside of the EMS, that name is not used. To obtain an MPEG-TS stream from the EMS, it must be first pushed out to the network.
+MPEG-TS ストリームには一般的にストリームid(名前)の概念がありません。EMSは内部用にインバウンドMPEG-TSに名前を割り当てますが、外部ではこの名前は使用されません。MPEG-TSストリームをEMSから取得するにはEMSからネットワークにプッシュされる必要があります。
 
-Sample commands to do this are:
+コマンド例を以下に示します:
 
 ```
 pushStream uri=mpegtsudp://DestinationAddr localStreamName=SomeLocalStream
 ```
 
-or
+または
 
 ```
 pushStream uri=mpegtstcp://DestinationAddr localStreamName=SomeStream
@@ -48,15 +49,15 @@ pushStream uri=mpegtstcp://DestinationAddr localStreamName=SomeStream
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
 **API Call:**
 
 ```
-pushStream uri=rtmp://192.168.2.105/live localStreamName=testpullstream targetStreamName=testpushstream 
+pushStream uri=rtmp://192.168.2.105/live localStreamName=testpullstream targetStreamName=testpushstream
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -77,21 +78,21 @@ Local stream testpullstream enqueued for pushing to rtmp://192.168.2.105/live as
 
 
 
-## Playing a Pushed Steam
+## プッシュされたストリームの再生
 
-Playing a pushed stream is similar in playing a pulled stream. 
+プッシュされたストリームの再生はプルされたストリームの再生と似ています
 
-The basic commands in playing a pushed stream in EMS are the following:
+EMSにプッシュされたストリームを再生する基本コマンド:
 
 - **RTMP**
 
-  The format of the RTMP URI is as follows:
+  RTMP URIフォーマット:
 
   ```
   rtmp[t|s]://[username[:password]@]ip[:port]/<appName>/<stream_name>
   ```
 
-  As an example, to play an RTMP stream, use the following URI in the Flash enabled player:
+  RTMPストリームの再生をFlashプレーヤー行うには下記のURIを使用します:
 
   ```
   rtmp://<EMS_IP_ADDRESS>/live/localStreamName
@@ -99,7 +100,7 @@ The basic commands in playing a pushed stream in EMS are the following:
 
 - **RTMP**
 
-  The format of the RTSP URI is as follows:
+  RTSP URIフォーマットでは次のようになります:
 
   ```
   rtsp://[username[:password]@]ip[:port]/[ts|vod|vodts]/<stream_name or MP4 file name>
@@ -107,19 +108,19 @@ The basic commands in playing a pushed stream in EMS are the following:
 
   **Note:**
 
-  The command is very similar to RTMP, except for the absence of the “appName” field.
+  コマンドは"appName"フィールドが無いことを除きRTMPと同じです
 
-  As an example, to play an RTSP stream, the following URI in an RTSP enabled player can be used:
+  RTSPストリームをRTSP再生可能なプレーヤーで再生するには下記のようなURIを使います。
 
   ```
   rtsp://<EMS_IP_ADDRESS>:5544/localStreamName
   ```
 
-  By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
+  EMSはデフォルトでvideo/audioペイロードデータをRTP経由で送ります。MPEG-TSにしたい場合はリクエストURIで指定してください：
 
 ------
 
-## Related Links:
+## 関連リンク:
 
 - [pushStream API](api_pushStream.html)
 - [Send Stream To Facebook](userguide_send.html#facebook-live)

@@ -7,7 +7,8 @@ folder: userguide
 toc: false
 ---
 
-The private key used for security authentication.
+セキュリティ認証に使用されるプライベートキー
+
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -21,4 +22,4 @@ GVOnuh7pX19wgj2VZv2Mz4HvKggPvXlS/WKtPFYsqsw=
 -----END RSA PRIVATE KEY-----
 ```
 
-**Note:** Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
+**Note:** EMS用に証明書とキーを生成するスクリプトについては [ここ](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) を参照してください。

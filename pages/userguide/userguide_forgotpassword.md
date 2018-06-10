@@ -9,26 +9,23 @@ toc: false
 
 
 
-If you forgot your password, you can reset your password by following these steps:
+パスワードを忘れてしまった場合、下記の手順でパスワードリセットを行うことができます：
 
-1. click **Forgot password** in the Log in Page.
+1. ログインページで **Forgot password**をクリックしてください
 
 ![](images/userguide/forgotpassword.jpg)
 
 
-2. Enter the **email address** used in Signing in.
+2. **メールアドレス** を入力してください
 
 ![](images/userguide/resetpassword.jpg)
 
 
-3. Enter the new password, click on **Save New Password**.
+3. 新規パスワードを入力し、**Save New Password**をクリックしてください
 
 ![](images/userguide/savenewpassword.JPG)
 
 
-4. Your password has been updated!
+4. パスワードが更新されました
 
 ![](images/userguide/resetsuccess.JPG)
-
-
-

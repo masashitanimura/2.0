@@ -7,46 +7,42 @@ folder: userguide
 toc: true
 ---
 
-Create an MSS (Microsoft Smooth Streaming). From Microsoft, "If the Internet bandwidth and video rendering capability on your playback device are sufficiently high, you'll experience high-definition video playback of the sample content. You will also be able to simulate end user experiences under varying conditions by simulating drops and recoveries in bandwidth." See [more](https://www.iis.net/media/experiencesmoothstreaming).
+MSS (Microsoft Smooth Streaming)を生成します。再生デバイスで十分ネットの帯域およびビデオレンダリング機能が得られる場合、サンプルコンテンツのHDビデオ再生が可能で、さまざまな条件下でのユーザーエクスペリエンスをシュミレートすることができます。くわしくは [詳細](https://www.iis.net/media/experiencesmoothstreaming)
 
 
 
-## How To
+## 手順
 
-### Single Stream
+### シングルストリーム
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 createMSSStream localstreamnames=<localstreamname> bandwidths=<bandwidth> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=C:\EvoStream\evo-webroot groupname=myMSSGroup
   ```
 
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=/var/evo-webroot groupname=myMSSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=/path_to_evo-webroot groupname=myMSSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createMSSStream localstreamnames=myStream bandwidths=51265536 targetfolder=../evo-webroot groupname=myMSSGroup
-```
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
-The created files will automatically save in the `targetFolder` path.
 
 ```
 evo-webroot:                            --> targetfolder
@@ -67,39 +63,35 @@ myMSSGroup                              --> groupname
 
 ### Multiple Stream
 
-To use multiple `localStreamNames` using one **createMSSStream** command do the following:
+ **createMSSStream**コマンドをつかって複数の`localStreamNames`を生成する手順を次に示します:
 
-**General Format:**
+
+**一般的なフォーマット:**
 
 ```
 createMSSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstreamnameX> bandwidths=<bandwidth1,bandwidth2,bandwidthX> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=C:\EvoStream\evo-webroot groupname=myMSSGroup
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/var/evo-webroot groupname=myMSSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/path_to_evo-webroot groupname=myMSSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createMSSStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=myHDSGroup
-```
-
-The created files will automatically save in the `targetFolder` path.
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
 ```
 evo-webroot:                           --> targetfolder
@@ -123,15 +115,15 @@ myMSSGroup                             --> groupname
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
-**API Call:**
+**サンプル API コール:**
 
 ```
 createMSSStream localstreamnames=testpullstream,testpullstream bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=mss playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI レスポンス:**
 
 ```
 Command entered successfully!
@@ -142,31 +134,31 @@ MSS stream created
       -- testpullStream
     manifestName: manifest.ismc
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
 
 ## Playing an MSS Manifest File
 
-The corresponding link to play this stream would then be:
+ストリームを再生するのは次の手順です:
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 http://<EMS_IP_Address:<Web_Server_Port>/<MSS_groupname>/<manifest_filename>
 ```
 
-**Sample URL:**
+**サンプル URL:**
 
-- **Single Stream**
+- **シングルストリーム**
 
   ```
   http://192.168.2.34:8888/myMSSGroup/manifest.ismc
   ```
 
 
-- **Multiple Stream**
+- **複数のストリーム**
 
   ```
   http://192.168.2.34:8888/myMSSGroup/myStream1/manifest.ismc
@@ -186,19 +178,20 @@ The player will now automatically play the stream once the MSS manifest is read.
 
 ## Automatic MSS
 
-The EMS can be configured to automatically create an MSS stream for every new inbound stream. The details for the MSS creation are placed in the config.lua file instead of as parameters to the `createMSSStream` API call.
+EMSは新規インバウンドストリームに対して自動的にMSSストリームを生成するよう設定することができます
+詳細はconfig.luaファイルに記述され、`createMSSStream`APIコールでのパラメータ設定は不要です。
 
 ```
 autoMSS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
-
 ```
 
-To enable automatic MSS a section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+`config.lua`ファイルを編集については  [詳細](userguide_config.html#autoDASH/HLS/HDS/MSS)をご参照ください。
+
 
 ------
 
-- [createMSSStream API](api_createMSSStream.html) 
+- [createMSSStream API](api_createMSSStream.html)
 - [Adding HTTP Streams](userguide_add.html#adding-http-streams)

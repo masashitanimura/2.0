@@ -7,27 +7,32 @@ folder: userguide
 toc: false
 ---
 
-Defines the IP address that will be blocked by EMS. If a blacklist is specified, access will only be granted to IP address does **NOT APPEAR** on the blacklist.
+EMSによりブロックされるIPアドレスの定義を行えます。ブラックリストが設定されている場合、ブラックリストに記述されたIPアドレスからのアクセスを拒否します。
 
-**Implementation:** 
 
-| Blacklist | Whitelist | Allowed IPs                            |
+
+**実装:**
+
+| ブラックリスト | ホワイトリスト | 許可される IP                            |
 | :-------: | :-------: | -------------------------------------- |
-|   empty   |   empty   | all IPs are allowed                    |
-|  x.x.x.x  |   empty   | all IPs are allowed except for x.x.x.x |
-|   empty   |  y.y.y.y  | only y.y.y.y is allowed                |
-|  x.x.x.x  |  y.y.y.y  | only y.y.y.y is allowed                |
-|  no file  |  y.y.y.y  | only y.y.y.y is allowed                |
-|  x.x.x.x  |  no file  | all IPs are allowed except for x.x.x.x |
-|  no file  |  no file  | error                                  |
+|   空白   |   空白   | すべてのIPが許可されます                    |
+|  x.x.x.x  |   空白   | x.x.x.x以外のIPが許可されます |
+|   空白   |  y.y.y.y  | y.y.y.yのみ許可されます                |
+|  x.x.x.x  |  y.y.y.y  | y.y.y.yのみ許可されます              |
+|  ファイルなし  |  y.y.y.y  | y.y.y.yのみ許可されます                     |
+|  x.x.x.x  |  ファイルなし  | x.x.x.x以外のIPが許可されます |
+|  ファイルなし  |  ファイルなし  | エラーとなります                                  |
 
-**Notes:**
+------
 
-- `enableIPFilter` should be set to `true` in webconfig.lua to be able to read the blacklist file
+##Notes:
 
-- `blacklistFile` code should not be commented to be able to honor the list of blacklisted IP address
+- ブラックリストファイルを読み込むにはwebconfig.luaで`enableIPFilter`は`true`に設定されている必要があります。
 
-  *Entry in config.lua:*
+
+- ブラックリストIPアドレスリストを有効にするためには`blacklistFile`コードはコメントしないようにしてください
+
+  *config.lua内の記述:*
 
   ```
     enableIPFilter=true,
@@ -35,13 +40,12 @@ Defines the IP address that will be blocked by EMS. If a blacklist is specified,
     blacklistFile="..\\config\\blacklist.txt",
   ```
 
-- If IP address is both on whitelist and blacklist file, EMS will treat the IP address as blacklisted
-
+- もしも特定のIPアドレスがホワイトリストとブラックリストの両方に存在する場合は、ブラックリストにあるものとして判定されます。
 
 
 ------
 
-## Related LInks
+## 関連リンク
 
 - [whitelist.txt](userguide_whitelist.html)
 - [Blacklisting](userguide_blacklisting.html)

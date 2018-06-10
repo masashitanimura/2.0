@@ -7,11 +7,11 @@ folder: userguide
 toc: false
 ---
 
-EMS can now support IP version 6!
+EMSはIPv6をサポートしています
 
-Simply change the IP address binding in config.lua and webconfig .lua to a v6 IP address format, restart EMS then you can now use IPv6!
+config.luaおよびwebconfig.luaでIPアドレスバインドをv6 IPアドレスフォーマットに変更し、EMSを再起動してください。
 
-*Sample changes:*
+*変更例:*
 
 ```
 -- RTMP and clustering
@@ -36,8 +36,8 @@ Simply change the IP address binding in config.lua and webconfig .lua to a v6 IP
 
 **Notes:**
 
-- Replace **127.0.0.1** to **::**
-- Use **[ipv6:port]** when using ipv6 in URLs 
-- EMS resolves address "**localhost**" into "**127.0.0.1**" 
-- If an EMS services is bound to a v6 address,  your command should also use v6
-- When performing a `pullStream` command on a v6 address please ensure that there is a service bound to a corresponding v6 address
+- **127.0.0.1** を **::**に変更してください
+- URLにipv6を使う場合は **[ipv6:port]**と記述してください
+- EMSは"**localhost**"を"**127.0.0.1**"と名前解決します
+- EMSサービスがv6アドレスにバインドされいている場合はコマンドもv6を使用してください
+- `pullStream`コマンドをv6アドレスで実行する際は、サービスがv6アドレスにバインドされていることを確認してください

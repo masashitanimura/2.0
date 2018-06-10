@@ -7,29 +7,30 @@ folder: userguide
 toc: false
 ---
 
-To access the EMS Web UI, a user should have a local account, or a Facebook account, or a Google+ account. You have the option to create a local account using your **email address** or, just log in via **Facebook** account or **Google+** account. 
+EMS Web UIへアクセスするにはユーザーはローカルアカウント、またはFacebook、またはGoogle+アカウントが必要です。**メールアドレス** をつかってローカルアカウントの作成ができます。
 
-To proceed with creating an account, go in this URL: `<EMSIPaddress>:4100`
+
+次のURLからアカウント作成ができます。URL:`<EMSIPaddress>:4100`
 
 ![](images/userguide/signup.JPG)
 
 
 
-## Create Local Account
+## ローカルアカウントの作成
 
-To add a local account using an email address:
+メールアドレスを使用してローカルアカウントを追加する
 
-1. Enter the **email address** and **password** to be used
+1. **メールアドレス**および**password**を入力してください
 
    ![](images/userguide/email.JPG)
 
-2. Click **Create Account**
+2. **Create Account**をクリックしてください
 
    ![](images/userguide/accountcreationsuccess.JPG)
 
 
 
-**Notes:** 
+**Notes:**
 
-- Only one local account can be created. 
-- If you want to change the email registered, you need to delete the **user.json** file in `node_modules\ems_web_ui\data`. This will remove the registered email and linked social media accounts in use.
+- ローカルアカウントは一つのみ作成できます
+- 登録したメールアドレスを変更したい場合は、`node_modules\ems_web_ui\data`以下の**user.json**を削除してください。登録されたメールアドレスおよびソーシャルメディアアカウント情報が削除されます。

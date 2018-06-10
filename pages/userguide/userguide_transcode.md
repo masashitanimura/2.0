@@ -7,39 +7,41 @@ folder: userguide
 toc: true
 ---
 
-The EMS is packaged with a software encoder which provides a wide variety of additional functionality to the EMS. EvoStream has chosen  LibAV’s AVConv encoder to be distributed, unmodified, along with the EMS. Source code for AVConv can be found at [http://libav.org/download.html](http://libav.org/download.html). EvoStream complies fully with the GPL in relation to the distribution of AVConv.
+EMSはさまざまな機能をもつソフトウェアエンコーダーもパッケージの中に持っており、LibAVのAVConvエンコーダーが選択されています。AVConvのソースコードは[http://libav.org/download.html](http://libav.org/download.html)から取得できます。EvoStreamはGPLに基づいてAVConvをコンパイルおよび配布しています。
 
-**The EMS can be easily configured to use ANY software encoder. If a different software encoder is desired, the integration requires only a change to a script, something that can be done on-demand.**
+**EMSは異なるソフトウェアエンコーダーを使うように設定でき、スクリプトによりオンデマンド変更することができます**
 
-Transcoding is an inherently complicated process, given the huge variety of options available for compressing audio and video. The EMS provides a simple `transcode` API which makes the entire process very easy.
+トランスコードはビデオやオーディオの圧縮に非常に多くのオプションが絡む複雑なプロセスですが、EMSでは`transcode` APIコールひとつですべてのプロセスを実行できます。
+
 
 **Note:**
 
-Transcoding requires **SIGNIFICANT** computing resources and will severely impact performance. A general conservative guideline is that to accomplish one transcoding job per CPU core for HD streams.
+トランスコードには大きなコンピュータリソースを必要とするプロセスで、パフォーマンスに大きな影響を及ぼします。保守的なガイドラインとしては一つのHDストリームの処理にCPUコアひとつが必要です。
 
 
 
-## How To
+## 手順
 
-### Changing Stream Bitrates
+### ストリームのビットレート変換
 
-A common use case for transcoding involves the “translating”(down-scaling) of an HD stream into lower bitrates to support Adaptive Streaming protocols and smaller clients like Android and iOS devices.
+トランスコードのよくあるケースとして、Adaptive Streamingプロトコルをサポートしたり、AndroidやiOSデバイス向けの対応のためのHDストリームの低いビットレートへの“translating”(ダウンスケーリング)があります。
 
-The simplest way to accomplish this is to bring the original HD stream into the EMS. You can then issue a command similar to the following to create multiple streams with lower bitrates:
+EMSにオリジナルのHDストリームを入力し、次のようなコマンドで複数の低ビットレートストリームを生成することができます。
 
-**Format:**
+
+**フォーマット:**
 
 ```
 transcode source=rtmp://<stream_source> groupName=<groupName> videoBitrates=<bitrate> destinations=<destinationName>
 ```
 
-**Sample API Call:**
+**サンプルAPIコール:**
 
 ```
 transcode source=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 groupName=group1 videoBitrates=100k,200k,300k destinations=stream100,stream200,stream300
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -79,11 +81,12 @@ Transcoding successfully started.
       -- na
 ```
 
-This command takes the **Source1** stream and creates 3 new streams within the EMS. **stream100** has a bit rate of 100kbps, **stream200** has a bit rate of 200kbps and **stream300** has a bit rate of 300kbps. You can check the created streams by sending `listStreams`.
+上記コマンドは **Source1**ストリームから３つの新規ストリームを生成します。**stream100**は100kbps、**stream200**は200kbps、**stream300**は300kbpsのビットレートです。`listStreams`コマンドで生成されたストリームを確認できます。
 
-You can then take each of those final streams and access them directly (IE: via RTMP or RTSP), or you can create an HLS group out of them to create an adaptive bitrate stream for iOS devices:
+これらのストリームに直接アクセス（RTMPやRTSPで）したり、HLSグループを生成しiOSデバイス向けのadaptive bitrateストリームをつくることができます。
 
-**Creating HLS from Transcoded Stream:**
+
+**トランスコードしたストリームからHLSを生成する:**
 
 ```
 createhlsstream localstreamnames=stream100,stream200,stream300 targetfolder=/mywebroot/hls groupname=MyGroup playlisttype=rolling playlistLength=10 chunkLength=20
@@ -91,23 +94,24 @@ createhlsstream localstreamnames=stream100,stream200,stream300 targetfolder=/myw
 
 
 
-### Using Different Codecs
+### 別コーデックに変換
 
-The EMS requires streams to be of type H.264/AAC, but that may not be the format your stream source is in. The EMS Transcoder can be used to convert your source stream into H.264/AAC:
+EMSは通常H.264/AACを必要としますが、ストリームソースがこれ以外の場合にEMS Transcoderを用いてH.264/AACに変換することができます:
 
-**Format:**
+
+**フォーマット:**
 
 ```
 transcode source=<stream_source>/localStreamName groupName=<groupName> videoBitrates=<bitrate> audioBitrates=<bitrate> destinations=<destinationName>
 ```
 
-**Sample API Call:**
+**サンプルAPIコール:**
 
 ```
 transcode source=rtsp://IpOfStreamSource:554/myStream groupName=group1 videoBitrates=5000k audioBitrates=800k destinations=myTranscodedStream
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -135,27 +139,28 @@ Transcoding successfully started.
       -- na
 ```
 
-This command pulls the source stream from its RTSP source directly, transcodes it, and passes it to the EMS as the `destinationName`. The `videoBitrates` parameter **must** be specified when transcoding the video codec. The `audioBitrates` parameter must be specified when transcoding the audio codec. If either the audio or video does not need to be transcoded, that parameter may be skipped. Here it is assumed that the source stream has a video bit rate of around 5Mbps and audio bitrate of around 800kbps.
+上記コマンドはソースストリームをRTSPソースから直接プルし、トランスコードして`destinationName`に送り込みます。`videoBitrates`パラメータは必須設定パラメータです。`audioBitrates`パラメータはオーディオのトランスコードが必要な場合は必須設定パラメータです。オーディオもビデオもトランスコードの必要が無い場合はこれらのパラメータは無視されます。ソースストリームはビデオビットレート5Mbps、オーディオビットレート800kbpsが想定されています。
 
 
 
-### Use files as input and/or output:
 
-This will change your input stream to an output file, or an input file to an output file.
+### ファイルを入出力に使用する:
 
-**Format:**
+入力ストリームをファイルに出力、またはファイル入力をファイル出力とする手順です
+
+**フォーマット:**
 
 ```
 transcode source=file://path_to_sourceFile groupName=group videoBitrates=<bitrate> audioBitrates=<bitrate> destinations=file://path_to_outputFile
 ```
 
-**Sample API Call:**
+**サンプルAPIコール:**
 
 ```
 transcode source=file://C:\EvoStream\media\bunny.mp4 groupName=group1 videoBitrates=100k audioBitrates=copy destinations=file://C:\EvoStream\media\transcoded.mp4 keepAlive=0
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -185,23 +190,27 @@ Transcoding successfully started.
 
 
 
-### Video Overlays - Watermarking
+### ビデオオーバーレイ - 透かし(Watermarking)
 
-The EMS Transcoder may be used to generate overlays on top of your videos. PNG or JPEG images with alpha layers (transparency) should be used. **The image must be at the same or smaller resolution (height and width) of the video you are overlaying**. The overlay file will be placed at the top-left corner of the video. To create the overlay, simply issue the following command:
+EMS Transcoderはビデオオーバーレイを生成することができます。アルファ付きのPNGやJPEGファイルを用意する必要があります。
+ **静止画はビデオと同一解像度かそれ以下のものを用意する必要があります**。オーバーレイは左上隅を起点として配置されます。
+ オーバーレイを生成するには以下のコマンドで行います:
 
-**Format:**
+
+
+**フォーマット:**
 
 ```
 transcode source=<localStreamName> groupName=<groupName> overlays0=<path/to/image.ext> destinations=destinationName
 ```
 
-**Sample API Call:**
+**サンプルAPIコール:**
 
 ```
 transcode source=myStream groupName=group1 overlays=/path/to/evologo.jpg destinations=OverlayedStream
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -231,23 +240,23 @@ Transcoding successfully started.
 
 
 
-### Cropping
+### クロップ
 
-In some cases, you may want to crop a video and focus on just a portion of the video. The EMS Transcoder supports video cropping.
+EMS Transcoderはビデオクロッピングに対応しています。
 
-**Format:**
+**フォーマット:**
 
 ```
 transcode source=<localStreamName> groupName=<groupName> croppings=<horizontalPosition:verticalPosition:width:height> destinations=destinationName
 ```
 
-**Sample API:**
+**サンプル API:**
 
 ```
 transcode source=myStream groupName=group1 croppings=0:0:50:50 destinations=CroppedStream
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -276,11 +285,11 @@ Transcoding successfully started.
 
 ```
 
-This creates a resultant stream containing only a square 50px by 50px from the top right corner of the video. The format for the `croppings` parameter horizontalPosition:verticalPosition:width:height where horizontalPosition=0 at leftmost pixel, verticalPosition=0 at uppermost pixel.
+上記は右上起点で50px X 50pxの正方形にビデオがクロップされます。`croppings`パラメータの書式はhorizontalPosition:verticalPosition:width:heightで表され、horizontalPosition=0は左端ピクセルを意味し、verticalPosition=0は上端ピクセルを意味します
 
 
 
-### Force TCP for inbound RTSP
+### インバウンドRTSPにTCPを強制する
 
 ```
 transcode source=rtmp://<RTMP server>/live/streamname groupName=group videoBitrates=copy videoSizes=360x200 $EMS_RTSP_TRANSPORT=tcp
@@ -288,64 +297,65 @@ transcode source=rtmp://<RTMP server>/live/streamname groupName=group videoBitra
 
 
 
-## Stopping Transcoding Process(es)
+## トランスコードプロセスを中止する
 
-You need to Issue a `removeconfig` API to stop the transcoding. 
+`removeconfig` APIを実行しトランスコードを中止できます
 
-**Format:**
+**フォーマット:**
 
 ```
 removeConfig groupName=<groupName>
 ```
 
-**Sample API Call:**
+**サンプルAPIコール:**
 
 ```
 removeConfig groupName=group1
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
 Configuration terminated
 ```
 
-All transcoding processes under **group1** will be removed.
+**group1**内のすべてのトランスコードプロセスが削除されます
 
 
 
-## Enable Transcode Logs
+## Transcode Logsの有効化
 
-The `transcode` command calls the emsTranscoder.sh. The logs will help you determine the root cause of the `transcode` issue. You can enable the `transcode` logs by doing the following:
+`transcode` コマンドはemsTranscoder.shを呼び出します。トランスコード関連の問題の原因を追求するには以下の手順でログを有効化してください:
 
-1. Enable `transcode` logs by removing the comment
+1. コメントを外し`transcode`ログを有効化する
 
-   **in Windows: emsTranscoder.bat**
+   **ウインドウズでは: emsTranscoder.bat**
 
    ```
    rem echo %TRANSCODER_BIN% %TRANSCODE%   //remove rem
    ```
 
-   **in Linux: emsTranscoder.sh**
+   **Linuxでは: emsTranscoder.sh**
 
    ```
    #echo "$TRANSCODER_BIN $TRANSCODE"     //remove #
    ```
 
-2. Run EMS Console, do the `transcode` command,  it will also print to the screen the evo-avconv command that it is executing
+2. EMSコンソールで, `transcode`コマンドを実行し、evo-avconvコマンド実行状況を確認します
 
-3. Copy the evo-avconv result
 
-   **Sample log:**
+3. evo-avconv 実行結果をコピーします
+
+   **サンプル log:**
 
    ```
    evo-avconv -y -i rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 -b:v 100K -c:v libx264 -c:a copy -metadata streamName=testTransDest rtmp://192.168.2.35/live/testTransDest
    ```
 
-4. Paste the evo-avconv result in new console (locate in evo-avconv executable)
+4. evo-avconv実行結果を新規コンソールでペーストします  (locate in evo-avconv executable)
 
-   **Sample log:**
+   **サンプル log:**
 
    ```
    C:\EvoStream>evo-avconv -y -i rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 -b:v 10
@@ -371,4 +381,3 @@ The `transcode` command calls the emsTranscoder.sh. The logs will help you deter
        Stream #0.1: Audio: aac, 44100 Hz, stereo, fltp
    Unable to find a suitable output format for 'rtmp://192.168.2.35/live/testTransDest'
    ```
-

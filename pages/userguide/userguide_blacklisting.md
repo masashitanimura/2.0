@@ -6,13 +6,13 @@ folder: userguide
 toc: false
 ---
 
-Blacklisting allows you to limit access to your EMS. This will affect anything that accesses the web port which is by default 8888. This feature works with the two configuration files which are the [blacklist.txt](userguide_blacklist.html) and [whitelist.txt](userguide_whitelist.html)
+ブラックリスト設定はEMSへのアクセスを制限するものです。制限はwebで使用されるポート（デフォルトは**8888**）へのアクセスに対して有効です。この機能は２つの設定ファイル（[blacklist.txt](userguide_blacklist.html) および [whitelist.txt](userguide_whitelist.html)）により構成されます
 
 
 
-## How To
+## 設定方法
 
-1. Check if blacklist and whitelist configration in webconfig.lua is enabled
+1. webconfig.lua内でblacklistおよびwhitelistの設定が有効化されているか
 
    ```
    enableIPFilter=true,
@@ -20,13 +20,13 @@ Blacklisting allows you to limit access to your EMS. This will affect anything t
    blacklistFile="..\\config\\blacklist.txt",
    ```
 
-   **Note**: `enableIPFilter` is false in default
+   **Note**: `enableIPFilter`はデフォルトでfalseに設定されています
 
    ​
 
-2. Add IP addresses to blacklist and whitelist text files
+2. blacklist および whitelistテキストファイルにIPアドレスを追記する
 
-   **Example:** 
+   **例:**
 
    ***blacklist.txt***
 
@@ -49,29 +49,33 @@ Blacklisting allows you to limit access to your EMS. This will affect anything t
    192.168.2.13
    ```
 
-3. Run EMS
+3. EMSを起動する
+
+   この例ではwhitelist.txtに記載のあるipアドレスからのアクセスのみEMSのwebサーバーポートにアクセスすることができ、その他のアドレスからのアクセスは制限されます。実装は以下の通りです。
 
 
+   **実装:**
 
-In this example, only IP addresses listed in the whitelist.txt will be granted access to the web server port of EMS, the rest are blacklisted. See the implementation below.
-
-**Implementation:**
-
-| Blacklist | Whitelist | Allowed IPs                            |
-| --------- | --------- | -------------------------------------- |
-| empty     | empty     | all IPs are allowed                    |
-| x.x.x.x   | empty     | all IPs are allowed except for x.x.x.x |
-| empty     | y.y.y.y   | only y.y.y.y is allowed                |
-| x.x.x.x   | y.y.y.y   | only y.y.y.y is allowed                |
-| no file   | y.y.y.y   | only y.y.y.y is allowed                |
-| x.x.x.x   | no file   | all IPs are allowed except for x.x.x.x |
-| no file   | no file   | error                                  |
-
+   | ブラックリスト | ホワイトリスト | 許可されるIP                           |
+   | :-------: | :-------: | -------------------------------------- |
+   |   空白   |   空白   | すべてのIPが許可されます                      |
+   |  x.x.x.x  |   空白    | x.x.x.x以外のIPが許可されます |
+   |   空白    |  y.y.y.y  | y.y.y.yのみ許可されます              |
+   |  x.x.x.x  |  y.y.y.y  | y.y.y.yのみ許可されます                |
+   |  ファイルなし  |  y.y.y.y  | y.y.y.yのみ許可されます                |
+   |  x.x.x.x  |  ファイルなし  | x.x.x.x以外のIPが許可されます |
+   |  ファイルなし  |  ファイルなし  | エラーとなります                                  |
 
 
 ------
 
-## Related Links
+## Notes
+
+- リストにIPv6を使用することも可能です
+
+------
+
+## 関連リンク
 
 - [blacklist.txt](userguide_blacklist.html)
 - [whitelist.txt](userguide_whitelist.html)

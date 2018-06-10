@@ -7,43 +7,54 @@ folder: userguide
 toc: false
 ---
 
-The VOD page is where you can access your streams in your EMS media folder. You can **play** or **delete** your VOD files here.
+VODページはEMSメディアフォルダ内のストリームにアクセスします。VODファイルの**再生** や **削除**が行えます。
 
 
 
-1. Select the server's media folder directory to be viewed
+
+1. サーバーのメディアフォルダをを選択してください
 
    ![](images/userguide/VOD_dir.JPG)
 
    ​
 
-   **Note:** All media folder declared in config.lua or added using [`addStorage`](api_addStorage.html) will be listed in the drop down list
+   **Note:** config.luaで指定したフォルダや [`addStorage`](api_addStorage.html)で指定したファルダ内のメディアがリスト表示されます
 
    ​
 
-2. The files will automatically listed in the table.
+2. ファイルは自動的にリスト表示されます
 
    ![](images/userguide/VOD_load.JPG)
 
    ​
 
-3. Select the **Action** you want to perform
+3. **Action**から下記のアクションを行えます
 
-   - ![](images/userguide/VOD_play.JPG)   **Play** - streams the VOD file from the media folder
-   - ![](images/userguide/VOD_delete.JPG)   **Delete** - deletes the VOD file in the media folder
-
+   - ![](images/userguide/VOD_play.JPG)   **再生** - メディアフォルダ内のVODファイルを再生します
+   - ![](images/userguide/VOD_delete.JPG)   **削除** - メディアフォルダ内のVODファイルを削除します
 
 
 
 
 ## Playing VOD
 
-Using the UI, you can stream your VOD in an instant. Just select on the list you want to play and click on the Play button
+UIをつかって、VODファイルをストリーム再生することができます。リストから選択し、Playボタンをクリックして再生できます
+
 
 ![](images/userguide/vod_playvod.JPG)
 
-**Notes:** 
+VODページで再生できるファイル:
 
-- A window will open in every play instance
-- You can only play mp4 and vod files
-- The player uses JSplayer version 5.8.8
+- MP4
+- TS
+- FLV
+- VOD  (.vod)  [generateLazyPull](api_generateLazyPullFile.html)で生成されたもの
+- Playlist files (.lst) [generateServerPlaylist](api_generateServerPlaylist.html)で生成されたもの
+
+------
+
+## Notes:
+
+- ブラウザでFlashを有効化してください
+- 再生インスタンスごとに新規ウインドウが開きます
+- JSplayer version 5.8.8が再生に使用されます　Firefoxは対応していませんので、代わりにChromeをご使用ください。

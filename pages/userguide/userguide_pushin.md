@@ -1,120 +1,135 @@
 ---
-title: Push In
-keywords: pushstream
+title: Push-in a Stream
+keywords: push-in
 sidebar: userguide_sidebar
-permalink: userguide_pushstream.html
-folder: userguide 
+permalink: userguide_pushin.html
+folder: userguide
 toc: true
 ---
 
-EMS is capable of receiving streams that are pushed to it from other servers. An RTMP listener is available on port **1935** , an RTSP listener on **5544** and a LiveFLV listener on port **6666**.
+EMSは外部サーバーからプッシュされたストリームを受けることができます。RTMPリスナーはポート**1935**で受け付けています。RTSPリスナーは**5544**、LiveFLVリスナーは**6666**です。
 
 
 
-## How To
+## 手順
 
-Steps on how to do the actual stream push needs to be consulted with the stream source, as every system has different ways of accomplishing this.
+ソースストリームによってプッシュ方法は異なります。
 
 
 
-## Push-In Authentication
+## Push-In認証
 
-For security, EMS has an option to require all streams which are pushed into the server be authenticated using authentication details that are specified in `config.lua` and `users.lua`. By default, the authentication configuration is disabled.
+セキュリティの観点からEMSは外部サーバーからプッシュされるストリームについて認証を必要とするよう設定ができます。認証設定は`config.lua`および`users.lua`に記述します。デフォルトでは認証設定は無効です。
 
-To enable authentication in the EMS the following should be set:
 
-1. Set [auth.xml]() to true
+下記の手順で認証機能を有効化します:
+
+**Note:**
+
+
+`../config`フォルダ以下のファイルを編集します
+
+1. `auth.xml`のブーリアン値をtrueにします
 
    ```
-   <BOOL name="">true</BOOL>
-   ```
-
-2. Remove comments (`--[[` .. `]]--`) and configure authentication in `config.lua`
+    <BOOL name="">true</BOOL>
 
    ```
-   authentication=
+
+2. `config.lua`のauthenticationの部分のコメント(`--[[` .. `]]--`) を外し、必要なパラメータを設定します
+
+   ```
+    --[[ //remove
+    authentication=
     {
-      rtmp=
-      {
-        type="adobe",
-        encoderAgents=
-      {
-        "FMLE/3.0 (compatible; FMSc/1.0)",
-        "Wirecast/FM 1.0 (compatible; FMSc/1.0)",
-        "EvoStream Media Server (www.evostream.com)"
-      },
-        usersFile="..\\config\\users.lua"
-      },
-      rtsp=
-      {
-        usersFile="..\\config\\users.lua",
-        authenticatePlay=true,
-      }
+   				rtmp=
+   				{
+   					type="adobe",
+   					encoderAgents=
+   					{
+   						"FMLE/3.0 (compatible; FMSc/1.0)",
+   						"Wirecast/FM 1.0 (compatible; FMSc/1.0)",
+   						"EvoStream Media Server (www.evostream.com)"
+   					},
+   					usersFile="/<path_to>/users.lua",
+   					--verifierUri="http://authserver/verifier.php",
+   					--token="secretstring",
+   				},
+   				rtsp=
+   				{
+   					usersFile="/<path_to>/users.lua",
+   					--authenticatePlay=false,
+   				},
+   				--ws=
+   				--{
+   				--	token="",
+   				--},
+    },  
+    ]]-- //remove
+   ```
+
+**認証パラメータ**
+
+| プロトコル |  パラメータ名  | 内容                              |
+| :------: | :--------------: | ---------------------------------------- |
+|   RTMP   |       type       | RTMPタイプ                           |
+|   \|\|   |  encoderAgents   | エンコーダーエージェント             |
+|   \|\|   |    usersFile     | users fileへのパス               |
+|   \|\|   |   verifierUri    | 外部URLベリファイヤ  200 OKという返り値は成功、その他は失敗です |
+|   \|\|   |      token       | セキュリティトークン              |
+|   RTSP   |    usersFile     | users fileへのパス               |
+|   \|\|   | authenticatePlay | trueに設定すると、ストリーム再生リクエストの際、ユーザ名およびパスワードを求めるプロンプトが表示されます |
+
+
+
+**users.luaでユーザー追加**
+
+authenticatePlayがtrueに設定されている場合に認証ウインドウが表示されユーザー名およびパスワードが求められますが、
+`users.lua`にユーザー名およびパスワードが設定されています。
+
+```
+users=
+{
+  USER_A="12345678",
+}
+realms=
+{
+  {
+    name="EVOSTREAM stream router",
+    method="Digest",
+    users={
+      "USER_A",
     },
-   ```
+  },
+}
 
-3. Add user in [users.lua]()
+```
 
-   ```
-   users=
-   {
-   	evo="evo123",
-   	stream="stream123",
-   }
+**Note:** 複数のユーザーを記述することができます
 
-   realms=
-   {
-   	{
-   		name="EVOSTREAM stream router",
-   		method="Digest",
-   		users={
-   			"evo",
-   			"stream",
-   		},
-   	},
-   }
-   ```
+```
+users=
+{
+  USER_A="12345678",
+  USER_B="87654321",
+}
+realms=
+{
+  {
+    name="EVOSTREAM stream router",
+    method="Digest",
+    users={
+      "USER_A",
+      "USER_B",
+    },
+  },
+}
+```
 
-4. Run EMS and send the `pushStream` command
+------
 
+## 関連リンク:
 
-
-## Playing a Pushed Steam
-
-Playing a pushed stream is similar in playing a pulled stream. 
-
-The basic commands in playing a pushed stream in EMS are the following:
-
-- **RTMP**
-
-  The format of the RTMP URI is as follows:
-
-  ```
-  rtmp[t|s]://[username[:password]@]ip[:port]/<appName>/<stream_name>
-  ```
-
-  As an example, to play an RTMP stream, use the following URI in the Flash enabled player:
-
-  ```
-  rtmp://<EMS_IP_ADDRESS>/live/localStreamName
-  ```
-
-- **RTMP**
-
-  The format of the RTSP URI is as follows:
-
-  ```
-  rtsp://[username[:password]@]ip[:port]/[ts|vod|vodts]/<stream_name or MP4 file name>
-  ```
-
-  **Note:**
-
-  The command is very similar to RTMP, except for the absence of the “appName” field.
-
-  As an example, to play an RTSP stream, the following URI in an RTSP enabled player can be used:
-
-  ```
-  rtsp://<EMS_IP_ADDRESS>:5544/localStreamName
-  ```
-
-  By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
+- [pushStream API](pushStream.html)
+- [Send Stream To Facebook](userguide_send.html#facebook-live)
+- [Send Stream To Youtube](userguide_send.html#youtube-live)

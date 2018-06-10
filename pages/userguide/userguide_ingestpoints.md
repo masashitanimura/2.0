@@ -7,7 +7,7 @@ folder: userguide
 toc: false
 ---
 
-The file where the ingest points are saved. This should be set to true when ingest point will be used.
+インジェストポイントの設定ファイルです。インジェストポイントを使用する場合はtrueに設定する必要があります。
 
 ```
 <?xml version="1.0" ?>
@@ -17,7 +17,7 @@ The file where the ingest points are saved. This should be set to true when inge
 
 
 
-If `hasIngestPoints` is set to true in config.lua and an ingest is ceated on API call, it will be listed in this file.
+config.luaで`hasIngestPoints`がtrueの場合、APIコールでインジェストが生成されます。
 
 **API call:**
 
@@ -39,7 +39,7 @@ createIngestPoint privateStreamName=theIngestPoint5 publicStreamName=Stream5
 
 ```
 <?xml version="1.0" ?>
-<MAP isArray="false" name="">
+<MAP isArray="true" name="">
     <STR name="theIngestPoint1">Stream1</STR>
     <STR name="theIngestPoint2">Stream2</STR>
     <STR name="theIngestPoint3">Stream3</STR>
@@ -47,3 +47,8 @@ createIngestPoint privateStreamName=theIngestPoint5 publicStreamName=Stream5
     <STR name="theIngestPoint5">Stream5</STR>
 </MAP>
 ```
+------
+
+## 関連リンク
+
+- [hasIngestPoints](userguide_configlua.html#hasingestpoints)

@@ -8,8 +8,8 @@ toc: false
 ---
 
 
+セキュリティ認証に使用される証明書
 
-The certificate used for security authentication.
 
 ```
 -----BEGIN CERTIFICATE-----
@@ -25,4 +25,4 @@ sjiyBNWZUq1pE3x0RnTpUA==
 -----END CERTIFICATE-----
 ```
 
-**Note:** Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files [here](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) for details.
+**Note:** EMS用に証明書とキーを生成するスクリプトについては [ここ](https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys) を参照してください。

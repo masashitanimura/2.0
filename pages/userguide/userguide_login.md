@@ -4,50 +4,36 @@ Keywords: Login
 sidebar: userguide_sidebar
 permalink: userguide_login.html
 folder: userguide
-toc: true
+toc: false
 ---
 
 
 
-You can log in to the EMS Web UI using the following:
+## ローカルアカウントでログイン
 
-- via created Local account
-- via Facebook account
-- via Google+  account
+G`<EMSIPaddress>:4100` を開くとWeb UIログインページにリダイレクトされます。
 
+1. 登録済みのメールアドレスとパスワードを入力してください
 
+2. Log Inをクリックしてください
 
-
-## Login Using Local Account
-
-If you already have your local account registered you will be redirected to login page when you go to `<EMSIPaddress>:4100`
-
-1. Enter the registered email address and password
-2. Click Log In
-
-![](images/userguide/locallogin.JPG)
+   ![](images/userguide/locallogin.JPG)
 
 
 
 
+------
 
-## Login Using Facebook
+## Note:
 
-1. Simply click on the **Log in with Facebook** link to log in
+- 登録したメールアドレスを変更したい場合は、`node_modules\ems_web_ui\data`以下の**user.json**を削除してください。登録されたメールアドレスおよびソーシャルメディアアカウント情報が削除されます。
 
-![](images/userguide/login_fb.jpg)
+- Facebook and Google+アカウントを使用してのログインはEMS 2.0.1で無効となりました。
 
-
-
-
-
-## Login Using Google+
-
-1. Simply click on the **Log in with Google+** link to log in
-
-![](images/userguide/login_g+.jpg)
+  ​
 
 
 
+## 関連リンク:
 
-
+- [Create Local Account](userguide_createaccount.html)

@@ -7,14 +7,14 @@ folder: userguide
 toc: false
 ---
 
-Defines the valid authentication the server will require when streams are pushed into the EMS.
+EMSにストリームがプッシュされる際に必要となる認証情報を定義します
 
-Where:
+定義箇所:
 
-- user1 = name of first user
-- user2 - name of second user
-- password1 = password of the first user
-- password2 = password of the second user
+- user1 = user1のユーザ名
+- user2 - user2のユーザ名
+- password1 = user1のパスワード
+- password2 = user2のパスワード
 
 ```
 users=
@@ -36,4 +36,16 @@ realms=
 }
 ```
 
-**Note:** You may add or delete number of users in this file.
+------
+
+## Notes:
+
+- 本ファイル内のユーザ名の追加・削除を行っていただけます。
+- 本ファイルを適用するには認証(auth.xml)が有効になっている必要があります。
+
+
+------
+
+## 関連リンク
+
+- [auth.xml](userguide_auth.html)

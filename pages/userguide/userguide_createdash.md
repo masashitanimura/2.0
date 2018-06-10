@@ -7,46 +7,42 @@ folder: userguide
 toc: true
 ---
 
-Create Dynamic Adaptive Streaming over HTTP (DASH) out of an existing H.264/AAC stream. DASH was developed by the Moving Picture Experts Group (MPEG) to establish a standard for HTTP adaptive-bitrate streaming that would be accepted by multiple vendors and facilitate interoperability.
+H.264/AACストリームからDynamic Adaptive Streaming over HTTP (DASH)を生成します。DASHはMoving Picture Experts Group (MPEG)により開発されたHTTP アダプティブビットレートストリーミング規格で多数のベンダーに採用されています。
 
 
 
-## How To
+## 手順
 
-### Single Stream
+### シングルストリーム
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 createDASHStream localstreamnames=<localstreamname> bandwidths=<bandwidth> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=C:\EvoStream\evo-webroot groupname=myDASHGroup
   ```
 
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=/var/evo-webroot groupname=myDASHGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=/path_to_evo-webroot groupname=myDASHGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createDASHStream localstreamnames=myStream bandwidths=51265536 targetfolder=../evo-webroot groupname=myDASHGroup
-```
 
-The created files will automatically save in the `targetFolder` path.
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
 ```
 evo-webroot:                           --> targetfolder
@@ -67,41 +63,38 @@ myDASHroup                             --> groupname
 
 
 
-### Multiple Streams
+### 複数のストリーム
 
-To use multiple `localStreamNames` using one **createDASHStream** command do the following:
 
-**General Format:**
+**createDASHStream**コマンドで複数の`localStreamNames`を生成するのは次の手順です
+
+**一般的なフォーマット:**
 
 ```
 createDASHStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstreamnameX> bandwidths=<bandwidth1,bandwidth2,bandwidthX> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=C:\EvoStream\evo-webroot groupname=myDASHGroup
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/var/evo-webroot groupname=myDASHGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=/path_to_evo-webroot groupname=myDASHGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createDASHStream localstreamnames=myStream1,myStream2 bandwidths=10000000,20000000 targetfolder=../evo-webroot groupname=myDASHGroup
-```
 
-The created files will automatically save in the `targetFolder` path.
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
 ```
 evo-webroot:                           --> targetfolder
@@ -133,15 +126,15 @@ myDASHroup                             --> groupname
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
-**API Call:**
+**サンプルAPIコール:**
 
 ```
-createDASHStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=dash
+createDASHStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=dash
 ```
 
-**JSON Response:**
+**JSON CLI レスポンス:**
 
 ```
 Command entered successfully!
@@ -152,66 +145,68 @@ DASH stream created
       -- testpullStream
     manifestName: manifest.mpd
     playlistType: appending
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
 
-## Playing a DASH Manifest File
+## DASH Manifestファイルの再生
 
-The corresponding link to play this stream would then be:
+ストリームを再生するのは次の手順です:
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 http://<EMS_IP_Address:<Web_Server_Port>/<DASH_groupname>/<manifest_filename>
 ```
 
-**Sample URL:**
+**サンプルURL:**
 
-- **Single Stream**
-
-  ```
-  http://192.168.2.34:8888/myHDSGroup/manifest.mpd
-  ```
-
-
-- **Multiple Stream**
+- **シングルストリーム**
 
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream1/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/manifest.mpd
   ```
 
+
+- **複数のストリーム**
+
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream2/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/myStream1/manifest.ismc
   ```
 
   ```
-  http://192.168.2.34:8888/myMSSGroup/myStream3/manifest.ismc
+  http://192.168.2.34:8888/myDASHGroup/myStream2/manifest.ismc
   ```
 
-The player will now automatically play the stream once the MSS manifest is read.
+  ```
+  http://192.168.2.34:8888/myDASHGroup/myStream3/manifest.ismc
+  ```
+
+プレーヤーはDASH Manifestファイルを読み込むとストリームを自動的に再生します
+
 
 
 
 ## Automatic DASH
 
-The EMS can be configured to automatically create a DASH stream for every new inbound stream. The details for the DASH creation are placed in the `config.lua` file instead of as parameters to the `createDASHStream` API call.
+EMSは新規インバウンドストリームに対して自動的にDASHストリームを生成するよう設定することができます
+詳細はconfig.luaファイルに記述され、`createDASHStream`APIコールでのパラメータ設定は不要です。
 
 ```
 autoDASH=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
-
 ```
 
-To enable automatic DASH section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+`config.lua`ファイルを編集については  [詳細](userguide_config.html#autoDASH/HLS/HDS/MSS)をご参照ください。
+
 
 ------
 
-## Related Links:
+## 関連リンク:
 
-- [createDASHStream API](api_createDASHStream.html) 
+- [createDASHStream API](api_createDASHStream.html)
 - [Adding HTTP Streams](userguide_add.html#adding-http-streams)
 - [DASH Upload Service](evowebservices_DASHupload.html)

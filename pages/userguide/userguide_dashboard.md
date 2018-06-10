@@ -8,16 +8,16 @@ toc: false
 
 
 
-The **Dashboard** contains the following information of your EMS:
+**Dashboard**はEMSに関する下記の情報を表示します:
 
-- Connection Settings 
-  - EMS Connection Status - tells the status of your connection to your EMS
-  - Port Settings - list of default ports used by EMS
+- Connection Settings
+  - Status - EMSへの接続ステータス
+  - Port Settings - EMSが使用するポートのリスト表示
 - Build Information
-  - EMS Version - the version of your EMS package
-  - Build Number - the build number of your EMS package
-  - License ID - the license ID used in your EMS
-- Quick Links - shortcuts
-- Incoming/Outgoing Stream - displays charts for the incoming and outgoing streams count
+  - EMS Version - EMSパッケージのバージョン情報
+  - Build Number - EMSパッケージのビルド番号
+  - License ID - EMSライセンスID
+- Quick Links - ショートカット
+- Incoming/Outgoing Stream - 入出力ストリーム数をチャート表示
 
 ![](images/userguide/dashboard.jpg)

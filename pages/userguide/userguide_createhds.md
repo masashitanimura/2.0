@@ -7,46 +7,44 @@ folder: userguide
 toc: true
 ---
 
-Create an HDS (HTTP Dynamic Streaming) stream out of an existing H.264/AAC stream. HDS is used to stream standard MP4 media over regular HTTP connections. HDS is a new technology developed by Adobe in response to HLS from Apple.
+
+H.264/AACストリームからHDS (HTTP Dynamic Streaming)ストリームを生成します。HDSはHTTP経由でMP4メディアをストリームするのに使用されます。HDSはAppleのHLSに対してAdobeが開発した比較的新しい技術です。
 
 
 
-## How To
 
-### Single Stream
+## 手順
 
-**General Format:**
+### シングルストリーム
+
+**一般的なフォーマット:**
 
 ```
 createHDSStream localstreamnames=<localstreamname> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createHDSStream localstreamnames=myStream targetfolder=C:\EvoStream\evo-webroot groupname=myHDSGroup
   ```
 
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createHDSStream localstreamnames=myStream targetfolder=/var/evo-webroot groupname=myHDSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createHDSStream localstreamnames=myStream targetfolder=/path_to_evo-webroot groupname=myHDSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHDSStream localstreamnames=myStream targetfolder=../evo-webroot groupname=myHDSGroup
-```
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
-The created files will automatically save in the `targetFolder` path.
 
 ```
 evo-webroot:                           --> targetfolder
@@ -61,41 +59,37 @@ myHDSGroup                             --> groupname
 
 
 
-### Multiple Stream
+### 複数のストリーム
 
-To use multiple `localStreamNames` using one **createHLSStream** command do the following:
+ **createHLSStream**コマンドをつかって複数の`localStreamNames`を生成する手順を次に示します:
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 createHDSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstreamnameX> targetFolder=<target_folder_path> groupname=<groupname>
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createHDSStream localstreamnames=myStream1,myStream2  targetfolder=C:\EvoStream\evo-webroot groupname=myHDSGroup
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createHDSStream localstreamnames=myStream1,myStream2  targetfolder=/var/evo-webroot groupname=myHDSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createHDSStream localstreamnames=myStream1,myStream2  targetfolder=/path_to_evo-webroot groupname=myHDSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHDSStream localstreamnames=myStream1,myStream2  targetfolder=../evo-webroot groupname=myHDSGroup
-```
+生成されたファイルは`targetFolder`パスに自動的に保存されます
 
-The created files will automatically save in the `targetFolder` path.
 
 ```
 evo-webroot:                           --> targetfolder
@@ -114,15 +108,15 @@ myHDSGroup                             --> groupname
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
-**API Call:**
+**サンプル API コール:**
 
 ```
-createHDSStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=hds playlisttype=rolling
+createHDSStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=hds playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI レスポンス:**
 
 ```
 Command entered successfully!
@@ -133,31 +127,31 @@ HDS stream created
       -- testpullStream
     manifestName:
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
 
-## Playing an HDS Playlist File
+## HDS プレイリストファイルの再生
 
-The corresponding link to play this stream would then be:
+ストリームを再生するのは次の手順です:
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 http://<EMS_IP_Address:<Web_Server_Port>/<HDS_groupname>/<Subfolder>/<manifest_filename>
 ```
 
-**Sample URL:**
+**サンプル URL:**
 
-- **Single Stream**
+- **シングルストリーム**
 
   ```
   http://192.168.2.34:8888/myHDSGroup/manifest.f4m
   ```
 
 
-- **Multiple Stream**
+- **複数のストリーム**
 
   ```
   http://192.168.2.34:8888/myHDSGroup/myStream1/manifest.f4m
@@ -171,27 +165,29 @@ http://<EMS_IP_Address:<Web_Server_Port>/<HDS_groupname>/<Subfolder>/<manifest_f
   http://192.168.2.34:8888/myHDSGroup/myStream3/manifest.f4m
   ```
 
-The player will now automatically play the stream once the HDS playlist is loaded.
+プレーヤーはHDSプレイリストファイルを読み込むとストリームを自動的に再生します
 
 
 
 ## Automatic HDS
 
-The EMS can be configured to automatically create an HDS stream for every new inbound stream. The details for the HDS creation are placed in the config.lua file instead of as parameters to the `createHDSStream` API call.
+EMSは新規インバウンドストリームに対して自動的にHDSストリームを生成するよう設定することができます
+詳細はconfig.luaファイルに記述され、`createHDSStream`APIコールでのパラメータ設定は不要です。
+
 
 ```
 autoHDS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
 ```
 
-To enable automatic HDS a section in the `config.lua` file needs to be enabled and modified. See configuration [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+`config.lua`ファイルを編集については  [詳細](userguide_config.html#autoDASH/HLS/HDS/MSS)をご参照ください。
 
 ------
 
-## Related Links:
+## 関連リンク:
 
-- [createHDSStream API](api_createHDSStream.html) 
+- [createHDSStream API](api_createHDSStream.html)
 - [Adding HTTP Streams](userguide_add.html#adding-http-streams)
 - [HDS Upload Service](evowebservices_HDSupload.html)

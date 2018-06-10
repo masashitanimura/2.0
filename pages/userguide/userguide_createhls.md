@@ -7,47 +7,44 @@ folder: userguide
 toc: true
 ---
 
-Create an HTTP Live Stream (HLS) out of an existing H.264/AAC, H.265/AAC streams.  HLS is used to stream live feeds to iOS devices such as iPhones and iPads. Please see `createHLSStream` [API](api_createHLSStream.html) for more details.
+H.264/AACおよびH.265/AACストリームからHTTP Live Stream (HLS)を生成します。HLSはiPhoneやiPad等iOS端末向けのライブフィードのストリーミングに使用されます。詳しくは`createHLSStream` [API](api_createHLSStream.html)をご参照ください。
 
 
 
-## How To
 
-### Single Stream
+## 手順
 
-**General Format:**
+### シングルストリーム
+
+**一般的なフォーマット:**
 
 ```
 createHLSStream localstreamnames=<localstreamname> targetFolder=<target_folder_path> groupname=<groupname>
 
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createHLSStream localstreamnames=myStream targetfolder=C:\EvoStream\evo-webroot groupname=myHLSGroup
   ```
 
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createHLSStream localstreamnames=myStream targetfolder=/var/evo-webroot groupname=myHLSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createHLSStream localstreamnames=myStream targetfolder=/path_to_evo-webroot groupname=myHLSGroup
   ```
 
-To make call easier, a **relative path** can be used:
 
-```
-createHLSStream localstreamnames=myStream targetfolder=../evo-webroot groupname=myHLSGroup
-```
 
-The created files will automatically save in the `targetFolder` path.
+生成されたファイルは自動的に`targetFolder`で指定されたパスに保存されます
 
 ```
 evo-webroot:                           --> targetfolder
@@ -63,42 +60,38 @@ myHLSGroup                             --> groupname
 
 
 
-### Multiple Stream
+### 複数ストリーム
 
-To use multiple `localStreamNames` using one **createHLSStream** command do the following:
+ **createHLSStream**コマンドをつかって複数の`localStreamNames`を生成する手順を次に示します:
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 createHLSStream localstreamnames=<localstreamname1>,<localstreamname2>,<localstreamnameX> targetFolder=<target_folder_path> groupname=<groupname>
 
 ```
 
-- **For Windows:**
+- **ウインドウズ:**
 
   ```
   createHLSStream localstreamnames=myStream1,myStream2  targetfolder=C:\EvoStream\evo-webroot groupname=myHLSGroup
   ```
 
-- **For Linux Package:**
+- **Linuxパッケージ:**
 
   ```
   createHLSStream localstreamnames=myStream1,myStream2  targetfolder=/var/evo-webroot groupname=myHLSGroup
   ```
 
-- **For Linux Archive:**
+- **Linuxアーカイブ:**
 
   ```
   createHLSStream localstreamnames=myStream1,myStream2  targetfolder=/path_to_evo-webroot groupname=myHLSGroup
   ```
 
-To make the call easier, a **relative path** can be used:
 
-```
-createHLSStream localstreamnames=myStream1,myStream2  targetfolder=../evo-webroot groupname=myHLSGroup
-```
 
-The created files will automatically save in the `targetFolder` path.
+生成されたファイルは`targetFolder`で指定したパスに自動的に保存されます
 
 ```
 evo-webroot:                           --> targetfolder
@@ -118,15 +111,15 @@ myHLSGroup                             --> groupname
 
 
 
-## JSON CLI Response
+## JSON CLI レスポンス
 
-**API Call:**
+**サンプル APIコール:**
 
 ```
-createHLSStream localstreamnames=testpullstream targetfolder=../evo-webroot groupname=hls playlisttype=rolling
+createHLSStream localstreamnames=testpullstream targetfolder=/var/evo-webroot groupname=hls playlisttype=rolling
 ```
 
-**JSON Response:**
+**JSON CLI レスポンス:**
 
 ```
 Command entered successfully!
@@ -137,31 +130,31 @@ HLS stream created
       -- testpullStream
     playlistName: playlist.m3u8
     playlistType: rolling
-    targetFolder: ../evo-webroot
+    targetFolder: /var/evo-webroot
 ```
 
 
 
-## Playing an HLS Playlist File
+## HLSプレイリストファイルの再生
 
-The corresponding link to use on Safari or other players to play this stream would then be:
+Safariやその他のプレーヤーでストリームを再生するのは以下の手順です
 
-**General Format:**
+**一般的なフォーマット:**
 
 ```
 http://<EMS_IP_Address:<Web_Server_Port>/<HLS_groupname>/<Subfolder>/<playlist_filename>
 ```
 
-**Sample URL:**
+**サンプル URL:**
 
-- **Single Stream**
+- **シングルストリーム**
 
   ```
   http://192.168.2.34:8888/myHLSGroup/playlist.m3u8
   ```
 
 
-- **Multiple Stream**
+- **複数のストリーム**
 
   ```
   http://192.168.2.34:8888/myHLSGroup/myStream1/playlist.m3u8
@@ -175,25 +168,25 @@ http://<EMS_IP_Address:<Web_Server_Port>/<HLS_groupname>/<Subfolder>/<playlist_f
   http://192.168.2.34:8888/myHLSGroup/myStream3/playlist.m3u8
   ```
 
-The player will now automatically play the stream once the HLS playlist is loaded.
+プレーヤーはHLSプレイリストが読み込まれると自動的にストリームの再生を開始します
 
 
 
-## DVR Playback
+## DVR 再生
 
-The EMS can support DVR functionality, allowing users to pause and resume playback of live streams. This capability is already built into the HLS protocol support. Simply use an “`appending`” playlist type or a “`rolling`” playlist with a sufficiently large `playlistLength` value.
+EMSはライブストリームの一時停止やリジューム再生などのDVR機能をサポートします。これはHLSプロトコルに内包された機能です。“`appending`”プレイリストタイプを使用するか、または`playlistLength`に大きな値を指定した“`rolling`”プレイリストを使用します。
 
-Users may also create time-shifted content or scheduled content by doing “local pulls” of server side playlists.
+サーバーサイドプレイリストで“local pulls”を利用してタイムシフトコンテンツやスケジュールコンテンツの生成もできます
 
 
 
-## HLS Resume
+## HLS リジューム
 
-In cases of server or stream restarts, the HLS will resume in appending segments to previously created playlists. This can be enabled by using the `hlsResume` parameter when invoking the `createHLSStream`API.
+サーバーやストリームにリスタートがあった場合、HLSは既存のプレイリストにセグメントappendを行います。これは`createHLSStream`APIコマンドで`hlsResume`パラメータを指定することで可能となります。
 
-This parameter defaults to 0 (false).
+このパラメータのデフォルト値は0(false)です
 
-Below is an example usage of the `createHLSStream` API command with the `hlsResume` parameter:
+`createHLSStream`APIコマンドで`hlsResume`パラメータをつかう例です:
 
 ```
 createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling hlsResume=1
@@ -201,13 +194,13 @@ createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupNam
 
 
 
-## Audio Only HLS
+## オーディオのみのHLS
 
-The EMS supports audio-only HLS delivery.
+EMSはオーディオのみのHLS配信をサポートします
 
-The createHLSStream API has an `audioOnly` parameter that specifies if the resulting stream will have no video. This parameter defaults to 0 (false) if not specified.
+createHLSStream APIコマンドを`audioOnly`パラメータ付きとすることでビデオなしのストリームを生成します。このパラメータのデフォルト値は0(false)です
 
-An example `createHLSStream` command with the `audioOnly` parameter follows:
+`audioOnly`パラメータ付きの`createHLSStream`コマンドの例:
 
 ```
 createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling audioOnly=1
@@ -216,55 +209,56 @@ createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupNam
 
 
 
-## Encryption
+## 暗号化
 
-**Note:** Encryption was supported on HLS version 5 and above.
+**Note:** 暗号化はHLSバージョン５以降でサポートされています
 
 
 
 ### VeriMatrix DRM
 
-The EMS supports Verimatrix DRM for HLS streams. To enable Verimatrix support for your HLS streams you must enable and modify the “drm” section of the config.lua file. Please see the [Configuration File]() for details on the “drm” section.
+EMSはHLSストリームでVerimatrix DRMをサポートします。VeriMatrixサポートを有効化するにはconfig.luaファイル内で"drm"セクションの編集が必要です。 詳しくは[Configuration File]() の“drm” セクションをご参照ください
 
-Once Verimatrix support is enabled in the config file, you can then conditionally add Verimatrix protection to your HLS streams. Simply add the drmType parameter on your `createHLSStream`  command:
+Verimatrixサポートが有効化されると、HLSストリームにVerimatrixプロテクションを条件付きで付加することができます。。drmTypeパラメータを`createHLSStream` コマンドで指定してください。
 
 ```
-createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling drmType=verimatrix	
+createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling drmType=verimatrix
 ```
 
 
 
-### AES Encryption
+### AES暗号化
 
-The EMS supports AES encryption for HLS streams. To use AES encryption you must specify two values in the `createHLSStream` API command: the `drmType` and the `aesKeyCount`.
+EMSはHLSストリームでAES暗号化をサポートします。AES暗号化を使用するには、`createHLSStream` コマンドで`drmType` と`aesKeyCount`の両方を指定する必要があります
 
 ```
 createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling drmType=ems aesKeyCount=5
 ```
 
-- **drmType** is a string value that specifies the type of encryption to use (“ems” means the EvoStream AES encryption scheme).
-- **aesKeyCount** is an integer value (defaulted to 5), which specifies how many AES keys will be generated, and rotated through, while encrypting the HLS Stream.
+- **drmType** では文字列型で暗号化の種類を指定します (“ems”は EvoStream AES encryption schemeを意味します).
+- **aesKeyCount** は整数値型（デフォルト値は５）で暗号化されるHLSストリームのローテーションキー生成数を指定します。
 
 
 
 
 ## Automatic HLS
 
-The EMS can be configured to automatically create an HLS stream for every new inbound stream. The details for the HLS creation are placed in the config.lua file instead of as parameters to the `createHLSStream` API call.
+EMSは新規インバウンドストリームに対して自動的にHLSストリームを生成するよう設定することができます
+詳細はconfig.luaファイルに記述され、`createHLSStream`APIコールでのパラメータ設定は不要です。
 
 ```
 autoHLS=
 {
-    targetFolder= "..\\evo-webroot",
+    targetFolder= "/var/evo-webroot",
 },
 ```
 
-To enable automatic HLS a section in the `config.lua` file needs to be enabled and modified. See configuration  [here](userguide_config.html#autoDASH/HLS/HDS/MSS).
+`config.lua`ファイルを編集については  [詳細](userguide_config.html#autoDASH/HLS/HDS/MSS)をご参照ください。
 
 ------
 
-## Related Links:
+## 関連リンク:
 
-- [createHLSStream API](api_createHLSStream.html) 
+- [createHLSStream API](api_createHLSStream.html)
 - [Adding HTTP Streams](userguide_add.html#adding-http-streams)
 - [HLS Upload Service](evowebservices_HLSupload.html)

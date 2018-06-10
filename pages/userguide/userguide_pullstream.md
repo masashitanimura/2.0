@@ -7,19 +7,21 @@ folder: userguide
 toc: true
 ---
 
-The EMS provides an extremely robust platform for stream protocol re-encapsulation. That is, the EMS will allow the translation from one streaming protocol to another protocol, allowing the reach to a wide range of video/audio clients, regardless of how the video/audio source is configured.
+EMSはストリームプロトコルの再カプセル化を行う堅牢なプラットフォームを提供します。つまりひとつのストリーミングプロトコルから他のストリーミングプロトコルへ変換を行うことができるため、元のvideo/audioに設定が特定のクライエント向けのものであっても、多様なクライエント向けにアクセスを可能とします。
 
-The first step to achieve protocol re-encapsulation is to get the original stream into the EMS. The most common method for doing this is by using the “**Pull a Stream**” mechanism, but other systems can also push a stream into the EMS.
-
-The `pullStream` API provides a way to tell the EMS to retrieve an existing stream.
+プロトコルの再カプセル化を行う第一歩はEMSに元となるストリームを取り込むことから始まります。最も頻繁につかわれるのは“**Pull**”ストリームによる方法です。外部のシステムからEMSのストリームをプッシュすることも可能です。
 
 
 
-## How To
+`pullStream` APIにより、EMSが既存ストリームを取得してくるように指示します
 
-Below are the examples of how to pull a stream in different formats:
 
-### RTMP stream
+
+## 手順
+
+下記の例のようにストリームをプルします:
+
+### RTMP ストリーム
 
 ```
 pullStream uri=rtmp://<STREAM_ADDRESS> localStreamName=RTMPTest
@@ -27,7 +29,7 @@ pullStream uri=rtmp://<STREAM_ADDRESS> localStreamName=RTMPTest
 
 
 
-### RTSP stream
+### RTSP ストリーム
 
 ```
 pullStream uri=rtsp://<STREAM_ADDRESS> localStreamName=RTSPTest
@@ -35,7 +37,7 @@ pullStream uri=rtsp://<STREAM_ADDRESS> localStreamName=RTSPTest
 
 
 
-### RTP - UDP stream
+### RTP - UDP ストリーム
 
 ```
 pullStream uri=rtp://<STREAM_ADDRESS> localStreamName=RTPTest isAudio=0 spsBytes=Z0LAHpZiA2P8vCAAAAMAIAAABgHixck= ppsBytes=aMuMsg==
@@ -43,15 +45,16 @@ pullStream uri=rtp://<STREAM_ADDRESS> localStreamName=RTPTest isAudio=0 spsBytes
 
 
 
-### MPEG-TS stream
+### MPEG-TS ストリーム
 
-#### UDP MPEG-TS stream
+#### UDP MPEG-TS ストリーム
 
 ```
 pullStream uri=dmpegtsudp://<STREAM_ADDRESS>:<PORT> localStreamName=TSTest
 ```
 
-This can be used for multicast streams as well. If the address of the stream is in the IP Multicast range, the EMS will automatically join the multicast group so that it can pull the stream.
+マルチキャストストリームでも使用できます。IPマルチキャスト範囲内のアドレスであればEMSは自動的にマルチキャストグループにjoinし、ストリームをプルします。
+
 
 #### TCP MPEG-TS
 
@@ -61,33 +64,34 @@ pullStream uri=dmpegtstcp://<STREAM_ADDRESS>:<PORT> localStreamName=TSTest
 
 **Note:**
 
-The “**d**” in front of mpegts ( **d**mpegts) in the URIs above refers to “deep parsing”. Using the URI, the inbound MPEG-TS stream can be re-encapsulated into other protocols such RTMP or RTSP. If the only output format will be MPEG-TS (e.g. EMS is used as an MPEG-TS pass-through), then mpegtsudp and mpegtstcp can be used as the URI protocol specifier. This will speed the transfer of the MPEG-TS streams since no parsing will occur.
+mpegtsの前に付くの “**d**”は ( **d**mpegts) “deep parsing”を意味します。このURIをつかうことでインバウンドMPEG-TSストリームをRTMPやRTSPなどのプロトコルに再カプセル化するこができます。出力フォーマットがMPEG-TSのみ(EMSをMPEG-TS pass-throughとして使う)の場合は、mpegtsudpおよび mpegtstcpをURIプロトコル指定に使用できます。この場合パースの必要がないのでMPEG-TSストリームの転送処理が高速になります。
 
 
 
-### LOCAL SDP FILE
+### LOCAL SDPファイル
 
-EMS is also capable in pulling an Session Description Protocol (SDP) file. An SDP is a format for describing the initialization parameters of streaming media sessions. SDP does not deliver media itself but is used for negotiation between end points of media type, format, and all associated properties.
+EMSはSession Description Protocol (SDP)をプルすることが可能です。SDPはストリーミングメディアセッションの初期化パラメータの記述フォーマットです。SDPはメディアそのものの配信は行わず、エンドポイント間でのメディアタイプやフォーマットその他のプロパティのネゴシエーションに使用されます。
+
 
 ```
 pullStream uri=file://<FILEPATH>/FILENAME.sdp localStreamName=sdpFileTest
 ```
 
 **Note:**
-
-The SDP must reside in the file system accessible by EMS.
-
+SDPはEMSがアクセスできるファイルシステム上になければなりません。
 
 
-## JSON CLI Response
 
-**API Call:**
+
+## JSON CLI レスポンス
+
+**API コール:**
 
 ```
 pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 localStreamname=testpullstream
 ```
 
-**JSON Response:**
+**JSON レスポンス:**
 
 ```
 Command entered successfully!
@@ -106,29 +110,31 @@ ulling
 
 
 
-## Playing a Pulled Steam
+## プルしたストリームの再生
 
-Once a stream has been added to EMS, it can be accessed in a variety of ways. Through the streaming protocol translation offered by EMS, it is just a matter of requesting the stream in the format that the target player can accept, and the EMS will take care of the rest.
+EMSにストリームが追加されたら、さまざま方法でアクセスすることができます。EMSのストリーミングプロトコル変換機能により、ターゲットプレーヤーが使えるフォーマットでリクエストをするだけであとはEMSが適切に処理してくれます。
 
-The basic commands in playing a pulled stream in EMS are the following:
+
+プルしたストリームの基本的な再生コマンドは以下のように行います:
+
 
 - **RTMP**
 
-  The format of the RTMP URI is as follows:
+  RTMP URIフォーマット:
 
   ```
   rtmp[t|s]://[username[:password]@]ip[:port]/<appName>/<stream_name>
   ```
 
-  As an example, to play an RTMP stream, use the following URI in the Flash enabled player:
+  RTMPストリームを再生するには、下記のURIをFlashプレーヤで利用します:
 
   ```
   rtmp://<EMS_IP_ADDRESS>/live/localStreamName
   ```
 
-- **RTMP**
+- **RTSP**
 
-  The format of the RTSP URI is as follows:
+  RTSP URIフォマット:
 
   ```
   rtsp://[username[:password]@]ip[:port]/[ts|vod|vodts]/<stream_name or MP4 file name>
@@ -136,23 +142,24 @@ The basic commands in playing a pulled stream in EMS are the following:
 
   **Note:**
 
-  The command is very similar to RTMP, except for the absence of the “appName” field.
+  "appName"フィールドが無いだけで、コマンドはRTMPにとても似ています。
 
-  As an example, to play an RTSP stream, the following URI in an RTSP enabled player can be used:
+  RTSPストリームを再生するには下記のURIをRTSP再生が可能なプレーヤで利用します。
+
 
   ```
   rtsp://<EMS_IP_ADDRESS>:5544/localStreamName
   ```
 
-  By default, the EMS will send the video/audio payload data via RTP. If MPEG-TS is needed instead, simply specify it in the request URI:
+  EMSはデフォルトでvideo/audioペイロードをRTP経由で送ります。MPEG-TSにしたい場合は下記のURIを指定します:
 
   ```
-  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamNam
+  rtsp://<EMS_IP_ADDRESS>:5544/ts/localStreamName
   ```
 
 ------
 
-## Related Links:
+## 関連リンク:
 
 - [pullStream API](api_pullStream.html)
 - [Adding Inbound Streams](userguide_add.html#adding-inbound-live-streams)

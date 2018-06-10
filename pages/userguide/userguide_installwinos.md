@@ -7,86 +7,88 @@ toc: true
 ---
 
 
-## Installation Procedure
+## インストール手順
 
-1. Download the EMS package installer at [https://evostream.com/software-downloads](https://evostream.com/software-downloads)
+1. [https://evostream.com/software-downloads](https://evostream.com/software-downloads)からEMSパッケージインストーラーをダウンロードしてください
 
-2. Install EMS 
+2. EMSのインストール
 
-   2.1. Extract the zip package
+   2.1. zipパッケージを伸長・展開します
 
-   2.2. Right-click on `setup.exe` then click **Run as administrator**
+   2.2. `setup.exe`を右クリックし管理者として実行をクリックしてください
 
    ![](images/userguide/qsgfw1.jpg)
 
    ​
 
-   2.3. Select the Setup Language, click **OK**
+   2.3. 言語を選択し**OK**ボタンをクリックしてください
 
    ![](images/userguide/qsgfw2.jpg)
 
    ​
 
-   2.4. Click **Next** to continue the installation
+   2.4. **Next**ボタンをクリックしインストールを続行してください
 
    ![](images/userguide/qsgfw3.jpg)
 
    ​
 
-   2.5 Read the license agreement and select **I accept the agreement**, click **Next**
+   2.5 ライセンス使用許諾文書を確認し **I accept the agreement**ボタンをクリックし **Next**をクリックしてください
 
    ![](images/userguide/qsgfw4.jpg)
 
    ​
 
-   2.6. Verify the installation path, click **Next**
+   2.6. インストール先のパスを確認し、 **Next**ボタンをクリックしてください。
 
    ![](images/userguide/qsgfw5.jpg)
 
    ​
 
-   2.7. Tick **Create a desktop icon**, click **Next**
+   2.7.  **Create a desktop icon**にチェックを入れ **Next**ボタンをクリックしてください
 
    ![](images/userguide/qsgfw6.jpg)
 
    ​
 
-   2.8. Confirm installation, click **Install**
+   2.8. **Install**ボタンをクリックしてください
 
    ![](images/userguide/qsgfw7.jpg)
 
    ​
 
-   2.9. Read the information, click **Next**
+   2.9. informationを参照し、**Next**ボタンをクリックしてください
 
    ![](images/userguide/qsgfw8.jpg)
 
    ​
 
-   2.10. Click **Finish** to finish the installation.  
+   2.10.  **Finish**ボタンをクリックしインストールを完了してください
 
    ![](images/userguide/qsgfw9.jpg)
 
    ​
 
-   **Note:** Uncheck **Launch EMS** if the license is not yet installed.
+   **Note:** ライセンスファイルを未だインストールしていない場合は、 **Launch EMS**のチェックを外して、**Finish**ボタンをクリックしてください。
 
 
 
 
 
 
-## License Installation
+## ラインセンスのインストール
 
-**Note:** You should already have your license file available. If none, EvoStream offers a **30-day free trial** license to those who want to explore the features of EMS. Click [here](https://evostream.com/free-trial/) to avail the free trial or contact [salesupport@evostream](mailto:salessupport@evostream.com) for other license type purchase.
+**Note:** ライセンスファイルをお手元にご用意ください。30日間の試用版をお試しになりたい場合は、
+[here]をクリックし(https://evostream.com/free-trial/)必要事項を記入しリクエストしてください。
+その他のライセンスの購入に関するお問い合わせは[salesupport@evostream](mailto:salessupport@evostream.com) まで
 
-To install the license, simply copy the `License.lic` file to `C:\EvoStream\config`.
+ライセンスをインストールするには `License.lic` ファイルを `C:\EvoStream\config` 以下にコピーするだけです。
 
 
 
 
 
-## Distribution Content
+## 配布内容
 
 ```
 C:\EvoStream
@@ -103,9 +105,6 @@ C:\EvoStream
    │   ├── users.lua
    │   ├── webconfig.json
    │   └── whitelist.txt
-   ├── demo
-   │   ├── base64.js
-   │   └── emsdemo.html
    ├── evo-avconv-presets
    │   ├── libx264-baseline.avpreset
    │   ├── libx264-fast.avpreset
@@ -143,7 +142,7 @@ C:\EvoStream
    │   │   │	├── common.css
    │   │   │	└── common.css.orig  
    │   │   ├── js
-   │   │   │	└── evohtml5player-latest.bundle.js 
+   │   │   │	└── evohtml5player-latest.bundle.js
    │   │   ├── evo.png
    │   │   ├── evoplayers.html
    │   │   ├── evowsabrvideo.html
@@ -205,7 +204,7 @@ C:\EvoStream
    │   ├── node_modules
    │   │   ├── basic-auth
    │   │   ├── connect
-   │   │   └── winston 
+   │   │   └── winston
    │   ├── req_handlers
    │   │   ├── authproxy.js
    │   │   ├── default.js
@@ -231,14 +230,14 @@ C:\EvoStream
    │   │   └── social-auth-config.js
    │   ├── core_modules
    │   │   ├── ems-api-core.js
-   │   │   ├── ems-api-proxy.js 
+   │   │   ├── ems-api-proxy.js
    │   │   ├── ems-config-core.js
    │   │   └── socket-io-api.js
    │   ├── data
    │   │   ├── help.json
    │   │   └── user.json   
    │   ├── logs
-   │   │   └── webui.log 
+   │   │   └── webui.log
    │   ├── models
    │   │   ├── list-config.js
    │   │   ├── list-streams.js
@@ -258,7 +257,7 @@ C:\EvoStream
    │   │   ├── index.js
    │   │   ├── stream.js
    │   │   └── users.js
-   │   ├── services 
+   │   ├── services
    │   │   └── stream-service.js
    │   ├── views
    │   │   ├── admin
@@ -271,16 +270,11 @@ C:\EvoStream
    ├── services
    │   ├── ems
    │   │   ├── create.bat
-   │   │   ├── nssm.exe
    │   │   ├── remove.bat
    │   │   ├── start.bat   
    │   │   ├── stop.bat      
    │   │   └── uninstall.bat    
-   │   └── webui     
-   │   │   ├── create_webui_service.bat
-   │   │   ├── remove_webui_service.bat
-   │   │   ├── start_webui_service.bat
-   │   └── └── stop_webui_service.bat 
+   │   └── nssm.exe   
    ├── emsTranscoder.bat
    ├── evo-avconv.exe
    ├── evo-mp4writer.exe

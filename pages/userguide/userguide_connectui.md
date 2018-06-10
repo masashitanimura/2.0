@@ -6,100 +6,87 @@ folder: userguide
 toc: true
 ---
 
-Once EMS is started, you can now connect to its UI. There are several ways to start the UI:
+## 自動スタートアップ
 
-## Starting EMS Web UI
+EMS起動の際、config.luaファイルの`rubWebUI`が`true`に設定されている場合、EMS Web UIも同時に起動します。ブラウザでUIを確認することができます:
 
-### Via Console
 
-Starting the Web UI using `run_console_webui` will open a separate console for the Web UI. This is very helpful if you want to see solely logs from the Web UI. 
+```
+書式: <EMS_IP>:<WebUI_Port>
 
-1. Run `run_console_webui.sh` in Linux,  `run_console_webui.bat` in Windows
+例: localhost:4100
+```
+
+
+
+## 手動スタートアップ
+
+config.luaファイルの`rubWebUI`が`false`に設定されている場合も下記の方法でUIを実行することはできます:
+
+
+
+### コンソール経由
+
+`run_console_webui`を使うとWeb UIが別コンソールで開始します。Web UIからのログを個別に確認したい場合に有用です。
+
+
+1. Linuxでは`run_console_webui.sh`を、ウインドウズでは`run_console_webui.bat`を実行する
 
    ![](images/userguide/startui_console.jpg)
 
-**Note:**
+   ​
 
-- You may configure the logging level of UI in `../node-webui/config/logging.json`
-
-
-
-
-### Via Daemon
-
-For Linux environment only, running Web UI via Daemon mode is also available. This will not show a console showing the logs of the activities of the Web UI.  
-
-1. Run `run_daemon_webui.sh`
-
-**Note:**
-
-- Run ps -ef|grep node to see if web ui is running, you should see `./evo-node node-webui/bin/webui_activate` in the result
-- You may check the Web UI logs in `../node-webui/logs/`
-- The configuration of the log level is the same with console logs and file logs
-
-
-
-
-### Via Service
-
-Same with EMS, you may add a Web UI service in Windows Registry. Running Web UI via service is like running the Web UI in Daemon mode on Linux environment.
-
-1. Create the service first
-
-   a. Open a command prompt
-
-   b. Locate the services folder: `C:\EvoStream\services\webui`
-
-   c. Send command: `create.bat`
+2. ブラウザでUIを開く:
 
    ```
-   C:\EvoStream\services\webui> create_webui_service.bat
+   書式: <EMS_IP>:<WebUI_Port>
+
+   例: localhost:4100
    ```
 
-   or run as Administrator the `create_webui_service.bat` in the location
 
-   d. A confirmation will be asked, click **Yes**
+​      **Note:**
 
-   ![](images/userguide/register.JPG)
-
-   e. EMS keys are now registered! Click **OK**
-
-   ![](images/userguide/register_success.JPG)
-
-   f. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
-
-   ![](images/userguide/service_ui_.jpg)
+   - `../node-webui/config/logging.json`を編集することでログレベル設定が可能です。
 
 
 
 
-## Stopping Web UI
+### デーモン経由
 
-The EMS Web UI process will not be killed when EMS is stopped. You may still access the Web UI but will not be able to do show the EMS functionalities.
+Linux環境のみですが、Web UIをデーモンモードで実行することが可能です。Web UIのアクティビティについてのログはコンソール上で表示しません。
 
 
+1. `run_daemon_webui.sh`を実行します
 
-### Stopping Console UI
-
-If you run the UI using the `run_console_webui.bat` or `run_console_webui.sh` or `run_daemon_ems.sh`:
-
-1. Run run_stop_webui.bat in Windows or run_stop_webui.sh in Linux
+2. ブラウザでUIを開く:
 
    ```
-   $ ./run_stop_webui.sh 
+   書式: <EMS_IP>:<WebUI_Port>
+
+   例: localhost:4100
+   ```
+
+   **Notes:**
+
+   - `ps -ef|grep node`でWeb UIの実行状況を確認できます。 結果に`./evo-node node-webui/bin/webui_activate`と表示されるはずです。
+   - `../node-webui/logs/`でWeb UIログを確認できます。
+   - ログレベル設定はコンソールログやファイルログと同様です
+
+   ​
+
+
+
+
+## Web UIの停止
+
+`run_console_webui.bat`、`run_console_webui.sh`、`run_daemon_ems.sh`のいずれかでUIを実行した場合:
+
+1. ウインドウズでは`run_stop_webui.bat` Linuxでは`run_stop_webui.sh` を実行することで停止します
+
+   ```
+   $ ./run_stop_webui.sh
    webui will now be stopped
    ```
 
-This will end the process of the WebUI running in Console.
-
-
-
-### Stopping Web UI Service
-
-If you Start the Web UI as a service (for Windows only):
-
-1. Go to Services, click on the EMS Web UI service entry
-
-2. Click **Stop**
-
-   or go to the services folder of EMS Web UI, double click on `stop_webui_service.bat`
+Web UIプロセスの実行を停止します

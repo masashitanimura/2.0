@@ -8,24 +8,25 @@ toc: true
 ---
 
 
-
-This page is where you can edit or update your profile.
-
+本ページではユーザー情報の編集・更新ができます
 
 
-## Local Account
 
-Displays user's local email account used.
+
+## ローカルアカウント
+
+ユーザーのローカルe-mailアカウントが表示されます
+
 
 ![](images/userguide/profile_localaccount.jpg)
 
 
 
-## Social Media Accounts
+## ソーシャルメディアアカウント
 
-If you logged in using your social media account, this will be seen under the Social Media Accounts in your profile. 
+ソーシャルメディアアカウントを利用してログインしている場合は、Social Media Accounts部分に表示されます。
 
-**Unlink:** This will remove/logout your account in the EMS Web UI
+**Unlink:** EMS Web UIからアカウントを削除／ログアウトします
 
 ![](images/userguide/profile_social.jpg)
 
@@ -33,11 +34,11 @@ If you logged in using your social media account, this will be seen under the So
 
 
 
-## Change Password
+## パスワード変更
 
-This portion lets users to change password being used.
+パスワード変更を行うことができます。
 
-To change password enter the Old, New Password and Confirm New Password and click **Submit New Password**
+パスワードの変更は、従来のパスワードと新規パスワードを入力し、**Submit New Password**をクリックしてください
+
 
 ![](images/userguide/profile_changepw.jpg)
-

@@ -7,6 +7,6 @@ toc: false
 ---
 
 
-This document provides instructions on how to use the EvoStream Media Server (EMS). It will cover the basics of starting the server as well as some advanced topics like modifying configuration files
+本文書はEvoStream Media Sever (EMS) の使用方法について記述されたものです。サーバーの起動といった基本から設定ファイルの編集などについてまで取り扱っています。
 
-This document is written for users of the EMS. It is expected that readers have a basic understanding of multimedia streaming and the technologies required to perform multimedia streaming.
+本文書はEMSをお使いのユーザーに向けて書かれたものです。マルチメディアストリーミングやそれに必要な技術について事前知識のある方を念頭に記述されています。

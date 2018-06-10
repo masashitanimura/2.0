@@ -9,21 +9,21 @@ toc: true
 
 
 
-## Linux Distributions (Linux apt/yum Installer)
+## Linux ディストリビューション (Linux apt/yum インストーラー)
 
-Running EMS as a service:
+EMSサービスとして実行するには:
 
 ```
 # service evostreamms start
 ```
-or
+かまたは
 ```
 # service evostreamms start_console
 ```
 
-**What's the difference?** If you run EMS using `start_console`, it will show logs on the console where you run the EMS. Starting it with `start`  will not show logs in the console. 
+**上記２つの違いについて** `start_console`の場合はEMSのログはコンソール上に表示されます。`start` の場合はコンソールにはログは表示されません。
 
-You can also do restart by sending: 
+EMSを再起動するには:
 
 ```
 # service evostreamms restart
@@ -33,17 +33,17 @@ You can also do restart by sending:
 
 
 
-## Linux, Mac OSX and BSD Distributions (.tar.gz Distribution)
+## Linux, Mac OSX および BSD ディストリビューション (.tar.gz ディストリビューション)
 
-There are two “run” scripts that can be used to start the EvoStream Media Server, just locate the `./bin` folder of EMS and execute the command:
+EvoStream Media Serverを起動するために使う２つの"run~"スクリプトがあります。EMSの`./bin`フォルダ以下にあります:
 
-1. Run EMS with console logs, using `./config/config.lua` as the main server configuration. 
+1. コンソールログありのEMSの起動。`./config/config.lua`がサーバー設定に使用されます
 
    ```
     $ ./run_console_ems.sh
    ```
 
-2. Run EMS as a background process. The script will attempt to assign the run-process to the user `evostream`.
+2. EMSをバックグラウンドプロセスとして起動します。実行プロセスは`evostream`ユーザーに割当てようとします。
 
    ```
     $ ./run_daemon_ems.sh
@@ -52,89 +52,100 @@ There are two “run” scripts that can be used to start the EvoStream Media Se
 
 **Notes:**
 
-- Either command can be directly executed.
-- For `run_daemon_ems.sh`, if the `evostream` user does not exist, an error will be printed to the screen. Despite the error, the EMS will probably have been started. To check if the server is running, user can issue `ps –ef | grep evostream` in terminal.
+- どちらのコマンドも直接実行可能です。
 
-This command will print differently on different operating systems, but it should let you know that the server is running.
+- `run_daemon_ems.sh`で実行の際に`evostream`ユーザーが存在しない場合、エラーが表示されるものの、EMSはおそらく起動されています。 サーバーが起動しているかどうか確認するには、ターミナルで `ps –e | grep evo` を実行してください。以下のような結果が表示されます:
 
-- The **user** used by `run_daemon_ems.sh` can easily be modified by changing the value after the `-u` in the script itself.
-- The user running the EvoStream Media Server must have sufficient permission to open and bind to network ports.
+  ```
+  user@ubuntu:~$ ps –e|grep evo
+  10727 pts/4 00:00:22 evostreamms
+  10728 pts/4 00:00:05 evo-node (for webserver)
+  10729 pts/4 00:00:00 evo-node (for webui)
+  10730 pts/4 00:00:00 evo-node (for webservices)
+  ```
+
+OSによって、結果表示は若干異なりますが、サーバーが起動しているかどうかの確認はできます。
+
+- **ユーザー** はスクリプト実行時`-u` オプション指定により変更可能です
+- EvoStream Media Serverを実行するユーザーは、ネットワークportをopenしたりbindできるよう適切なパーミッションが必要です。
 
 
 
 
-## Windows Distribution
+## Windows ディストリビューション
 
-The EMS may be started using the **Windows Services** tool in Windows.
+EMSはウインドウズの**Windows Services**を使って起動することができます
 
-### Via Service
+### サービス
 
-**Pre-requisite:**
+**事前準備:**
 
-It is needed to add EMS into your Window's registry to enable the use of service.
+ウインドウズレジストリでEMSサービスを有効化しておく必要があります。
 
-1. Open a command prompt
+1. コマンドプロンプトを開き
 
-2. Locate the services folder: `C:\EvoStream\services\ems`
+2. `C:\EvoStream\services\ems` サービスフォルダを選択し
 
-3. Send command: `create.bat`
+3. `create.bat`コマンドに送り込みます
 
    ```
    C:\EvoStream\services\ems> create.bat
    ```
-   **Note:** You can also double click the batch file to run
+   **Note:** バッチファイルをダブルクリックしても実行できます
 
    ​
 
-4. A confirmation will be asked, click **Yes**
+4. 確認を求められますので **Yes** ボタンをクリックしてください。
 
   ![](images/userguide/register.JPG)
 
   ​
 
-5. EMS keys are now registered! Click **OK**
+5. EMS keysが登録されました **OK** をクリックしてください。
 
   ![](images/userguide/register_success.JPG)
 
   ​
 
-6. Verify the registration by checking in `Control Panel > Administrative  Tools > Services`
+6. `Control Panel > Administrative  Tools > Services`から登録の確認ができます。
 
   ![](images/userguide/registry_services.jpg)
 
 
 
-**Starting the Service**
+**サービスの開始**
 
-1. Open a command prompt
+1. コマンドプロンプトを開き
 
-2. Locate the services folder: `C:\EvoStream\services\ems`
+2. `C:\EvoStream\services\ems`フォルダに
 
-3. Send command: `start.bat`
+3. `start.bat`コマンドを送り込みます
 
-   This will start the service if it has not already been started
+   サービスが開始されます
 
    ​
 
 
 **Notes:**
 
-- Call `stop.bat` to stop the running EMS service
-- Use the `remove.bat` command if you opt to remove EMS in the registry
+- EMSサービスの停止は `stop.bat` をCallします
+- `remove.bat` コマンドでEMSのレジストリ登録を削除できます
 
 
 
 
 
-### Via Shortcut Icon
+### ショートカットアイコン経由での起動
 
-User may directly run the EMS using the shortcut icon if added during installation
+インストール時にショートカットを作成しておくことで、ショートカット経由でEMSを起動することもできます。
 
- ![](images/userguide/emsShortcut.jpg)
+ ![](images/home/startupicon.JPG)
 
-This will open a console running EMS.
+EMSをコンソール起動します。
 
-The shotcut icon calls the `run_console_ems.bat`. You may also run this executable found in the installed EMS. Simply double-clicked to start the server. This script simply runs the Media Server through the command prompt, using `config/config.lua` as the main server configuration. 
+ショートカットは`run_console_ems.bat`を呼び出します。EMSがインストールされているディレクトリで直接ダブルクリックしてサーバーを起動することもできます。このスクリプトはメディアサーバーをコマンドプロンプトで起動し、サーバー設定には`config/config.lua`を使用します。
+
+
 
 ```
 C:\EvoStream\run_console_ems.bat
@@ -142,28 +153,60 @@ C:\EvoStream\run_console_ems.bat
 
 
 
-## Startup Success
+## 起動の確認
 
-For either Windows or Linux/BSD/OSX, when you run the EMS as a console application, you should see the following screen indicating the server is up and running:
+ウインドウズやLinux/BSD/OSXにおいてEMSをコンソールアプリケーションとして起動した場合、サーバーが起動したことを示す次の表示となります
+
 
 ![](images/userguide/start1.png)
 
-**Tip!** A successful EMS start will show GO! GO! GO! in console.
+**Tip!** EMSが正常に起動するとコンソールに GO! GO! GO!と表示されます。
+
+起動したアプリケーションはタスクマネージャーで確認できます。
+
+```
+evostreamms.exe
+evo-node.exe    (webserver)
+evo-node.exe    (webui)
+evo-node.exe    (webservices)
+```
 
 
 
-## EMS Command Line Definition
 
-The evostreamms executable can be run with a few different options. The command line signature is as follows:
 
-**Format:** evostreamms [OPTIONS][config_file_path]
+## EMS コマンドライン定義
 
-| Command                        | Function                                 |
-| ------------------------------ | ---------------------------------------- |
-| –help                          | Prints this help and exit.               |
-| –version                       | Prints the version and exit.             |
-| –use-implicit-console-appender | Adds extra logging at runtime, but is only effective when the server is started as a console application. This is particularly useful when the server starts and stops immediately for an unknown reason. It will allow you users to see if something is wrong, particularly with the config file. |
-| –daemon                        | Overrides the daemon setting inside the config file and forces the server to start in daemon mode. |
-| –uid=                          | Run the process with the specified user id. |
-| –gid=                          | Run the process with the specified group id. |
-| –pid=<pid_file>                | Create PID file. Works only if –daemon option is specified. |
+いくつかのコマンドラインオプションが使用できます
+
+**Format:** evostreamms [オプション][configファイルのパス]
+
+| コマンド                          | 機能                                 |
+| -------------------------------- | ---------------------------------------- |
+| `–help`                          | ヘルプを表示します               |
+| `–version`                       | バージョン情報を表示します             |
+| `–use-implicit-console-appender` | 実行時エキストラログを記録します。コンソールアプリケーションとして起動された場合にのみ有効です。サーバーが起動してすぐに停止してしまう場合に原因の切り分けに有効です。 |
+| `–daemon`                        | 設定ファイルのデーモン設定内容を無視し、デーモンモードでサーバーを起動します |
+| `–uid=`                          | 指定したユーザーidでプロセスを実行します |
+| `–gid=`                          | 指定したグループidでプロセスを起動します |
+| `–pid=<pid_file>`                | PIDファイルを生成します。-daemonオプションと一緒に使う必要があります |
+
+------
+
+## Notes
+
+- EMSを起動すると下記の項目も同時に起動します:
+
+  - EMS Web Server
+  - EMS Web UI
+  - EMS Webservices
+
+- config.luaで起動プロセスを設定することができます
+
+  - [runWebServer](userguide_configlua.html#runwebserver)
+
+  - [runWebUI](userguide_configlua.html#runwebui)
+
+  - [eventLogger](userguide_configlua.html#eventlogger)
+
+    ​

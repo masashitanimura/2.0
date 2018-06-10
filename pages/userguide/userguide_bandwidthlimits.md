@@ -7,11 +7,12 @@ folder: userguide
 toc: false
 ---
 
-Defines the maximum amount of bandwidth you want the server to be able to use (set the instantaneous bandwidth cap).
+サーバーが使用する最大帯域の設定を定義します(一時的帯域キャップ)
 
-If `enableCheckBandwidth` in config.lua is true, automatically EMS will read the bandwidths.xml file. EMS will limit all the incoming and outgoing stream dependent to the configured bandwidth range.
+config.luaで`enableCheckBandwidth`がtrueの場合、EMSはbandwidths.xmlファイルを読み込み、入出力両方のストリームにおける総帯域を設定値に制限します。
 
-Default for in and out is zero (0) which means no limit.
+入出力ともにデフォルト値はゼロ(0)で、無制限という意味です。
+
 
 ```
 <?xml version="1.0" ?>
@@ -21,4 +22,4 @@ Default for in and out is zero (0) which means no limit.
 </MAP>
 ```
 
-See [enableCheckBandwidth](# enableCheckBandwidth).
+ [enableCheckBandwidth](userguide_configlua.html#enablecheckbandwidth)を見る

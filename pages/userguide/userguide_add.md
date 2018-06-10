@@ -6,52 +6,58 @@ folder: userguide
 toc: true
 ---
 
-This is where you can add a stream to your EMS. You can add simple streams and HTTP streams in this page.
+EMSにストリームを追加することができます。シンプルなストリームやHTTPストリームの追加ができます
 
 
 
-## Adding Inbound Live Streams
+## インバウンドライブストリームの追加
 
-This is similar to the `pullStream` command. If you wan't to add a RTSP or RTMP stream, simply do the following:
+`pullStream`コマンドに似ています。RTSPまたはRTMPストリームを追加は次の手順です:
 
-1. Choose  **Inbound Live Stream** under Choose the Stream Type to Add
-2. Enter the **URI Stream Source**
-3. Enter the **Local Stream Name**
-4. Click **Add Stream**
+1. **Inbound Live Stream**をプルダウンから選択してください
 
-![](images/userguide/addstream.JPG)
+2.  **URI Stream Source**を入力してください
+
+3. **Local Stream Name**を入力してください
+
+4. **Add Stream**ボタンをクリックしてください
+
+   ![](images/userguide/addstream.JPG)
+
+   ​
 
 **Notes:**
 
-- ![](images/userguide/clear.JPG)  - will clear inputs in fields
+- ![](images/userguide/clear.JPG)  - フィールドの内容を消去します
 
-- ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
+- ![](images/userguide/viewstream.JPG)   - アクティブなストリームの表示にリダイレクトされます
 
-See [pullStream](api_pullStream.html) API for more information.
+より詳しい情報は [pullStream](api_pullStream.html) APIをご参照ください
 
 
 
-## Adding HTTP Streams
+## HTTPストリームの追加
 
-Adding HTTP streams has made easy in this page. You can now create your HLS, DASH, HDS and MSS here.
+簡単にHTTPストリームの追加ができます。HLS, DASH, HDS, MSSを生成することができます。
+A
 
-1. Choose the  **HTTP Stream Type** (HLS, DASH, HDS, MSS)
+1. **HTTP Stream Type** （ストリームタイプ）を選択してください(HLS, DASH, HDS, MSS)
 
-2. Choose the **Stream Source**
+2.  **Stream Source**を選択してください
 
-   **Note:** List of Active streams will be shown under the Stream Source field. You can select more than one
+   **Note:** Stream Sourceフィールドにアクティブなストリームがリスト表示されます （複数選択可）
 
-3. Enter **Target Folder**
+3.  **Target Folder**を入力してください
 
-   **Note:** Should use absolute path 
+   **Note:** 絶対パスを入力してください
 
-4. Enter **Group Name**
+4. **Group Name**を入力してください
 
-5. Enter **Chunk Length**
+5. **Chunk Length**を入力してください
 
-6. Enter **Bitrate** (optional)
+6. **Bitrate** (オプショナル)を入力してください
 
-7. Click **Add Stream**
+7. **Add Stream**をクリックしてください
 
 ![](images/userguide/addhttpstream.JPG)
 
@@ -59,7 +65,5 @@ Adding HTTP streams has made easy in this page. You can now create your HLS, DAS
 
 **Notes:**
 
-- ![](images/userguide/clear.JPG)   - will clear inputs in fields
-- ![](images/userguide/viewstream.JPG)   - redirects to Active to view the stream in list
-
-
+- ![](images/userguide/clear.JPG)   - フィールドを消去します
+- ![](images/userguide/viewstream.JPG)   - アクティブなストリームの表示にリダイレクトされます

@@ -7,13 +7,12 @@ folder: userguide
 toc: false
 ---
 
-This file sets the allowed maximum number of connections to EMS.
+conlimits.xmlファイルはEMSの最大同時接続数を設定します。
 
-Default is zero (0) means no maximum.
+デフォルト値はゼロ(0)です
 
 ```
 <?xml version="1.0" ?>
 <UINT32 name="">0</UINT32>
 
 ```
-

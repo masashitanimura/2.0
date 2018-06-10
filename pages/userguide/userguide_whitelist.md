@@ -8,26 +8,25 @@ toc: false
 ---
 
 
+EMSにアクセス可能なIPアドレスを定義します。ホワイトリストが定義されている場合、ファイルに記述されたIPアドレスのみアクセス可能です。
 
-Defines the IP address that will have access to EMS. If a whitelist is specified, access will only be granted to that IP address that **APPEARS** on the whitelist file.
+**実装:**
 
-**Implementation:** 
-
-| Blacklist | Whitelist | Is Allowed?                            |
+| ブラックリスト | ホワイトリスト | 許可されるIP                           |
 | :-------: | :-------: | -------------------------------------- |
-|   empty   |   empty   | all IPs are allowed                    |
-|  x.x.x.x  |   empty   | all IPs are allowed except for x.x.x.x |
-|   empty   |  y.y.y.y  | only y.y.y.y is allowed                |
-|  x.x.x.x  |  y.y.y.y  | only y.y.y.y is allowed                |
-|  no file  |  y.y.y.y  | only y.y.y.y is allowed                |
-|  x.x.x.x  |  no file  | all IPs are allowed except for x.x.x.x |
-|  no file  |  no file  | error                                  |
+|   空白   |   空白   | すべてのIPが許可されます                      |
+|  x.x.x.x  |   空白    | x.x.x.x以外のIPが許可されます |
+|   空白    |  y.y.y.y  | y.y.y.yのみ許可されます              |
+|  x.x.x.x  |  y.y.y.y  | y.y.y.yのみ許可されます                |
+|  ファイルなし  |  y.y.y.y  | y.y.y.yのみ許可されます                |
+|  x.x.x.x  |  ファイルなし  | x.x.x.x以外のIPが許可されます |
+|  ファイルなし  |  ファイルなし  | エラーとなります                                  |
 
 **Notes:**
 
-- `enableIPFilter` should be set to `true` in webconfig.lua to be able to read the whitelist file
+- ホワイトリストファイルを読み込むにはwebconfig.luaで`enableIPFilter`は`true`に設定されている必要があります。
 
-- `whitelistFile` code should not be commented to be able to honor the list of whitelist IP address
+- ホワイトリストIPアドレスリストを有効にするためには`whitelistFile`コードはコメントしないようにしてください
 
   ```
     enableIPFilter=true,
@@ -35,13 +34,13 @@ Defines the IP address that will have access to EMS. If a whitelist is specified
     blacklistFile="..\\config\\blacklist.txt",
   ```
 
-- If IP address is both on whitelist and blacklist file, EMS will treat the IP address as blacklisted
+- もしも特定のIPアドレスがホワイトリストとブラックリストの両方に存在する場合は、ブラックリストにあるものとして判定されます。
 
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [blacklist.txt](userguide_blacklist.html)
 - [Blacklisting](userguide_blacklisting.html)

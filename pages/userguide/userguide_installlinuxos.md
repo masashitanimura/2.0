@@ -8,19 +8,22 @@ toc: true
 
 
 
-## Platform Verification
+## プラットフォームの確認
 
-If you are unsure if the distribution you downloaded is appropriate for your Operating System, you can use the `platformTests` program. This program is available with all distributions and provides a suite of platform compatibility tests. It can be found in the bin directory.
-
-On all systems, open a console or terminal (command prompt) and run the `platformTests` executable (`./platformTests`). It will print out the results of the platform compatibility tests. If the test succeeds, then you have an appropriate distribution!
+ご使用のOSに適切なディストリビューションをダウンロードされたかを確認するには、`platformTests` プログラムをご利用ください。このプログラムはすべてのディストリビューションに含まれており、binディレクトリ下にあります。互換性に関するテストを行います。
 
 
+コンソールまたはターミナルを開き、`platformTests`を実行します (`./platformTests`)
+プラットフォーム互換性テスト結果を表示します。テストにパスしたら、適切なディストリビューションということです。
 
-## Linux Limitations
 
-Linux systems place limits on the number of sockets and file descriptors a process may use. This will apply to the EMS as well. If you plan on using more than 1024 connections at one time for your server, you will need to modify the following configuration file: `/etc/security/limits.conf`
 
-The following lines will need to be added/modified:
+## Linuxの制限
+
+Linuxシステムはデフォルトでプロセスが使用可能なソケット数およびファイルディスクリプタ数に制限を設けており、
+これはEMSについても当てはまります。サーバーが扱うコネクション数が1024を越えることが予測されているなら、`/etc/security/limits.conf` 設定ファイルを編集する必要があります。
+
+次のように追加・変更する必要があります。
 
 ```
 soft nofile 16384
@@ -29,43 +32,43 @@ soft nproc 4096
 hard nproc 16384
 ```
 
-## Installation Procedure
+## インストールの手順
 
-### Linux Package (Linux apt/yum Installer)
+### Linuxパッケージ (Linux apt/yum インストーラー)
 
-**Pre-requisites:**
+#### 事前準備:
 
-Administrative privileges are required. This can be accomplished in many ways.
+- keyファイルがダウンロードできるようファイルーウォールの制限を無効にしてください
 
-If the sudo utility is available:
+- インストールには管理者権限が必要となります
 
-```
-$ su –
-```
+  sudo ユーティリティが使える場合
 
-If the sudo utility is not available:
+  ```
+  $ su –
+  ```
 
-```
-$ sudo su –
-```
+  sudo ユーティリティが使えない場合
 
-**Note:**
+  ```
+  $ sudo su –
+  ```
 
-The prompt changes from `$` to `#` when administrative privileges are enabled.
+  **Note:** 管理者権限が有効になるとコマンドプロンプトが `$` から `#` に変わります。
 
 
 
-**Installation Procedure:**
+#### インストール手順:
 
-1\. Retrieve the script used to install the EvoStream software repository and store it
+EvoStreamソフトウェアリポジトリをインストールするためのスクリプトをダウンロードします
 
-- Debian based Linux distributions (Ubuntu or Debian)
+- DebianベースのLinuxディストリビューションの場合 (Ubuntu または Debian)
 
   ```
   # wget http://apt.evostream.com/installkeys.sh -O /tmp/installkeys.sh
   ```
 
-- RedHat based Linux distributions (CentOS, Fedora, RHEL)
+- RedHatベースのLinuxディストリビューションの場合 (CentOS, Fedora, RHEL)
 
   ```
   # curl http://yum.evostream.com/installkeys.sh -o /tmp/installkeys.sh
@@ -73,35 +76,37 @@ The prompt changes from `$` to `#` when administrative privileges are enabled.
 
   ​
 
-2\. Execute the script to install the EvoStream software repository and keys
+2\. EvoStream software repositoryおよびkeysのインストールを行うためにスクリプトを実行してください
 
 ```
 # sh /tmp/installkeys.sh
 ```
 
-- If successful, the following message should be printed on the console:
+- 実行がうまくいった場合、下記のようなメッセージが表示されます:
 
   ```
   "EvoStream keys installed successfully"
   ```
 
-At this stage, the EvoStream software repository and keys are successfully installed and you can install packages from it.
-
-**Note:** Steps 1 and 2 above must be executed only once.
-
-The following steps are used to install the EvoStream Media Server, and can be repeated to update the EMS to the most recent release.
+EvoStreamソフトウェアリポジトリおよびkeysのインストールが完了したことになります。パッケージのインストールに進んでください。
 
 
 
-3\. Install EvoStream Media Server.
+**Note:** 手順１および２の実行は１回のみとしてください
 
-- Debian based Linux distributions (Ubuntu or Debian)
+EvoStream Media Serverのインストールは以下の手順です。この手順はEMSのアップデートの際も同様です。
+
+
+
+3\. EvoStream Media Serverのインストール.
+
+- DebianベースのLinuxディストリビューション (Ubuntu または Debian)
 
   ```
   # apt-get install evostream-mediaserver
   ```
 
-- RedHat based Linux distributions (CentOS, Fedora, RHEL)
+- RedHatベースのLinuxディストリビューション (CentOS, Fedora, RHEL)
 
   ```
   # yum install evostream-mediaserver
@@ -110,35 +115,33 @@ The following steps are used to install the EvoStream Media Server, and can be r
 
 
 
-#### License Installation
+#### ライセンスのインストール
 
-To install the license, simply copy the `License.lic` file to `/etc/evostream/License.lic`.
-
-
-
-### Linux Archive (.tar.gz Distribution)
-
-You can install the EMS from a simple archive file (.tar.gz). The latest EMS Release can be found on the EvoStream website: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
-
-You will need to choose the most appropriate distribution for the Operating System that you are using. Once you have downloaded your distribution.
-
-Simply **extract** the EMS package. The location of the installation is not important. However, for security reasons, the EvoStream Media Server should **NOT** be installed into the web-root of the target computer (if one exists).
-
-
-
-#### License Installation
-
-To install the license, simply copy the `License.lic` file to `../config/License.lic`.
+ライセンスのインストールは `License.lic` ファイルを `/etc/evostreamms/` 以下にコピーするだけです。
 
 
 
 
+### Linuxアーカイブ版 (.tar.gzディストリビューション)
 
-## Distribution Content
+アーカイブ版(.tar.gz)のEMSをインストールすることも可能です。最新のリリースはEvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/)からダウンロード可能です。
 
-### Linux Package
+ご利用のOSに適したディストリビューションを選択いただく必要があります。
 
-**A.1. Configuration files**
+ダウンロードしたEMSパッケージを伸長・展開してください。インストールするパスに特に制限はありませんが、セキュリティの観点からweb-rootにはインストールしないことをおすすめします。
+
+
+#### ライセンスのインストール
+
+ライセンスのインストールは `License.lic` ファイルを `../config/evostreamms/` 以下にコピーするだけです。
+
+
+
+## ディストリビューション内容
+
+### Linuxパッケージ
+
+**A. 設定ファイル **
 
 ```
 ├── etc
@@ -152,21 +155,51 @@ To install the license, simply copy the `License.lic` file to `../config/License
 │       └── whitelist.txt
 ```
 
-**A. 2. XXX Files**
+**B. 実行およびノードファイル**
 
 ```
 ├── usr
 │   ├── bin
-│   │   ├── evo-phpengine
-│   │   │   └── php.cgi
 │   │   ├── evo-avconv
 │   │   ├── evo-mp4writer
+│   │   ├── evo-node
 │   │   ├── evostreamms
-│   │   └── evo-webserver
+│   │   ├── node-ews
+│   │   ├── node-webservices
+│   │   ├── node-webui
 │   └── share
 │       ├── evo-avconv
 │       │   └── presets
-│       │       └── [30 transcode preset files]
+│       │       ├── libx264-baseline.avpreset
+│       |       ├── libx264-fast.avpreset
+│       |       ├── libx264-fast.avpreset
+│       |       ├── libx264-faster.avpreset
+│       |       ├── libx264-faster.avpreset
+│       |       ├── libx264-ipod320.avpreset
+│       |       ├── libx264-ipod640.avpreset
+│       |       ├── libx264-lossless_fast.avpreset
+│       |       ├── libx264-lossless_max.avpreset
+│       |       ├── libx264-lossless_medium.avpreset
+│       |       ├── libx264-lossless_slow.avpreset
+│       |       ├── libx264-lossless_slower.avpreset
+│       |       ├── libx264-lossless_ultrafast.avpreset
+│       |       ├── libx264-main.avpreset
+│       |       ├── libx264-medium.avpreset
+│       |       ├── libx264-medium_firstpass.avpreset
+│       |       ├── libx264-placebo.avpreset
+│       |       ├── libx264-placebo_firstpass.avpreset
+│       |       ├── libx264-slow.avpreset
+│       |       ├── libx264-slow_firstpass.avpreset
+│       |       ├── libx264-slower.avpreset
+│       |       ├── libx264-slower_firstpass.avpreset
+│       |       ├── libx264-superfast.avpreset
+│       |       ├── libx264-superfast_firstpass.avpreset
+│       |       ├── libx264-ultrafast.avpreset
+│       |       ├── libx264-ultrafast_firstpass.avpreset
+│       |       ├── libx264-veryfast.avpreset
+│       |       ├── libx264-veryfast_firstpass.avpreset
+│       |       ├── libx264-veryslow.avpreset
+│       |       └── libx264-veryslow_firstpass.avpreset
 │       └── doc
 │           └── evostreamms
 │               ├── copyright
@@ -181,7 +214,136 @@ To install the license, simply copy the `License.lic` file to `../config/License
 │                   └── RELEASE_NUMBER
 ```
 
-**A.3. XML Files**
+**B.1. Node-WebServerファイル**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-ews
+│   │   |   ├── evo-phpengine
+│   │   |   ├── ews.node
+│   │   |   ├── fileRotateSize.js
+│   │   |   ├── helper.js
+│   │   |   ├── node-ews.js
+│   │   |   ├── node_modules
+│   │   │   |   ├── basic-auth
+│   │   │   |   ├── connect
+│   │   │   |   └── winston
+│   │   |   └── req_handlers     
+│   │   │   |   ├── authproxy.js
+│   │   │   |   ├── default.js
+│   │   │   |   ├── httpstream.js
+│   │   │   |   ├── php.js
+│   │   │   |   └── resphdrs.js  
+```
+
+**B.2. Node-Webservicesファイル**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-webservices
+│   │   |   ├── app.js
+│   │   |   ├── base_plugins
+│   │   │   |   ├── basehdsplugin.js
+│   │   │   |   ├── basehlsplugin.js
+│   │   │   |   └── baseplugin.js    
+│   │   |   ├── bin
+│   │   │   |   └── www       
+│   │   |   ├── config
+│   │   │   |   ├── logging.json
+│   │   │   |   └── plugins.json    
+│   │   |   ├── core_modules
+│   │   │   |   └── ems-api-core.js      
+│   │   |   ├── LICENSE
+│   │   |   ├── logs
+│   │   │   |   └── evowebservices.log          
+│   │   |   ├── node_modules
+│   │   │   |   ├── body-parser
+│   │   │   |   ├── comment-json
+│   │   │   |   ├── concat-stream
+│   │   │   |   ├── debug
+│   │   │   |   ├── express
+│   │   │   |   ├── morgan
+│   │   │   |   ├── request-enhanced
+│   │   │   |   ├── s3
+│   │   │   |   └── winston
+│   │   |   ├── package.json
+│   │   |   ├── plugins
+│   │   │   |   ├── amazondashupload.js
+│   │   │   |   ├── amazonhdsupload.js
+│   │   │   |   ├── amazonhlsupload.js
+│   │   │   |   ├── streamautorouter.js
+│   │   │   |   ├── streamloadbalancer.js
+│   │   │   |   └── streamrecorder.js   
+│   │   |   ├── README.md
+│   │   |   ├── README.txt
+│   │   |   ├── routes
+│   │   │   |   ├── evowebservices.js
+│   │   │   |   └── index.js      
+│   │   |   ├── services
+│   │   │   |   └── plugin-service.js
+│   │   |   ├── views
+│   │   │   |   ├── error.hbs
+│   │   │   |   ├── index.hbs
+│   │   │   └── └── layout.hbs
+```
+
+**B.3. Node-WebUI ファイル**
+
+```
+├── usr
+│   ├── bin
+│   │   ├── node-webui
+│   │   |   ├── app.js
+│   │   |   ├── auth
+│   │   │   │   ├── passport-config.js
+│   │   │   │   └── restrict.js
+│   │   |   ├── bin
+│   │   │   │   └── webui_activate
+│   │   |   ├── config
+│   │   │   │   ├── dir-config.js
+│   │   │   │   ├── logging.json
+│   │   │   │   └── social-auth-config.js
+│   │   |   ├── core_modules
+│   │   │   │   ├── ems-api-core.js
+│   │   │   │   ├── ems-api-proxy.js
+│   │   │   │   ├── ems-config-core.js
+│   │   │   │   └──  socket-io-api.js
+│   │   |   ├── data
+│   │   │   │   ├── help.json
+│   │   │   │   └──  user.json   
+│   │   |   ├── logs
+│   │   │   │   ├── webui.log
+│   │   |   ├── models
+│   │   │   │   ├── list-config.js
+│   │   │   │   ├── list-streams.js
+│   │   │   │   └──  user.js
+│   │   |   ├── node_modules
+│   │   │   │   └──  [168 node_module files]
+│   │   |   ├── public
+│   │   │   │   ├── css
+│   │   │   │   ├── fonts
+│   │   │   │   ├── images
+│   │   │   │   ├── js
+│   │   │   │   └──  media
+│   │   |   ├── routes
+│   │   │   │   ├── api-explorer.js   
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── ems.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── tream.js
+│   │   │   │   └── users.js
+│   │   |   ├── services
+│   │   │   │   └──  stream-service.js
+│   │   |   ├── views
+│   │   │   │   ├── admin
+│   │   │   │   ├── index
+│   │   │   │   ├── error.hbs
+│   │   │   └── └──  index.hbs  
+```
+
+**4. XML ファイル**
 
 ```
 └── var
@@ -195,26 +357,26 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │       └── pushPullSetup.xml
 ```
 
-**A.4. Evo-webroot Files**
+**5. Evo-Webroot ファイル**
 
 ```
 └── var
     ├── evo-webroot
     │   ├── demo
     │   │   ├── css
-    │   │   ├── evo.png
     │   │   ├── evoplayers.html
+    │   │   ├── evo.png
     │   │   ├── evowsabrvideo.html
+    │   │   ├── js
+    │   │   │   └── evohtml5player-latest.bundle.js
     │   │   ├── jsonMetaTest.html
     │   │   ├── jsonMetaWriteTest.html
     │   │   └── loading.gif
     │   ├── clientaccesspolicy.xml
     │   └── crossdomain.xml    
-    │   ├── clientaccesspolicy.xml
-    │   └── crossdomaim.xml
 ```
 
-**A.5. Log Files**
+**6. Log ファイル**
 
 ```
 └── var
@@ -222,7 +384,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
     │   └── evostreamms
 ```
 
-**A.6. Executable Files**
+**7. 実行ファイル**
 
 ```
 └── var
@@ -288,7 +450,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   │   ├── node_modules
   │   │   │   ├── basic-auth
   │   │   │   ├── connect
-  │   │   │   └── winston 
+  │   │   │   └── winston
   │   │   ├── req_handlers
   │   │   │   ├── authproxy.js
   │   │   │   ├── default.js
@@ -312,14 +474,14 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   │   │   └── social-auth-config.js
   │   │   ├── core_modules
   │   │   │   ├── ems-api-core.js
-  │   │   │   ├── ems-api-proxy.js 
+  │   │   │   ├── ems-api-proxy.js
   │   │   │   ├── ems-config-core.js
   │   │   │   └── socket-io-api.js
   │   │   ├── data
   │   │   │   ├── help.json
   │   │   │   └── user.json   
   │   │   ├── logs
-  │   │   │   └── webui.log 
+  │   │   │   └── webui.log
   │   │   ├── models
   │   │   │   ├── list-config.js
   │   │   │   ├── list-streams.js
@@ -339,7 +501,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   │   │   ├── index.js
   │   │   │   ├── stream.js
   │   │   │   └── users.js
-  │   │   ├── services 
+  │   │   ├── services
   │   │   │   └── stream-service.js
   │   │   ├── views
   │   │   │   ├── admin
@@ -372,9 +534,6 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   ├── users.lua
   │   ├── webconfig.json
   │   └── whitelist.txt
-  ├── demo
-  │   ├── base64.js
-  │   └── emsdemo.html
   ├── evo-avconv-presets
   │   └── [30 transcode preset files]
   ├── evo-webroot
@@ -383,7 +542,7 @@ To install the license, simply copy the `License.lic` file to `../config/License
   │   │   │   ├── common.css
   │   │   │	  └── common.css.orig  
   │   │   ├── js
-  │   │   │	  └── evohtml5player-latest.bundle.js 
+  │   │   │	  └── evohtml5player-latest.bundle.js
   │   │   ├── evo.png
   │   │   ├── evoplayers.html
   │   │   ├── evowsabrvideo.html
@@ -398,6 +557,3 @@ To install the license, simply copy the `License.lic` file to `../config/License
   ├── Evostream Media Server EULA v2.pdf
   └── README.txt
 ```
-
-
-

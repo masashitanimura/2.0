@@ -10,55 +10,49 @@ toc: true
 
 ## Mac OS X
 
-You can install the EMS from a simple archive file (.tar.gz). The latest EMS Release can be found on the EvoStream website: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
+アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+ EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
 
-You will need to choose the most appropriate distribution for the Operating System that you are using. Once you have downloaded your distribution.
+ご利用のOSに適したディストリビューションを選択いただく必要があります。
 
-Simply **extract** the EMS package. The location of the installation is not important. However, for security reasons, the EvoStream Media Server should **NOT** be installed into the web-root of the target computer (if one exists).
+ダウンロードしたEMSパッケージを伸長・展開してください。インストールするパスに特に制限はありませんが、セキュリティの観点からweb-rootにはインストールしないことをおすすめします。
 
-To install the license, simply copy the `License.lic` file to `../config/License.lic`.
+ライセンスのインストールは `License.lic` ファイルを `../config/evostreamms/` 以下にコピーするだけです。
 
 
 
 ## FreeBSD
 
-You can install the EMS from a simple archive file (.tar.gz). The latest EMS Release can be found on the EvoStream website: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
+アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+ EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/)
 
-You will need to choose the most appropriate distribution for the Operating System that you are using. Once you have downloaded your distribution.
+ご利用のOSに適したディストリビューションを選択いただく必要があります。
 
-Simply **extract** the EMS package. The location of the installation is not important. However, for security reasons, the EvoStream Media Server should **NOT** be installed into the web-root of the target computer (if one exists).
 
-To install the license, simply copy the `License.lic` file to `../config/License.lic`.
+ダウンロードしたEMSパッケージを伸長・展開してください。インストールするパスに特に制限はありませんが、セキュリティの観点からweb-rootにはインストールしないことをおすすめします。
+
+ライセンスのインストールは `License.lic` ファイルを `../config/evostreamms/` 以下にコピーするだけです。
 
 
 
 ## Windows Embedded
 
-Contact Sales Support if you need a build for Windows Embedded. See [installation procedure on Windows](#Windows).
+Windows Embedded向けのビルドが必要な方はセールスサポートにご連絡ください
+ [installation procedure on Windows](userguide_installwinos.html)
 
 
 
 ## Raspberry Pi
 
-You can install the EMS from a simple archive file (.tar.gz). The latest EMS Release can be found on the EvoStream website: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
+アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+ EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/)
 
-You will need to choose the most appropriate distribution for the Operating System that you are using. Once you have downloaded your distribution.
-
-Simply **extract** the EMS package. The location of the installation is not important. However, for security reasons, the EvoStream Media Server should **NOT** be installed into the web-root of the target computer (if one exists).
-
-To install the license, simply copy the `License.lic` file to `../config/License.lic`.
+ご利用のOSに適したディストリビューションを選択いただく必要があります。
 
 
+ダウンロードしたEMSパッケージを伸長・展開してください。インストールするパスに特に制限はありませんが、セキュリティの観点からweb-rootにはインストールしないことをおすすめします。
 
-## Android
-
-Contact Sales Support if you need a build for Android.
-
+ライセンスのインストールは `License.lic` ファイルを `../config/evostreamms/` 以下にコピーするだけです。
 
 
-## iOS
-
-Contact Sales Support if you need a build for iOS.
-
-
-
+**Note:** Raspberry Pi用のパッケージにはEMS Webserver, EMS Web UI, EMS Webservicesは含まれておりません
